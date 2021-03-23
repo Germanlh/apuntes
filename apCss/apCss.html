@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apuntes CSS3</title>
+    <script src="https://kit.fontawesome.com/a2e8d0339c.js"></script>
+    <link rel="stylesheet" href="../css/apuntes.css">
+    <link rel="stylesheet" href="../css/prism.css">
+</head>
+<body>
+    <main>
+        <aside><!--*** MENU ****************-->
+            <nav>
+                <div class="logo-materia">
+                    <img src="../img/CSS3_logo.svg" alt="Css3 logo">
+                </div>
+                <a href="../index.html" class="icon-home"><i class="fas fa-home"></i></a> <!-- Home -->
+
+                <ul class="menu">
+                    <li><!--Referencias-->
+                        <p>Referencias</p>
+                        <ul class="submenu">
+                            <li><a href="https://developer.mozilla.org/es/docs/Web/CSS" >CSS MDN</a></li>
+                            <li><a href="https://developer.mozilla.org/es/docs/Web/CSS/Reference" >Ref MDN</a></li>
+                            <li><a href="https://www.w3schools.com/css/default.asp" >W3Schools</a></li>
+                            <li><a href="https://caniuse.com/" >Can Iuse</a></li>
+                            <li><a href="https://css-tricks.com/" >CSS Tricks</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#rudimentos">Rudimentos</a><!--Rudimentos-->
+                        <ul class="submenu">
+                            <li><a href="#que-es-css" >¿Que es CSS?</a></li>
+                            <li><a href="#regla-css" >Regla CSS</a></li>
+                            <li><a href="#css-en-html" >CSS en HTML</a></li>
+                            <li><a href="#selectores" >Selectores</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" >xXxXx</a></li><!--xXXx-->
+                </ul>
+            </nav>
+        </aside>
+        <div class="contenedor"><!--*** Contenedor General de Temas *****************************************-->
+            <section class="section" id="rudimentos"><!--*** Rudimentos ************************-->
+                <h2 class="section-title">Rudimentos</h2>
+                <article class="concept"><!--Que es CSS-->
+                    <h3 class="title-concept" id="que-es-css">¿Que es CSS?</h3>
+                    <p class="content"><!--** Parrafos de Contenido **-->
+                        <strong>CSS</strong> es el acrónimo de Hojas de estilo en cascada (del inglés <em> <strong>C</strong>ascading <strong>S</strong>tyle <strong>S</strong>heet </em>) es el lenguaje de estilos utilizado para describir la presentación de documentos HTML o XML (en-US) (incluyendo varios languages basados en XML como SVG, MathML o XHTML). CSS describe como debe ser renderizado el elemento estructurado en la pantalla, en papel, en el habla o en otros medios.
+                    </p>
+                    <p class="content"><!--** Parrafos de Contenido **-->
+                        CSS es uno de los lenguajes base de la Open Web y posee una especificación estandarizada por parte del W3C. Anteriormente, el desarrollo de varias partes de las especificaciones de CSS era realizado de manera sincrónica, lo que permiía el versionado de las recomendaciones. Probablemente habrás escuchado acerca de CSS1, CSS2.1, CSS3. Sin embargo, CSS4 nunca se ha lanzado como una versión oficial. 
+                    </p>
+                    <p class="content"><!--** Parrafos de Contenido **-->
+                        En resumen, con <strong>CSS</strong> podemos definir la manera en que lucirá una página web, desde los colores de los elementos, la tipografía e incluso el orden y el espacio de cada uno de los elementos involucrados.
+                    </p>
+                    <div class="alert"><!--** Parrafos de ADVERTENCIA **-->
+                        <p class="content-alert">
+                            <strong>ALERTA:</strong> Para un adecuado entendimiento del manejo de CSS es necesario tener sólidas bases de HTML, de otra forma el aprendizaje será lento, ya que ambas tecnologías se complementan.
+                        </p>
+                    </div>
+                </article>
+                <article class="concept"><!--Regla CSS-->
+                    <h3 class="title-concept" id="regla-css">Regla CSS</h3>
+                    <p class="content"><!--** Parrafos de Contenido **-->
+                        Debemos entender que una página web es una conjunto de objetos acomodados por etiquetas uno después de otro y cada uno de esos objetos generalmente marcados por estas etiquetas contiene propiedades que pueden alterarse y cambiar el aspecto original de la página. Para que podamos visualizarlos de forma correcta, debemos indicar que propiedades deben modificarse. 
+                    </p>
+                    <p class="content"><!--** Parrafos de Contenido **-->
+                        La forma en que CSS realiza estos cambios es estableciendo "Reglas Predeterminadas" o simplemente "Reglas" las cuales le indican al nevegador como debe mostrar ese elemento que estamos manipulando, cada regla que establezcamos debe tener la siguiente estructura: 
+                    </p>
+                    <div class="ilustracion">
+                        <img src="img/regla.png" alt="Regla CSS" class="ilustracion">
+                    </div>
+                    <p class="content"><!--** Parrafos de Contenido **-->
+                        A continuación describimos cada una de sus partes:
+                    </p>
+                    <p class="content"><!--** Parrafos de Contenido **-->
+                        <strong>SELECTOR:</strong> es la manera en la que nos referimos al elemento al cual aplicaremos la regla que estamos definiendo, para ello, todas las declaraciones que afecten a este elemento debemos escribirlas entre llaves <em>"{...}"</em>  para mantenerlas agrupadas, existen muchas maneras de referirnos a esos elementos, si los combinamos adecuadamente, podemos acceder a cualquiera de los elementos establecidos en la página.
+                    </p>
+                    <p class="content"><!--** Parrafos de Contenido **-->
+                        <strong>DECLARACIÓN:</strong> cada una de las declaraciones modifica una propiedad diferente del elemento seleccionado, cada una de ellas se encuentra compuesta por una propiedad y por el valor que esta asumirá, es importante que al finalizar la declaración, ésta termine con <em>";"</em>.
+                    </p>
+                    <p class="content"><!--** Parrafos de Contenido **-->
+                        <strong>PROPIEDAD:</strong> La propiedad nos indica que característica del elemento queremos cambiar, su anchura, su altura, su color, etc. de esta manera indicamos al navegador como debe visualizarse. es importante que después de mencionar la propiedad separemos con <em>":"</em> los valores que le daremos a la misma.
+                    </p>
+                    <div class="note"><!--** Parrafos de Notas **-->
+                        <p class="content-note">
+                            <strong>NOTA:</strong> Cada propiedad puede llevar consigo más de un valor, generalmente, se identifica un valor de otro por que van separados por espacios, de igual manera existen funciones que nos apoyan para colocar de mejor manera estos valores.
+                        </p>
+                    </div>
+                    <p class="content"><!--** Parrafos de Contenido **-->
+                        <strong>VALOR:</strong> Una vez que hemos señalado la propiedad debemos indicar adecuadamente el nuevo valor que ésta tendrá, este cambio de magnitud depende de la propiedad que estamos modificando, una vez que hayamos establecido los valores adecuados, la declaración debe finalizar con <em>";"</em>.
+                    </p>
+                    <div class="note"><!--** Parrafos de Notas **-->
+                        <p class="content-note">
+                            <strong>NOTA:</strong> Cada Valor es diferente para cada tipo de propiedad, lo más común es que este valor vaya acompañado de un magnitud o unidad de medida que especifica la manera en que la propiedad cambiará.
+                        </p>
+                    </div>
+                </article>
+                <article class="concept"><!--CSS en HTML-->
+                    <h3 class="title-concept" id="css-en-html">CSS en HTML</h3>
+                    <p class="content"><!--** Parrafos de Contenido **-->
+                        Una vez que hemos entendido que cada elemento que vamos a modificar debemos definir una regla, ahora debemos entender donde es el lugar adecuado para colocar esa regla y que funcione.
+                    </p>
+                    <p class="content"><!--** Parrafos de Contenido **-->
+                        El código CSS se interpreta en el navegador del cliente que abre una página web, para que éste navegador interprete de forma adecuada los estilos que corresponden a un sitio web, debemos especificar como es que cada uno de los elementos que se encuentran dentro de la página deben presentarse y para ello existen 3 formas diferentes de hacerlo.
+                    </p>
+                    <ul class="content">
+                        <li>Forma in-line</li>
+                        <li>Forma Embebida</li>
+                        <li>Forma Enlace</li>
+                    </ul>
+                    <p class="content"><!--** Parrafos de Contenido **-->
+                        <strong>IN-LINE:</strong> Esta forma nos permite colocar el estilo, dentro de los atributos de las etiquetas que se definen en HTML, este atributo solo afecta a la etiqueta en cuestión una a la vez. 
+                    </p>
+                    <div class="alert"><!--** Parrafos de ADVERTENCIA **-->
+                        <p class="content-alert">
+                            <strong>ALERTA:</strong> Trabajar con estilos <em>In-line</em> es cómodo por que se agregan las reglas dentro de los atributos de la etiqueta, sin embargo, no se aprovecha la cascada de CSS, lo cual es una potente herramienta de diseño, tampoco se pueden repetir los estilos a diferentes páginas del mismo proyecto asi mismo afecta la Especificidad, pues el estilo <em>In-line</em> siempre tiene mayor prioridad sobre las otras formas.
+                        </p>
+                    </div> 
+                    <h3 class="title-aux">Ejemplo In-line:</h3>
+                    <pre><!--*** Codigo Ejemplo ******************-->
+                        <code class="language-html">
+                            &lt;p style="font-size: 20px"&gt;Mi texto &lt;&#47;p&gt;
+                        </code>
+                    </pre>
+                    <p class="content"><!--** Parrafos de Contenido **-->
+                        <strong>EMBEBIDA:</strong> Esta forma nos permite modificar a los elementos semejantes dentro del mismo archivo HTML, pues al usar un selector, este no se encuentra atado dentro de la misma etiqueta, por lo que se puede aprovechar del efecto en cascada y afectar a otros objetos "Semejantes". 
+                    </p>
+                    <div class="alert"><!--** Parrafos de ADVERTENCIA **-->
+                        <p class="content-alert">
+                            <strong>ALERTA:</strong> A pesar que la forma embebida nos permite aprovechar de mejor manera la cascada, es una buena práctica utilizar la tercera forma, además que nos permite agregar esas mismas reglas de estilo a otras páginas.
+                        </p>
+                    </div> 
+                    <h3 class="title-aux">Ejemplo Embebido:</h3>
+                    <pre><!--*** Codigo Ejemplo ******************-->
+                        <code class="language-html">
+                            &lt;head&gt;
+                                &lt;style&gt;
+                                    p{
+                                        font-size:20px;
+                                    }
+                                &lt;&#47;style&gt;
+                            &lt;&#47;head&gt;
+                        </code>
+                    </pre>
+                    <p class="content"><!--** Parrafos de Contenido **-->
+                        <strong>ENLACE:</strong> Esta forma nos permite crear una archivo *.css por separado del archivo *.html, lo que nos permite crear un solo conjunto de reglas que pueden aplicarse a diversas páginas y mantener posteriormente los cambios fácilmente, esta forma de trabajar se considera la mejor práctica para las hojas de estilo. 
+                    </p>
+                    <h3 class="title-aux">Ejemplo Enlace:</h3>
+                    <pre><!--*** Codigo Ejemplo ******************-->
+                        <code class="language-html">
+                            &lt;head&gt;
+                                &lt;link rel="stylesheet" href="css/estilo.css" &gt;
+                            &lt;&#47;head&gt;
+                        </code>
+                    </pre>
+                </article>
+                <article class="concept"><!--Selectores-->
+                    <h3 class="title-concept" id="selectores">SELECTORES</h3>
+                    <p class="content"><!--** Parrafos de Contenido **-->
+                        Una vez que hemos entendido que cada elemento que vamos a modificar debemos definir una regla, ahora debemos entender donde es el lugar adecuado para colocar esa regla y que funcione.
+                    </p>
+                    <p class="content"><!--** Parrafos de Contenido **-->
+                        El código CSS se interpreta en el navegador del cliente que abre una página web, para que éste navegador interprete de forma adecuada los estilos que corresponden a un sitio web, debemos especificar como es que cada uno de los elementos que se encuentran dentro de la página deben presentarse y para ello existen 3 formas diferentes de hacerlo.
+                    </p>
+                    <ul class="content">
+                        <li>Forma in-line</li>
+                        <li>Forma Embebida</li>
+                        <li>Forma Enlace</li>
+                    </ul>
+                    <p class="content"><!--** Parrafos de Contenido **-->
+                        <strong>IN-LINE:</strong> Esta forma nos permite colocar el estilo, dentro de los atributos de las etiquetas que se definen en HTML, este atributo solo afecta a la etiqueta en cuestión una a la vez. 
+                    </p>
+                    <div class="alert"><!--** Parrafos de ADVERTENCIA **-->
+                        <p class="content-alert">
+                            <strong>ALERTA:</strong> Trabajar con estilos <em>In-line</em> es cómodo por que se agregan las reglas dentro de los atributos de la etiqueta, sin embargo, no se aprovecha la cascada de CSS, lo cual es una potente herramienta de diseño, tampoco se pueden repetir los estilos a diferentes páginas del mismo proyecto asi mismo afecta la Especificidad, pues el estilo <em>In-line</em> siempre tiene mayor prioridad sobre las otras formas.
+                        </p>
+                    </div> 
+                    <h3 class="title-aux">Ejemplo In-line:</h3>
+                    <pre><!--*** Codigo Ejemplo ******************-->
+                        <code class="language-html">
+                            &lt;p style="font-size: 20px"&gt;Mi texto &lt;&#47;p&gt;
+                        </code>
+                    </pre>
+                    <p class="content"><!--** Parrafos de Contenido **-->
+                        <strong>EMBEBIDA:</strong> Esta forma nos permite modificar a los elementos semejantes dentro del mismo archivo HTML, pues al usar un selector, este no se encuentra atado dentro de la misma etiqueta, por lo que se puede aprovechar del efecto en cascada y afectar a otros objetos "Semejantes". 
+                    </p>
+                    <div class="alert"><!--** Parrafos de ADVERTENCIA **-->
+                        <p class="content-alert">
+                            <strong>ALERTA:</strong> A pesar que la forma embebida nos permite aprovechar de mejor manera la cascada, es una buena práctica utilizar la tercera forma, además que nos permite agregar esas mismas reglas de estilo a otras páginas.
+                        </p>
+                    </div> 
+                    <h3 class="title-aux">Ejemplo Embebido:</h3>
+                    <pre><!--*** Codigo Ejemplo ******************-->
+                        <code class="language-html">
+                            &lt;head&gt;
+                                &lt;style&gt;
+                                    p{
+                                        font-size:20px;
+                                    }
+                                &lt;&#47;style&gt;
+                            &lt;&#47;head&gt;
+                        </code>
+                    </pre>
+                    <p class="content"><!--** Parrafos de Contenido **-->
+                        <strong>ENLACE:</strong> Esta forma nos permite crear una archivo *.css por separado del archivo *.html, lo que nos permite crear un solo conjunto de reglas que pueden aplicarse a diversas páginas y mantener posteriormente los cambios fácilmente, esta forma de trabajar se considera la mejor práctica para las hojas de estilo. 
+                    </p>
+                    <h3 class="title-aux">Ejemplo Enlace:</h3>
+                    <pre><!--*** Codigo Ejemplo ******************-->
+                        <code class="language-html">
+                            &lt;head&gt;
+                                &lt;link rel="stylesheet" href="css/estilo.css" &gt;
+                            &lt;&#47;head&gt;
+                        </code>
+                    </pre>
+                    <!--***********************************************************************-->
+                    <p class="content"><!--** Parrafos de Contenido **-->
+                        En resumen, con <strong>CSS</strong> podemos definir la manera en que lucirá una página web, desde los colores de los elementos, la tipografía e incluso el orden y el espacio de cada uno de los elementos involucrados.
+                    </p>
+                    <div class="link-reference"> <!--** Referencias **-->
+                        <a href="" class="icon-link"><i class="fas fa-external-link-alt"></i></a>
+                        <ul>
+                            <li><a href="">MDN</a></li>
+                            <li><a href="">Nose</a></li>
+                            <li><a href="">Quien sabe</a></li>
+                            <li><a href="">Puede ser</a></li>
+                            <li><a href="">A lo mejor</a></li>
+                        </ul>
+                    </div>
+                    <h3 class="title-aux">Titulo Secundario</h3>
+                    <div class="note"><!--** Parrafos de Notas **-->
+                        <p class="content-note">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo deserunt reprehenderit eos? Libero placeat amet rem perferendis ut quasi consectetur repudiandae reiciendis iure illo! Ipsam numquam cupiditate veritatis perferendis nemo.
+                        </p>
+                    </div>
+                    <div class="codes"><!--** Sintaxis **-->
+                        <code>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, inventore error. Tenetur optio officiis dicta omnis numquam eos eius recusandae amet ad ducimus, quod tempore cumque! Voluptate illo obcaecati cum?
+                        </code>
+                    </div>
+                    <pre><!--*** Codigo Ejemplo ******************-->
+                        <code class="language-javascript">
+                            let a;
+                            a=25;
+                            if(!a){
+                                console.log("No");
+                            }else{
+                                console.log("Si");
+                            }
+                        </code>
+                    </pre>
+                </article>
+            </section>
+            <section class="section" id="XXX"><!--*** XxXxXxXxX Formato Seccion  General *************-->
+                <h2 class="section-title">Rudimentos</h2>
+                <article class="concept">
+                    <h3 class="title-concept">¿Que es JavaScript?</h3>
+                    <div class="link-reference"> <!--** Referencias **-->
+                        <a href="" class="icon-link"><i class="fas fa-external-link-alt"></i></a>
+                        <ul>
+                            <li><a href="">MDN</a></li>
+                            <li><a href="">Nose</a></li>
+                            <li><a href="">Quien sabe</a></li>
+                            <li><a href="">Puede ser</a></li>
+                            <li><a href="">A lo mejor</a></li>
+                        </ul>
+                    </div>
+                    <p class="content"><!--** Parrafos de Contenido **-->
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt nisi accusamus ipsa, dolores nobis quae, blanditiis, harum voluptas doloribus consequuntur at? Consectetur sunt quos optio explicabo dolorem, voluptatibus rem voluptates.
+                    </p>
+                    <h3 class="title-aux">Titulo Secundario</h3>
+                    <div class="alert"><!--** Parrafos de ADVERTENCIA **-->
+                        <p class="content-alert">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam maxime odio, qui ratione incidunt necessitatibus quisquam aut deleniti nihil dolor sed officiis consequatur quibusdam in, temporibus, deserunt numquam obcaecati. Dolor?
+                        </p>
+                    </div>
+                    <div class="note"><!--** Parrafos de Notas **-->
+                        <p class="content-note">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo deserunt reprehenderit eos? Libero placeat amet rem perferendis ut quasi consectetur repudiandae reiciendis iure illo! Ipsam numquam cupiditate veritatis perferendis nemo.
+                        </p>
+                    </div>
+                    <div class="codes"><!--** Codigos de Ejemplo **-->
+                        <code>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, inventore error. Tenetur optio officiis dicta omnis numquam eos eius recusandae amet ad ducimus, quod tempore cumque! Voluptate illo obcaecati cum?
+                        </code>
+                    </div>
+                    <pre>
+                        <code class="language-javascript">
+                            let a;
+                            a=25;
+                            if(!a){
+                                console.log("No");
+                            }else{
+                                console.log("Si");
+                            }
+                        </code>
+                    </pre>
+                </article>
+            </section>
+        </div>
+    </main>
+    <script src="../js/prism.js"></script>
+</body>
+</html>

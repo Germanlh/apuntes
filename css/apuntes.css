@@ -111,12 +111,18 @@ p{
     color: var(--white);
     background-color: var(--first-color);
     padding: 0.3em;
+    margin: 0 0 0.5rem 0;
 }
 .title-concept, .title-aux{
-    color: var(--second-color);
-    margin: 0.6rem 0;
+    color: var(--white);
+    background-color: var(--second-color);
+    padding: 0.3em;
+    border-radius: 0.3em;
+    display: inline-block;
 }
-.title-aux{color: var(--text-color);}
+.title-aux{
+    background-color: var(--text-color);
+}
 
 
 
