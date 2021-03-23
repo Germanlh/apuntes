@@ -1,0 +1,335 @@
+html{
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: sans-serif;
+}
+body{
+    background-color: darkgray;
+}
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+}
+/***************************************/
+.container{
+    background-color: rgb(53, 53, 53);
+    border-radius: 1em;
+    max-width: 700px;
+    width: 90%;
+    height: 400px;
+    margin: 2em auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 0.13em 0.13em 0.5em;
+}
+.container>h2{
+    color: white;
+    text-align: center;
+}
+.container article{
+    width:90%;
+    height: 70%;
+    border: thin solid white;
+    border-radius: 1em;    
+}
+/******* Degradados Lineales *************************************************/
+.deg-lineales{
+    /* background: linear-gradient(to right, green 33.33%,
+                                    white 33.33%,
+                                    white 66.66%, 
+                                    red 66.66%); */
+    /* background-image: linear-gradient(to top, black 5%,rgba(0,0,0,0) 70%),
+                        url(http://lorempixel.com/500/500/); */
+    /* background-image: linear-gradient(to top,rgba(0,0,0,0),rgba(0,0,0,0) 70%),
+                        url(http://lorempixel.com/500/500/); */
+    background-image: linear-gradient(to top,transparent,transparent),
+                        url(http://lorempixel.com/500/500/);
+    transition: all 2s;
+}
+.deg-lineales:hover{
+    /* background-image: linear-gradient(to top,rgba(0,0,0,1) 10%,rgba(0,0,0,0) 90%),
+                        url(http://lorempixel.com/500/500/); */
+    background-image: linear-gradient(to top,black 10%,transparent 90%),
+                        url(http://lorempixel.com/500/500/);
+}
+/******* Degradados Multiples  ****************************************************/
+.deg-multiples{
+    /* background-image: 
+        linear-gradient(to right, black,transparent),
+        linear-gradient(yellow 50%,red 50%); */
+    background-image: 
+        linear-gradient(45deg, black,transparent 60%),
+        linear-gradient(to right, blue 40%, transparent 40%),
+        linear-gradient(to top, red 50%, white 50%);
+    background-size: 100% 100%, 100% 50%, 100% 100%;
+    background-repeat: no-repeat, no-repeat, no-repeat;  
+    /* position: relative; */
+}
+.deg-multiples::before{
+    --separacion: 10px;
+    /*agregamos el codigo unicode de la estrella*/
+    content:"\2605";
+    color:white;
+    font-size: 7em;
+    /* position: absolute; */
+    /* line-height: 1; */
+    /* top: -0.05em; */
+    /* left: 0.5em; */
+}
+/******* Shadow Curve *********************************/
+.contiene-sombra{
+    position: relative;
+    z-index: 0;
+}
+.container .shadow-curve{
+    border: none;
+}
+/* .shadow-curve{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+} */
+.shadow-curve div{
+    width: 90%;
+    height: 5em;
+    color: white;
+    margin: 3em auto;
+    text-align: center;
+    /* border: thin solid white; */
+    border-radius: 1em;
+    /* flex-basis: 45%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* transition: all 1s ease; */
+    position: relative;
+    /* z-index: 5; */
+}
+.shadow-curve .item1{
+    background-color: blueviolet;
+    /* order: 2; */
+    /* z-index: 5; */
+    /* background-image: linear-gradient(blueviolet,blueviolet); */
+}
+
+.shadow-curve .item1::after{
+    content: "";
+    width: 90%;
+    height: 25%;
+    border-radius: 50%;
+    background-color: black;
+    box-shadow: black 0 0.5em 0.5em;
+    /* align-self: flex-end; */
+    /* order: 1; */
+    position: absolute;
+    left: 5%;
+    bottom: 0em;
+    z-index: -1;
+}
+
+.shadow-curve .item2{
+    background-color:crimson;
+    /* order: 1; */
+}
+
+.shadow-curve .item2::after,
+.shadow-curve .item2::before {
+    content: "";
+    width: 90%;
+    height: 10%;
+    background-color: black;
+    box-shadow: black 0 0.7em 0.5em;
+    /* align-self: flex-end; */
+    /* order: 1; */
+    position: absolute;
+    left: 5%;
+    bottom: 0.5em;
+    z-index: -1;
+}
+.shadow-curve .item2::after{
+    transform: rotate(-5deg);
+}
+.shadow-curve .item2::before{
+    transform: rotate(5deg);
+}
+
+
+/******* Background Slide  ****************************************************************/
+.container .back-slide{
+    border: none;
+    /*".container article" tiene mas especificidad 
+    que ".back-slide", por lo que es necesario utilizar 
+    de esta forma para cambiar la regla
+    
+    Lo adecuado es usar clases para aprovechar 
+    la cascada y sobreescribir las reglas*/
+}
+.back-slide{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: space-evenly;
+  --sombra: #0FF;
+}
+.back-slide div{
+    flex-basis: 45%;
+    height: 3em;
+    color: white;
+    text-align: center;
+    border: thin solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1em;
+    transition: all 1s ease;
+}
+.back-slide div:hover{
+    color: brown;
+}
+/* .back-slide>div:hover{
+    color: darkred;
+} */
+.back-slide .item1{
+    box-shadow: 5px 0 var(--sombra) inset;
+}
+.back-slide .item1:hover{
+    box-shadow: 200px 0 var(--sombra) inset;
+}
+.back-slide .item2{
+    box-shadow: -5px 0 var(--sombra) inset;
+}
+.back-slide .item2:hover{
+    box-shadow: -200px 0 var(--sombra) inset;
+}
+.back-slide .item3{
+    box-shadow: 0 -5px var(--sombra) inset;
+}
+.back-slide .item3:hover{
+    box-shadow: 0 -100px var(--sombra) inset;
+}
+.back-slide .item4{
+    box-shadow:  0 5px var(--sombra) inset;
+}
+.back-slide .item4:hover{
+    box-shadow: 0 200px var(--sombra) inset;
+}
+.back-slide .item5{
+    box-shadow: 5px 0 var(--sombra) inset,
+                -5px 0 var(--sombra) inset;
+            }
+.back-slide .item5:hover{
+    box-shadow: 100px 0 var(--sombra) inset,
+                -100px 0 var(--sombra) inset;
+            }
+.back-slide .item6{
+    box-shadow: 0 0 var(--sombra) inset,
+                0 0 var(--sombra) inset,
+                0 0 var(--sombra) inset,
+                0 0 var(--sombra) inset;
+            }
+.back-slide .item6:hover{
+    box-shadow: 100px 0 var(--sombra) inset,
+                -100px 0 var(--sombra) inset,
+                0 100px var(--sombra) inset,
+                0 -100px var(--sombra) inset;
+}
+
+/******* Bordes animados ********************/
+.container .border-animate{
+    border: none;
+}
+.border-animate{
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+align-items: center;
+}
+
+.border-animate div{
+    width: 80%;
+    height: 3em;
+    border: white thin solid;
+    border-radius: 0.25em;
+    color: cornsilk;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.border-animate div::after{
+    content: "";
+    width: 0;
+    height: 10%;
+    background-color: honeydew;
+    position: absolute;
+    bottom: 0;
+    transition: all 0.3s ease;
+}
+
+.border-animate .item1{
+    background-color: crimson;
+}
+.border-animate .item1::after{
+    left: 0;
+}
+
+.border-animate .item2{
+    background-color: blue;
+}
+.border-animate .item2::after{
+    right: 0;
+}
+
+.border-animate .item3{
+    background-color: green;
+}
+.border-animate .item3::after{
+    left: 50%;
+}
+.border-animate .item3:hover::after{
+    left: 0;
+}
+.border-animate div:hover::after{
+    width: 100%;
+}
+/******* Cuatro Bordes Animados ********************/
+.four-border-animate{
+    --grueso: 0.5em;
+    --color-borde:yellow;
+    --alto: 272px;
+    --ancho: 532px;
+    background-image: url(http://lorempixel.com/500/500/);
+    position: relative;
+    overflow: hidden;
+}
+.four-border-animate::after,
+.four-border-animate::before{
+    content:"";
+    background-color:var(--color-borde);
+    position: absolute;
+    transition: all 0.5s;
+    left: 0;
+}
+.four-border-animate::after{
+    width: 0%;
+    height: var(--grueso);
+    bottom: 0;
+    box-shadow: var(--color-borde) var(--ancho) calc(var(--alto)*(-1)) 0;
+}
+.four-border-animate::before{
+    width: var(--grueso);
+    height: 0;
+    top: 0;
+    box-shadow: var(--color-borde) var(--ancho) var(--alto) 0;
+}
+.four-border-animate:hover:after{
+    width: 100%;
+    box-shadow: var(--color-borde) 0 calc(var(--alto)*(-1)) 0;
+}
+.four-border-animate:hover:before{
+    height: 100%;
+    box-shadow: var(--color-borde) var(--ancho) 0 0;
+}

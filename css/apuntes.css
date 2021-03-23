@@ -1,0 +1,163 @@
+/**** Elementos de diseño *************************/
+:root{
+    --first-color:#456BE6;
+    --first-alpha-color:#456be680;
+    --second-color:#583080;
+    --second-alpha-color:#58308080;
+    --third-color:#9F87B3;
+    --black:black;
+    --black-alpha: #00000080;
+    --white:white;
+    --white-alpha:#FFFFFF80;
+    --gray-light:rgb(223, 222, 207);
+    --gray-color:gray;
+    --gray-dark:rgb(63, 62, 62);
+    --text-color:rgb(46, 46, 46);
+    --link-color: #B88027;
+    --font-principal: sans-serif;
+}
+/**** Reseteos ******************************************************/
+html{
+    box-sizing: border-box;
+    font-family: var(--font-principal);
+    font-size: 20px;
+    color: var(--text-color);
+}   
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+body{
+    overflow-x: hidden ;/*Evita scroll horizontal*/
+    background-color: var(--gray-light);
+}
+
+a{
+    color: var(--link-color);
+    text-decoration: none;
+}
+a:hover{opacity: 0.75;}
+
+h1{font-size: 1.75rem;}
+h2{font-size: 1.5rem;}
+h3{font-size: 1.25rem;}
+h5{font-size: 0.75rem;}
+img{
+    /*se ajusta al ancho del contenedor*/
+    max-width: 100%;
+    height: auto;
+}
+p{
+    line-height: 1.6;
+    text-indent: 2rem;
+}/*interlineado*/
+
+/**** Componentes *************************/
+/**** Utilidades *************************/
+
+/**** Estilos del sitio *************************/
+
+.alert, .codes, .note{
+    background-color: rgb(255, 238, 180);
+    border-left: var(--second-color) 0.5rem solid;
+    padding: 0.6rem;
+    margin-bottom: 1.2rem;
+}
+.codes{background-color: var(--gray-dark);}
+.codes code{color: var(--white);}
+.note{background-color: var(--first-alpha-color);}
+
+.content{margin-bottom: 1.2rem;}
+
+.contenedor{
+    scroll-behavior: smooth;/*Para Hero image*/
+    padding: 0.75em;
+}
+.icon-home, .icon-link{
+    font-size: 1.5rem;
+}
+.link-reference{
+    width: 100%;
+    height: 2rem;
+    /* background-color: var(--gray-color); */
+    transition: all 0.5s;
+}
+.link-reference ul{
+    list-style: none;
+    display: none;
+}
+.link-reference li{
+    background-color: var(--gray-light);
+    margin: 0.3rem 0;
+}
+.link-reference:hover{
+    height: 100%;
+    padding: 0.6rem;
+}
+.link-reference:hover>ul{display: block;}
+
+.logo-materia{
+    width: 2.35rem;
+    margin-bottom: 0.5rem;
+}
+
+.section{
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: var(--gray-dark) 0.15rem solid;
+}
+.section-title{
+    color: var(--white);
+    background-color: var(--first-color);
+    padding: 0.3em;
+}
+.title-concept, .title-aux{
+    color: var(--second-color);
+    margin: 0.6rem 0;
+}
+.title-aux{color: var(--text-color);}
+
+
+
+@media screen and (min-width:480px){
+    main{
+        margin: 0 auto;
+        max-width: 1200px;
+        min-height: 100vh;
+        display: flex;
+        justify-content: space-between;
+    }
+    aside{
+        width: 2.35rem;
+        padding: 0.5rem;
+        margin-right: 0.5rem;
+        transition: all 1s ease;
+    }
+    aside:hover{width: 20rem;}
+    aside:hover>nav>ul{ display: block; }
+    
+    nav{
+        padding: 0.5rem 0 0 0;
+        position: sticky;
+        top: 0;
+    }
+    nav ul{
+        list-style: none;
+        display: none;
+    }
+    nav li{
+        padding: 0.4em ;
+        border-top: var(--third-color) thin solid;
+        background-color: var(--gray-light);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    nav li:hover{background-color: var(--first-color);}
+    nav li:hover > a{color:var(--white);}
+
+    nav li li{padding-left: 2em;}
+
+    nav li > ul{display: none;}
+    nav li:hover>ul{ display: block; }
+}

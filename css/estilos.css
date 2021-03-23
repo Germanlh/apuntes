@@ -1,0 +1,126 @@
+/**** Elementos de diseño *************************/
+:root{
+    --first-color:#456BE6;
+    --first-alpha-color:#456be680;
+    --second-color:#583080;
+    --second-alpha-color:#58308080;
+    --third-color:#9F87B3;
+    --black:black;
+    --black-alpha: #00000080;
+    --white:white;
+    --white-alpha:#FFFFFF80;
+    --gray-light:rgb(214, 214, 214);
+    --gray-color:gray;
+    --gray-dark:rgb(63, 62, 62);
+    --text-color:rgb(46, 46, 46);
+    --link-color: #B88027;
+    --font-principal: sans-serif;
+}
+/**** Reseteos ******************************************************/
+html{
+    box-sizing: border-box;
+    font-family: var(--font-principal);
+    font-size: 16px;
+    color: var(--text-color);
+    scroll-behavior: smooth;/*Para Hero image*/
+}   
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+body{
+    overflow-x: hidden ;/*Evita scroll horizontal*/
+    background-color: var(--gray-dark);
+}
+header{
+    padding: 0.4em;
+    background-color: var(--first-color);
+    color: var(--white);
+    text-align: center;
+}
+
+main{
+    min-height: 100vh;
+    background-color:var(--gray-light);
+    box-shadow: var(--black) 0 0.5em 0.5em;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-content: space-evenly;
+
+}
+footer{
+    background-color: var(--first-color);
+    color: var(--white);
+    padding: 0.4em;
+    text-align: center;
+}
+
+
+a{
+    color: var(--link-color);
+    text-decoration: none;
+}
+a:hover{opacity: 0.75;}
+h1{font-size: 1.75rem;}
+h2{font-size: 1.5rem;}
+h3{font-size: 1.25rem;}
+h5{font-size: 0.75rem;}
+img{
+    /*se ajusta al ancho del contenedor*/
+    max-width: 100%;
+    height: auto;
+}
+p{line-height: 1.6;}/*interlineado*/
+
+/**** Componentes *************************/
+/**** Utilidades *************************/
+.ventana{
+    width: 85%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+/**** Estilos del sitio *************************/
+.materias{
+    /* width: 45%; */
+    height: 10em;
+    margin: 0.5em;
+    padding: 0.5em;
+    background-color: var(--white-alpha);
+    border-radius: 0.5em;
+    flex-basis: 12em;
+    overflow: hidden;
+    position: relative;
+
+}
+.materias::after, .materias::before {
+    content:"";
+    width: 0;
+    height: 0.35em;
+    background-color: var(--second-color);
+    position: absolute;
+    left: 50%;
+    transition: all 0.5s;
+}
+.materias::after{bottom: 0;}
+.materias::before{top: 0;}
+.materias:hover::after, .materias:hover::before{
+    width: 100%;
+    left: 0;
+}
+.nombre-materia{
+    text-align: center;
+}
+.logo-materia{
+    width: 90%;
+    height: 80%;
+    margin: 0 auto;
+}
+.materias img{
+    width: auto;
+    height: 90%;
+    display: block;
+    margin: 0 auto;
+}
+
