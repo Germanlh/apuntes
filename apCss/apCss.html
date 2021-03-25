@@ -20,7 +20,7 @@
 
                 <ul class="menu">
                     <li><!--Referencias-->
-                        <p>Referencias</p>
+                        Referencias
                         <ul class="submenu">
                             <li><a href="https://developer.mozilla.org/es/docs/Web/CSS" >CSS MDN</a></li>
                             <li><a href="https://developer.mozilla.org/es/docs/Web/CSS/Reference" >Ref MDN</a></li>
@@ -75,28 +75,37 @@
                     <p class="content"><!--** Parrafos de Contenido **-->
                         A continuación describimos cada una de sus partes:
                     </p>
-                    <p class="content"><!--** Parrafos de Contenido **-->
-                        <strong>SELECTOR:</strong> es la manera en la que nos referimos al elemento al cual aplicaremos la regla que estamos definiendo, para ello, todas las declaraciones que afecten a este elemento debemos escribirlas entre llaves <em>"{...}"</em>  para mantenerlas agrupadas, existen muchas maneras de referirnos a esos elementos, si los combinamos adecuadamente, podemos acceder a cualquiera de los elementos establecidos en la página.
-                    </p>
-                    <p class="content"><!--** Parrafos de Contenido **-->
-                        <strong>DECLARACIÓN:</strong> cada una de las declaraciones modifica una propiedad diferente del elemento seleccionado, cada una de ellas se encuentra compuesta por una propiedad y por el valor que esta asumirá, es importante que al finalizar la declaración, ésta termine con <em>";"</em>.
-                    </p>
-                    <p class="content"><!--** Parrafos de Contenido **-->
-                        <strong>PROPIEDAD:</strong> La propiedad nos indica que característica del elemento queremos cambiar, su anchura, su altura, su color, etc. de esta manera indicamos al navegador como debe visualizarse. es importante que después de mencionar la propiedad separemos con <em>":"</em> los valores que le daremos a la misma.
-                    </p>
-                    <div class="note"><!--** Parrafos de Notas **-->
-                        <p class="content-note">
-                            <strong>NOTA:</strong> Cada propiedad puede llevar consigo más de un valor, generalmente, se identifica un valor de otro por que van separados por espacios, de igual manera existen funciones que nos apoyan para colocar de mejor manera estos valores.
-                        </p>
-                    </div>
-                    <p class="content"><!--** Parrafos de Contenido **-->
-                        <strong>VALOR:</strong> Una vez que hemos señalado la propiedad debemos indicar adecuadamente el nuevo valor que ésta tendrá, este cambio de magnitud depende de la propiedad que estamos modificando, una vez que hayamos establecido los valores adecuados, la declaración debe finalizar con <em>";"</em>.
-                    </p>
-                    <div class="note"><!--** Parrafos de Notas **-->
-                        <p class="content-note">
-                            <strong>NOTA:</strong> Cada Valor es diferente para cada tipo de propiedad, lo más común es que este valor vaya acompañado de un magnitud o unidad de medida que especifica la manera en que la propiedad cambiará.
-                        </p>
-                    </div>
+                    <dl class="content">
+                        <dt>SELECTOR:</dt>
+                        <dd>es la manera en la que nos referimos al elemento al cual aplicaremos la regla que estamos definiendo, para ello, todas las declaraciones que afecten a este elemento debemos escribirlas entre llaves <em>"{...}"</em>  para mantenerlas agrupadas, existen muchas maneras de referirnos a esos elementos, si los combinamos adecuadamente, podemos acceder a cualquiera de los elementos establecidos en la página.</dd>
+
+                        <dt>DECLARACIÓN:</dt>
+                        <dd>cada una de las declaraciones modifica una propiedad diferente del elemento seleccionado, cada una de ellas se encuentra compuesta por una propiedad y por el valor que esta asumirá, es importante que al finalizar la declaración, ésta termine con <em>";"</em>.</dd>
+
+                        <dt>PROPIEDAD:</dt>
+                        <dd>
+                            La propiedad nos indica que característica del elemento queremos cambiar, su anchura, su altura, su color, etc. de esta manera indicamos al navegador como debe visualizarse. es importante que después de mencionar la propiedad separemos con <em>":"</em> los valores que le daremos a la misma.
+                        
+                            <div class="note"><!--** Parrafos de Notas **-->
+                                <p class="content-note">
+                                    <strong>NOTA:</strong> Cada propiedad puede llevar consigo más de un valor, generalmente, se identifica un valor de otro por que van separados por espacios, de igual manera existen funciones que nos apoyan para colocar de mejor manera estos valores.
+                                </p>
+                            </div>
+                        </dd>
+
+                        <dt>VALOR:</dt>
+                        <dd>
+                            Una vez que hemos señalado la propiedad debemos indicar adecuadamente el nuevo valor que ésta tendrá, este cambio de magnitud depende de la propiedad que estamos modificando, una vez que hayamos establecido los valores adecuados, la declaración debe finalizar con <em>";"</em>.
+
+                            <div class="note"><!--** Parrafos de Notas **-->
+                                <p class="content-note">
+                                    <strong>NOTA:</strong> Cada Valor es diferente para cada tipo de propiedad, lo más común es que este valor vaya acompañado de un magnitud o unidad de medida que especifica la manera en que la propiedad cambiará.
+                                </p>
+                            </div>
+                        </dd>
+
+                    </dl>
+                    
                 </article>
                 <article class="concept"><!--CSS en HTML-->
                     <h3 class="title-concept" id="css-en-html">CSS en HTML</h3>
@@ -111,192 +120,172 @@
                         <li>Forma Embebida</li>
                         <li>Forma Enlace</li>
                     </ul>
-                    <p class="content"><!--** Parrafos de Contenido **-->
-                        <strong>IN-LINE:</strong> Esta forma nos permite colocar el estilo, dentro de los atributos de las etiquetas que se definen en HTML, este atributo solo afecta a la etiqueta en cuestión una a la vez. 
-                    </p>
-                    <div class="alert"><!--** Parrafos de ADVERTENCIA **-->
-                        <p class="content-alert">
-                            <strong>ALERTA:</strong> Trabajar con estilos <em>In-line</em> es cómodo por que se agregan las reglas dentro de los atributos de la etiqueta, sin embargo, no se aprovecha la cascada de CSS, lo cual es una potente herramienta de diseño, tampoco se pueden repetir los estilos a diferentes páginas del mismo proyecto asi mismo afecta la Especificidad, pues el estilo <em>In-line</em> siempre tiene mayor prioridad sobre las otras formas.
-                        </p>
-                    </div> 
-                    <h3 class="title-aux">Ejemplo In-line:</h3>
-                    <pre><!--*** Codigo Ejemplo ******************-->
-                        <code class="language-html">
-                            &lt;p style="font-size: 20px"&gt;Mi texto &lt;&#47;p&gt;
-                        </code>
-                    </pre>
-                    <p class="content"><!--** Parrafos de Contenido **-->
-                        <strong>EMBEBIDA:</strong> Esta forma nos permite modificar a los elementos semejantes dentro del mismo archivo HTML, pues al usar un selector, este no se encuentra atado dentro de la misma etiqueta, por lo que se puede aprovechar del efecto en cascada y afectar a otros objetos "Semejantes". 
-                    </p>
-                    <div class="alert"><!--** Parrafos de ADVERTENCIA **-->
-                        <p class="content-alert">
-                            <strong>ALERTA:</strong> A pesar que la forma embebida nos permite aprovechar de mejor manera la cascada, es una buena práctica utilizar la tercera forma, además que nos permite agregar esas mismas reglas de estilo a otras páginas.
-                        </p>
-                    </div> 
-                    <h3 class="title-aux">Ejemplo Embebido:</h3>
-                    <pre><!--*** Codigo Ejemplo ******************-->
-                        <code class="language-html">
-                            &lt;head&gt;
-                                &lt;style&gt;
-                                    p{
-                                        font-size:20px;
-                                    }
-                                &lt;&#47;style&gt;
-                            &lt;&#47;head&gt;
-                        </code>
-                    </pre>
-                    <p class="content"><!--** Parrafos de Contenido **-->
-                        <strong>ENLACE:</strong> Esta forma nos permite crear una archivo *.css por separado del archivo *.html, lo que nos permite crear un solo conjunto de reglas que pueden aplicarse a diversas páginas y mantener posteriormente los cambios fácilmente, esta forma de trabajar se considera la mejor práctica para las hojas de estilo. 
-                    </p>
-                    <h3 class="title-aux">Ejemplo Enlace:</h3>
-                    <pre><!--*** Codigo Ejemplo ******************-->
-                        <code class="language-html">
-                            &lt;head&gt;
-                                &lt;link rel="stylesheet" href="css/estilo.css" &gt;
-                            &lt;&#47;head&gt;
-                        </code>
-                    </pre>
+                    <dl class="content">
+                        <dt>IN-LINE:</dt>
+                        <dd>
+                            Esta forma nos permite colocar el estilo, dentro de los atributos de las etiquetas que se definen en HTML, este atributo solo afecta a la etiqueta en cuestión una a la vez.
+
+                            <h3 class="title-aux">Ejemplo:</h3>
+                            <pre><!--*** Codigo Ejemplo ******************-->
+                                <code class="language-html">
+                                    &lt;p style="font-size: 20px"&gt;Mi texto &lt;&#47;p&gt;
+                                </code>
+                            </pre>
+
+                            <div class="alert"><!--** Parrafos de ADVERTENCIA **-->
+                                <p class="content-alert">
+                                    <strong>ALERTA:</strong> Trabajar con estilos <em>In-line</em> es cómodo por que se agregan las reglas dentro de los atributos de la etiqueta, sin embargo, no se aprovecha la cascada de CSS, lo cual es una potente herramienta de diseño, tampoco se pueden repetir los estilos a diferentes páginas del mismo proyecto asi mismo afecta la Especificidad, pues el estilo <em>In-line</em> siempre tiene mayor prioridad sobre las otras formas.
+                                </p>
+                            </div> 
+                        </dd>
+
+                        <dt>EMBEBIDA:</dt>
+                        <dd>
+                            Esta forma nos permite modificar a los elementos semejantes dentro del mismo archivo HTML, pues al usar un selector, este no se encuentra atado dentro de la misma etiqueta, por lo que se puede aprovechar del efecto en cascada y afectar a otros objetos "Semejantes".
+
+                            <h3 class="title-aux">Ejemplo:</h3>
+                            <pre><!--*** Codigo Ejemplo ******************-->
+                                <code class="language-html">
+                                    &lt;head&gt;
+                                        &lt;style&gt;
+                                            p{
+                                                font-size:20px;
+                                            }
+                                        &lt;&#47;style&gt;
+                                    &lt;&#47;head&gt;
+                                </code>
+                            </pre>
+
+                            <div class="alert"><!--** Parrafos de ADVERTENCIA **-->
+                                <p class="content-alert">
+                                    <strong>ALERTA:</strong> A pesar que la forma embebida nos permite aprovechar de mejor manera la cascada, es una buena práctica utilizar la tercera forma, además que nos permite agregar esas mismas reglas de estilo a otras páginas.
+                                </p>
+                            </div>
+                        </dd>
+
+                        <dt>ENLACE:</dt>
+                        <dd>
+                            Esta forma nos permite crear una archivo *.css por separado del archivo *.html, lo que nos permite crear un solo conjunto de reglas que pueden aplicarse a diversas páginas y mantener posteriormente los cambios fácilmente, esta forma de trabajar se considera la mejor práctica para las hojas de estilo.
+
+                            <h3 class="title-aux">Ejemplo Enlace:</h3>
+                            <pre><!--*** Codigo Ejemplo ******************-->
+                                <code class="language-html">
+                                    &lt;head&gt;
+                                        &lt;link rel="stylesheet" href="css/estilo.css" &gt;
+                                    &lt;&#47;head&gt;
+                                </code>
+                            </pre>
+                        </dd>
+                    </dl>
                 </article>
                 <article class="concept"><!--Selectores-->
                     <h3 class="title-concept" id="selectores">SELECTORES</h3>
                     <p class="content"><!--** Parrafos de Contenido **-->
-                        Una vez que hemos entendido que cada elemento que vamos a modificar debemos definir una regla, ahora debemos entender donde es el lugar adecuado para colocar esa regla y que funcione.
+                        Un selector es la manera con la cual nosotros nos referimos a un elemento  de la página web a la cual nosotros aplicaremos una serie de declaraciones que modificarán su aspecto final, es importante conocer la forma de dirigirnos a ese elemento, por que si lo hacemos de forma incorrecta, los estilos no se aplicaran correctamente, para ello, existe un amplia diversidad de herramientas que podemos utilizar y combinar entre ellas para seleccionar correctamente el elemento.
                     </p>
                     <p class="content"><!--** Parrafos de Contenido **-->
-                        El código CSS se interpreta en el navegador del cliente que abre una página web, para que éste navegador interprete de forma adecuada los estilos que corresponden a un sitio web, debemos especificar como es que cada uno de los elementos que se encuentran dentro de la página deben presentarse y para ello existen 3 formas diferentes de hacerlo.
+                        A continuación enumeramos los tipos de selectores que disponemos.
                     </p>
                     <ul class="content">
-                        <li>Forma in-line</li>
-                        <li>Forma Embebida</li>
-                        <li>Forma Enlace</li>
+                        <li><a href="#selector-tipo">Selector de Tipo</a></li>
+                        <li><a href="#selector-clase">Selector de Clase</a></li>
+                        <li><a href="#">Selector de ID</a></li>
+                        <li><a href="#">Selector de Atributo</a></li>
+                        <li><a href="#">Selector de Pseudoclases</a></li>
+                        <li><a href="#">Selector de Pseudoelementos</a></li>
+                        <li><a href="#">Selector Universal</a></li>
                     </ul>
                     <p class="content"><!--** Parrafos de Contenido **-->
-                        <strong>IN-LINE:</strong> Esta forma nos permite colocar el estilo, dentro de los atributos de las etiquetas que se definen en HTML, este atributo solo afecta a la etiqueta en cuestión una a la vez. 
+                        De la misma forma disponemos de operadores de combinación, los cuales nos permiten ampliar de forma significativa nuestras herramientas de selección, entre ellas encontramos: 
                     </p>
-                    <div class="alert"><!--** Parrafos de ADVERTENCIA **-->
-                        <p class="content-alert">
-                            <strong>ALERTA:</strong> Trabajar con estilos <em>In-line</em> es cómodo por que se agregan las reglas dentro de los atributos de la etiqueta, sin embargo, no se aprovecha la cascada de CSS, lo cual es una potente herramienta de diseño, tampoco se pueden repetir los estilos a diferentes páginas del mismo proyecto asi mismo afecta la Especificidad, pues el estilo <em>In-line</em> siempre tiene mayor prioridad sobre las otras formas.
-                        </p>
-                    </div> 
-                    <h3 class="title-aux">Ejemplo In-line:</h3>
-                    <pre><!--*** Codigo Ejemplo ******************-->
-                        <code class="language-html">
-                            &lt;p style="font-size: 20px"&gt;Mi texto &lt;&#47;p&gt;
-                        </code>
-                    </pre>
+                    <ul class="content">
+                        <li>Combinador coma <strong>","</strong></li>
+                        <li>Combinador Espacio<strong>" "</strong></li>
+                        <li>Combinador suma<strong>"+"</strong></li>
+                        <li>Combinador virgulilla<strong>"~"</strong></li>
+                    </ul>
                     <p class="content"><!--** Parrafos de Contenido **-->
-                        <strong>EMBEBIDA:</strong> Esta forma nos permite modificar a los elementos semejantes dentro del mismo archivo HTML, pues al usar un selector, este no se encuentra atado dentro de la misma etiqueta, por lo que se puede aprovechar del efecto en cascada y afectar a otros objetos "Semejantes". 
+                        Entendamos como funcionan cada uno de ellos: 
                     </p>
-                    <div class="alert"><!--** Parrafos de ADVERTENCIA **-->
-                        <p class="content-alert">
-                            <strong>ALERTA:</strong> A pesar que la forma embebida nos permite aprovechar de mejor manera la cascada, es una buena práctica utilizar la tercera forma, además que nos permite agregar esas mismas reglas de estilo a otras páginas.
-                        </p>
-                    </div> 
-                    <h3 class="title-aux">Ejemplo Embebido:</h3>
-                    <pre><!--*** Codigo Ejemplo ******************-->
-                        <code class="language-html">
-                            &lt;head&gt;
-                                &lt;style&gt;
+                    <dl class="content">
+                        <dt id="selector-tipo">SELECTOR DE TIPO</dt>
+                        <dd>
+                            Un <a href="https://developer.mozilla.org/es/docs/Web/CSS/Type_selectors">selector de tipo</a> también recibe el nombre de selector de nombre, de etiqueta o selector de elemento porque selecciona un elemento/etiqueta HTML del documento de forma directa.
+                            <h3 class="title-aux">En archvo HTML:</h3>
+                            <pre><!--*** Codigo Ejemplo ******************-->
+                                <code class="language-html">
+                                    &lt;p&gt;Mi texto &lt;&#47;p&gt;
+                                </code>
+                            </pre>
+                            <h3 class="title-aux">En archvo CSS:</h3>
+                            <pre><!--*** Codigo Ejemplo ******************-->
+                                <code class="language-css">
                                     p{
-                                        font-size:20px;
+                                      font-size: 20px;
                                     }
-                                &lt;&#47;style&gt;
-                            &lt;&#47;head&gt;
-                        </code>
-                    </pre>
-                    <p class="content"><!--** Parrafos de Contenido **-->
-                        <strong>ENLACE:</strong> Esta forma nos permite crear una archivo *.css por separado del archivo *.html, lo que nos permite crear un solo conjunto de reglas que pueden aplicarse a diversas páginas y mantener posteriormente los cambios fácilmente, esta forma de trabajar se considera la mejor práctica para las hojas de estilo. 
-                    </p>
-                    <h3 class="title-aux">Ejemplo Enlace:</h3>
-                    <pre><!--*** Codigo Ejemplo ******************-->
-                        <code class="language-html">
-                            &lt;head&gt;
-                                &lt;link rel="stylesheet" href="css/estilo.css" &gt;
-                            &lt;&#47;head&gt;
-                        </code>
-                    </pre>
-                    <!--***********************************************************************-->
-                    <p class="content"><!--** Parrafos de Contenido **-->
-                        En resumen, con <strong>CSS</strong> podemos definir la manera en que lucirá una página web, desde los colores de los elementos, la tipografía e incluso el orden y el espacio de cada uno de los elementos involucrados.
-                    </p>
-                    <div class="link-reference"> <!--** Referencias **-->
-                        <a href="" class="icon-link"><i class="fas fa-external-link-alt"></i></a>
-                        <ul>
-                            <li><a href="">MDN</a></li>
-                            <li><a href="">Nose</a></li>
-                            <li><a href="">Quien sabe</a></li>
-                            <li><a href="">Puede ser</a></li>
-                            <li><a href="">A lo mejor</a></li>
-                        </ul>
-                    </div>
-                    <h3 class="title-aux">Titulo Secundario</h3>
-                    <div class="note"><!--** Parrafos de Notas **-->
-                        <p class="content-note">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo deserunt reprehenderit eos? Libero placeat amet rem perferendis ut quasi consectetur repudiandae reiciendis iure illo! Ipsam numquam cupiditate veritatis perferendis nemo.
-                        </p>
-                    </div>
-                    <div class="codes"><!--** Sintaxis **-->
-                        <code>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, inventore error. Tenetur optio officiis dicta omnis numquam eos eius recusandae amet ad ducimus, quod tempore cumque! Voluptate illo obcaecati cum?
-                        </code>
-                    </div>
-                    <pre><!--*** Codigo Ejemplo ******************-->
-                        <code class="language-javascript">
-                            let a;
-                            a=25;
-                            if(!a){
-                                console.log("No");
-                            }else{
-                                console.log("Si");
-                            }
-                        </code>
-                    </pre>
-                </article>
-            </section>
-            <section class="section" id="XXX"><!--*** XxXxXxXxX Formato Seccion  General *************-->
-                <h2 class="section-title">Rudimentos</h2>
-                <article class="concept">
-                    <h3 class="title-concept">¿Que es JavaScript?</h3>
-                    <div class="link-reference"> <!--** Referencias **-->
-                        <a href="" class="icon-link"><i class="fas fa-external-link-alt"></i></a>
-                        <ul>
-                            <li><a href="">MDN</a></li>
-                            <li><a href="">Nose</a></li>
-                            <li><a href="">Quien sabe</a></li>
-                            <li><a href="">Puede ser</a></li>
-                            <li><a href="">A lo mejor</a></li>
-                        </ul>
-                    </div>
-                    <p class="content"><!--** Parrafos de Contenido **-->
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt nisi accusamus ipsa, dolores nobis quae, blanditiis, harum voluptas doloribus consequuntur at? Consectetur sunt quos optio explicabo dolorem, voluptatibus rem voluptates.
-                    </p>
-                    <h3 class="title-aux">Titulo Secundario</h3>
-                    <div class="alert"><!--** Parrafos de ADVERTENCIA **-->
-                        <p class="content-alert">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam maxime odio, qui ratione incidunt necessitatibus quisquam aut deleniti nihil dolor sed officiis consequatur quibusdam in, temporibus, deserunt numquam obcaecati. Dolor?
-                        </p>
-                    </div>
-                    <div class="note"><!--** Parrafos de Notas **-->
-                        <p class="content-note">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo deserunt reprehenderit eos? Libero placeat amet rem perferendis ut quasi consectetur repudiandae reiciendis iure illo! Ipsam numquam cupiditate veritatis perferendis nemo.
-                        </p>
-                    </div>
-                    <div class="codes"><!--** Codigos de Ejemplo **-->
-                        <code>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, inventore error. Tenetur optio officiis dicta omnis numquam eos eius recusandae amet ad ducimus, quod tempore cumque! Voluptate illo obcaecati cum?
-                        </code>
-                    </div>
-                    <pre>
-                        <code class="language-javascript">
-                            let a;
-                            a=25;
-                            if(!a){
-                                console.log("No");
-                            }else{
-                                console.log("Si");
-                            }
-                        </code>
-                    </pre>
+                                </code>
+                            </pre>
+                            <div class="alert"><!--** Parrafos de ADVERTENCIA **-->
+                                <p class="content-alert">
+                                    <strong>ALERTA:</strong> cuando usamos esta forma de seleccionar los elementos, la regla que definamos se aplica para todas las etiquetas del mismo tipo. En el caso del ejemplo todas las etiquetas "p" seran afectadas por este estilo.
+                                </p>
+                                
+                            </div> 
+                        </dd>
+
+                        <dt id="selector-clase">SELECTOR DE CLASE</dt>
+                        <dd>
+                            Este <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors">selector de clase</a> nos proporciona un metodo para seleccionar a solo "algunos" elementos a quienes deseamos aplicar la regla, es decir, solo los elementos que pertenecen a la clase que definimos pueden ser seleccionados, en este caso, no importa si los elementos son de etiquetas diferentes o etiquetas iguales.
+                            <br><br>
+                            La forma correcta de implementarlo es asignadole una clase en el atributo "class" en las etiquetas del archivo *.html de esa manera "marcamos" las etiquetas a las cuales se le aplicaran la regla que definiremos en el archivo *.css, cuando definamos la regla el nombre de la clase debe estar precedida de "." para indicar que es el nombre de la clase.
+                        
+                            <h3 class="title-aux">En archvo HTML:</h3>
+                            <pre><!--*** Codigo Ejemplo ******************-->
+                                <code class="language-html">
+                                    &lt;p class="amarillo"&gt; Mi texto &lt;&#47;p&gt;
+                                </code>
+                            </pre>
+                            <h3 class="title-aux">En archvo CSS:</h3>
+                            <pre><!--*** Codigo Ejemplo ******************-->
+                                <code class="language-css">
+                                    .amarillo{
+                                      color: yellow;
+                                    }
+                                </code>
+                            </pre>
+                            De ser necesario, podemos modificar el ejemplo para asignar la clase a diferentes etiquetas y observar como se aplica la regla a las etiquetas que seleccionamos, miestras que las etiquetas que no contienen a la clase, quedan excluidas de la regla, todo esto se aplica sin modificar el archivo *.css.
+                            <h3 class="title-aux">En archvo HTML:</h3>
+                            <pre><!--*** Codigo Ejemplo ******************-->
+                                <code class="language-html">
+                                    &lt;h1 class="amarillo"&gt; Titulo Amarillo &lt;&#47;h1&gt;
+                                    &lt;p&gt; Este parrafo va en color predeterminado&lt;&#47;p&gt;
+                                    &lt;p&gt; Este parrafo tampoco se aplica la regla&#47;p&gt;
+                                    &lt;p class="amarillo"&gt; Este parrafo SI es amarillo&lt;&#47;p&gt;
+                                </code>
+                            </pre>
+                            De la misma forma podemos agregar más de una clase a las etiquetas, lo que nos permite agregar más características a un elemento. eso lo podemos ver en este ejemplo:
+                            <h3 class="title-aux">En archvo HTML:</h3>
+                            <pre><!--*** Codigo Ejemplo ******************-->
+                                <code class="language-html">
+                                    &lt;h1 class="amarillo caja"&gt; Titulo Amarillo &lt;&#47;h1&gt; &lt;!-- este titulo llevaria caja alrededor y letra amarilla--&gt;
+                                    &lt;p&gt; Este parrafo va en color predeterminado&lt;&#47;p&gt;
+                                    &lt;p class="caja"&gt; Este parrafo tampoco se aplica la regla pero tiene un borde negro alrededor&lt;&#47;p&gt;
+                                    &lt;p class="amarillo"&gt; Este parrafo SI es amarillo&lt;&#47;p&gt;
+                                </code>
+                            </pre>
+                            <h3 class="title-aux">En archvo CSS:</h3>
+                            <pre><!--*** Codigo Ejemplo ******************-->
+                                <code class="language-css">
+                                    .amarillo{
+                                      color: yellow;
+                                    }
+                                    .caja{
+                                        border: thin solid black;
+                                    }
+                                </code>
+                            </pre>
+                        </dd>
+                    </dl>
                 </article>
             </section>
         </div>

@@ -29,8 +29,9 @@ html{
     box-sizing: inherit;
 }
 body{
-    overflow-x: hidden ;/*Evita scroll horizontal*/
+    /*overflow-x: hidden ;/*Evita scroll horizontal*/
     background-color: var(--gray-light);
+    scroll-behavior: smooth;
 }
 
 a{
@@ -62,7 +63,7 @@ p{
     background-color: rgb(255, 238, 180);
     border-left: var(--second-color) 0.5rem solid;
     padding: 0.6rem;
-    margin-bottom: 1.2rem;
+    margin: 1.2rem 0;
 }
 .codes{background-color: var(--gray-dark);}
 .codes code{color: var(--white);}
@@ -71,7 +72,7 @@ p{
 .content{margin-bottom: 1.2rem;}
 
 .contenedor{
-    scroll-behavior: smooth;/*Para Hero image*/
+    /*Para Hero image*/
     padding: 0.75em;
 }
 .icon-home, .icon-link{
@@ -119,9 +120,12 @@ p{
     padding: 0.3em;
     border-radius: 0.3em;
     display: inline-block;
+    margin: 0.5rem 0;
 }
 .title-aux{
-    background-color: var(--text-color);
+    display: block;
+    color: var(--text-color);
+    background-color: transparent;
 }
 
 
@@ -129,10 +133,11 @@ p{
 @media screen and (min-width:480px){
     main{
         margin: 0 auto;
-        max-width: 1200px;
+        max-width: 1000px;
         min-height: 100vh;
         display: flex;
         justify-content: space-between;
+        overflow-x: hidden;
     }
     aside{
         width: 2.35rem;
@@ -166,4 +171,20 @@ p{
 
     nav li > ul{display: none;}
     nav li:hover>ul{ display: block; }
+    ul[class="content"]{
+        padding-left: 2rem;
+        list-style-position: inside;
+    }
+    dl[class="content"]>dt{
+        font-weight: bold;
+    }
+    dl[class="content"]>dd{
+        padding-left: 2rem;
+        margin-bottom: 1rem;
+    }
+    .ilustracion{
+        width: 25rem;
+        height: auto;
+        margin: 0 auto;
+    }
 }
