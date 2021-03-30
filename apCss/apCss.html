@@ -186,11 +186,11 @@
                     <p class="content"><!--** Parrafos de Contenido **-->
                         A continuación enumeramos los tipos de selectores que disponemos.
                     </p>
-                    <ul class="content">
+                    <ul class="content" id="selector-menu">
                         <li><a href="#selector-tipo">Selector de Tipo</a></li>
                         <li><a href="#selector-clase">Selector de Clase</a></li>
-                        <li><a href="#">Selector de ID</a></li>
-                        <li><a href="#">Selector de Atributo</a></li>
+                        <li><a href="#selector-id">Selector de ID</a></li>
+                        <li><a href="#selector-atributo">Selector de Atributo</a></li>
                         <li><a href="#">Selector de Pseudoclases</a></li>
                         <li><a href="#">Selector de Pseudoelementos</a></li>
                         <li><a href="#">Selector Universal</a></li>
@@ -208,9 +208,9 @@
                         Entendamos como funcionan cada uno de ellos: 
                     </p>
                     <dl class="content">
-                        <dt id="selector-tipo">SELECTOR DE TIPO</dt>
+                        <dt id="selector-tipo"><a href="#selector-menu">SELECTOR DE TIPO</a></dt>
                         <dd>
-                            Un <a href="https://developer.mozilla.org/es/docs/Web/CSS/Type_selectors">selector de tipo</a> también recibe el nombre de selector de nombre, de etiqueta o selector de elemento porque selecciona un elemento/etiqueta HTML del documento de forma directa.
+                            Un <a href="https://developer.mozilla.org/es/docs/Web/CSS/Type_selectors">selector de tipo</a> también recibe el nombre de selector de nombre, de etiqueta, selector de elemento o selector general porque selecciona un elemento/etiqueta HTML del documento de forma directa.
                             <h3 class="title-aux">En archvo HTML:</h3>
                             <pre><!--*** Codigo Ejemplo ******************-->
                                 <code class="language-html">
@@ -232,8 +232,7 @@
                                 
                             </div> 
                         </dd>
-
-                        <dt id="selector-clase">SELECTOR DE CLASE</dt>
+                        <dt id="selector-clase"><a href="#selector-menu">SELECTOR DE CLASE</a></dt>
                         <dd>
                             Este <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors">selector de clase</a> nos proporciona un metodo para seleccionar a solo "algunos" elementos a quienes deseamos aplicar la regla, es decir, solo los elementos que pertenecen a la clase que definimos pueden ser seleccionados, en este caso, no importa si los elementos son de etiquetas diferentes o etiquetas iguales.
                             <br><br>
@@ -267,9 +266,11 @@
                             <h3 class="title-aux">En archvo HTML:</h3>
                             <pre><!--*** Codigo Ejemplo ******************-->
                                 <code class="language-html">
-                                    &lt;h1 class="amarillo caja"&gt; Titulo Amarillo &lt;&#47;h1&gt; &lt;!-- este titulo llevaria caja alrededor y letra amarilla--&gt;
+                                    &lt;!-- este titulo llevaria caja alrededor y letra amarilla--&gt;
+                                    &lt;h1 class="amarillo caja"&gt; Titulo Amarillo &lt;&#47;h1&gt; 
                                     &lt;p&gt; Este parrafo va en color predeterminado&lt;&#47;p&gt;
-                                    &lt;p class="caja"&gt; Este parrafo tampoco se aplica la regla pero tiene un borde negro alrededor&lt;&#47;p&gt;
+                                    &lt;p class="caja"&gt; Este parrafo tampoco se aplica la regla pero 
+                                    tiene un borde negro alrededor&lt;&#47;p&gt;
                                     &lt;p class="amarillo"&gt; Este parrafo SI es amarillo&lt;&#47;p&gt;
                                 </code>
                             </pre>
@@ -284,6 +285,140 @@
                                     }
                                 </code>
                             </pre>
+                        </dd>
+                        <dt id="selector-id"><a href="#selector-menu">SELECTOR DE ID</a></dt>
+                        <dd>
+                            El <a href="https://developer.mozilla.org/es/docs/Web/CSS/ID_selectors">Selector Id</a> o de referencia absoluta nos ayuda a seleccionar directamente un único elemento que en su etiqueta html contenga el atributo "id". para referirnos desde el archivo *.css es necesario que se anteponga el caracter "#"
+                            <h3 class="title-aux">En archvo HTML:</h3>
+                            <pre><!--*** Codigo Ejemplo ******************-->
+                                <code class="language-html">
+                                    &lt;p id="amarillo"&gt; Mi texto &lt;&#47;p&gt;
+                                </code>
+                            </pre>
+                            <h3 class="title-aux">En archvo CSS:</h3>
+                            <pre><!--*** Codigo Ejemplo ******************-->
+                                <code class="language-css">
+                                    #amarillo{
+                                      color: yellow;
+                                    }
+                                </code>
+                            </pre>
+
+                        </dd>
+                        <dt id="selector-atributo"><a href="#selector-menu">SELECTOR DE ATRIBUTO</a></dt>
+                        <dd>
+                            El <a href="https://developer.mozilla.org/es/docs/Web/CSS/Attribute_selectors">Selector de Atributo</a> nos permite elegir un elemento de la página web al cual le aplicaremos una regla, siempre y cuando se haya especificado por lo menos algún atributo, podemos seleccionar el elemento por el tipo de atributo, por el valor preciso del atributo o por alguna frase que pertenezca al valor del atributo, la nomenclatura es la siguiente:
+
+                            <table class="content-table">
+                                <thead>
+                                    <tr>
+                                        <th colspan="3"><h3 class="title-aux">Presencia y Valor</h3></th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">Selector</th>
+                                        <th scope="col" colspan="2">Ejemplo</th>
+                                    </tr>
+                                </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>[<em>attr</em>]</code></td>
+                                            <td colspan="2"><pre><code class="language-css">a[title]{/*...*/}</code></pre></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3"> <strong>DESCRIPCION:</strong> Selecciona a los elementos o etiquetas del archivo *.html que contengan un atributo concreto, sin importar su valor. reemplazamos <em>attr</em> por el nombre del atributo que buscamos entre los corchetes.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>[<em>attr</em>=<em>value</em>]</code></td>
+                                            <td colspan="2"><pre>
+                                            <code class="language-css">
+                                                a[href="https://example.com"]
+                                                {/*...*/}
+                                            </code></pre></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3"><strong>DESCRIPCION:</strong> Selecciona elementos que tiene un atributo de nombre <em>attr</em>, y su valor exacto es <em>value</em> (la cadena de caracteres que se indica entre corchetes).</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>[<em>attr</em>~=<em>value</em>]</code></td>
+                                            <td colspan="2"><pre><code class="language-css">p[class~="special"]{/*...*/}</code></pre></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3"><strong>DESCRIPCION:</strong> Se lecciona a las etiquetas del archivo *.html con el atributo de nombre <em>attr</em>, cuyo valor es exactamente <em>value</em>, o los elementos con un mismo atributo <em>attr</em> que contiene uno o más valores de los cuales, al menos uno, coincide con <em>value</em>. Hay que tomar en cuenta que los diferentes valores generalmente se separan por espacios.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>[<em>attr</em>|=<em>value</em>]</code></td>
+                                             <td colspan="2"><pre><code class="language-css">div[lang|="zh"]{/*...*/}</code></pre></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3"><strong>DESCRIPCIÓN:</strong> Relaciona a los elementos con un nombre de atributo, <em>attr</em>, cuyo valor puede ser exactamente <em>value</em> o puede comenzar con <em>value</em> seguido inmediatamente por un guion.</td>
+                                        </tr>
+                                    </tbody>
+                            </table>
+                               <br><br>
+                            <table class="content-table">
+                                <thead>
+                                    <tr>
+                                        <th colspan="3"><h3 class="title-aux">Coincidentes con subcadenas</h3></th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">Selector</th>
+                                        <th scope="col" colspan="2">Ejemplo</th>
+                                    </tr>
+                                   </thead>
+                                   <tbody>
+                                        <tr>
+                                            <td><code>[<em>attr</em>^=<em>value</em>]</code></td>
+                                            <td colspan="2"><pre><code class="language-css">li[class^="box-"]{/*...*/}</code></pre></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3"><strong>DESCRIPCIÓN:</strong> Relaciona a los elementos con un nombre de atributo, <em>attr</em>, cuyo valor <strong>comienza</strong> exactamente con <em>value</em>.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>[<em>attr</em>*=<em>value</em>]</code></td>
+                                            <td colspan="2"><pre><code class="language-css">li[class*="box"]{/*...*/}</code></pre></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3"><strong>DESCRIPCIÓN:</strong> Relaciona a los elementos con un nombre de atributo, <em>attr</em>, cuyo valor contiene al menos una ocurrencia de la subcadena <em>value</em>.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>[<em>attr</em>$=<em>value</em>]</code></td>
+                                            <td colspan="2"><pre><code class="language-css">li[class$="-box"]{/*...*/}</code></pre></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3"><strong>DESCRIPCIÓN:</strong> Relaciona a los elementos con un nombre de atributo, <em>attr</em>, cuyo valor termina exactamente con la subcadena<em>value</em>.</td>
+                                        </tr>
+                                   </tbody>
+                            </table>
+                               <br><br>
+                            <table class="content-table">
+                                <thead>
+                                 <tr>
+                                     <th colspan="3"><h3 class="title-aux">Case sensitive</h3></th>
+                                 </tr>
+                                 <tr>
+                                     <th scope="col">Selector</th>
+                                     <th scope="col" colspan="2">Ejemplo</th>
+                                 </tr>
+                                </thead>
+                                <tbody>
+                                     <tr>
+                                         <td><code>i</code></td>
+                                         <td colspan="2"><pre><code class="language-css">li[class^="a" i]{/*...*/}</code></pre></td>
+                                     </tr>
+                                     <tr>
+                                         <td colspan="3"><strong>DESCRIPCIÓN:</strong> Selecciona los elementos que cumplan con la descripción del selector pero adicionalmente su valor sea en letras minusculas</td>
+                                     </tr>
+                                     <tr>
+                                         <td><code>s</code></td>
+                                         <td colspan="2"><pre><code class="language-css">ol[type="A" s]{/*...*/}</code></pre></td>
+                                     </tr>
+                                     <tr>
+                                         <td colspan="3"><strong>DESCRIPCIÓN:</strong> Selecciona los elementos que cumplan con la descripción del selector pero adicionalmente su valor sea en letras minusculas, <strong>este atributo es experimental</strong>.</td>
+                                     </tr>
+                                </tbody>
+                            </table>
+
                         </dd>
                     </dl>
                 </article>

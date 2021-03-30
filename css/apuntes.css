@@ -15,6 +15,8 @@
     --text-color:rgb(46, 46, 46);
     --link-color: #B88027;
     --font-principal: sans-serif;
+    --ventana_pc: 1000px;
+
 }
 /**** Reseteos ******************************************************/
 html{
@@ -22,6 +24,7 @@ html{
     font-family: var(--font-principal);
     font-size: 20px;
     color: var(--text-color);
+    scroll-behavior: smooth;
 }   
 *, *::after, *::before{
     margin: 0;
@@ -31,7 +34,6 @@ html{
 body{
     /*overflow-x: hidden ;/*Evita scroll horizontal*/
     background-color: var(--gray-light);
-    scroll-behavior: smooth;
 }
 
 a{
@@ -46,7 +48,7 @@ h3{font-size: 1.25rem;}
 h5{font-size: 0.75rem;}
 img{
     /*se ajusta al ancho del contenedor*/
-    max-width: 100%;
+    width: 100%;
     height: auto;
 }
 p{
@@ -69,12 +71,32 @@ p{
 .codes code{color: var(--white);}
 .note{background-color: var(--first-alpha-color);}
 
-.content{margin-bottom: 1.2rem;}
-
 .contenedor{
     /*Para Hero image*/
     padding: 0.75em;
 }
+.content{margin-bottom: 1.2rem;}
+
+.content-table{
+    width: 100%;
+    border-spacing: 0.1rem;
+    border-collapse: separate;
+}
+.content-table tbody tr:nth-child(even){
+    color: var(--text-color);
+    background-color: var(--second-alpha-color);
+}
+
+.content-table th, .content-table td{
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    background-color: var(--first-alpha-color);
+} 
+.content-table th{
+    color: var(--white);
+    background-color: var(--first-color);
+}
+
 .icon-home, .icon-link{
     font-size: 1.5rem;
 }
@@ -131,14 +153,6 @@ p{
 
 
 @media screen and (min-width:480px){
-    main{
-        margin: 0 auto;
-        max-width: 1000px;
-        min-height: 100vh;
-        display: flex;
-        justify-content: space-between;
-        overflow-x: hidden;
-    }
     aside{
         width: 2.35rem;
         padding: 0.5rem;
@@ -147,7 +161,21 @@ p{
     }
     aside:hover{width: 20rem;}
     aside:hover>nav>ul{ display: block; }
-    
+    dl[class="content"]>dt{
+        font-weight: bold;
+    }
+    dl[class="content"]>dd{
+        padding-left: 2rem;
+        margin-bottom: 1rem;
+    }
+    main{
+        margin: 0 auto;
+        max-width: var(--ventana_pc);
+        min-height: 100vh;
+        display: flex;
+        justify-content: space-between;
+        /* overflow-x: hidden; */
+    }
     nav{
         padding: 0.5rem 0 0 0;
         position: sticky;
@@ -171,20 +199,20 @@ p{
 
     nav li > ul{display: none;}
     nav li:hover>ul{ display: block; }
+    pre{
+        /* max-width: 90%; */
+        max-height: 16rem;
+        /* display: block; */
+        overflow: auto;
+    }
     ul[class="content"]{
         padding-left: 2rem;
         list-style-position: inside;
     }
-    dl[class="content"]>dt{
-        font-weight: bold;
-    }
-    dl[class="content"]>dd{
-        padding-left: 2rem;
-        margin-bottom: 1rem;
-    }
     .ilustracion{
-        width: 25rem;
-        height: auto;
+        width: 80%;
+        /* max-width: 70vw; */
+        /* height: auto; */
         margin: 0 auto;
     }
 }
