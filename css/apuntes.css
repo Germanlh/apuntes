@@ -6,6 +6,7 @@
     --second-alpha-color:#58308080;
     --third-color:#9F87B3;
     --black:black;
+    --black-code:#272822;
     --black-alpha: #00000080;
     --white:white;
     --white-alpha:#FFFFFF80;
@@ -16,7 +17,6 @@
     --link-color: #B88027;
     --font-principal: sans-serif;
     --ventana_pc: 1000px;
-
 }
 /**** Reseteos ******************************************************/
 html{
@@ -35,13 +35,11 @@ body{
     /*overflow-x: hidden ;/*Evita scroll horizontal*/
     background-color: var(--gray-light);
 }
-
 a{
     color: var(--link-color);
     text-decoration: none;
 }
 a:hover{opacity: 0.75;}
-
 h1{font-size: 1.75rem;}
 h2{font-size: 1.5rem;}
 h3{font-size: 1.25rem;}
@@ -65,22 +63,18 @@ p{
     background-color: rgb(255, 238, 180);
     border-left: var(--second-color) 0.5rem solid;
     padding: 0.6rem;
-    margin: 1.2rem 0;
+    margin-bottom: 1.2rem;
 }
-.codes{background-color: var(--gray-dark);}
-.codes code{color: var(--white);}
+.codes{background-color: var(--black-code);}
 .note{background-color: var(--first-alpha-color);}
-
-.contenedor{
-    /*Para Hero image*/
-    padding: 0.75em;
-}
+.contenedor{padding: 0.75em;}
 .content{margin-bottom: 1.2rem;}
-
 .content-table{
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
     border-spacing: 0.1rem;
     border-collapse: separate;
+    margin: 1rem;
 }
 .content-table tbody tr:nth-child(even){
     color: var(--text-color);
@@ -96,10 +90,16 @@ p{
     color: var(--white);
     background-color: var(--first-color);
 }
-
-.icon-home, .icon-link{
-    font-size: 1.5rem;
+.content-table th[colspan="3"]{
+    background-color: var(--second-color);
 }
+
+.icon-home{font-size: clamp(1.5rem, 5vw, 1.75rem);}
+.icon-home, .logo-materia{ 
+    max-width: 2.35rem;
+    margin: 0 auto 0.5rem auto;
+}
+
 .link-reference{
     width: 100%;
     height: 2rem;
@@ -119,11 +119,6 @@ p{
     padding: 0.6rem;
 }
 .link-reference:hover>ul{display: block;}
-
-.logo-materia{
-    width: 2.35rem;
-    margin-bottom: 0.5rem;
-}
 
 .section{
     padding-bottom: 1rem;
@@ -148,39 +143,44 @@ p{
     display: block;
     color: var(--text-color);
     background-color: transparent;
+    margin:0;
 }
-/**************************************************************************/
-/**************************************************************************/
+/* ************************************************************************ */
+/* ************************************************************************ */
 
 
 @media screen and (min-width:480px){
+    main{
+        margin: 0 auto;
+        max-width: var(--ventana_pc);
+        min-height: 100vh;
+        /* background-color: blue; */
+        display: flex;
+        /* justify-content: space-between; */
+    }
     aside{
-        width: 2.35rem;
-        padding: 0.5rem;
-        margin-right: 0.5rem;
+        padding: 0 0.5rem;
+        flex-basis: 3rem;
         transition: all 1s ease;
     }
-    aside:hover{width: 20rem;}
+    aside:hover{flex-basis: 35%;}
     aside:hover>nav>ul{ display: block; }
+
     dl[class="content"]>dt{
         font-weight: bold;
+        margin: 0.5rem 0;
     }
     dl[class="content"]>dd{
         padding-left: 2rem;
         margin-bottom: 1rem;
     }
-    main{
-        margin: 0 auto;
-        max-width: var(--ventana_pc);
-        min-height: 100vh;
-        display: flex;
-        justify-content: space-between;
-        /* overflow-x: hidden; */
-    }
-    nav{
-        padding: 0.5rem 0 0 0;
+
+    aside nav{
+        /* width: 100%; */
+        height: 100vh;
+        overflow: auto;
         position: sticky;
-        top: 0;
+        top: 1rem;
     }
     nav ul{
         list-style: none;
@@ -200,19 +200,28 @@ p{
 
     nav li > ul{display: none;}
     nav li:hover>ul{ display: block; }
-    pre{
-        /* max-width: 90%; */
-        max-height: 16rem;
-        /* display: block; */
+    /**/
+    /* pre {
         overflow: auto;
+        word-wrap: normal;
+        white-space: pre;
+      } */
+    /**/
+   pre{
+        width: var(--ventana_pc);
+        /* max-width: 90%; */
+        /* max-height: 16rem; */
+        /* display: block; */
+        /* overflow: auto; */
     }
     ul[class="content"], ol[class="content"]{
         padding-left: 2rem;
         list-style-position: inside;
     }
+    .contenedor{width: 47rem;}
     .ilustracion{
         width: 80%;
-        /* max-width: 70vw; */
+        /* max-width: 70vw; *
         /* height: auto; */
         margin: 0 auto;
     }

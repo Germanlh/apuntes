@@ -14,12 +14,11 @@
         <aside><!--*** MENU ****************-->
             <nav>
                 <div class="logo-materia">
-                    <img src="../img/CSS3_logo.svg" alt="Css3 logo">
+                    <!-- class="icon-home fas fa-home" Icono Home Font awesome-->
+                    <a href="../index.html" ><img src="../img/CSS3_logo.svg" alt="Css3 logo"></a> 
                 </div>
-                <a href="../index.html" class="icon-home"><i class="fas fa-home"></i></a> <!-- Home -->
-
                 <ul class="menu">
-                    <li><!--Referencias-->
+                    <li>
                         Referencias
                         <ul class="submenu">
                             <li><a href="https://developer.mozilla.org/es/docs/Web/CSS" target="_blank" rel="noopener noreferrer">CSS MDN</a></li>
@@ -29,7 +28,7 @@
                             <li><a href="https://css-tricks.com/" target="_blank" rel="noopener noreferrer">CSS Tricks</a></li>
                         </ul>
                     </li>
-                    <li><a href="#rudimentos">Rudimentos</a><!--Rudimentos-->
+                    <li><a href="#rudimentos">Rudimentos</a>
                         <ul class="submenu">
                             <li><a href="#que-es-css" >¿Que es CSS?</a></li>
                             <li><a href="#css-en-html" >CSS en HTML</a></li>
@@ -38,25 +37,32 @@
                             <li><a href="#selectores" >Selectores</a></li>
                         </ul>
                     </li>
-                    <li><a href="#" >xXxXx</a></li><!--xXXx-->
+                    <li><a href="#box-model">Modelo de Caja</a></li>
+                    <li><a href="#box-style">Estilos de caja</a></li>
+                    <li><a href="#texto-css">Texto con CSS</a></li>
+                    <li><a href="#maquetacion">Maquetación</a></li>
+                    <li><a href="#media-queries">Media Queries</a></li>
+                    <li><a href="#responsive-design">Responsive Design</a></li>
+                    <li><a href="#animaciones">Animaciones</a></li>
+                    <li><a href="#depuracion">Depuración</a></li>
                 </ul>
-            </nav>
+            </nav> 
         </aside>
         <div class="contenedor"><!--*** Contenedor General de Temas *****************************************-->
             <section class="section" id="rudimentos"><!--*** Rudimentos ************************-->
                 <h2 class="section-title">Rudimentos</h2>
                 <article class="concept"><!--Que es CSS-->
                     <h3 class="title-concept" id="que-es-css">¿Que es CSS?</h3>
-                    <p class="content"><!--** Parrafos de Contenido **-->
+                    <p class="content">
                         <strong>CSS</strong> es el acrónimo de Hojas de estilo en cascada (del inglés <em> <strong>C</strong>ascading <strong>S</strong>tyle <strong>S</strong>heet </em>) es el lenguaje de estilos utilizado para describir la presentación de documentos HTML o XML (en-US) (incluyendo varios languages basados en XML como SVG, MathML o XHTML). CSS describe como debe ser renderizado el elemento estructurado en la pantalla, en papel, en el habla o en otros medios.
                     </p>
-                    <p class="content"><!--** Parrafos de Contenido **-->
+                    <p class="content">
                         CSS es uno de los lenguajes base de la Open Web y posee una especificación estandarizada por parte del W3C. Anteriormente, el desarrollo de varias partes de las especificaciones de CSS era realizado de manera sincrónica, lo que permiía el versionado de las recomendaciones. Probablemente habrás escuchado acerca de CSS1, CSS2.1, CSS3. Sin embargo, CSS4 nunca se ha lanzado como una versión oficial. 
                     </p>
-                    <p class="content"><!--** Parrafos de Contenido **-->
+                    <p class="content">
                         En resumen, con <strong>CSS</strong> podemos definir la manera en que lucirá una página web, desde los colores de los elementos, la tipografía e incluso el orden y el espacio de cada uno de los elementos involucrados.
                     </p>
-                    <div class="alert"><!--** Parrafos de ADVERTENCIA **-->
+                    <div class="alert">
                         <p class="content-alert">
                             <strong>ALERTA:</strong> Para un adecuado entendimiento del manejo de CSS es necesario tener sólidas bases de HTML, de otra forma el aprendizaje será lento, ya que ambas tecnologías se complementan.
                         </p>
@@ -64,10 +70,10 @@
                 </article>
                 <article class="concept"><!--CSS en HTML-->
                     <h3 class="title-concept" id="css-en-html">CSS en HTML</h3>
-                    <p class="content"><!--** Parrafos de Contenido **-->
+                    <p class="content">
                         Una vez que hemos entendido que cada elemento que vamos a modificar debemos definir una regla, ahora debemos entender donde es el lugar adecuado para colocar esa regla y que funcione.
                     </p>
-                    <p class="content"><!--** Parrafos de Contenido **-->
+                    <p class="content">
                         El código CSS se interpreta en el navegador del cliente que abre una página web, para que éste navegador interprete de forma adecuada los estilos que corresponden a un sitio web, debemos especificar como es que cada uno de los elementos que se encuentran dentro de la página deben presentarse y para ello existen 3 formas diferentes de hacerlo.
                     </p>
                     <ul class="content">
@@ -81,13 +87,13 @@
                             Esta forma nos permite colocar el estilo, dentro de los atributos de las etiquetas que se definen en HTML, este atributo solo afecta a la etiqueta en cuestión una a la vez.
 
                             <h3 class="title-aux">Ejemplo:</h3>
-                            <pre><!--*** Codigo Ejemplo ******************-->
+                            <div class="codes">
                                 <code class="language-html">
                                     &lt;p style="font-size: 20px"&gt;Mi texto &lt;&#47;p&gt;
                                 </code>
-                            </pre>
+                            </div>
 
-                            <div class="alert"><!--** Parrafos de ADVERTENCIA **-->
+                            <div class="alert">
                                 <p class="content-alert">
                                     <strong>ALERTA:</strong> Trabajar con estilos <em>In-line</em> es cómodo por que se agregan las reglas dentro de los atributos de la etiqueta, sin embargo, no se aprovecha la cascada de CSS, lo cual es una potente herramienta de diseño, tampoco se pueden repetir los estilos a diferentes páginas del mismo proyecto asi mismo afecta la Especificidad, pues el estilo <em>In-line</em> siempre tiene mayor prioridad sobre las otras formas.
                                 </p>
@@ -99,19 +105,30 @@
                             Esta forma nos permite modificar a los elementos semejantes dentro del mismo archivo HTML, pues al usar un selector, este no se encuentra atado dentro de la misma etiqueta, por lo que se puede aprovechar del efecto en cascada y afectar a otros objetos "Semejantes".
 
                             <h3 class="title-aux">Ejemplo:</h3>
-                            <pre><!--*** Codigo Ejemplo ******************-->
+                            <div class="codes">
                                 <code class="language-html">
                                     &lt;head&gt;
-                                        &lt;style&gt;
-                                            p{
-                                                font-size:20px;
-                                            }
-                                        &lt;&#47;style&gt;
+                                        &lt;style&gt; 
+                                        p{ 
+                                            font-size:20px; 
+                                        } 
+                                        &lt;&#47;style&gt; 
                                     &lt;&#47;head&gt;
                                 </code>
-                            </pre>
+                            </div>
+                            <div class="codes">
+                                <code class="language-html">
+                                    <p>&lt;head&gt;</p>
+                                    &nbsp;&nbsp;&lt;style&gt; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;p{ <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size:20px; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+                                    &nbsp;&nbsp;&lt;&#47;style&gt; <br>
+                                    &lt;&#47;head&gt;
+                                </code>
+                            </div>
 
-                            <div class="alert"><!--** Parrafos de ADVERTENCIA **-->
+                            <div class="alert">>
                                 <p class="content-alert">
                                     <strong>ALERTA:</strong> A pesar que la forma embebida nos permite aprovechar de mejor manera la cascada, es una buena práctica utilizar la tercera forma, además que nos permite agregar esas mismas reglas de estilo a otras páginas.
                                 </p>
@@ -123,28 +140,28 @@
                             Esta forma nos permite crear una archivo *.css por separado del archivo *.html, lo que nos permite crear un solo conjunto de reglas que pueden aplicarse a diversas páginas y mantener posteriormente los cambios fácilmente, esta forma de trabajar se considera la mejor práctica para las hojas de estilo.
 
                             <h3 class="title-aux">Ejemplo Enlace:</h3>
-                            <pre><!--*** Codigo Ejemplo ******************-->
+                            <div class="codes">
                                 <code class="language-html">
                                     &lt;head&gt;
                                         &lt;link rel="stylesheet" href="css/estilo.css" &gt;
                                     &lt;&#47;head&gt;
                                 </code>
-                            </pre>
+                            </div>
                         </dd>
                     </dl>
                 </article>
                 <article class="concept"><!--Regla CSS-->
                     <h3 class="title-concept" id="regla-css">Regla CSS</h3>
-                    <p class="content"><!--** Parrafos de Contenido **-->
+                    <p class="content">
                         Debemos entender que una página web es una conjunto de objetos acomodados por etiquetas uno después de otro y cada uno de esos objetos generalmente marcados por estas etiquetas contiene propiedades que pueden alterarse y cambiar el aspecto original de la página. Para que podamos visualizarlos de forma correcta, debemos indicar que propiedades deben modificarse. 
                     </p>
-                    <p class="content"><!--** Parrafos de Contenido **-->
+                    <p class="content">
                         La forma en que CSS realiza estos cambios es estableciendo "Reglas Predeterminadas" o simplemente "Reglas" las cuales le indican al nevegador como debe mostrar ese elemento que estamos manipulando, cada regla que establezcamos debe tener la siguiente estructura: 
                     </p>
                     <div class="ilustracion">
                         <img src="img/regla.png" alt="Regla CSS" class="ilustracion">
                     </div>
-                    <p class="content"><!--** Parrafos de Contenido **-->
+                    <p class="content">
                         A continuación describimos cada una de sus partes:
                     </p>
                     <dl class="content">
@@ -158,7 +175,7 @@
                         <dd>
                             La propiedad nos indica que característica del elemento queremos cambiar, su anchura, su altura, su color, etc. de esta manera indicamos al navegador como debe visualizarse. es importante que después de mencionar la propiedad separemos con <em>":"</em> los valores que le daremos a la misma.
                         
-                            <div class="note"><!--** Parrafos de Notas **-->
+                            <div class="note">
                                 <p class="content-note">
                                     <strong>NOTA:</strong> Cada propiedad puede llevar consigo más de un valor, generalmente, se identifica un valor de otro por que van separados por espacios, de igual manera existen funciones que nos apoyan para colocar de mejor manera estos valores.
                                 </p>
@@ -169,7 +186,7 @@
                         <dd>
                             Una vez que hemos señalado la propiedad debemos indicar adecuadamente el nuevo valor que ésta tendrá, este cambio de magnitud depende de la propiedad que estamos modificando, una vez que hayamos establecido los valores adecuados, la declaración debe finalizar con <em>";"</em>.
 
-                            <div class="note"><!--** Parrafos de Notas **-->
+                            <div class="note">
                                 <p class="content-note">
                                     <strong>NOTA:</strong> Cada Valor es diferente para cada tipo de propiedad, lo más común es que este valor vaya acompañado de un magnitud o unidad de medida que especifica la manera en que la propiedad cambiará.
                                 </p>
@@ -181,14 +198,14 @@
                 </article>
                 <article class="concept"><!--Especificidad, Cascada y Herencia-->
                     <h3 class="title-concept" id="esp-cas-her">Herencia, Cascada y Especificidad</h3>
-                    <p class="content"><!--** Parrafos de Contenido **-->
+                    <p class="content">
                         Estos 3 conceptos se encuentran estrechamente relacionados y son los responsables que se apliquen o no las reglas que se definen, estas características tambien son útiles para asignarle la misma regla a diferentes elementos con características similares sin necesidad de repetir código
                     </p>
                     <h3 class="title-aux">Herencia</h3>
-                    <p class="content"><!--** Parrafos de Contenido **-->
+                    <p class="content">
                         La herencia es el mecanismo mediante el cual un objeto padre (o de jerarquía superior) "hereda" características a sus hijos directos y ellos a su vez heredarían éstas características o lo siguientes elementos descendientes. Existirán características que serán heredables y algunas otras no podrán heredarse.
                     </p>
-                    <p class="content"><!--** Parrafos de Contenido **-->
+                    <p class="content">
                         CSS proporciona 4 valores (1 elemento experimental) de propiedad universales especiales para el control de la herencia. Todas las propiedades CSS aceptan estos valores.
                     </p>
                     <dl class="content">
@@ -204,28 +221,28 @@
                         <dd>Esta es una Propiedad abreviada que tiene por objetivo controlar la herencia en las reglas CSS, esta afecta a casi todas las propiedades a la vez y puede tomar cualquiera de los 4 valores anteriores por ejemplo: <code class="language-css"> a {all:revert;}</code></dd>
                     </dl>
                     <h3 class="title-aux">Cascada</h3>
-                    <p class="content"><!--** Parrafos de Contenido **-->
+                    <p class="content">
                        Esta propiedad permite que un regla pueda aplicarse a diferentes elementos, por ejemplo, si definimos una regla para los parrafos "p" todas las etiquetas "p" aplicaran la misma regla, sin embargo, si mas adelante se enuncia una regla diferente para el selector "p", se aplicará la ultima regla que aparezca: 
                     </p>
                     <h3 class="title-aux">Ejemplo:</h3>
-                    <pre><code class="language-css">
+                    <div class="codes"><code class="language-css">
                         /*...*/
                         p{color:blue;}
                         p{color:red;}
                         p{color:orange;}
                         /*...*/
-                    </code></pre>
-                    <p class="content"><!--** Parrafos de Contenido **-->
+                    </code></div>
+                    <p class="content">
                         En este ejemplo podemos ver visualmente como es que se han aplicado diferentes reglas a las etiquetas "p", sin embargo la regla que prevalecerá será la que tiene color naranja, ya que la cascada respeta la última regla válida. 
                      </p>
                      <h3 class="title-aux">Especificidad</h3>
-                     <p class="content"><!--** Parrafos de Contenido **-->
+                     <p class="content">
                         La especificidad, se aplica para aquellos elementos se encuentran referidos en más de una regla y tienen diferente selector, para ello, se analiza la manera en que el selector se ha construido y se refiere a ese elemento, dándole valores a las diferentes formas de construir el selector, provocando que aquel que sea más específico para referirse al elemento sea quien prepondere sobre los demás.
                      </p>
-                     <p class="content"><!--** Parrafos de Contenido **-->
+                     <p class="content">
                         Para explicar mejor esta idea, se le da un valor numérico a los selectores, se distingue entre etiquetas, clases, id, inline y sobre el important ese valor se suma y se aplica la regla que tenga un selector con mayor número, es decir, mayor especificidad.
                      </p>
-                     <p class="content"><!--** Parrafos de Contenido **-->
+                     <p class="content">
                         Los valores aproximados que se asignan son los siguientes.
                      </p>
                      <table class="content-table">
@@ -272,23 +289,22 @@
                          </tbody>
 
                      </table>
-                     <div class="alert"><!--** Parrafos de ADVERTENCIA **-->
+                     <div class="alert">
                         <p class="content-alert">
                             <strong>ALERTA:</strong> Usar "!important" es una mala práctica, conocer este valor para los atributos es útil para casos extremos, pero no para casos comunes que pueden resolverse con clases o combinadores.
                         </p>
                     </div>
-                     <p class="content"><!--** Parrafos de Contenido **-->
+                     <p class="content">
                         A manera de Ejemplo colocaremos los siguientes ejemplos calculando sus valores
                      </p>
-                     
                     <table class="content-table">
                         <thead>
                             <tr>
                                 <th scope="col">Selector</th>
-                                <th scope="col">Millares:</th>
-                                <th scope="col">Centenas:</th>
-                                <th scope="col">Decenas:</th>
-                                <th scope="col">Unidades:</th>
+                                <th scope="col">M:</th>
+                                <th scope="col">C:</th>
+                                <th scope="col">D:</th>
+                                <th scope="col">U:</th>
                                 <th scope="col">Total</th>
                             </tr>
                         </thead>
@@ -337,7 +353,7 @@
                             </tr>
                         </tbody>
                     </table>
-                     <p class="content"><!--** Parrafos de Contenido **-->
+                     <p class="content">
                         Para entender mejor esta idea, es útil que entendamos como es que el navegador asigna estilos a los diferentes elementos.
                      </p>
                      <ol class="content">
@@ -360,10 +376,10 @@
                 </article>
                 <article class="concept"><!--Selectores-->
                     <h3 class="title-concept" id="selectores">SELECTORES</h3>
-                    <p class="content"><!--** Parrafos de Contenido **-->
+                    <p class="content">
                         Un selector es la manera con la cual nosotros nos referimos a un elemento  de la página web a la cual nosotros aplicaremos una serie de declaraciones que modificarán su aspecto final, es importante conocer la forma de dirigirnos a ese elemento, por que si lo hacemos de forma incorrecta, los estilos no se aplicaran correctamente, para ello, existe un amplia diversidad de herramientas que podemos utilizar y combinar entre ellas para seleccionar correctamente el elemento.
                     </p>
-                    <p class="content"><!--** Parrafos de Contenido **-->
+                    <p class="content">
                         A continuación enumeramos los tipos de selectores que disponemos.
                     </p>
                     <ul class="content" id="selector-menu">
@@ -375,7 +391,7 @@
                         <li><a href="#selector-pseudoelemento">Selector de Pseudoelementos</a></li>
                         <li><a href="#selector-universal">Selector Universal</a></li>
                     </ul>
-                    <p class="content"><!--** Parrafos de Contenido **-->
+                    <p class="content">
                         De la misma forma disponemos de <a href="#operadores-combinacion">operadores de combinación</a>, los cuales nos permiten ampliar de forma significativa nuestras herramientas de selección, entre ellas encontramos: 
                     </p>
                     <ul class="content">
@@ -384,7 +400,7 @@
                         <li>Combinador suma<strong>"+"</strong></li>
                         <li>Combinador virgulilla<strong>"~"</strong></li>
                     </ul>
-                    <p class="content"><!--** Parrafos de Contenido **-->
+                    <p class="content">
                         Entendamos como funcionan cada uno de ellos: 
                     </p>
                     <dl class="content">
@@ -392,20 +408,20 @@
                         <dd>
                             Un <a href="https://developer.mozilla.org/es/docs/Web/CSS/Type_selectors" target="_blank" rel="noopener noreferrer">selector de tipo</a> también recibe el nombre de selector de nombre, de etiqueta, selector de elemento o selector general porque selecciona un elemento/etiqueta HTML del documento de forma directa.
                             <h3 class="title-aux">En archvo HTML:</h3>
-                            <pre><!--*** Codigo Ejemplo ******************-->
+                            <div class="codes">
                                 <code class="language-html">
                                     &lt;p&gt;Mi texto &lt;&#47;p&gt;
                                 </code>
-                            </pre>
+                            </div>
                             <h3 class="title-aux">En archvo CSS:</h3>
-                            <pre><!--*** Codigo Ejemplo ******************-->
+                            <div class="codes">
                                 <code class="language-css">
                                     p{
                                       font-size: 20px;
                                     }
                                 </code>
-                            </pre>
-                            <div class="alert"><!--** Parrafos de ADVERTENCIA **-->
+                            </div>
+                            <div class="alert">
                                 <p class="content-alert">
                                     <strong>ALERTA:</strong> cuando usamos esta forma de seleccionar los elementos, la regla que definamos se aplica para todas las etiquetas del mismo tipo. En el caso del ejemplo todas las etiquetas "p" seran afectadas por este estilo.
                                 </p>
@@ -419,80 +435,80 @@
                             La forma correcta de implementarlo es asignadole una clase en el atributo "class" en las etiquetas del archivo *.html de esa manera "marcamos" las etiquetas a las cuales se le aplicaran la regla que definiremos en el archivo *.css, cuando definamos la regla el nombre de la clase debe estar precedida de "." para indicar que es el nombre de la clase.
                         
                             <h3 class="title-aux">En archvo HTML:</h3>
-                            <pre><!--*** Codigo Ejemplo ******************-->
+                            <div class="codes">
                                 <code class="language-html">
                                     &lt;p class="amarillo"&gt; Mi texto &lt;&#47;p&gt;
                                 </code>
-                            </pre>
+                            </div>
                             <h3 class="title-aux">En archvo CSS:</h3>
-                            <pre><!--*** Codigo Ejemplo ******************-->
+                            <div class="codes">
                                 <code class="language-css">
                                     .amarillo{
                                       color: yellow;
                                     }
                                 </code>
-                            </pre>
+                            </div>
                             De ser necesario, podemos modificar el ejemplo para asignar la clase a diferentes etiquetas y observar como se aplica la regla a las etiquetas que seleccionamos, miestras que las etiquetas que no contienen a la clase, quedan excluidas de la regla, todo esto se aplica sin modificar el archivo *.css.
                             <h3 class="title-aux">En archvo HTML:</h3>
-                            <pre><!--*** Codigo Ejemplo ******************-->
+                            <div class="codes">
                                 <code class="language-html">
                                     &lt;h1 class="amarillo"&gt; Titulo Amarillo &lt;&#47;h1&gt;
                                     &lt;p&gt; Este parrafo va en color predeterminado&lt;&#47;p&gt;
                                     &lt;p&gt; Este parrafo tampoco se aplica la regla&#47;p&gt;
                                     &lt;p class="amarillo"&gt; Este parrafo SI es amarillo&lt;&#47;p&gt;
                                 </code>
-                            </pre>
+                            </div>
                             De la misma forma podemos agregar más de una clase a las etiquetas, lo que nos permite agregar más características a un elemento. eso lo podemos ver en este ejemplo:
                             <h3 class="title-aux">En archvo HTML:</h3>
-                            <pre><!--*** Codigo Ejemplo ******************-->
+                            <div class="codes">
                                 <code class="language-html">
-                                    &lt;!-- este titulo llevaria caja alrededor y letra amarilla--&gt;
+                                        &lt;!-- este titulo llevaria caja alrededor y letra amarilla--&gt;
+                                </code><br><code class="language-html">
                                     &lt;h1 class="amarillo caja"&gt; Titulo Amarillo &lt;&#47;h1&gt; 
+                                </code><br><code class="language-html">
                                     &lt;p&gt; Este parrafo va en color predeterminado&lt;&#47;p&gt;
+                                </code><br><code class="language-html">
                                     &lt;p class="caja"&gt; Este parrafo tampoco se aplica la regla pero 
                                     tiene un borde negro alrededor&lt;&#47;p&gt;
+                                </code><br><code class="language-html">
                                     &lt;p class="amarillo"&gt; Este parrafo SI es amarillo&lt;&#47;p&gt;
                                 </code>
-                            </pre>
+                            </div>
                             <h3 class="title-aux">En archvo CSS:</h3>
-                            <pre><!--*** Codigo Ejemplo ******************-->
+                            <div class="codes">
                                 <code class="language-css">
-                                    .amarillo{
-                                      color: yellow;
-                                    }
-                                    .caja{
-                                        border: thin solid black;
-                                    }
+                                    .amarillo{color: yellow;}
+                                </code><br><code class="language-css">
+                                    .caja{border: thin solid black;}
                                 </code>
-                            </pre>
+                            </div>
                         </dd>
                         <dt id="selector-id"><a href="#selector-menu">SELECTOR DE ID</a></dt>
                         <dd>
                             El <a href="https://developer.mozilla.org/es/docs/Web/CSS/ID_selectors" target="_blank" rel="noopener noreferrer">Selector Id</a> o de referencia absoluta nos ayuda a seleccionar directamente un único elemento que en su etiqueta html contenga el atributo "id". para referirnos desde el archivo *.css es necesario que se anteponga el caracter "#"
                             <h3 class="title-aux">En archvo HTML:</h3>
-                            <pre><!--*** Codigo Ejemplo ******************-->
+                            <div class="codes">
                                 <code class="language-html">
                                     &lt;p id="amarillo"&gt; Mi texto &lt;&#47;p&gt;
                                 </code>
-                            </pre>
+                            </div>
                             <h3 class="title-aux">En archvo CSS:</h3>
-                            <pre><!--*** Codigo Ejemplo ******************-->
+                            <div class="codes">
                                 <code class="language-css">
-                                    #amarillo{
-                                      color: yellow;
-                                    }
+                                    #amarillo{color: yellow;}
                                 </code>
-                            </pre>
+                            </div>
 
                         </dd>
                         <dt id="selector-atributo"><a href="#selector-menu">SELECTOR DE ATRIBUTO</a></dt>
                         <dd>
                             El <a href="https://developer.mozilla.org/es/docs/Web/CSS/Attribute_selectors">Selector de Atributo</a> nos permite elegir un elemento de la página web al cual le aplicaremos una regla, siempre y cuando se haya especificado por lo menos algún atributo, podemos seleccionar el elemento por el tipo de atributo, por el valor preciso del atributo o por alguna frase que pertenezca al valor del atributo, la nomenclatura es la siguiente:
+                            <br><br>
 
                             <table class="content-table">
                                 <thead>
                                     <tr>
-                                        <th colspan="3"><h3 class="title-aux">Presencia y Valor</h3></th>
+                                        <th colspan="3">Presencia y Valor</th>
                                     </tr>
                                     <tr>
                                         <th scope="col">Selector</th>
@@ -502,25 +518,24 @@
                                     <tbody>
                                         <tr>
                                             <td><code>[<em>attr</em>]</code></td>
-                                            <td colspan="2"><pre><code class="language-css">a[title]{/*...*/}</code></pre></td>
+                                            <td colspan="2"><code class="language-css">a[title]{/*...*/}</code></td>
                                         </tr>
                                         <tr>
                                             <td colspan="3"> <strong>DESCRIPCION:</strong> Selecciona a los elementos o etiquetas del archivo *.html que contengan un atributo concreto, sin importar su valor. reemplazamos <em>attr</em> por el nombre del atributo que buscamos entre los corchetes.</td>
                                         </tr>
                                         <tr>
                                             <td><code>[<em>attr</em>=<em>value</em>]</code></td>
-                                            <td colspan="2"><pre>
-                                            <code class="language-css">
+                                            <td colspan="2"><code class="language-css">
                                                 a[href="https://example.com"]
                                                 {/*...*/}
-                                            </code></pre></td>
+                                            </code></td>
                                         </tr>
                                         <tr>
                                             <td colspan="3"><strong>DESCRIPCION:</strong> Selecciona elementos que tiene un atributo de nombre <em>attr</em>, y su valor exacto es <em>value</em> (la cadena de caracteres que se indica entre corchetes).</td>
                                         </tr>
                                         <tr>
                                             <td><code>[<em>attr</em>~=<em>value</em>]</code></td>
-                                            <td colspan="2"><pre><code class="language-css">p[class~="special"]{/*...*/}</code></pre></td>
+                                            <td colspan="2"><code class="language-css">p[class~="special"]{/*...*/}</code></td>
                                         </tr>
                                         <tr>
                                             <td colspan="3"><strong>DESCRIPCION:</strong> Se lecciona a las etiquetas del archivo *.html con el atributo de nombre <em>attr</em>, cuyo valor es exactamente <em>value</em>, o los elementos con un mismo atributo <em>attr</em> que contiene uno o más valores de los cuales, al menos uno, coincide con <em>value</em>. Hay que tomar en cuenta que los diferentes valores generalmente se separan por espacios.
@@ -528,7 +543,7 @@
                                         </tr>
                                         <tr>
                                             <td><code>[<em>attr</em>|=<em>value</em>]</code></td>
-                                             <td colspan="2"><pre><code class="language-css">div[lang|="zh"]{/*...*/}</code></pre></td>
+                                             <td colspan="2"><code class="language-css">div[lang|="zh"]{/*...*/}</code></td>
                                         </tr>
                                         <tr>
                                             <td colspan="3"><strong>DESCRIPCIÓN:</strong> Relaciona a los elementos con un nombre de atributo, <em>attr</em>, cuyo valor puede ser exactamente <em>value</em> o puede comenzar con <em>value</em> seguido inmediatamente por un guion.</td>
@@ -539,7 +554,7 @@
                             <table class="content-table">
                                 <thead>
                                     <tr>
-                                        <th colspan="3"><h3 class="title-aux">Coincidentes con subcadenas</h3></th>
+                                        <th colspan="3">Coincidentes con subcadenas</th>
                                     </tr>
                                     <tr>
                                         <th scope="col">Selector</th>
@@ -549,21 +564,21 @@
                                    <tbody>
                                         <tr>
                                             <td><code>[<em>attr</em>^=<em>value</em>]</code></td>
-                                            <td colspan="2"><pre><code class="language-css">li[class^="box-"]{/*...*/}</code></pre></td>
+                                            <td colspan="2"><code class="language-css">li[class^="box-"]{/*...*/}</code></td>
                                         </tr>
                                         <tr>
                                             <td colspan="3"><strong>DESCRIPCIÓN:</strong> Relaciona a los elementos con un nombre de atributo, <em>attr</em>, cuyo valor <strong>comienza</strong> exactamente con <em>value</em>.</td>
                                         </tr>
                                         <tr>
                                             <td><code>[<em>attr</em>*=<em>value</em>]</code></td>
-                                            <td colspan="2"><pre><code class="language-css">li[class*="box"]{/*...*/}</code></pre></td>
+                                            <td colspan="2"><code class="language-css">li[class*="box"]{/*...*/}</code></td>
                                         </tr>
                                         <tr>
                                             <td colspan="3"><strong>DESCRIPCIÓN:</strong> Relaciona a los elementos con un nombre de atributo, <em>attr</em>, cuyo valor contiene al menos una ocurrencia de la subcadena <em>value</em>.</td>
                                         </tr>
                                         <tr>
                                             <td><code>[<em>attr</em>$=<em>value</em>]</code></td>
-                                            <td colspan="2"><pre><code class="language-css">li[class$="-box"]{/*...*/}</code></pre></td>
+                                            <td colspan="2"><code class="language-css">li[class$="-box"]{/*...*/}</code></td>
                                         </tr>
                                         <tr>
                                             <td colspan="3"><strong>DESCRIPCIÓN:</strong> Relaciona a los elementos con un nombre de atributo, <em>attr</em>, cuyo valor termina exactamente con la subcadena<em>value</em>.</td>
@@ -574,7 +589,7 @@
                             <table class="content-table">
                                 <thead>
                                  <tr>
-                                     <th colspan="3"><h3 class="title-aux">Case sensitive</h3></th>
+                                     <th colspan="3">Case sensitive</th>
                                  </tr>
                                  <tr>
                                      <th scope="col">Selector</th>
@@ -584,14 +599,14 @@
                                 <tbody>
                                      <tr>
                                          <td><code>i</code></td>
-                                         <td colspan="2"><pre><code class="language-css">li[class^="a" i]{/*...*/}</code></pre></td>
+                                         <td colspan="2"><code class="language-css">li[class^="a" i]{/*...*/}</code></td>
                                      </tr>
                                      <tr>
                                          <td colspan="3"><strong>DESCRIPCIÓN:</strong> Selecciona los elementos que cumplan con la descripción del selector pero adicionalmente su valor sea en letras minusculas</td>
                                      </tr>
                                      <tr>
                                          <td><code>s</code></td>
-                                         <td colspan="2"><pre><code class="language-css">ol[type="A" s]{/*...*/}</code></pre></td>
+                                         <td colspan="2"><code class="language-css">ol[type="A" s]{/*...*/}</code></td>
                                      </tr>
                                      <tr>
                                          <td colspan="3"><strong>DESCRIPCIÓN:</strong> Selecciona los elementos que cumplan con la descripción del selector pero adicionalmente su valor sea en letras minusculas, <strong>este atributo es experimental</strong>.</td>
@@ -604,13 +619,15 @@
                         <dd>
                             Las <a href="https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-classes" target="_blank" rel="noopener noreferrer">Pseudoclases</a> son palabras claves que se añaden a los selectores, los cuales representan un estado en particular del elemento seleccionado. Todas las pseudoclases se comportan del mismo modo. Seleccionan un fragmento del documento que está en un estado determinado y se comportan como si se hubiera añadido una clase a su html.
                             <h3 class="title-aux">Ejemplo</h3>
-                            <pre>
+                            <div class="codes">
                                 <code class="language-css">
                                     article p:first-child{/*...*/}
+                                </code><br><code class="language-css">
                                     a:hover{/*...*/}
+                                </code><br><code class="language-css">
                                     a:visited{/*...*/}
                                 </code>
-                            </pre>
+                            </div>
                             Algunas pseudoclases utiles son las siguientes:
                             <ul class="content">
                                 <li><strong>:nth-child()</strong>: Permite seleccionar un hijo de un elemento que tiene varios hijos, cada hijo se enumera según el orden de aparición, lo que nos permite colocar ese número ordinal entre paréntesis para ubicarlo, también es posible usar las palabras "odd" y "even" para indicar elementos impares o pares, según sea necesario</li>
@@ -629,15 +646,18 @@
                         <dd>
                             Los <a href="https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-elements" target="_blank" rel="noopener noreferrer">Pseudoelementos</a> se comportan como si agregaramos un elemento html nuevo al marcado, para diferenciarlos de las pseudoclases agregamos <strong>"::"</strong> al selector y el nombre del pseudoelemento en esta<a href="https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements#%c2%bfqu%c3%a9_es_un_pseudoelemento" target="_blank" rel="noopener noreferrer">Lista de Pseudoelementos y Pseudoclases</a> podemos ver una lista de ellos. 
                             <h3 class="title-aux">Ejemplo</h3>
-                            <pre>
+                            <div class="codes">
                                 <code class="language-css">
                                     article::before{/*...*/}
+                                </code><br><code class="language-css">
                                     p::after{/*...*/}
+                                </code><br><code class="language-css">
                                     p::first-letter {/*...*/}
+                                </code><br><code class="language-css">
                                     a::first-line{/*...*/}
                                 </code>
-                            </pre>
-                            <div class="alert"><!--** Parrafos de ADVERTENCIA **-->
+                            </div>
+                            <div class="alert">
                                 <p class="content-alert">
                                     <strong>ADVERTENCIA:</strong> para que podamos usar un ::before o un ::after debemos agregar un valor a "content" aunque sea un valor como <code class="language-css">content:"";</code> para que pueda verse el elemento y las modificaciones que le hagamos a estos pseudoelementos. Estos pseudoelementos no funcionan en los elementos <strong>in-line</strong>
                                 </p>
@@ -660,10 +680,11 @@
                         <dt id="operadores-combinacion"> <a href="#selector-menu">OPERADORES DE COMBINACION</a></dt>
                         <dd>
                             Los operadores de Combinación nos permiten combinar diferentes selectores e identificar la relacion que hay entre ellos
+                            <br><br>
                             <table class="content-table">
                                 <thead>
                                  <tr>
-                                     <th colspan="3"><h3 class="title-aux">Operadores de Combinación</h3></th>
+                                     <th colspan="3">Operadores de Combinación</th>
                                  </tr>
                                  <tr>
                                      <th scope="col">Operador</th>
@@ -673,35 +694,35 @@
                                 <tbody>
                                     <tr>
                                         <td><code><strong>","</strong></code></td>
-                                        <td colspan="2"><pre><code class="language-css">div, span{/*...*/}</code></pre></td>
+                                        <td colspan="2"><code class="language-css">div, span{/*...*/}</code></td>
                                     </tr>
                                     <tr>
                                         <td colspan="3"><strong>DESCRIPCIÓN:</strong> En este caso la <strong>","</strong> nos permite agrupar diferentes bloques que comparten la misma regla, todas las declaraciones se aplican al "div" y a "span" sin importar la relacion que tengan entre si</td>
                                     </tr>
                                      <tr>
                                          <td><code><strong>" "</strong></code></td>
-                                         <td colspan="2"><pre><code class="language-css">div span{/*...*/}</code></pre></td>
+                                         <td colspan="2"><code class="language-css">div span{/*...*/}</code></td>
                                      </tr>
                                      <tr>
                                          <td colspan="3"><strong>DESCRIPCIÓN:</strong>El espacio en blanco Selecciona todos los elementos "span" que se encuentran dentro de un "div", estos elementos no importa si son hijos directos o "nietos", siempre y cuando "div" sea el ancestro que los contenga</td>
                                      </tr>
                                      <tr>
                                          <td><code><strong>">"</strong></code></td>
-                                         <td colspan="2"><pre><code class="language-css">div>span{/*...*/}</code></pre></td>
+                                         <td colspan="2"><code class="language-css">div>span{/*...*/}</code></td>
                                      </tr>
                                      <tr>
                                          <td colspan="3"><strong>DESCRIPCIÓN:</strong>El selector hijo directo <strong>">"</strong> permite seleccionar a los elementos "span" que son hijos directos o se encuentran exactamente en el siguiente nivel de jerarquia de "div", en esta ocasión los elementos descendientes que se encuentren en niveles inferiores, no se veran afectados</td>
                                      </tr>
                                      <tr>
                                          <td><code><strong>"+"</strong></code></td>
-                                         <td colspan="2"><pre><code class="language-css">div+span{/*...*/}</code></pre></td>
+                                         <td colspan="2"><code class="language-css">div+span{/*...*/}</code></td>
                                      </tr>
                                      <tr>
                                          <td colspan="3"><strong>DESCRIPCIÓN:</strong>El selector Hermano adyacente <strong>"+"</strong> selecciona al "span" que es hermano de "div" y que son contiguos, es decir, esxactamente a lado de "div", en este caso ambos comparten la misma jerarquía</td>
                                      </tr>
                                      <tr>
                                          <td><code><strong>"~"</strong></code></td>
-                                         <td colspan="2"><pre><code class="language-css">div~span{/*...*/}</code></pre></td>
+                                         <td colspan="2"><code class="language-css">div~span{/*...*/}</code></td>
                                      </tr>
                                      <tr>
                                          <td colspan="3"><strong>DESCRIPCIÓN:</strong>El selector Hermano siguiente <strong>"~"</strong> selecciona al o los "span" que son hermanos de "div" no importa si son contiguos o hay varios bloques de diferencia siempre y cuando se encuentren en el mismo nivel de jerarquia y se encuentren despues de div</td>
@@ -712,7 +733,108 @@
                         </dd>
                     </dl>
                 </article>
+            </section>
+            <section class="section" id="box-model"><!--*** Box Model ************************-->
+                <h2 class="section-title">Modelo de Caja</h2><!--*** Box Model************************-->
+                <!--
+                    flow
+                    display:  Block - inline
+                    unidades
+                    width -height
+                    padding
+                    margin
+                    overflow
+                    box-sizing
+                -->
+            </section>
+            <section class="section" id="box-style"><!--*** Box-style ************************-->
+                <h2 class="section-title">Estilizando las cajas</h2>
+                <!--
+                    colores, rgb, rgba, hsla...
+                    color
+                    Background
+                    border
+                    border-radius
+                    box-shadow
+                    
+                    Gradiente
+                    outline
+                    image-border
+                    overflow-img
 
+                -->
+            </section>
+            <section class="section" id="texto-css"><!--*** Texto CSS ************************-->
+                <h2 class="section-title">Tipografías</h2>
+                <!-- 
+                        /*funciones min, max, clamp, calc, var, attr*/
+                        /*Clamp para texto fluido*/
+                    Font-face
+                    columnas
+                    word-wrap
+                    text-shadow
+                    font-family
+                    listas ul, ol, dl
+                    link
+
+                    writing-mode
+                    table 
+                    formulario
+
+
+                 -->
+            </section>
+            <section class="section" id="maquetacion"><!--*** Maquetación ************************-->
+                <h2 class="section-title">Maquetacion</h2>
+                <!-- 
+                    display
+                    visibility
+                    position 
+                        /*Position sticky no funciona si ancestro tiene overflow*/
+                    z-index
+                    Contextos de apilamiento "stacking-context"
+                    float
+                    inline-block
+                    table
+                    flexbox
+                    grid
+                 -->
+            </section>
+            <section class="section" id="media-queries"><!--*** Media Queries ************************-->
+                <h2 class="section-title">Media Queries</h2>
+                <!-- 
+                    screen
+                    print
+                 -->
+            </section>
+            <section class="section" id="responsive-design"><!--*** Responsive Design ************************-->
+                <h2 class="section-title">Depuración</h2>
+                <!-- 
+                    Organizacion 
+                    Variables
+                    Depuración
+                 -->
+            </section>
+            <section class="section" id="animaciones"><!--*** Animaciones ************************-->
+                <h2 class="section-title">Animaciones</h2>
+                <!-- 
+                    Transition
+                    Transform
+                    scale
+                    rotate
+                    skew
+                    translate
+                    Animacion @keyframes
+
+                 -->
+            </section>
+            <section class="section" id="depuracion"><!--*** Depuracion ************************-->
+                <h2 class="section-title">Depuración</h2>
+                <!-- 
+                    Organizacion 
+                    Variables
+                    Depuración
+                 -->
             </section>
         </div>
     </main>
