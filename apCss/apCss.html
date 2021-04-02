@@ -33,11 +33,16 @@
                             <li><a href="#que-es-css" >¿Que es CSS?</a></li>
                             <li><a href="#css-en-html" >CSS en HTML</a></li>
                             <li><a href="#regla-css" >Regla CSS</a></li>
-                            <li><a href="#esp-cas-her" >Cascada, herencia, especificidad</a></li>
                             <li><a href="#selectores" >Selectores</a></li>
+                            <li><a href="#esp-cas-her" >Cascada, herencia, especificidad</a></li>
                         </ul>
                     </li>
-                    <li><a href="#box-model">Modelo de Caja</a></li>
+                    <li><a href="#box-model">Modelo de Caja</a>
+                        <ul class="submenu">
+                            <li><a href="#flujo-normal" >Flujo Normal</a></li>
+                            <li><a href="#modelo-caja" >Modelos de Cajas</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#box-style">Estilos de caja</a></li>
                     <li><a href="#texto-css">Texto con CSS</a></li>
                     <li><a href="#maquetacion">Maquetación</a></li>
@@ -93,11 +98,9 @@
                                 </code>
                             </div>
 
-                            <div class="alert">
-                                <p class="content-alert">
-                                    <strong>ALERTA:</strong> Trabajar con estilos <em>In-line</em> es cómodo por que se agregan las reglas dentro de los atributos de la etiqueta, sin embargo, no se aprovecha la cascada de CSS, lo cual es una potente herramienta de diseño, tampoco se pueden repetir los estilos a diferentes páginas del mismo proyecto asi mismo afecta la Especificidad, pues el estilo <em>In-line</em> siempre tiene mayor prioridad sobre las otras formas.
-                                </p>
-                            </div> 
+                            <p class="alert">
+                                <strong>ALERTA:</strong> Trabajar con estilos <em>In-line</em> es cómodo por que se agregan las reglas dentro de los atributos de la etiqueta, sin embargo, no se aprovecha la cascada de CSS, lo cual es una potente herramienta de diseño, tampoco se pueden repetir los estilos a diferentes páginas del mismo proyecto asi mismo afecta la Especificidad, pues el estilo <em>In-line</em> siempre tiene mayor prioridad sobre las otras formas.
+                            </p>
                         </dd>
 
                         <dt>EMBEBIDA:</dt>
@@ -108,31 +111,22 @@
                             <div class="codes">
                                 <code class="language-html">
                                     &lt;head&gt;
-                                        &lt;style&gt; 
-                                        p{ 
-                                            font-size:20px; 
-                                        } 
-                                        &lt;&#47;style&gt; 
-                                    &lt;&#47;head&gt;
-                                </code>
-                            </div>
-                            <div class="codes">
-                                <code class="language-html">
-                                    <p>&lt;head&gt;</p>
-                                    &nbsp;&nbsp;&lt;style&gt; <br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;p{ <br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size:20px; <br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;} <br>
-                                    &nbsp;&nbsp;&lt;&#47;style&gt; <br>
+                                </code><br>&nbsp;&nbsp;<code class="language-html">
+                                    &lt;style&gt;
+                                </code><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code class="language-html"> 
+                                    p{font-size:20px;}
+                                </code><br>&nbsp;&nbsp;<code class="language-html"> 
+                                    &lt;&#47;style&gt; 
+                                </code><br><code class="language-html">
                                     &lt;&#47;head&gt;
                                 </code>
                             </div>
 
-                            <div class="alert">>
-                                <p class="content-alert">
+                            
+                                <p class="alert">
                                     <strong>ALERTA:</strong> A pesar que la forma embebida nos permite aprovechar de mejor manera la cascada, es una buena práctica utilizar la tercera forma, además que nos permite agregar esas mismas reglas de estilo a otras páginas.
                                 </p>
-                            </div>
+                            
                         </dd>
 
                         <dt>ENLACE:</dt>
@@ -143,7 +137,9 @@
                             <div class="codes">
                                 <code class="language-html">
                                     &lt;head&gt;
+                                </code><br>&nbsp;&nbsp;&nbsp;&nbsp;<code class="language-html">
                                         &lt;link rel="stylesheet" href="css/estilo.css" &gt;
+                                </code><br><code class="language-html">
                                     &lt;&#47;head&gt;
                                 </code>
                             </div>
@@ -159,7 +155,7 @@
                         La forma en que CSS realiza estos cambios es estableciendo "Reglas Predeterminadas" o simplemente "Reglas" las cuales le indican al nevegador como debe mostrar ese elemento que estamos manipulando, cada regla que establezcamos debe tener la siguiente estructura: 
                     </p>
                     <div class="ilustracion">
-                        <img src="img/regla.png" alt="Regla CSS" class="ilustracion">
+                        <img src="img/regla.png" alt="Regla CSS">
                     </div>
                     <p class="content">
                         A continuación describimos cada una de sus partes:
@@ -175,204 +171,22 @@
                         <dd>
                             La propiedad nos indica que característica del elemento queremos cambiar, su anchura, su altura, su color, etc. de esta manera indicamos al navegador como debe visualizarse. es importante que después de mencionar la propiedad separemos con <em>":"</em> los valores que le daremos a la misma.
                         
-                            <div class="note">
-                                <p class="content-note">
+                            <p class="note">
                                     <strong>NOTA:</strong> Cada propiedad puede llevar consigo más de un valor, generalmente, se identifica un valor de otro por que van separados por espacios, de igual manera existen funciones que nos apoyan para colocar de mejor manera estos valores.
                                 </p>
-                            </div>
                         </dd>
 
                         <dt>VALOR:</dt>
                         <dd>
                             Una vez que hemos señalado la propiedad debemos indicar adecuadamente el nuevo valor que ésta tendrá, este cambio de magnitud depende de la propiedad que estamos modificando, una vez que hayamos establecido los valores adecuados, la declaración debe finalizar con <em>";"</em>.
 
-                            <div class="note">
-                                <p class="content-note">
+                            <p class="note">
                                     <strong>NOTA:</strong> Cada Valor es diferente para cada tipo de propiedad, lo más común es que este valor vaya acompañado de un magnitud o unidad de medida que especifica la manera en que la propiedad cambiará.
                                 </p>
-                            </div>
                         </dd>
 
                     </dl>
                     
-                </article>
-                <article class="concept"><!--Especificidad, Cascada y Herencia-->
-                    <h3 class="title-concept" id="esp-cas-her">Herencia, Cascada y Especificidad</h3>
-                    <p class="content">
-                        Estos 3 conceptos se encuentran estrechamente relacionados y son los responsables que se apliquen o no las reglas que se definen, estas características tambien son útiles para asignarle la misma regla a diferentes elementos con características similares sin necesidad de repetir código
-                    </p>
-                    <h3 class="title-aux">Herencia</h3>
-                    <p class="content">
-                        La herencia es el mecanismo mediante el cual un objeto padre (o de jerarquía superior) "hereda" características a sus hijos directos y ellos a su vez heredarían éstas características o lo siguientes elementos descendientes. Existirán características que serán heredables y algunas otras no podrán heredarse.
-                    </p>
-                    <p class="content">
-                        CSS proporciona 4 valores (1 elemento experimental) de propiedad universales especiales para el control de la herencia. Todas las propiedades CSS aceptan estos valores.
-                    </p>
-                    <dl class="content">
-                        <dt>inherit:</dt>
-                        <dd>Este valor hace que la propiedad a la que se aplica, sea exactamente igual al valor de su padre en la misma propiedad, en otras palabras "activa la herencia"</dd>
-                        <dt>initial:</dt>
-                        <dd>Cada navegador tiene por defecto una hoja de estilo para los elementos, la cual suele ser diferente para uno de ellos, esta hoja posiciona esos valores básicos, al usar el valor "initial" la propiedad regresa a los valores por defecto que posee el navegador</dd>
-                        <dt>unset:</dt>
-                        <dd>Reestablece el valor a su valor natural, puede ser inherit o initial, dependiendo de la propiedad a la que se aplique.</dd>
-                        <dt>revert:</dt>
-                        <dd>es un valor experimental, el cual tendría como propósito revertir la cascada y regresar su valor al que heredaría de su ancestro más cercano</dd>
-                        <dt>all</dt>
-                        <dd>Esta es una Propiedad abreviada que tiene por objetivo controlar la herencia en las reglas CSS, esta afecta a casi todas las propiedades a la vez y puede tomar cualquiera de los 4 valores anteriores por ejemplo: <code class="language-css"> a {all:revert;}</code></dd>
-                    </dl>
-                    <h3 class="title-aux">Cascada</h3>
-                    <p class="content">
-                       Esta propiedad permite que un regla pueda aplicarse a diferentes elementos, por ejemplo, si definimos una regla para los parrafos "p" todas las etiquetas "p" aplicaran la misma regla, sin embargo, si mas adelante se enuncia una regla diferente para el selector "p", se aplicará la ultima regla que aparezca: 
-                    </p>
-                    <h3 class="title-aux">Ejemplo:</h3>
-                    <div class="codes"><code class="language-css">
-                        /*...*/
-                        p{color:blue;}
-                        p{color:red;}
-                        p{color:orange;}
-                        /*...*/
-                    </code></div>
-                    <p class="content">
-                        En este ejemplo podemos ver visualmente como es que se han aplicado diferentes reglas a las etiquetas "p", sin embargo la regla que prevalecerá será la que tiene color naranja, ya que la cascada respeta la última regla válida. 
-                     </p>
-                     <h3 class="title-aux">Especificidad</h3>
-                     <p class="content">
-                        La especificidad, se aplica para aquellos elementos se encuentran referidos en más de una regla y tienen diferente selector, para ello, se analiza la manera en que el selector se ha construido y se refiere a ese elemento, dándole valores a las diferentes formas de construir el selector, provocando que aquel que sea más específico para referirse al elemento sea quien prepondere sobre los demás.
-                     </p>
-                     <p class="content">
-                        Para explicar mejor esta idea, se le da un valor numérico a los selectores, se distingue entre etiquetas, clases, id, inline y sobre el important ese valor se suma y se aplica la regla que tenga un selector con mayor número, es decir, mayor especificidad.
-                     </p>
-                     <p class="content">
-                        Los valores aproximados que se asignan son los siguientes.
-                     </p>
-                     <table class="content-table">
-                         <thead>
-                             <tr>
-                                 <th>Selector</th>
-                                 <th>Valor</th>
-                                 <th>Descripcion</th>
-                             </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td>*, +, >, ~, " ", ",", :not</td>
-                                 <td>0</td>
-                                 <td>El selector universal, combinadores y la pseudoclase :not no influyen en el calculo de la especificidad</td>
-                             </tr>
-                             <tr>
-                                 <td>Tag</td>
-                                 <td>1</td>
-                                 <td>El selector de tipo de etiqueta "&lt;&gt;", o pseudoelemento "::" agrega una unidad.</td>
-                             </tr>
-                             <tr>
-                                 <td>Clase</td>
-                                 <td>10</td>
-                                 <td>El selector de clase ".", de atributo"[]" o pseudoclase ":" </td>
-                             </tr>
-                             <tr>
-                                 <td>Id</td>
-                                 <td>100</td>
-                                 <td>Para cada selector de Id "#"</td>
-                             </tr>
-                             <tr>
-                                 <td>In-Line</td>
-                                 <td>1000</td>
-                                 <td>Estos estilos se especifican directamente sobre el atributo "style" de la estiqueta correspondiente en el documento html
-                                 </td>
-                             </tr>
-                             <tr>
-                                 <td>!important</td>
-                                 <td>1,000,000</td>
-                                 <td>la declaración que contenga como valor !important prevalece sobre cualquier otra regla</td>
-                             </tr>
-
-                         </tbody>
-
-                     </table>
-                     <div class="alert">
-                        <p class="content-alert">
-                            <strong>ALERTA:</strong> Usar "!important" es una mala práctica, conocer este valor para los atributos es útil para casos extremos, pero no para casos comunes que pueden resolverse con clases o combinadores.
-                        </p>
-                    </div>
-                     <p class="content">
-                        A manera de Ejemplo colocaremos los siguientes ejemplos calculando sus valores
-                     </p>
-                    <table class="content-table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Selector</th>
-                                <th scope="col">M:</th>
-                                <th scope="col">C:</th>
-                                <th scope="col">D:</th>
-                                <th scope="col">U:</th>
-                                <th scope="col">Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><code class="language-css">h1{/*...*/}</code></td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>1</td>
-                                <td>0001</td>
-                            </tr>
-                            <tr>
-                                <td><code class="language-css">h1 + p::first-letter{/*...*/}</code></td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>3</td>
-                                <td>0003</td>
-                            </tr>
-                            <tr>
-                                <td><code class="language-css">li &gt; a[href*="en-US"] &gt; .inline-warning{/*...*/}</code></td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>2</td>
-                                <td>2</td>
-                                <td>0022</td>
-                            </tr>
-                            <tr>
-                                <td><code class="language-css">#identifier{/*...*/}</code></td>
-                                <td>0</td>
-                                <td>1</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0100</td>
-                            </tr>
-                            <tr>
-                                <td> <code class="language-html">
-                                    &lt;a style="color:blue;"&gt;link&lt;&#47;a&gt;
-                                </code></td>
-                                <td>1</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>1000</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                     <p class="content">
-                        Para entender mejor esta idea, es útil que entendamos como es que el navegador asigna estilos a los diferentes elementos.
-                     </p>
-                     <ol class="content">
-                         <li>Herencia</li>
-                         <li>Orden del código</li>
-                         <li>Especificidad</li>
-                         <li>Importancia</li>
-                     </ol>
-                     <dl class="content">
-                         <dt>Herencia:</dt>
-                         <dd>El navegador primero se fija en la hoja de estilos que tiene predeterminada y la forma en que estos estilos se heredan a sus hijos, estos se colocan de forma inicial</dd>
-                         <dt>Órden del código:</dt>
-                         <dd>Después observa los estilos que se encuentran definidas en la hoja de estilos del usuario, si hay conflicto, las hojas definidas por el usuario tienen preponderancia, si hay diferentes reglas que se aplican al mismo elemento se observa el orden en que aparecen y las últimas definidas son las que tienen mayor preponderancia</dd>
-                         <dt>Especificidad:</dt>
-                         <dd> Si existen coincidencias de reglas que se refieren a un mismo elemento, el navegador observa que regla se ha definido de forma "más específica" es decir, cual regla provoca que se seleccione a un elemento de manera inequivoca o de forma menos general.
-                         </dd>
-                         <dt>Importancia</dt>
-                         <dd>Propiedades que contengan el valor !important</dd>
-                     </dl>
                 </article>
                 <article class="concept"><!--Selectores-->
                     <h3 class="title-concept" id="selectores">SELECTORES</h3>
@@ -416,17 +230,12 @@
                             <h3 class="title-aux">En archvo CSS:</h3>
                             <div class="codes">
                                 <code class="language-css">
-                                    p{
-                                      font-size: 20px;
-                                    }
+                                    p{font-size: 20px;}
                                 </code>
                             </div>
-                            <div class="alert">
-                                <p class="content-alert">
+                            <p class="alert">
                                     <strong>ALERTA:</strong> cuando usamos esta forma de seleccionar los elementos, la regla que definamos se aplica para todas las etiquetas del mismo tipo. En el caso del ejemplo todas las etiquetas "p" seran afectadas por este estilo.
                                 </p>
-                                
-                            </div> 
                         </dd>
                         <dt id="selector-clase"><a href="#selector-menu">SELECTOR DE CLASE</a></dt>
                         <dd>
@@ -443,9 +252,7 @@
                             <h3 class="title-aux">En archvo CSS:</h3>
                             <div class="codes">
                                 <code class="language-css">
-                                    .amarillo{
-                                      color: yellow;
-                                    }
+                                    .amarillo{color: yellow;}
                                 </code>
                             </div>
                             De ser necesario, podemos modificar el ejemplo para asignar la clase a diferentes etiquetas y observar como se aplica la regla a las etiquetas que seleccionamos, miestras que las etiquetas que no contienen a la clase, quedan excluidas de la regla, todo esto se aplica sin modificar el archivo *.css.
@@ -453,8 +260,11 @@
                             <div class="codes">
                                 <code class="language-html">
                                     &lt;h1 class="amarillo"&gt; Titulo Amarillo &lt;&#47;h1&gt;
+                                </code><br><code class="language-html">
                                     &lt;p&gt; Este parrafo va en color predeterminado&lt;&#47;p&gt;
+                                </code><br><code class="language-html">
                                     &lt;p&gt; Este parrafo tampoco se aplica la regla&#47;p&gt;
+                                </code><br><code class="language-html">
                                     &lt;p class="amarillo"&gt; Este parrafo SI es amarillo&lt;&#47;p&gt;
                                 </code>
                             </div>
@@ -657,11 +467,9 @@
                                     a::first-line{/*...*/}
                                 </code>
                             </div>
-                            <div class="alert">
-                                <p class="content-alert">
+                            <p class="alert">
                                     <strong>ADVERTENCIA:</strong> para que podamos usar un ::before o un ::after debemos agregar un valor a "content" aunque sea un valor como <code class="language-css">content:"";</code> para que pueda verse el elemento y las modificaciones que le hagamos a estos pseudoelementos. Estos pseudoelementos no funcionan en los elementos <strong>in-line</strong>
-                                </p>
-                            </div>
+                            </p>
                         </dd>
                         <dt id="selector-universal"><a href="#selector-menu">SELECTOR UNIVERSAL</a></dt>
                         <dd>
@@ -733,18 +541,329 @@
                         </dd>
                     </dl>
                 </article>
+                <article class="concept"><!--Especificidad, Cascada y Herencia-->
+                    <h3 class="title-concept" id="esp-cas-her">Herencia, Cascada y Especificidad</h3>
+                    <p class="content">
+                        Estos 3 conceptos se encuentran estrechamente relacionados y son los responsables que se apliquen o no las reglas que se definen, estas características tambien son útiles para asignarle la misma regla a diferentes elementos con características similares sin necesidad de repetir código
+                    </p>
+                    <h3 class="title-aux">Herencia</h3>
+                    <p class="content">
+                        La herencia es el mecanismo mediante el cual un objeto padre (o de jerarquía superior) "hereda" características a sus hijos directos y ellos a su vez heredarían éstas características o lo siguientes elementos descendientes. Existirán características que serán heredables y algunas otras no podrán heredarse.
+                    </p>
+                    <p class="content">
+                        CSS proporciona 4 valores (1 elemento experimental) de propiedad universales especiales para el control de la herencia. Todas las propiedades CSS aceptan estos valores.
+                    </p>
+                    <dl class="content">
+                        <dt>inherit:</dt>
+                        <dd>Este valor hace que la propiedad a la que se aplica, sea exactamente igual al valor de su padre en la misma propiedad, en otras palabras "activa la herencia"</dd>
+                        <dt>initial:</dt>
+                        <dd>Cada navegador tiene por defecto una hoja de estilo para los elementos, la cual suele ser diferente para uno de ellos, esta hoja posiciona esos valores básicos, al usar el valor "initial" la propiedad regresa a los valores por defecto que posee el navegador</dd>
+                        <dt>unset:</dt>
+                        <dd>Reestablece el valor a su valor natural, puede ser inherit o initial, dependiendo de la propiedad a la que se aplique.</dd>
+                        <dt>revert:</dt>
+                        <dd>es un valor experimental, el cual tendría como propósito revertir la cascada y regresar su valor al que heredaría de su ancestro más cercano</dd>
+                        <dt>all</dt>
+                        <dd>Esta es una Propiedad abreviada que tiene por objetivo controlar la herencia en las reglas CSS, esta afecta a casi todas las propiedades a la vez y puede tomar cualquiera de los 4 valores anteriores por ejemplo: <code class="language-css"> a {all:revert;}</code></dd>
+                    </dl>
+                    <h3 class="title-aux">Cascada</h3>
+                    <p class="content">
+                       Esta propiedad permite que un regla pueda aplicarse a diferentes elementos, por ejemplo, si definimos una regla para los parrafos "p" todas las etiquetas "p" aplicaran la misma regla, sin embargo, si mas adelante se enuncia una regla diferente para el selector "p", se aplicará la ultima regla que aparezca: 
+                    </p>
+                    <h3 class="title-aux">Ejemplo:</h3>
+                    <div class="codes"><code class="language-css">
+                        /*...*/
+                    </code><br><code class="language-css">
+                        p{color:blue;}
+                    </code><br><code class="language-css">
+                        p{color:red;}
+                    </code><br><code class="language-css">
+                        p{color:orange;}
+                    </code><br><code class="language-css">
+                        /*...*/
+                    </code></div>
+                    <p class="content">
+                        En este ejemplo podemos ver visualmente como es que se han aplicado diferentes reglas a las etiquetas "p", sin embargo la regla que prevalecerá será la que tiene color naranja, ya que la cascada respeta la última regla válida. 
+                     </p>
+                     <h3 class="title-aux">Especificidad</h3>
+                     <p class="content">
+                        La especificidad, se aplica para aquellos elementos se encuentran referidos en más de una regla y tienen diferente selector, para ello, se analiza la manera en que el selector se ha construido y se refiere a ese elemento, dándole valores a las diferentes formas de construir el selector, provocando que aquel que sea más específico para referirse al elemento sea quien prepondere sobre los demás.
+                     </p>
+                     <p class="content">
+                        Para explicar mejor esta idea, se le da un valor numérico a los selectores, se distingue entre etiquetas, clases, id, inline y sobre el important ese valor se suma y se aplica la regla que tenga un selector con mayor número, es decir, mayor especificidad.
+                     </p>
+                     <p class="content">
+                        Los valores aproximados que se asignan son los siguientes.
+                     </p>
+                     <table class="content-table">
+                         <thead>
+                             <tr>
+                                 <th>Selector</th>
+                                 <th>Valor</th>
+                                 <th>Descripcion</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>*, +, >, ~, " ", ",", :not</td>
+                                 <td>0</td>
+                                 <td>El selector universal, combinadores y la pseudoclase :not no influyen en el calculo de la especificidad</td>
+                             </tr>
+                             <tr>
+                                 <td>Tag</td>
+                                 <td>1</td>
+                                 <td>El selector de tipo de etiqueta "&lt;&gt;", o pseudoelemento "::" agrega una unidad.</td>
+                             </tr>
+                             <tr>
+                                 <td>Clase</td>
+                                 <td>10</td>
+                                 <td>El selector de clase ".", de atributo"[]" o pseudoclase ":" </td>
+                             </tr>
+                             <tr>
+                                 <td>Id</td>
+                                 <td>100</td>
+                                 <td>Para cada selector de Id "#"</td>
+                             </tr>
+                             <tr>
+                                 <td>In-Line</td>
+                                 <td>1000</td>
+                                 <td>Estos estilos se especifican directamente sobre el atributo "style" de la estiqueta correspondiente en el documento html
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td>!important</td>
+                                 <td>1,000,000</td>
+                                 <td>la declaración que contenga como valor !important prevalece sobre cualquier otra regla</td>
+                             </tr>
+
+                         </tbody>
+
+                     </table>
+                     <div class="alert">
+                        <p class="content-alert">
+                            <strong>ALERTA:</strong> Usar "!important" es una mala práctica, conocer este valor para los atributos es útil para casos extremos, pero no para casos comunes que pueden resolverse con clases o combinadores.
+                        </p>
+                    </div>
+                     <p class="content">
+                        A manera de Ejemplo colocaremos los siguientes ejemplos calculando sus valores
+                     </p>
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Selector</th>
+                                <th scope="col">M:</th>
+                                <th scope="col">C:</th>
+                                <th scope="col">D:</th>
+                                <th scope="col">U:</th>
+                                <th scope="col">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code class="language-css">h1{/*...*/}</code></td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>0001</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-css">h1 + p::first-letter{/*...*/}</code></td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>3</td>
+                                <td>0003</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-css">li &gt; a[href*="en-US"] &gt; .inline-warning{/*...*/}</code></td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>0022</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-css">#identifier{/*...*/}</code></td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0100</td>
+                            </tr>
+                            <tr>
+                                <td> <code class="language-html">
+                                    &lt;a style="color:blue;"&gt;link&lt;&#47;a&gt;
+                                </code></td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>1000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                     <p class="content">
+                        Para entender mejor esta idea, es útil que entendamos como es que el navegador asigna estilos a los diferentes elementos.
+                     </p>
+                     <ol class="content">
+                         <li>Herencia</li>
+                         <li>Orden del código</li>
+                         <li>Especificidad</li>
+                         <li>Importancia</li>
+                     </ol>
+                     <dl class="content">
+                         <dt>Herencia:</dt>
+                         <dd>El navegador primero se fija en la hoja de estilos que tiene predeterminada y la forma en que estos estilos se heredan a sus hijos, estos se colocan de forma inicial</dd>
+                         <dt>Órden del código:</dt>
+                         <dd>Después observa los estilos que se encuentran definidas en la hoja de estilos del usuario, si hay conflicto, las hojas definidas por el usuario tienen preponderancia, si hay diferentes reglas que se aplican al mismo elemento se observa el orden en que aparecen y las últimas definidas son las que tienen mayor preponderancia</dd>
+                         <dt>Especificidad:</dt>
+                         <dd> Si existen coincidencias de reglas que se refieren a un mismo elemento, el navegador observa que regla se ha definido de forma "más específica" es decir, cual regla provoca que se seleccione a un elemento de manera inequivoca o de forma menos general.
+                         </dd>
+                         <dt>Importancia</dt>
+                         <dd>Propiedades que contengan el valor !important</dd>
+                     </dl>
+                </article>
             </section>
             <section class="section" id="box-model"><!--*** Box Model ************************-->
-                <h2 class="section-title">Modelo de Caja</h2><!--*** Box Model************************-->
-                <!--
-                    flow
-                    display:  Block - inline
-                    unidades
+                <h2 class="section-title">Modelo de Caja</h2>
+                <article class="concept"><!--Flujo Normal-->
+                    <h3 class="title-concept" id="flujo-normal">Flujo Normal</h3>
+                        <p class="content">
+                            Lo que se conoce como flujo normal es la manera en que los diferentes elementos se acomodan en el navegador de forma predeterminada, es decir, sin que exista una hoja de estilos que le ordene como deben verse y acomodarse esos elementos. 
+                        </p>
+                        <p class="content">
+                            Esta manera de acomodar a los elementos, es útil por que nos da un inicio para no trabajar desde cero el acomodo y arreglo de los diferentes elementos, esta primera forma respeta el orden en que se describieron las etiquetas en la página html y se acomodan una atras de otra respetando la naturaleza de cada etiqueta, esta naturaleza puede ser en <strong>Bloque</strong> o en <strong>Línea</strong> 
+                        </p>
+                        <dl class="content">
+                            <dt>Bloque:</dt>
+                            <dd>Las etiquetas en <strong>bloque</strong>  tienen la característica que se apilan de forma vertical una sobre otra, éstas etiquetas pueden contener otras etiquetas de bloque u otras etiquetas en línea, en este enlace aparecerá una <a href="https://developer.mozilla.org/es/docs/Web/HTML/Block-level_elements" target="_blank" rel="noopener noreferrer">lista de etiquetas en bloque</a>. algunas de sus características son:</dd>
+                            <ul class="content">
+                                <li>La caja fuerza un salto de línea al llegar al final de la línea.</li>
+                                <li>La caja se extenderá en la dirección de la línea para llenar todo el espacio disponible que haya en su contenedor. En la mayoría de los casos, esto significa que la caja será tan ancha como su contenedor, y llenará el 100% del espacio disponible.</li>
+                                <li>Se respetan las propiedades <a href="https://developer.mozilla.org/es/docs/Web/CSS/width" target="_blank" rel="noopener noreferrer"><code>width</code></a> y <a href="https://developer.mozilla.org/es/docs/Web/CSS/height" target="_blank" rel="noopener noreferrer"><code>height</code></a>.</li>
+                                <li>El relleno, el margen y el borde mantienen a los otros elementos alejados de la caja.</li>
+                            </ul>
+
+                            <dt>In-line:</dt>
+                            <dd>Las etiquetas con naturaleza <strong>In-line</strong> se acomodan en el eje horizontal una a lado de la otra, una forma de visualizarlo sería verlos como si fueran "palabras" dentro de un párrafo, estas palabras solo ocupan el espacio absolutamente necesario y tienen una separación mínima entre otras palabras, esta es una <a href="https://developer.mozilla.org/es/docs/Web/HTML/Inline_elements" target="_blank" rel="noopener noreferrer">lista de elementos en línea</a></dd>
+                            <ul class="content">
+                                <li>La caja no fuerza ningún salto de línea al llegar al final de la línea.</li>
+                                <li>Las propiedades <a href="https://developer.mozilla.org/es/docs/Web/CSS/width" target="_blank" rel="noopener noreferrer"><code>width</code></a> y <a href="https://developer.mozilla.org/es/docs/Web/CSS/height" target="_blank" rel="noopener noreferrer"><code>height</code></a> no se aplican.</li>
+                                <li>Se aplican relleno, margen y bordes verticales, pero no mantienen alejadas otras cajas en línea.</li>
+                                <li>Se aplican relleno, margen y bordes horizontales, y mantienen alejadas otras cajas en línea.</li>
+                            </ul>
+                        </dl>
+                        <p class="content">
+                            Existen dos tipos de visualizaciones, la Externa y la interna, la externa tiene que ver directamente con su naturaleza, si es en bloque o in-line, sin embargo aunque la visualización interna sigue este patron, esta visualización interna puede cambiarse por ejemplo al usar display:flex o display:grid 
+                        </p>
+                        <h3 class="title-aux">Display</h3>
+                        <p class="content">La manera en que podemos cambiar la naturaleza de una caja es mediante la propiedad <code class="language-css">display:/*valor*/;</code> formalmente esta propiedad tiene la capacidad cambiar tanto la visualización interna y externa de los elementos y existe una extensa aplicacion que puede hacerse gracias a esta propiedad y puede verse en esta <a href="https://developer.mozilla.org/es/docs/Web/CSS/display" target="_blank" rel="noopener noreferrer">Lista de valores display</a>, sin embargo, por ahora mostraremos solo 3 valores:</p>
+                        <dl class="content">
+                            <dt>block</dt>
+                            <dd>Esta propiedad asigna a la caja correspondiente que se comporte como un elemento de bloque, no importa si su naturaleza era in-line, el nuevo valor forza el comportamiento. Su sintaxis es: <code class="language-css">display:block;</code></dd>
+                            
+                            <dt>inline</dt>
+                            <dd>Esta propiedad provoca que la caja se comporte como un elemento inline, sin importar su naturaleza. Su sintaxis es: <code class="language-css">display:inline;</code></dd>
+
+                            <dt>inline-block</dt>
+                            <dd>Esta propiedad forza al elemento a comportarse como una combinación de las propiedades anteriores, es decir, la caja se comporta como un elemento inline, en el sentido que no forza el salto de linea, pero admite los valores de with y height. su sintaxis es: <code class="language-css">display:inline-block;</code></dd>
+                        </dl>
+                </article>
+                <article class="concept"><!-- Modelo de Cajas-->
+                    <h3 class="title-concept" id="modelo-caja">Modelo de cajas</h3>
+                    <p class="content">
+                        Una vez que hemos entendido el flujo natural de los elementos, tenemos que observar cuales son las propiedades que afectan el tamaño de ellos, para después "acomodarlas" en un proceso que se conoce como maquetado, estas propiedades se superponen una encima de la otra "Engordando" a la caja, lo que provoca que se afecte el tamaño final de la caja, esta situación puede provocarnos comportamientos inesperados al momento de acomodar los elementos. Los elementos que se ven afectados por todas las propiedades que a continuación se enumeran son los de bloque, que los in-line, solo se ven afectados por algunos de ellos:
+                    </p>
+                    <ul class="content">
+                        <li>El <strong>contenido de la caja</strong> (o <em>content box</em>): El área donde se muestra el contenido, cuyo tamaño puede cambiarse utilizando propiedades como <a href="https://developer.mozilla.org/es/docs/Web/CSS/width" target="_blank" rel="noopener noreferrer"><code>width</code></a> y <a href="https://developer.mozilla.org/es/docs/Web/CSS/height" target="_blank" rel="noopener noreferrer"><code>height</code></a>.</li>
+                        <li>El <strong>relleno de la caja</strong> (o <em>padding box</em>): El relleno es espacio en blanco alrededor del contenido; es posible controlar su tamaño usando la propiedad <a href="https://developer.mozilla.org/es/docs/Web/CSS/padding" target="_blank" rel="noopener noreferrer"><code>padding</code></a> y otras propiedades relacionadas.</li>
+                        <li>El <strong>borde de la caja</strong> (o <em>border box</em>): El borde de la caja envuelve el contenido y el de relleno. Es posible controlar su tamaño y estilo utilizando la propiedad <a href="https://developer.mozilla.org/es/docs/Web/CSS/border" target="_blank" rel="noopener noreferrer"><code>border</code></a> y otras propiedades relacionadas.</li>
+                        <li>El <strong>margen de la caja</strong> (o <em>margin box</em>): El margen es la capa más externa. Envuelve el contenido, el relleno y el borde como espacio en blanco entre la caja y otros elementos. Es posible controlar su tamaño usando la propiedad <a href="https://developer.mozilla.org/es/docs/Web/CSS/margin" target="_blank" rel="noopener noreferrer"><code>margin</code></a> y otras propiedades relacionadas.</li>
+                    </ul>
+                    <div class="ilustracion">
+                        <img src="img/box-model (1).png" alt="Modelo de caja" class="ilustracion">
+                    </div>
+
+                    <h3 class="title-aux">Modelo de Caja Estandar</h3>
+                    <p class="content">
+                        cuando se definen las propiedades de width y height, estas se aplican directamente al content-box, y todas las demás propiedades se suman de forma externa para obtener el tamaño final. Por ejemplo:
+                    </p>
+                    <div class="codes">
+                        <code class="language-css">
+                            .box {
+                        </code><br><code class="language-css">
+                                width: 350px;
+                            </code><br><code class="language-css">
+                                height: 150px;
+                            </code><br><code class="language-css">
+                                margin: 10px;
+                            </code><br><code class="language-css">
+                                padding: 25px;
+                            </code><br><code class="language-css">
+                                border: 5px solid black;
+                            </code><br><code class="language-css">
+                              }
+                        </code>
+                    </div>
+                    <div class="ilustracion">
+                        <img src="img/standard-box-model.png" alt="Modelo de caja" class="ilustracion">
+                    </div>
+                    <p class="content">
+                        como se puede apreciar, el espacio que ocupa nuestra caja usando el modelo de cajas estándar será en realidad de 410 px (350 + 25 + 25 + 5 + 5); y su altura, de 210 px (150 + 25 + 25 + 5 + 5), porque el área de relleno y el borde se añaden al ancho que se utiliza para el contenido de la caja
+                    </p>
+                    <p class="note">
+                        El margen no se cuenta para el tamaño final de la caja, el tamaño de la caja se calcula hasta el borde
+                    </p>
+                    <h3 class="title-aux">Modelo de Caja Alternativo</h3>
+                    <p class="content">
+                        El este modelo de caja el tamaño dado por los valores width y height se determina por la caja del borde, esto permite que los valores de padding y border queden "dentro" del tamaño de caja definido, por lo que sabremos a ciencia cierta cuanto mide la caja y no debemos de añadir mas pixeles.
+                    </p>
+                    <div class="ilustracion">
+                        <img src="img/alternate-box-model.png" alt="Modelo de caja" class="ilustracion">
+                    </div>
+                    <p class="content">
+                        Para lograrlo, debemos agregar la propiedad <strong><code>box-sizing</code></strong> con el valor <strong><code>border-box</code></strong> ya que los navegadores de forma predeterminada usan el modelo de cajas estandar, y debemos "decirle" que active esta característica para ayudarnos a tener un mejor control en el tamaño.
+                    </p>
+                    <div class="codes">
+                        <code class="language-css">
+                            .box {
+                        </code><br><code class="language-css">
+                                box-sizing: border-box;
+                            </code><br><code class="language-css">
+                                /*...*/
+                            </code><br><code class="language-css">
+                              }
+                        </code>
+                    </div>
+                    <p class="content">
+                        Si quieres que todos tus elementos usen el modelo de cajas alternativo (opción común entre los desarrolladores) debes establecer la propiedad <code>box-sizing</code> en el elemento <code>&lt;html&gt;</code>. Luego debes configurar todos los demás elementos para que hereden ese valor, como se ve en el fragmento de código siguiente. Si deseas comprender qué hay detrás, consulta el <a href="https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/" target="_blank" rel=" noopener">artículo de <em>CSS-Tricks</em> sobre el tamaño de las cajas</a>.
+                    </p>
+                    <div class="codes">
+                        <code class="language-css">
+                            html{
+                        </code><br><code class="language-css">
+                                box-sizing: border-box;
+                            </code><br><code class="language-css">
+                             }
+                            </code><br><code class="language-css">
+                             *, *::before, *::after{
+                            </code><br><code class="language-css">
+                                box-sizing: inherit;
+                            </code><br><code class="language-css">
+                              }
+                        </code>
+                    </div>
+
+                       
+                </article>
+                <!--                    
                     width -height
-                    padding
                     margin
+                    Margin Collapse
+                    padding
+                    
+                    unidades
                     overflow
-                    box-sizing
                 -->
             </section>
             <section class="section" id="box-style"><!--*** Box-style ************************-->
@@ -778,6 +897,7 @@
                     link
 
                     writing-mode
+                        /*https://developer.mozilla.org/es/docs/Web/CSS/writing-mode*/
                     table 
                     formulario
 
@@ -808,7 +928,7 @@
                  -->
             </section>
             <section class="section" id="responsive-design"><!--*** Responsive Design ************************-->
-                <h2 class="section-title">Depuración</h2>
+                <h2 class="section-title">responsive-design</h2>
                 <!-- 
                     Organizacion 
                     Variables
