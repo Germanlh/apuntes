@@ -11,7 +11,7 @@
 </head>
 <body>
     <main>
-        <aside><!--*** MENU ****************-->
+        <aside><!-- <<<<<<< MENU >>>>>>>>> -->
             <nav>
                 <div class="logo-materia">
                     <!-- class="icon-home fas fa-home" Icono Home Font awesome-->
@@ -41,8 +41,11 @@
                         <ul class="submenu">
                             <li><a href="#flujo-normal" >Flujo Normal</a></li>
                             <li><a href="#modelo-caja" >Modelos de Cajas</a></li>
+                            <li><a href="#propiedades-box-model" >Propiedades del modelo de caaja</a></li>
+                            <li><a href="#overflow" >Overflow</a></li>
                         </ul>
                     </li>
+                    <li><a href="#value-units">Valores y Unidades</a></li>
                     <li><a href="#box-style">Estilos de caja</a></li>
                     <li><a href="#texto-css">Texto con CSS</a></li>
                     <li><a href="#maquetacion">Maquetación</a></li>
@@ -53,7 +56,7 @@
                 </ul>
             </nav> 
         </aside>
-        <div class="contenedor"><!--*** Contenedor General de Temas *****************************************-->
+        <div class="contenedor"><!--<<<<<<< CONTENEDOR  >>>>>>>>> -->
             <section class="section" id="rudimentos"><!--*** Rudimentos ************************-->
                 <h2 class="section-title">Rudimentos</h2>
                 <article class="concept"><!--Que es CSS-->
@@ -724,7 +727,7 @@
                      </dl>
                 </article>
             </section>
-            <section class="section" id="box-model"><!--*** Box Model ************************-->
+            <section class="section" id="box-model"><!--*** Box Model *******************-->
                 <h2 class="section-title">Modelo de Caja</h2>
                 <article class="concept"><!--Flujo Normal-->
                     <h3 class="title-concept" id="flujo-normal">Flujo Normal</h3>
@@ -856,34 +859,293 @@
 
                        
                 </article>
-                <!--                    
-                    width -height
-                    margin
-                    Margin Collapse
-                    padding
-                    
-                    unidades
-                    overflow
+                <article class="concept"><!-- Propiedades Box-model-->
+                    <h3 class="title-concept" id="propiedades-box-model">Propiedades Modelo de Caja</h3>
+                    <h3 class="title-aux" >WIDTH</h3>
+                    <p class="content">
+                        La propiedad <strong><a href="https://developer.mozilla.org/es/docs/Web/CSS/width" target="_blank" rel="noopener noreferrer">width</a></strong> permite determinar el ancho que tendrá un objeto, en el enlace se puede ver varios valores para esta propiedad, pero muchas de ellas son experimentales y todavía no se encuentran disponibles para todos los navegadores. La sintaxis es la siguiente:
+
+                        <div class="codes">
+                            <code class="language-css">
+                                /* Valores <length> */
+                                </code><br><code class="language-css">
+                                width: 300px;
+                            </code><br><code class="language-css">
+                                width: 25em;
+                            </code><br><br><code class="language-css">
+                                /* Valores <percentage> */
+                                </code><br><code class="language-css">
+                                width: 75%;
+                            </code><br><br><code class="language-css"> 
+                                /* Valores clave */
+                            </code><br><code class="language-css">
+                                width: auto;
+                            </code><br><br>  <code class="language-css">
+                                /* Valores globales */
+                            </code><br><code class="language-css">
+                                width: inherit;
+                            </code><br><code class="language-css">
+                                width: initial;
+                            </code><br><code class="language-css">
+                                width: unset;
+                            </code>
+                        </div>
+                        <dl class="content">
+                            <dt>&lt;length&gt;</dt> 
+                            <dd>Este valores es un número, seguido de la unidad de medida que representa, podemos ver una extensa <a href="https://developer.mozilla.org/es/docs/Web/CSS/length" target="_blank" rel="noopener noreferrer">lista de unidades de medida explicada </a> o una <a href="https://www.w3schools.com/cssref/css_units.asp" target="_blank" rel="noopener noreferrer">referencia</a> condensada de las mismas. Las mas comunes son: px, em, rem, vw, cm, in.</dd>
+
+                            <dt>&lt;percentage&gt;</dt>
+                            <dd>Este es un valor numerico que representa el porcentaje que medirá el elemento, la referencia se toma del contenedor, de esta manera, el elemento solo medira una fracción de su padre, esta es una explicación mas detallada de <a href="https://developer.mozilla.org/es/docs/Web/CSS/percentage" target="_blank" rel="noopener noreferrer">Porcentaje</a> </dd>
+
+                            <dt>auto</dt>
+                            <dd>Es el valor por defecto de esta propiedad, es decir, si no se especifíca, el navegador calcula automáticamente el valor final</dd>
+                        </dl>
+
+                    </p>
+                    <h3 class="title-aux">HEIGHT</h3>
+                        <p class="content">
+                            Nos indica la altura que un elemento puede tener, en esta<a href="https://developer.mozilla.org/es/docs/Web/CSS/percentage" target="_blank" rel="noopener noreferrer">lista de referencia</a> encontramos los valores habituales y los experimentales. Los valores que acepta height son semejantes a los de width.
+                        </p>
+                        <div class="codes"><code class="language-css">
+                            /* Valores clave */
+                            </code><br><code class="language-css">
+                            height: auto;
+                            </code><br><br><code class="language-css">
+                            /* Valores <length> */
+                            </code><br><code class="language-css">
+                            height: 120px;
+                            </code><br><code class="language-css">
+                            height: 10em;
+                            </code><br><br><code class="language-css">
+                            /* Valores <percentage> */
+                            </code><br><code class="language-css">
+                            height: 75%;
+                            </code><br><br><code class="language-css">
+                            /* Valores globales */
+                            </code><br><code class="language-css">
+                                width: inherit;
+                            </code><br><code class="language-css">
+                                width: initial;
+                            </code><br><code class="language-css">
+                                width: unset;
+                        </code></div>
+
+                    <h3 class="title-aux">BORDER</h3>
+                        <p class="content">
+                            La propiedad border es la <a href="https://developer.mozilla.org/es/docs/Web/CSS/Shorthand_properties" target="_blank" rel="noopener noreferrer">propiedad abreviada</a>, que nos permite manipular en conjunto 3 características que modifican la apariencia del borde de los diferentes elementos, estas propiedades son:
+                        </p>
+                        <dl class="content">
+                            </dt> <a href="https://developer.mozilla.org/es/docs/Web/CSS/border-width" target="_blank" rel="noopener noreferrer">border-width</a><dt>
+                            <dd>Esta propiedad define el ancho del borde, acepta solo valores positivos, puede colocarse un valor <a href="https://developer.mozilla.org/es/docs/Web/CSS/length" target="_blank" rel="noopener noreferrer"><code>&lt;length&gt;</code></a> o puede usarse las los valores <code>thin | medium | thick </code></dd>
+
+                            <dt> <a href="https://developer.mozilla.org/es/docs/Web/CSS/border-style" target="_blank" rel="noopener noreferrer">border-style</a></dt>
+                            <dd>Nos indica el estilo que tomará el borde dentro de ellos encontramos</dd>
+                            <dd>
+                                <table class="content-table">
+                                    <tbody>
+                                        <tr>
+                                            <td style="vertical-align: middle;"><code>none</code></td>
+                                            <td style="vertical-align: middle;">
+                                                <div
+                                                    style="margin: 0.5em; width: 3em; height: 3em; border-top-style: none; background-color: palegreen;">
+                                                </div>
+                                            </td>
+                                            <td style="vertical-align: middle;">Al igual que la palabra clave hidden, no muestra ningún borde. A menos que se establezca una imagen de fondo, el valor calculado de border-top-width (en-US) será 0, incluso si el valor especificado es otro. En el caso de que la celda de la tabla y el borde se contraigan, el valor ninguno tiene la prioridad más baja: si se establece cualquier otro borde en conflicto, se mostrará.</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="vertical-align: middle;"><code>hidden</code></td>
+                                            <td style="vertical-align: middle;">
+                                                <div
+                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 3px; border-top-style: hidden; background-color: palegreen;">
+                                                </div>
+                                            </td>
+                                            <td style="vertical-align: middle;">Al igual que la palabra clave none, no muestra ningún borde. A menos que se establezca una imagen de fondo, el valor calculado de border-top-width (en-US) será 0, incluso si el valor especificado es otro. En el caso de que la celda de la tabla y el borde se contraigan, el valor oculto tiene la prioridad más alta: si se establece cualquier otro borde en conflicto, no se mostrará.</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="vertical-align: middle;"><code>dotted</code></td>
+                                            <td style="vertical-align: middle;">
+                                                <div
+                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 3px; border-top-style: dotted; background-color: palegreen;">
+                                                </div>
+                                            </td>
+                                            <td style="vertical-align: middle;">Muestra una serie de puntos redondeados. El espaciado de los puntos no está definido por la especificación y es específico de la implementación. El radio de los puntos es la mitad del ancho de borde superior calculado </a>.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="vertical-align: middle;"><code>dashed</code></td>
+                                            <td style="vertical-align: middle;">
+                                                <div
+                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 3px; border-top-style: dashed; background-color: palegreen;">
+                                                </div>
+                                            </td>
+                                            <td style="vertical-align: middle;">Muestra una serie de segmentos de línea o guiones cortos con extremos cuadrados. El tamaño y la longitud exactos de los segmentos no están definidos por la especificación y son específicos de la implementación.</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="vertical-align: middle;"><code>solid</code></td>
+                                            <td style="vertical-align: middle;">
+                                                <div
+                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 3px; border-top-style: solid; background-color: palegreen;">
+                                                </div>
+                                            </td>
+                                            <td style="vertical-align: middle;">Muestra una línea sólida, recta y única.</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="vertical-align: middle;"><code>double</code></td>
+                                            <td style="vertical-align: middle;">
+                                                <div
+                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 3px; border-top-style: double; background-color: palegreen;">
+                                                </div>
+                                            </td>
+                                            <td style="vertical-align: middle;">Muestra dos líneas rectas que se suman al tamaño de píxel definido por el ancho del borde
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="vertical-align: middle;"><code>groove</code></td>
+                                            <td style="vertical-align: middle;">
+                                                <div
+                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 3px; border-top-style: groove; background-color: palegreen;">
+                                                </div>
+                                            </td>
+                                            <td style="vertical-align: middle;">Muestra un borde con apariencia tallada. Es lo opuesto a la cresta</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="vertical-align: middle;"><code>ridge</code></td>
+                                            <td style="vertical-align: middle;">
+                                                <div
+                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 3px; border-top-style: ridge; background-color: palegreen;">
+                                                </div>
+                                            </td>
+                                            <td style="vertical-align: middle;">Muestra un borde con apariencia extruida. Es lo opuesto al surco.</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="vertical-align: middle;"><code>inset</code></td>
+                                            <td style="vertical-align: middle;">
+                                                <div
+                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 3px; border-top-style: inset; background-color: palegreen;">
+                                                </div>
+                                            </td>
+                                            <td style="vertical-align: middle;">Muestra un borde que hace que el elemento parezca incrustado. Es lo opuesto al comienzo. Cuando se aplica a una celda de la tabla con border-collapse configurado como contraído, este valor se comporta como groove.</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="vertical-align: middle;"><code>outset</code></td>
+                                            <td style="vertical-align: middle;">
+                                                <div
+                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 3px; border-top-style: outset; background-color: palegreen;">
+                                                </div>
+                                            </td>
+                                            <td style="vertical-align: middle;">
+                                                Muestra un borde que hace que el elemento aparezca en relieve. Es lo opuesto al recuadro. Cuando se aplica a una celda de la tabla con el colapso de borde establecido en colapsado, este valor se comporta como una cresta.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </dd>
+
+                            <dt> <a href="https://developer.mozilla.org/es/docs/Web/CSS/border-color" target="_blank" rel="noopener noreferrer">border-color</a></dt>
+                            <dd> Este valor se define por cualquiera de los valores permitidos para <a href="https://developer.mozilla.org/es/docs/Web/CSS/color" target="_blank" rel="noopener noreferrer"><code>&lt;color&gt;</code></a>  que son: valor de color, Hexadecimal, funcion RGB o RGBA, Funcion HSL o HSLA</dd>
+                        </dl>
+                        <h3 class="title-aux">Sintaxis:</h3>
+                        <div class="codes"><code>
+                            border: [border-width || border-style || border-color | inherit] ;
+                        </code></div>
+                        <h3 class="title-aux">Ejemplo:</h3>
+                        <div class="codes"><code class="language-css">
+                            element {border: 1px solid #000;}
+                        </code></div>
+                        <p class="content">
+                            Adicionalmente a esta propiedad, existen dos propiedades relacionadas con esta propiedad, éstas son: <a href="https://developer.mozilla.org/es/docs/Web/CSS/outline" target="_blank" rel="noopener noreferrer">outline</a> y <a href="https://developer.mozilla.org/es/docs/Web/CSS/border-image" target="_blank" rel="noopener noreferrer">border-image</a>
+                        </p>
+
+                    <h3 class="title-aux">MARGIN - PADDING</h3>
+                    <p class="content">
+                        Estas dos propiedades se refieren al espacio vacio que existe a partir del borde, en el caso del padding, genera un vacio entre el borde y la caja de contenido, es decir, hacia adentro, mientras que el margen genera un espacio vacio entre el borde y el resto de los elementos exteriores, en cuanto su funcionamiento son muy similares por lo que explicaremos el <a href="https://developer.mozilla.org/es/docs/Web/CSS/margin" target="_blank" rel="noopener noreferrer">margin</a> y las mismas características se aplican al <a href="https://developer.mozilla.org/es/docs/Web/CSS/padding" target="_blank" rel="noopener noreferrer">padding</a>.
+                    </p>
+                    <p class="content">
+                        margin es la <a href="https://developer.mozilla.org/es/docs/Web/CSS/Shorthand_properties" target="_blank" rel="noopener noreferrer">propiedad abreviada</a> que permite manipular 4 aspectos del margen, en este caso se condensa en una sola instrucción a <code> margin-top | margin-right | margin-bottom | margin-left</code>, sin embargo, no es necesario definir los 4 valores al mismo tiempo, como puede verse en el siguiente ejemplo:
+                    </p>
+                    <div class="codes"><code class="language-css">
+                        /* Aplica a todos los cuatro lados */
+                    </code><br><code class="language-css">
+                        margin: 1em;
+                    </code><br><br><code class="language-css">
+                        /* Vertical | Horizontal */
+                    </code><br><code class="language-css">
+                        margin: 5% auto;
+                    </code><br><br><code class="language-css">
+                        /* Arriba | Horizontal | Abajo */
+                    </code><br><code class="language-css">
+                        margin: 1em auto 2em;
+                    </code><br><br><code class="language-css">
+                        /* Arriba | Derecha | Abajo | Izquierda */
+                    </code><br><code class="language-css">
+                        margin: 2px 1em 0 auto;
+                    </code><br><br><code class="language-css">
+                        /* Valores globales */
+                        </code><br><code class="language-css">
+                            margin: inherit;
+                        </code><br><code class="language-css">
+                            margin: initial;
+                        </code><br><code class="language-css">
+                            margin: unset;
+                    </code></div>
+                    <p class="content">
+                        Se aceptan los siguientes valores:
+                    </p>
+                    <dl class="content">
+                        <dt><a href="https://developer.mozilla.org/es/docs/Web/CSS/length" target="_blank" rel="noopener noreferrer">&lt;length&gt;</a></dt> 
+                        <dd>Este valores es un número positivo o negativo, seguido de la unidad de medida que representa, Las mas comunes son: px, em, rem, vw, cm, in.</dd>
+
+                        <dt><a href="https://developer.mozilla.org/es/docs/Web/CSS/percentage" target="_blank" rel="noopener noreferrer">&lt;percentage&gt;</a></dt>
+                        <dd>Este es un valor numerico positivo o negativo que representa un porcentaje de la medida delcontenedor</dd>
+
+                        <dt>auto</dt>
+                        <dd>auto es reemplazado por algún valor apropiado. Por ejemplo, puede usarse para centrar horizontalmente un elemento <code class="language-css">div { width:50%;  margin:0 auto; }</code> centrará el div horizontalmente.</dd>
+                    </dl>
+
+
+                    <h3 class="title-aux">MARGIN - COLLAPSE</h3>
+                    <p class="content">
+                        Los margenes, no forman parte del tamaño de la caja, aunque si influye en el espacio que ocupan, explicado de otra forma, el margen es el espacio invisible que provoca que los otros elementos no se "toquen" entre ellos.
+                    </p>
+                    <p class="content">
+                        Sin embargo si dos cajas contiguas tienen margen, el espacio entre ellas no se suma, por el contrario, se contrae. Un punto clave a la hora de entender los márgenes es el concepto de colapso del margen. Si tienes dos elementos cuyos márgenes se tocan, esos márgenes se combinan para convertirse en un solo margen, cuyo tamaño es el del margen más grande.
+                    </p>
+                </article>
+                <article class="concept"><!-- OverFlow-->
+                    <h3 class="title-concept" id="overflow">Overflow</h3>
+                </article>
+            </section>
+            <section class="section" id="value-units"><!--*** Valores y Unidades ***************-->
+                <h2 class="section-title">Valores y Unidades</h2>
+                <!--
+                    Longitud Absoluta y relativa
+                    color
+                    colores, rgb, rgba, hsla...
+
+                    integer
+                    Number
+                    dimension
+                    percentage
                 -->
             </section>
-            <section class="section" id="box-style"><!--*** Box-style ************************-->
+            <section class="section" id="box-style"><!--*** Box-style *******************-->
                 <h2 class="section-title">Estilizando las cajas</h2>
                 <!--
                     colores, rgb, rgba, hsla...
                     color
                     Background
-                    border
-                    border-radius
+                    overflow-img
                     box-shadow
                     
-                    Gradiente
                     outline
                     image-border
-                    overflow-img
+                    border-radius
+                    
+                    Gradiente
 
                 -->
             </section>
-            <section class="section" id="texto-css"><!--*** Texto CSS ************************-->
+            <section class="section" id="texto-css"><!--*** Texto CSS *******************-->
                 <h2 class="section-title">Tipografías</h2>
                 <!-- 
                         /*funciones min, max, clamp, calc, var, attr*/
@@ -904,7 +1166,7 @@
 
                  -->
             </section>
-            <section class="section" id="maquetacion"><!--*** Maquetación ************************-->
+            <section class="section" id="maquetacion"><!--*** Maquetación *****************-->
                 <h2 class="section-title">Maquetacion</h2>
                 <!-- 
                     display
@@ -920,14 +1182,14 @@
                     grid
                  -->
             </section>
-            <section class="section" id="media-queries"><!--*** Media Queries ************************-->
+            <section class="section" id="media-queries"><!--*** Media Queries *****************-->
                 <h2 class="section-title">Media Queries</h2>
                 <!-- 
                     screen
                     print
                  -->
             </section>
-            <section class="section" id="responsive-design"><!--*** Responsive Design ************************-->
+            <section class="section" id="responsive-design"><!--*** Responsive Design **********-->
                 <h2 class="section-title">responsive-design</h2>
                 <!-- 
                     Organizacion 
@@ -935,7 +1197,7 @@
                     Depuración
                  -->
             </section>
-            <section class="section" id="animaciones"><!--*** Animaciones ************************-->
+            <section class="section" id="animaciones"><!--*** Animaciones ****************-->
                 <h2 class="section-title">Animaciones</h2>
                 <!-- 
                     Transition
@@ -948,7 +1210,7 @@
 
                  -->
             </section>
-            <section class="section" id="depuracion"><!--*** Depuracion ************************-->
+            <section class="section" id="depuracion"><!--*** Depuracion *****************-->
                 <h2 class="section-title">Depuración</h2>
                 <!-- 
                     Organizacion 

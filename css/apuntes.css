@@ -65,7 +65,10 @@ p{
     padding: 0.6rem;
     margin-bottom: 1.2rem;
 }
-.codes{background-color: var(--black-code);}
+.codes{
+    color: var(--white);
+    background-color: var(--black-code);
+}
 .note{background-color: var(--first-alpha-color);}
 .contenedor{padding: 0.75em;}
 .content{margin-bottom: 1.2rem;}
@@ -215,8 +218,11 @@ p{
         /* overflow: auto; */
     }
     ul[class="content"], ol[class="content"]{
-        padding-left: 2rem;
-        list-style-position: inside;
+        padding-left: 3rem;
+        /* list-style-position: inside; */
+    }
+    ul[class="content"] li, ol[class="content"] li{
+        margin-bottom: 0.3rem;
     }
     .contenedor{width: 47rem;}
     .ilustracion{
