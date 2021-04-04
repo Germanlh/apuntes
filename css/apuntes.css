@@ -40,9 +40,10 @@ a{
     text-decoration: none;
 }
 a:hover{opacity: 0.75;}
-h1{font-size: 1.75rem;}
-h2{font-size: 1.5rem;}
-h3{font-size: 1.25rem;}
+h1{font-size: 3rem;}
+h2{font-size: 2rem;}
+h3{font-size: 1.5rem;}
+h4{font-size: 1rem;}
 h5{font-size: 0.75rem;}
 img{
     /*se ajusta al ancho del contenedor*/
@@ -60,10 +61,11 @@ p{
 /**** Estilos del sitio *************************/
 
 .alert, .codes, .note{
-    background-color: rgb(255, 238, 180);
-    border-left: var(--second-color) 0.5rem solid;
+    margin: 1.2rem 0;
     padding: 0.6rem;
-    margin-bottom: 1.2rem;
+    border-left: var(--second-color) 0.5rem solid;
+    border-radius: 0.25rem;
+    background-color: rgb(255, 238, 180);
 }
 .codes{
     color: var(--white);
@@ -129,24 +131,28 @@ p{
     border-bottom: var(--gray-dark) 0.15rem solid;
 }
 .section-title{
-    color: var(--white);
-    background-color: var(--first-color);
     padding: 0.3em;
     margin: 0 0 0.5rem 0;
+    border-radius: 0.15rem;
+    color: var(--white);
+    background-color: var(--first-color);
 }
 .title-concept, .title-aux{
     color: var(--white);
     background-color: var(--second-color);
     padding: 0.3em;
-    border-radius: 0.3em;
-    display: inline-block;
+    border-radius: 0.15em;
+    /* display: inline-block; */
     margin: 0.5rem 0;
 }
 .title-aux{
-    display: block;
-    color: var(--text-color);
-    background-color: transparent;
-    margin:0;
+    width: fit-content;
+    color: var(--white);
+    background-color: var(--text-color);
+}
+.title-codes{
+    color: var(--white);
+    margin-bottom: 1rem;
 }
 /* ************************************************************************ */
 /* ************************************************************************ */

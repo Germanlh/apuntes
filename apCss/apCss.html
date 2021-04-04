@@ -70,11 +70,9 @@
                     <p class="content">
                         En resumen, con <strong>CSS</strong> podemos definir la manera en que lucirá una página web, desde los colores de los elementos, la tipografía e incluso el orden y el espacio de cada uno de los elementos involucrados.
                     </p>
-                    <div class="alert">
-                        <p class="content-alert">
-                            <strong>ALERTA:</strong> Para un adecuado entendimiento del manejo de CSS es necesario tener sólidas bases de HTML, de otra forma el aprendizaje será lento, ya que ambas tecnologías se complementan.
+                        <p class="alert">
+                            <strong>ADVERTENCIA:</strong> Para un adecuado entendimiento del manejo de CSS es necesario tener sólidas bases de HTML, de otra forma el aprendizaje será lento, ya que ambas tecnologías se complementan.
                         </p>
-                    </div>
                 </article>
                 <article class="concept"><!--CSS en HTML-->
                     <h3 class="title-concept" id="css-en-html">CSS en HTML</h3>
@@ -94,15 +92,15 @@
                         <dd>
                             Esta forma nos permite colocar el estilo, dentro de los atributos de las etiquetas que se definen en HTML, este atributo solo afecta a la etiqueta en cuestión una a la vez.
 
-                            <h3 class="title-aux">Ejemplo:</h3>
                             <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
                                 <code class="language-html">
                                     &lt;p style="font-size: 20px"&gt;Mi texto &lt;&#47;p&gt;
                                 </code>
                             </div>
 
                             <p class="alert">
-                                <strong>ALERTA:</strong> Trabajar con estilos <em>In-line</em> es cómodo por que se agregan las reglas dentro de los atributos de la etiqueta, sin embargo, no se aprovecha la cascada de CSS, lo cual es una potente herramienta de diseño, tampoco se pueden repetir los estilos a diferentes páginas del mismo proyecto asi mismo afecta la Especificidad, pues el estilo <em>In-line</em> siempre tiene mayor prioridad sobre las otras formas.
+                                <strong>ADVERTENCIA:</strong> Trabajar con estilos <em>In-line</em> es cómodo por que se agregan las reglas dentro de los atributos de la etiqueta, sin embargo, no se aprovecha la cascada de CSS, lo cual es una potente herramienta de diseño, tampoco se pueden repetir los estilos a diferentes páginas del mismo proyecto asi mismo afecta la Especificidad, pues el estilo <em>In-line</em> siempre tiene mayor prioridad sobre las otras formas.
                             </p>
                         </dd>
 
@@ -110,8 +108,8 @@
                         <dd>
                             Esta forma nos permite modificar a los elementos semejantes dentro del mismo archivo HTML, pues al usar un selector, este no se encuentra atado dentro de la misma etiqueta, por lo que se puede aprovechar del efecto en cascada y afectar a otros objetos "Semejantes".
 
-                            <h3 class="title-aux">Ejemplo:</h3>
                             <div class="codes">
+                                <h4 class="title-codes">Ejemplo:</h4>
                                 <code class="language-html">
                                     &lt;head&gt;
                                 </code><br>&nbsp;&nbsp;<code class="language-html">
@@ -127,7 +125,7 @@
 
                             
                                 <p class="alert">
-                                    <strong>ALERTA:</strong> A pesar que la forma embebida nos permite aprovechar de mejor manera la cascada, es una buena práctica utilizar la tercera forma, además que nos permite agregar esas mismas reglas de estilo a otras páginas.
+                                    <strong>ADVERTENCIA:</strong> A pesar que la forma embebida nos permite aprovechar de mejor manera la cascada, es una buena práctica utilizar la tercera forma, además que nos permite agregar esas mismas reglas de estilo a otras páginas.
                                 </p>
                             
                         </dd>
@@ -136,8 +134,8 @@
                         <dd>
                             Esta forma nos permite crear una archivo *.css por separado del archivo *.html, lo que nos permite crear un solo conjunto de reglas que pueden aplicarse a diversas páginas y mantener posteriormente los cambios fácilmente, esta forma de trabajar se considera la mejor práctica para las hojas de estilo.
 
-                            <h3 class="title-aux">Ejemplo Enlace:</h3>
                             <div class="codes">
+                                <h4 class="title-codes">Ejemplo Enlace:</h3>
                                 <code class="language-html">
                                     &lt;head&gt;
                                 </code><br>&nbsp;&nbsp;&nbsp;&nbsp;<code class="language-html">
@@ -184,7 +182,7 @@
                             Una vez que hemos señalado la propiedad debemos indicar adecuadamente el nuevo valor que ésta tendrá, este cambio de magnitud depende de la propiedad que estamos modificando, una vez que hayamos establecido los valores adecuados, la declaración debe finalizar con <em>";"</em>.
 
                             <p class="note">
-                                    <strong>NOTA:</strong> Cada Valor es diferente para cada tipo de propiedad, lo más común es que este valor vaya acompañado de un magnitud o unidad de medida que especifica la manera en que la propiedad cambiará.
+                                    <strong>NOTA:</strong> Cada <a href="https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Values_and_units" target="_blank" rel="noopener noreferrer">valor</a> es diferente para cada tipo de propiedad, lo más común es que este valor vaya acompañado de un magnitud o unidad de medida que especifica la manera en que la propiedad cambiará.
                                 </p>
                         </dd>
 
@@ -224,20 +222,20 @@
                         <dt id="selector-tipo"><a href="#selector-menu">SELECTOR DE TIPO</a></dt>
                         <dd>
                             Un <a href="https://developer.mozilla.org/es/docs/Web/CSS/Type_selectors" target="_blank" rel="noopener noreferrer">selector de tipo</a> también recibe el nombre de selector de nombre, de etiqueta, selector de elemento o selector general porque selecciona un elemento/etiqueta HTML del documento de forma directa.
-                            <h3 class="title-aux">En archvo HTML:</h3>
                             <div class="codes">
+                                <h4 class="title-codes">En archvo HTML:</h4>
                                 <code class="language-html">
                                     &lt;p&gt;Mi texto &lt;&#47;p&gt;
                                 </code>
                             </div>
-                            <h3 class="title-aux">En archvo CSS:</h3>
                             <div class="codes">
+                                <h4 class="title-codes">En archvo CSS:</h4>
                                 <code class="language-css">
                                     p{font-size: 20px;}
                                 </code>
                             </div>
                             <p class="alert">
-                                    <strong>ALERTA:</strong> cuando usamos esta forma de seleccionar los elementos, la regla que definamos se aplica para todas las etiquetas del mismo tipo. En el caso del ejemplo todas las etiquetas "p" seran afectadas por este estilo.
+                                    <strong>ADVERTENCIA:</strong> cuando usamos esta forma de seleccionar los elementos, la regla que definamos se aplica para todas las etiquetas del mismo tipo. En el caso del ejemplo todas las etiquetas "p" seran afectadas por este estilo.
                                 </p>
                         </dd>
                         <dt id="selector-clase"><a href="#selector-menu">SELECTOR DE CLASE</a></dt>
@@ -246,21 +244,21 @@
                             <br><br>
                             La forma correcta de implementarlo es asignadole una clase en el atributo "class" en las etiquetas del archivo *.html de esa manera "marcamos" las etiquetas a las cuales se le aplicaran la regla que definiremos en el archivo *.css, cuando definamos la regla el nombre de la clase debe estar precedida de "." para indicar que es el nombre de la clase.
                         
-                            <h3 class="title-aux">En archvo HTML:</h3>
                             <div class="codes">
+                                <h4 class="title-codes">En archvo HTML:</h4>
                                 <code class="language-html">
                                     &lt;p class="amarillo"&gt; Mi texto &lt;&#47;p&gt;
                                 </code>
                             </div>
-                            <h3 class="title-aux">En archvo CSS:</h3>
                             <div class="codes">
+                                <h4 class="title-codes">En archvo CSS:</h4>
                                 <code class="language-css">
                                     .amarillo{color: yellow;}
                                 </code>
                             </div>
                             De ser necesario, podemos modificar el ejemplo para asignar la clase a diferentes etiquetas y observar como se aplica la regla a las etiquetas que seleccionamos, miestras que las etiquetas que no contienen a la clase, quedan excluidas de la regla, todo esto se aplica sin modificar el archivo *.css.
-                            <h3 class="title-aux">En archvo HTML:</h3>
                             <div class="codes">
+                                <h4 class="title-codes">En archvo HTML:</h4>
                                 <code class="language-html">
                                     &lt;h1 class="amarillo"&gt; Titulo Amarillo &lt;&#47;h1&gt;
                                 </code><br><code class="language-html">
@@ -272,8 +270,8 @@
                                 </code>
                             </div>
                             De la misma forma podemos agregar más de una clase a las etiquetas, lo que nos permite agregar más características a un elemento. eso lo podemos ver en este ejemplo:
-                            <h3 class="title-aux">En archvo HTML:</h3>
                             <div class="codes">
+                                <h4 class="title-codes">En archvo HTML:</h4>
                                 <code class="language-html">
                                         &lt;!-- este titulo llevaria caja alrededor y letra amarilla--&gt;
                                 </code><br><code class="language-html">
@@ -287,8 +285,8 @@
                                     &lt;p class="amarillo"&gt; Este parrafo SI es amarillo&lt;&#47;p&gt;
                                 </code>
                             </div>
-                            <h3 class="title-aux">En archvo CSS:</h3>
                             <div class="codes">
+                                <h4 class="title-codes">En archvo CSS:</h4>
                                 <code class="language-css">
                                     .amarillo{color: yellow;}
                                 </code><br><code class="language-css">
@@ -299,14 +297,14 @@
                         <dt id="selector-id"><a href="#selector-menu">SELECTOR DE ID</a></dt>
                         <dd>
                             El <a href="https://developer.mozilla.org/es/docs/Web/CSS/ID_selectors" target="_blank" rel="noopener noreferrer">Selector Id</a> o de referencia absoluta nos ayuda a seleccionar directamente un único elemento que en su etiqueta html contenga el atributo "id". para referirnos desde el archivo *.css es necesario que se anteponga el caracter "#"
-                            <h3 class="title-aux">En archvo HTML:</h3>
                             <div class="codes">
+                                <h4 class="title-codes">En archvo HTML:</h4>
                                 <code class="language-html">
                                     &lt;p id="amarillo"&gt; Mi texto &lt;&#47;p&gt;
                                 </code>
                             </div>
-                            <h3 class="title-aux">En archvo CSS:</h3>
                             <div class="codes">
+                                <h4 class="title-codes">En archvo CSS:</h4>
                                 <code class="language-css">
                                     #amarillo{color: yellow;}
                                 </code>
@@ -431,8 +429,8 @@
                         <dt id="selector-pseudoclase"><a href="#selector-menu">SELECTOR DE PSEUDOCLASE</a></dt>
                         <dd>
                             Las <a href="https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-classes" target="_blank" rel="noopener noreferrer">Pseudoclases</a> son palabras claves que se añaden a los selectores, los cuales representan un estado en particular del elemento seleccionado. Todas las pseudoclases se comportan del mismo modo. Seleccionan un fragmento del documento que está en un estado determinado y se comportan como si se hubiera añadido una clase a su html.
-                            <h3 class="title-aux">Ejemplo</h3>
                             <div class="codes">
+                                <h4 class="title-codes">Ejemplo:</h4>
                                 <code class="language-css">
                                     article p:first-child{/*...*/}
                                 </code><br><code class="language-css">
@@ -458,8 +456,8 @@
                         <dt id="selector-pseudoelemento"><a href="#selector-menu">SELECTOR PSEUDOELEMENTO</a></dt>
                         <dd>
                             Los <a href="https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-elements" target="_blank" rel="noopener noreferrer">Pseudoelementos</a> se comportan como si agregaramos un elemento html nuevo al marcado, para diferenciarlos de las pseudoclases agregamos <strong>"::"</strong> al selector y el nombre del pseudoelemento en esta<a href="https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements#%c2%bfqu%c3%a9_es_un_pseudoelemento" target="_blank" rel="noopener noreferrer">Lista de Pseudoelementos y Pseudoclases</a> podemos ver una lista de ellos. 
-                            <h3 class="title-aux">Ejemplo</h3>
                             <div class="codes">
+                                <h4 class="title-codes">Ejemplo:</h4>
                                 <code class="language-css">
                                     article::before{/*...*/}
                                 </code><br><code class="language-css">
@@ -572,8 +570,9 @@
                     <p class="content">
                        Esta propiedad permite que un regla pueda aplicarse a diferentes elementos, por ejemplo, si definimos una regla para los parrafos "p" todas las etiquetas "p" aplicaran la misma regla, sin embargo, si mas adelante se enuncia una regla diferente para el selector "p", se aplicará la ultima regla que aparezca: 
                     </p>
-                    <h3 class="title-aux">Ejemplo:</h3>
-                    <div class="codes"><code class="language-css">
+                    <div class="codes">
+                        <h4 class="title-codes">Ejemplo:</h4>
+                        <code class="language-css">
                         /*...*/
                     </code><br><code class="language-css">
                         p{color:blue;}
@@ -641,11 +640,10 @@
                          </tbody>
 
                      </table>
-                     <div class="alert">
-                        <p class="content-alert">
-                            <strong>ALERTA:</strong> Usar "!important" es una mala práctica, conocer este valor para los atributos es útil para casos extremos, pero no para casos comunes que pueden resolverse con clases o combinadores.
-                        </p>
-                    </div>
+                     <p class="alert">
+                            <strong>ADVERTENCIA:</strong> Usar "!important" es una mala práctica, conocer este valor para los atributos es útil para casos extremos, pero no para casos comunes que pueden resolverse con clases o combinadores.
+                    </p>
+                    
                      <p class="content">
                         A manera de Ejemplo colocaremos los siguientes ejemplos calculando sus valores
                      </p>
@@ -815,7 +813,7 @@
                         como se puede apreciar, el espacio que ocupa nuestra caja usando el modelo de cajas estándar será en realidad de 410 px (350 + 25 + 25 + 5 + 5); y su altura, de 210 px (150 + 25 + 25 + 5 + 5), porque el área de relleno y el borde se añaden al ancho que se utiliza para el contenido de la caja
                     </p>
                     <p class="note">
-                        El margen no se cuenta para el tamaño final de la caja, el tamaño de la caja se calcula hasta el borde
+                        <strong>Nota:</strong> El margen no se cuenta para el tamaño final de la caja, el tamaño de la caja se calcula hasta el borde
                     </p>
                     <h3 class="title-aux">Modelo de Caja Alternativo</h3>
                     <p class="content">
@@ -867,6 +865,10 @@
 
                         <div class="codes">
                             <code class="language-css">
+                                /* Valores Predeterminado */
+                            </code><br><code class="language-css">
+                                width: auto;
+                            </code><br><br>  <code class="language-css">
                                 /* Valores <length> */
                                 </code><br><code class="language-css">
                                 width: 300px;
@@ -877,10 +879,6 @@
                                 </code><br><code class="language-css">
                                 width: 75%;
                             </code><br><br><code class="language-css"> 
-                                /* Valores clave */
-                            </code><br><code class="language-css">
-                                width: auto;
-                            </code><br><br>  <code class="language-css">
                                 /* Valores globales */
                             </code><br><code class="language-css">
                                 width: inherit;
@@ -907,7 +905,7 @@
                             Nos indica la altura que un elemento puede tener, en esta<a href="https://developer.mozilla.org/es/docs/Web/CSS/percentage" target="_blank" rel="noopener noreferrer">lista de referencia</a> encontramos los valores habituales y los experimentales. Los valores que acepta height son semejantes a los de width.
                         </p>
                         <div class="codes"><code class="language-css">
-                            /* Valores clave */
+                            /* Valor Predeterminado*/
                             </code><br><code class="language-css">
                             height: auto;
                             </code><br><br><code class="language-css">
@@ -929,6 +927,9 @@
                             </code><br><code class="language-css">
                                 width: unset;
                         </code></div>
+                        <p class="note">
+                            <strong>NOTA:</strong>Adicionalmente a width y height es útil contar con propiedades que difinen maximos o minimos de acuerdo a las circuinstancias, por ejemplo algunas etiquetas no se mostraran al menos que tengan un elemento dentro, es util sobre todo a la hora de maquetar darles una medida inicial, Lo mismo sucede cuando los elementos crecen demasiado y deseamos limitar ese crecimiento, para ellos las propiedades <a href="https://developer.mozilla.org/es/docs/Web/CSS/min-height" target="_blank" rel="noopener noreferrer">min-height</a>y <a href="https://developer.mozilla.org/es/docs/Web/CSS/max-height" target="_blank" rel="noopener noreferrer">max-height</a>  regulan la altura mientras que <a href="https://developer.mozilla.org/es/docs/Web/CSS/max-width" target="_blank" rel="noopener noreferrer">max-width</a> y <a href="https://developer.mozilla.org/es/docs/Web/CSS/min-width" target="_blank" rel="noopener noreferrer">min-width</a> regulan la anchura de los objetos, cabe mencionar que estas propiedad tiene preponderancia sobre width y height 
+                        </p>
 
                     <h3 class="title-aux">BORDER</h3>
                         <p class="content">
@@ -1044,16 +1045,18 @@
                             <dt> <a href="https://developer.mozilla.org/es/docs/Web/CSS/border-color" target="_blank" rel="noopener noreferrer">border-color</a></dt>
                             <dd> Este valor se define por cualquiera de los valores permitidos para <a href="https://developer.mozilla.org/es/docs/Web/CSS/color" target="_blank" rel="noopener noreferrer"><code>&lt;color&gt;</code></a>  que son: valor de color, Hexadecimal, funcion RGB o RGBA, Funcion HSL o HSLA</dd>
                         </dl>
-                        <h3 class="title-aux">Sintaxis:</h3>
-                        <div class="codes"><code>
+                        <div class="codes">
+                        <h4 class="title-codes">Sintaxis:</h4>
+                            <code></code>
                             border: [border-width || border-style || border-color | inherit] ;
                         </code></div>
-                        <h3 class="title-aux">Ejemplo:</h3>
-                        <div class="codes"><code class="language-css">
+                        <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
+                            <code class="language-css">
                             element {border: 1px solid #000;}
                         </code></div>
-                        <p class="content">
-                            Adicionalmente a esta propiedad, existen dos propiedades relacionadas con esta propiedad, éstas son: <a href="https://developer.mozilla.org/es/docs/Web/CSS/outline" target="_blank" rel="noopener noreferrer">outline</a> y <a href="https://developer.mozilla.org/es/docs/Web/CSS/border-image" target="_blank" rel="noopener noreferrer">border-image</a>
+                        <p class="note">
+                            <strong>Nota:</strong> Adicionalmente a esta propiedad, existen dos propiedades relacionadas con esta propiedad, éstas son: <a href="https://developer.mozilla.org/es/docs/Web/CSS/outline" target="_blank" rel="noopener noreferrer">outline</a> y <a href="https://developer.mozilla.org/es/docs/Web/CSS/border-image" target="_blank" rel="noopener noreferrer">border-image</a>
                         </p>
 
                     <h3 class="title-aux">MARGIN - PADDING</h3>
@@ -1113,10 +1116,79 @@
                 </article>
                 <article class="concept"><!-- OverFlow-->
                     <h3 class="title-concept" id="overflow">Overflow</h3>
+                    <p class="content">
+                        A pesar de que se pueda definir el tamaño de una caja desde CSS, siempre existe la posiblidad que el contenido no se ajuste a este tamaño ya sea por que se vea mas pequeño o por que el contenido supere el tamaño del contenedor, es en este momento en que llamamos un desborde de elementos.
+                    </p>
+                    <p class="content">
+                        De manera predeterminada, la forma en que CSS gestiona el desbordamiento es que "deja salir" el contenido, es decir, se muestra fuera de la caja, esto lo hace para evitar problemas de visualización de contenido y se oculte información al usuario que pueda ser importante. La forma adecuada con lidiar con el desbordamiento es usando la propiedad <a href="https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Overflowing_content" target="_blank" rel="noopener noreferrer">overflow</a>. 
+                    </p>
+                    <div class="codes">
+                        <code class="language-css">
+                            /*Valor predeterminado*/
+                        </code><br><code class="language-css">
+                            overflow: visible
+                        </code><br><code class="language-css">
+                            /*Valores*/
+                        </code><br><code class="language-css">
+                            overflow: hidden
+                        </code><br><code class="language-css">
+                            overflow: scroll
+                        </code><br><code class="language-css">
+                            overflow: auto
+                        </code><br><code class="language-css">
+                            overflow: inherit
+                        </code>
+                    </div>
+                    <dl class="content">
+                        <dt><code>visible</code></dt>
+                        <dd>Valor por defecto. El contenido no es recortado, podría ser dibujado fuera de la caja contenedora.</dd>
+                        <dt><code>hidden</code></dt>
+                        <dd>El contenido es recortado y no se muestran barras de posición.</dd>
+                        <dt><code>scroll</code></dt>
+                        <dd>El contenido es recortado y el navegador web usa las barras de desplazamiento, se haya recortado contenido&nbsp;o no. Esto previene cualquier problema con las barras de desplazamiento apareciendo o desapareciendo en un entorno dinámico. Puede que las impresoras impriman contenido excedente.</dd>
+                        <dt><code>auto</code></dt>
+                        <dd>Depende del agente de usuario. Navegadores de escritorio como Firefox proveen barras de desplazamiento si hay contenido excedente.</dd>
+                       </dl>
+                       <p class="content">
+                           En el caso que se quiera controlar solo el scroll vertical u horizontal, podemos usar la propiedad <a href="https://developer.mozilla.org/es/docs/Web/CSS/overflow-y" target="_blank" rel="noopener noreferrer">overflow-y</a> y <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-x" target="_blank" rel="noopener noreferrer">overflow-x</a>
+                       </p>
+                       <p class="note">
+                           <strong>Nota:</strong> En un contenedor fluido relleno de texto, el tamaño mínimo depende de la palabra más larga, en el caso de lidiar con palabras muy largas que provoquen el desbordamiento se puede usar la propiedad <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/word-break" target="_blank" rel="noopener noreferrer">word-break</a> o <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-wrap" target="_blank" rel="noopener noreferrer">overflow-wrap</a> para solucionar el problema.
+                       </p>
+                       <p class="alert">
+                        <strong>Advertencia:</strong> En CSS hay un concepto conocido como <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context" target="_blank" rel="noopener noreferrer">block formatting context</a>  o BFC (contexto de formato de bloque). Cuando usas un valor de overflow, como scroll o auto, creas un BFC. El resultado es que el contenido de la caja al que acabas de cambiar el valor overflow se convierte en un minidiseño propio. Las cosas que están fuera del contenedor no pueden meterse en él, y nada puede sobresalir de esa caja hacia el diseño circundante. Esto es para permitir un comportamiento con desplazamiento, porque para poder crear una experiencia de desplazamiento consistente todo el contenido de tu caja ha de estar contenido en algo, y no puede superponerse con otros elementos de la página.
+                       </p>
+
+
                 </article>
             </section>
             <section class="section" id="value-units"><!--*** Valores y Unidades ***************-->
                 <h2 class="section-title">Valores y Unidades</h2>
+                <p class="content">
+                    Los valores que una propiedad puede adquirir depende exclusivamente de esa propiedad que deseamos modificar, sin embargo podemos generalizarlos y agruparlos en una lista que nos apoye al momento de necesitarlo, sin embargo lo adecuado es buscar la referencia de cada propiedad para conocer los valores que este admite..
+                </p>
+                <ul class="content">
+                    <li><a href="#keyword">Palabras Clave</a></li>
+                    <li><a href="#numbers">Numbers</a></li>
+                    <li><a href="#color">Color</a></li>
+                    <li><a href="#position">position</a></li>
+                    <li><a href="#function">Funciones</a></li>
+                </ul>
+                <article class="concept"> <!--Keyword-->
+                    <h3 class="title-concept" id="keyword"> <a href="#value-units">Palabras Clave</a></h3>
+                </article>
+                <article class="concept"> <!--Numbers-->
+                    <h3 class="title-concept" id="numbers"> <a href="#value-units">Numericos</a></h3>
+                </article>
+                <article class="concept"> <!--Color-->
+                    <h3 class="title-concept" id="color"> <a href="#value-units">Colores</a></h3>
+                </article>
+                <article class="concept"> <!--Position-->
+                    <h3 class="title-concept" id="position"> <a href="#value-units">Posición</a></h3>
+                </article>
+                <article class="concept"> <!--Functions-->
+                    <h3 class="title-concept" id="function"> <a href="#value-units">Funciones</a></h3>
+                </article>
                 <!--
                     Longitud Absoluta y relativa
                     color
@@ -1131,7 +1203,6 @@
             <section class="section" id="box-style"><!--*** Box-style *******************-->
                 <h2 class="section-title">Estilizando las cajas</h2>
                 <!--
-                    colores, rgb, rgba, hsla...
                     color
                     Background
                     overflow-img
