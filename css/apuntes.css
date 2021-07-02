@@ -95,7 +95,7 @@ p{
     color: var(--white);
     background-color: var(--first-color);
 }
-.content-table th[colspan="3"]{
+.content-table th[colspan]{
     background-color: var(--second-color);
 }
 

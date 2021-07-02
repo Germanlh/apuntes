@@ -1175,30 +1175,346 @@
                     <li><a href="#function">Funciones</a></li>
                 </ul>
                 <article class="concept"> <!--Keyword-->
-                    <h3 class="title-concept" id="keyword"> <a href="#value-units">Palabras Clave</a></h3>
+                    <h3 class="title-concept" id="keyword"> Palabras Clave</h3>
+                    <a href="#value-units">Regresar Valores y Unidades</a>
+                    <p class="content">Las propiedades que aceptan como cadenas de caracteres podrían ser: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/custom-ident" target="_blank" rel="noopener noreferrer">Identificadores</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/string" target="_blank" rel="noopener noreferrer">Texto</a> o Palabras clave.</p>
+                    <dl class="content">
+                        <dt>Identificadores</dt>
+                        <dd>Los identificadores son cadenas de caracteres que se usan para identificar un elemento, obedece a ciertas reglas para crear un identificador válido, se usan para identificar keyframes, animaciones o grid-areas.</dd>
+
+                        <dt>texto</dt>
+                        <dd>Este texto puede agregarse a propiedades como "content" las cuales admite cadenas de caracteres acotada por comillas.</dd>
+
+                        <dt>Palabras clave</dt>
+                        <dd>Las palabras clave, son texto que que simplifican un concepto reconocible por el usuario, por ejemplo los valores universales que aceptan todas las propiedades <code>inherit | initial | unset | revert</code> o los valores  <code>left | right | none | inline-start | inline-end</code>, de cualquier forma debe consultarse la referencia de cada propiedad.</dd>
+                    </dl> 
                 </article>
                 <article class="concept"> <!--Numbers-->
-                    <h3 class="title-concept" id="numbers"> <a href="#value-units">Numericos</a></h3>
+                    <h3 class="title-concept" id="numbers"> Numericos</h3>
+                    <a href="#value-units">Regresar Valores y Unidades</a>
+                    <p class="content">
+                        Este tipo de valor se ralaciona directamente con las propiedades que admiten un valor numerico para trabaja y en muchas ocasiones seguida de una unidad, entre ellas se encuentran:
+                    </p>
+                    <dl class="content">
+                        <dt>Entero</dt>
+                        <dd>Estos numeros <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/integer" target="_blank" rel="noopener noreferrer">enteros</a> utilizan los caracteres del 0 al 9 y pueden ser positivos o negativos, es una buena idea revisar la referencia de la propiedad ya que algunas de ellas no aceptan valores negativos</dd>
+
+                        <dt>Decimal</dt>
+                        <dd>Los numeros <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/number" target="_blank" rel="noopener noreferrer">decimal</a> pueden dar valores positivos o negativos  </dd>
+
+                        <dt>Porcentaje</dt>
+                        <dd>El <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage" target="_blank" rel="noopener noreferrer">porcentaje</a> representa una fraccion de algun elemento representado en una division de 100 unidades, en este caso el numero va de 1 a 100seguido del simbolo de porcentaje, por ejemplo: <code class="language-css">width:45%;</code></dd>
+
+                        <dt>Unidades</dt>
+                        <dd>Las <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/dimension" target="_blank" rel="noopener noreferrer">unidades</a> muchas veces llamadas dimensiones nos dan un valor que tiene sentido en un contexto especifico, por ejemplo, distancia, tiempo, angulos, etc. se utilizan con un valor numérico seguido de una abreviación de la unidad en cuestion las mas comunes son:</dd>
+                        <ulclass="content">
+                            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>&lt;length&gt;</code></a> Unidades de <a href="#unidades-distancia">distancia</a></li>
+                            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/angle"><code>&lt;angle&gt;</code></a>unidades <a href="#unidades-angulares">angulares</a></li>
+                            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/time"><code>&lt;time&gt;</code></a> Unidades de<a href="#unidades-tiempo">tiempo</a></li>
+                            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/resolution"><code>&lt;resolution&gt;</code></a> Unidades de <a href="#unidades-resolucion">resolucion</a></li>
+                           </ul>
+                    </dl>
+                    <h3 class="title-aux" id="unidades-distancia">Unidades de distancia</h3>
+                    <p class="content">
+                        El tipo numérico con el que te vas a encontrar con mayor frecuencia es <a href="https://developer.mozilla.org/es/docs/Web/CSS/length" target="_blank" rel="noopener noreferrer">&lt;length&gt;</a>, por ejemplo, 10px (píxeles) o 30em. En CSS se utilizan dos longitudes diferentes: relativa y absoluta. Es importante conocer la diferencia para entender qué dimensiones van a tener las cosas.
+                    </p>
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th colspan="3">Unidades Absolutas</th>
+                            </tr>
+                            <tr>
+                                <th scope="col">Unidad</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Equivale a</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>cm</code></td>
+                                <td>Centímetros</td>
+                                <td>1cm = 96px/2,54</td>
+                            </tr>
+                            <tr>
+                                <td><code>mm</code></td>
+                                <td>Milímetros</td>
+                                <td>1mm = 1/10 de 1cm</td>
+                            </tr>
+                            <tr>
+                                <td><code>Q</code></td>
+                                <td>Cuartos de milímetros</td>
+                                <td>1Q = 1/40 de 1cm</td>
+                            </tr>
+                            <tr>
+                                <td><code>in</code></td>
+                                <td>Pulgadas</td>
+                                <td>1in = 2,54cm = 96px</td>
+                            </tr>
+                            <tr>
+                                <td><code>pc</code></td>
+                                <td>Picas</td>
+                                <td>1pc = 1/16 de 1in</td>
+                            </tr>
+                            <tr>
+                                <td><code>pt</code></td>
+                                <td>Puntos</td>
+                                <td>1pt = 1/72 de 1in</td>
+                            </tr>
+                            <tr>
+                                <td><code>px</code></td>
+                                <td>Píxeles</td>
+                                <td>1px = 1/96 de 1in</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th colspan="2">Unidades Relativas</th>
+                            </tr>
+                            <tr>
+                                <th scope="col">Unidad</th>
+                                <th scope="col">Relativa a</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>em</code></td>
+                                <td>Tamaño de letra del elemento padre, en el caso de propiedades tipográficas como <a
+                                        href="https://developer.mozilla.org/es/docs/Web/CSS/font-size"><code>font-size</code></a>, y tamaño de la fuente del propio
+                                    elemento en el caso de otras propiedades, como <a href="https://developer.mozilla.org/es/docs/Web/CSS/width"><code>width</code></a>.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><code>ex</code></td>
+                                <td>Altura x de la fuente del elemento.</td>
+                            </tr>
+                            <tr>
+                                <td><code>ch</code></td>
+                                <td>La medida de avance (ancho) del glifo "0" de la letra del elemento.</td>
+                            </tr>
+                            <tr>
+                                <td><code>rem</code></td>
+                                <td>Tamaño de la letra del elemento raíz.</td>
+                            </tr>
+                            <tr>
+                                <td><code>lh</code></td>
+                                <td>Altura de la línea del elemento.</td>
+                            </tr>
+                            <tr>
+                                <td><code>vw</code></td>
+                                <td>1% del ancho de la ventana gráfica.</td>
+                            </tr>
+                            <tr>
+                                <td><code>vh</code></td>
+                                <td>1% de la altura de la ventana gráfica.</td>
+                            </tr>
+                            <tr>
+                                <td><code>vmin</code></td>
+                                <td>1% de la dimensión más pequeña de la ventana gráfica.</td>
+                            </tr>
+                            <tr>
+                                <td><code>vmax</code></td>
+                                <td>1% de la dimensión más grande de la ventana gráfica.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3 class="title-aux" id="unidades-angulares">Unidades angulares</h3>
+                    <p class="content">
+                        El tipo de dato  <a href="https://developer.mozilla.org/es/docs/Web/CSS/angle" target="_blank" rel="noopener noreferrer">&lt;angle&gt;</a> de CSS representa valores de ángulo. Los valores positivos representan ángulos en sentido de las agujas del reloj, mientras los valores negativos representan ángulos en sentido opuesto. Su sintáxis es un valor de tipo numérico seguido inmediatamente por la unidad (deg, grad, rad o turn). Al igual que cualquier otra dimensión en CSS, no debe haber espacio entre la unidad y el número.
+                    </p>
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Unidades</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Descripcion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>deg</code></td>
+                                <td>Grados (Degrees)</td>
+                                <td>Un circulo mide 360 grados</td>
+                            </tr>
+                            <tr>
+                                <td><code>grad</code></td>
+                                <td>Gradians</td>
+                                <td>Existen 400 gradianes en un circulo.</td>
+                            </tr>
+                            <tr>
+                                <td><code>rad</code></td>
+                                <td>Radians</td>
+                                <td>existen 2π radians en un circulo completo.</td>
+                            </tr>
+                            <tr>
+                                <td><code>turn</code></td>
+                                <td>Turns</td>
+                                <td>Existe 1 turn o una "vuelta" en un circulo completo.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3 class="title-aux" id="unidades-tiempo">Unidades de tiempo</h3>
+                    <p class="content">
+                        El tipo de dato <a href="https://developer.mozilla.org/es/docs/Web/CSS/time" target="_blank" rel="noopener noreferrer">&lt;time&gt;</a> de CSS representa un valor de tiempo expresado en segundos o milisegundos. Se usa en animation, transition y propiedades relacionadas.
+                    </p>
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Unidades</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Descripcion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>s</code></td>
+                                <td>Seconds</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><code>ms</code></td>
+                                <td>Milliseconds</td>
+                                <td>es la milésima parte de un segundo.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <h3 class="title-aux" id="unidades-resolucion">Unidades de resolucion</h3>
+                    <p class="content">
+                        El tipo de dato CSS <a href="https://developer.mozilla.org/es/docs/Web/CSS/resolution" target="_blank" rel="noopener noreferrer">&lt;resolution&gt;</a>, usado en media queries,  define la densidad de píxeles de un dispositivo de salida, su resolución. Es un <a href="https://developer.mozilla.org/es/docs/Web/CSS/number" target="_blank" rel="noopener noreferrer">&lt;number&gt;</a> inmediatamente seguido por una unidad de resolución (dpi, dpcm, ...). Como para cualquier dimensión CSS, no hay espacio entre la unidad literal y el número.
+                        
+                        <br>En pantallas, la longitud está relacionada a centímetros, pulgadas o píxeles CSS, no en valores físicos.
+                            
+                        <br> Incluso si todas las unidades representan la misma resolución para el valor 0, la unidad no se puede omitir en este caso, ya que no es un <length>: 0 es inválida y no representa 0dpi, 0dpcm, ni 0dppx.
+                    </p>
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Unidad</th>
+                                <th scope="col">Descripcion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>dpi</code></td>
+                                <td>Puntos por pulgada.</td>
+                            </tr>
+                            <tr>
+                                <td><code>dpcm</code></td>
+                                <td>Puntos por centimetro.</td>
+                            </tr>
+                            <tr>
+                                <td><code>dppx</code>, <code>x</code></td>
+                                <td>Puntos por pixel.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
                 </article>
                 <article class="concept"> <!--Color-->
-                    <h3 class="title-concept" id="color"> <a href="#value-units">Colores</a></h3>
+                    <h3 class="title-concept" id="color"> Colores</h3>
+                    <a href="#value-units">Regresar Valores y Unidades</a>
+                    <p class="content">
+                        En CSS hay muchas formas de especificar el <a href="https://developer.mozilla.org/es/docs/Web/CSS/color_value" target="_blank" rel="noopener noreferrer">&lt;color&gt;</a>, algunas de las cuales se implementaron más recientemente que otras. En todas partes en CSS se pueden usar los mismos valores de color, tanto para especificar el color del texto como el color de fondo, o de cualquier otra cosa.
+                        <br><br>
+                        El sistema de colores estándar disponible en los ordenadores modernos es de 24 bits, lo que permite visualizar aproximadamente 16,7 millones de colores distintos a partir de una combinación de diferentes canales de rojo, verde y azul con 256 valores diferentes por canal (256 x 256 x 256 = 16.777.216). Echemos un vistazo a algunas de las formas en que podemos especificar colores en CSS.
+                        <br><br>
+                        Existe la propiedad &nbsp;<a href="https://developer.mozilla.org/es/docs/Web/CSS/opacity"><code>opacity</code></a> la cual no tiene directamente relacion con el color, pero provoca que el elemento se vuelva "Transparente", semejante al color alpha, pero esta propiedad afecta a todo el contenido.
+                        <br><br>
+                        Existen 4 formas de definir una color:
+                    </p>
+                    <dl class="content">
+                        <dt>Palabras Clave</dt> 
+                        <dd> Estas palabras clave mencionan el nombre de color en inglés, de esa manera puedes poner el texto <code>black | red | yellow | green ... </code> existe una larga <a href="https://www.w3schools.com/cssref/css_colors.asp" target="_blank" rel="noopener noreferrer">lista</a> de palabras claves aceptadas
+                        <br><br>
+                        La palabra clave <strong><code>transparent</code></strong> el cual provoca que se vea completamente el color del elemento que se encuentre debajo, este color es equivalente a <code class="language-css">rgba(0,0,0,0);</code>
+                        </dd>
+
+                        <dt>Hexadecimal</dt>
+                        <dd>Los Valores hexadecimales es un sistema numerico que utiliza los caracteres 0-9 y de a-f es decir un total de 16 caracteres, para tener un valor de 256 necesitamos dos caracteres hexadecimales por lo que debe establecerse 2 caracteres hexadecimales por cada color, para usarse debe anteponerse el simbolo "#" y un par de valores hexadecimales por cada canal de color (RR, GG, BB) adicionalmente puede añadirse un siguiente canal que sería el alpha (RR, GG, BB, AA) quedando la nomenclatura como #RRGGBB o #RRGGBBAA</dd>
+                        <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
+                            <code class="language-css">
+                                /*RGB*/
+                            </code><br><code class="language-css">
+                                color:#02798b;
+                            </code><br><code class="language-css">
+                                color:#c55da1;
+                            </code><br><code class="language-css">
+                                /*RGBA*/
+                            </code><br><code class="language-css">
+                                color:#02798b0A;
+                            </code><br><code class="language-css">
+                                color:#c55da114;
+                            </code>
+                        </div>
+                        
+                        <dt>Funcion RGB</dt>
+                        <dd>Esta es una funcion que admite tres valores numericos enteros de 0 a 255, cada valor representa a cada uno de los colores Rojo, Verde y Azul, <code class="language-css">rgb(25,135,45);</code> cabe mencionar que tambien existe la funcion <code class="language-css">rgba(25,135,45,0.5);</code>
+                            la cual acepta un cuarto valor para indicar el grado de opacidad en un rango de 0 a 1. Los valores equivalentes del ejemplo anterior serian:</dd> 
+                            <div class="codes">
+                                <h4 class="title-codes">Ejemplo:</h4>
+                                <code class="language-css">
+                                    /*RGB*/
+                                </code><br><code class="language-css">
+                                    color:rgb(2,121,139);
+                                </code><br><code class="language-css">
+                                    color:rgb(197,93,161);
+                                </code><br><code class="language-css">
+                                    /*RGBA*/
+                                </code><br><code class="language-css">
+                                    color:rgb(2,121,139,0.1);
+                                </code><br><code class="language-css">
+                                    color:rgb(197,93,161,0.2);
+                                </code>
+                            </div>
+                        <dt>Funcion HSL</dt>
+                        <dd>Al igual que la función RGB esta funcion trabaja con 3 valores, la diferencia es que los valores son: <strong><code>Matiz | Saturación | Luminosidad</code></strong> Matiz: admite valores de 0 a 360, Saturación: admite valores de 0 a 100% y la Luminosidad: tambien acepta valores de 0 a 100%. Al igual que la funcion RGB, existe una función hsla(); que agrega el canal alpha para la transparencia</dd>
+                        <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
+                            <code class="language-css">
+                                /*HSL*/
+                            </code><br><code class="language-css">
+                                color:hsl(188, 97%, 28%);
+                            </code><br><code class="language-css">
+                                color:hsl(321, 47%, 57%);
+                            </code><br><code class="language-css">
+                                /*HSLA*/
+                            </code><br><code class="language-css">
+                                color:hsla(188, 97%, 28%, 0.1);
+                            </code><br><code class="language-css">
+                                color:hsla(321, 47%, 57%, 0.2);
+                            </code>
+                        </div>
+                    </dl>
+                    <p class="note">
+                        <strong>Nota:</strong>
+                            Algunas propiedades relacionadas con el color son <a href="https://developer.mozilla.org/es/docs/Web/CSS/color"><code>color</code></a>, <a href="https://developer.mozilla.org/es/docs/Web/CSS/background-color"><code>background-color</code></a>, <a href="https://developer.mozilla.org/es/docs/Web/CSS/border-color"><code>border-color</code></a>, <a href="https://developer.mozilla.org/es/docs/Web/CSS/outline-color"><code>outline-color</code></a>, <a href="https://developer.mozilla.org/es/docs/Web/CSS/text-shadow"><code>text-shadow</code></a>, <a href="https://developer.mozilla.org/es/docs/Web/CSS/box-shadow"><code>box-shadow</code></a>. entre otras.
+                    </p>
                 </article>
                 <article class="concept"> <!--Position-->
-                    <h3 class="title-concept" id="position"> <a href="#value-units">Posición</a></h3>
+                    <h3 class="title-concept" id="position"> Posición</h3>
+                    <a href="#value-units">Regresar Valores y Unidades</a>
+                    <p class="content">El tipo de dato <code><a href="https://developer.mozilla.org//en-US/docs/Web/CSS/position_value"  target="_blank" rel="noopener noreferrer">&lt;position&gt;</a></code> representa un conjunto de coordenadas 2D que se utiliza para colocar un elemento, por ejemplo una imagen de fondo (con el atributo <code><a href="https://developer.mozilla.org//en-US/docs/Web/CSS/background-position"  target="_blank" rel="noopener noreferrer">background-position</a></code>). Puede tomar palabras clave como <code>top</code>, <code>left</code>, <code>bottom</code>, <code>right</code> y <code>center</code> para alinear los elementos con los límites específicos de una caja de dos dimensiones, y también longitudes, que representan desplazamientos desde los bordes superior e izquierdo de la caja.</p>
+                    <p class="content">Un valor de posición típico consta de dos valores: el primero establece la posición horizontal, y el segundo la vertical. Si solo especificas valores para un eje, el otro usará <code>center</code> por defecto.</p>
                 </article>
                 <article class="concept"> <!--Functions-->
-                    <h3 class="title-concept" id="function"> <a href="#value-units">Funciones</a></h3>
+                    <h3 class="title-concept" id="function"> Funciones</h3>
+                    <a href="#value-units">Regresar Valores y Unidades</a>
+                    <p class="content">
+                        Las funciones de CSS a diferencia de los lenguages de programacion, estos ya se encuentran definidos y no podemos definir nuevas funciones, esta es una pequeña <a href="https://www.w3schools.com/cssref/css_functions.asp" target="_blank" rel="noopener noreferrer">lista</a> de funciones disponibles o esta <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Functions" target="_blank" rel="noopener noreferrer">lista extensa</a>.
+                    </p>
+                    <p class="content">
+                        En programación, una función es un bloque de código reutilizable que es posible ejecutar varias veces para completar una tarea repetitiva con el mínimo esfuerzo tanto por parte del desarrollador como del ordenador. Las funciones suelen asociarse a lenguajes como JavaScript, Python o C++, pero también hay funciones en CSS, como valores de código propietario. Ya hemos visto funciones en acción en la sección sobre los colores: rgb(), hsl(), etc. El valor que se utiliza para devolver una imagen de un archivo, en este caso url(), también es una función.
+                        <br><br>
+                        Un valor que se comporta más como algo que puedes encontrar en un lenguaje de programación tradicional es la función calc(). Esta función te proporciona la capacidad de hacer cálculos simples en tu CSS. Es particularmente útil si deseas calcular valores que no puedes definir al escribir el CSS para tu proyecto y necesitas que el navegador lo haga durante la ejecución.
+                        <br><br>
+                        Por ejemplo, a continuación usamos calc() para hacer que la caja tenga 20% + 100px de ancho. El 20% se calcula a partir del ancho del contenedor principal .wrapper y, por lo tanto, cambiará si ese ancho cambia. No podemos hacer este cálculo de antemano porque no sabemos cuál será el 20% del elemento padre, por lo que usamos calc() para decirle al navegador que lo haga por nosotros.
+                    </p>
                 </article>
-                <!--
-                    Longitud Absoluta y relativa
-                    color
-                    colores, rgb, rgba, hsla...
-
-                    integer
-                    Number
-                    dimension
-                    percentage
-                -->
             </section>
             <section class="section" id="box-style"><!--*** Box-style *******************-->
                 <h2 class="section-title">Estilizando las cajas</h2>
