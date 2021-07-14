@@ -6,47 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apuntes CSS3</title>
     <script src="https://kit.fontawesome.com/a2e8d0339c.js"></script>
-    <link rel="stylesheet" href="../css/apuntes2.css">
+    <link rel="stylesheet" href="../css/apuntes.css">
     <link rel="stylesheet" href="../css/prism.css">
 </head>
 <body>
     <main>
         <aside><!-- <<<<<<< MENU >>>>>>>>> -->
             <nav>
-                <label for="check-menu" class="btn-menu fas fa-bars"></label>
-
                 <div class="logo-materia">
-                    <!-- class="icon-home fas fa-home" Icono Home Font awesome
-                    <i class="fas fa-bars"></i>-->
-                    <a href="#" class="materias"><!--*** HTML5 ********************-->
-                            <img src="../img/HTML5_logo.svg" alt="Logo HTML5">
-                    </a>
-                    <a href="../index.html" class="materias materia-selected"><!--*** CSS3 ********************-->
-                            <img src="../img/CSS3_logo.svg" alt="Css3 logo">
-                    </a>
-                    <a href="../apJs/apJs.html" class="materias"><!--*** JavaScript ********************-->
-                            <img src="../img/JavaScript_logo.svg" alt="Javascript Logo">
-                    </a>
-                    <a href="" class="materias"><!--*** Responsive ********************-->
-                            <img src="../img/Responsive_Logo.svg" alt="Logo Responsive">
-                    </a>
-                    <a href="" class="materias"><!--*** PHP ********************-->
-                            <img src="../img/PHP-logo.svg" alt="PHP Logo">
-                    </a>
-                    <a href="" class="materias"><!--*** GIT ********************-->
-                            <img src="../img/Git-logo.svg" alt="GIT logo">
-                    </a>
-                    <a href="" class="materias"><!--*** Bash ********************-->
-                            <img src="../img/Gnu-bash-logo.svg" alt="BASH logo">
-                    </a>
-                    <a href="" class="materias"><!--*** Ejercicios ********************-->
-                            <img src="../img/ejercicios.svg" alt="Ejercicios logo">
-                    </a>
+                    <!-- class="icon-home fas fa-home" Icono Home Font awesome-->
+                    <a href="../index.html" ><img src="../img/CSS3_logo.svg" alt="Css3 logo"></a> 
                 </div>
-
-                <input type="checkbox" name="" id="check-menu">
                 <ul class="menu">
-                    <label for="check-menu" class="btn-menu fas fa-bars"></label>
                     <li>
                         Referencias
                         <ul class="submenu">
@@ -57,10 +28,7 @@
                             <li><a href="https://css-tricks.com/" target="_blank" rel="noopener noreferrer">CSS Tricks</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <label for="rudimentos" class="elem-menu">Rudimentos</label>
-                        <!-- <a href="#rudimentos">Rudimentos</a> -->
-                        
+                    <li><a href="#rudimentos">Rudimentos</a>
                         <ul class="submenu">
                             <li><a href="#que-es-css" >¿Que es CSS?</a></li>
                             <li><a href="#css-en-html" >CSS en HTML</a></li>
@@ -69,9 +37,7 @@
                             <li><a href="#esp-cas-her" >Cascada, herencia, especificidad</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <label for="box-model" class="elem-menu">Modelo de Caja</label>
-                        <!-- <a href="#box-model">Modelo de Caja</a> -->
+                    <li><a href="#box-model">Modelo de Caja</a>
                         <ul class="submenu">
                             <li><a href="#flujo-normal" >Flujo Normal</a></li>
                             <li><a href="#modelo-caja" >Modelos de Cajas</a></li>
@@ -79,44 +45,19 @@
                             <li><a href="#overflow" >Overflow</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <label for="value-units" class="elem-menu">Valores y Unidades</label>
-                        <!-- <a href="#value-units">Valores y Unidades</a> -->
-                        <ul class="submenu">
-                            <li><a href="#keyword">Palabras Clave</a></li>
-                            <li><a href="#numbers">Numbers</a></li>
-                            <li><a href="#color">Color</a></li>
-                            <li><a href="#position">position</a></li>
-                            <li><a href="#function">Funciones</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <label for="box-style" class="elem-menu">Estilos de caja</label>
-                        <!-- <a href="#box-style">Estilos de caja</a></li> -->
-                    <li>
-                        <label for="texto-css" class="elem-menu">Texto con CSS</label>
-                        <!-- <a href="#texto-css">Texto con CSS</a></li> -->
-                    <li>
-                        <label for="maquetacion" class="elem-menu">Maquetación</label>
-                        <!-- <a href="#maquetacion">Maquetación</a></li> -->
-                    <li>
-                        <label for="media-queries" class="elem-menu">Media Queries</label>
-                        <!-- <a href="#media-queries">Media Queries</a></li> -->
-                    <li>
-                        <label for="responsive-design" class="elem-menu">Responsive Design</label>
-                        <!-- <a href="#responsive-design">Responsive Design</a></li> -->
-                    <li>
-                        <label for="animaciones" class="elem-menu">Animaciones</label>
-                        <!-- <a href="#animaciones">Animaciones</a></li> -->
-                    <li>
-                        <label for="depuracion" class="elem-menu">Depuración</label>
-                        <!-- <a href="#depuracion">Depuración</a></li> -->
+                    <li><a href="#value-units">Valores y Unidades</a></li>
+                    <li><a href="#box-style">Estilos de caja</a></li>
+                    <li><a href="#texto-css">Texto con CSS</a></li>
+                    <li><a href="#maquetacion">Maquetación</a></li>
+                    <li><a href="#media-queries">Media Queries</a></li>
+                    <li><a href="#responsive-design">Responsive Design</a></li>
+                    <li><a href="#animaciones">Animaciones</a></li>
+                    <li><a href="#depuracion">Depuración</a></li>
                 </ul>
             </nav> 
         </aside>
         <div class="contenedor"><!--<<<<<<< CONTENEDOR  >>>>>>>>> -->
-            <input type="radio" name="bloques" class="bloques" id="rudimentos" checked>
-            <section class="section" ><!--*** Rudimentos ************************-->
+            <section class="section" id="rudimentos"><!--*** Rudimentos ************************-->
                 <h2 class="section-title">Rudimentos</h2>
                 <article class="concept"><!--Que es CSS-->
                     <h3 class="title-concept" id="que-es-css">¿Que es CSS?</h3>
@@ -784,8 +725,7 @@
                      </dl>
                 </article>
             </section>
-            <input type="radio" name="bloques" class="bloques" id="box-model">
-            <section class="section"><!--*** Box Model *******************-->
+            <section class="section" id="box-model"><!--*** Box Model *******************-->
                 <h2 class="section-title">Modelo de Caja</h2>
                 <article class="concept"><!--Flujo Normal-->
                     <h3 class="title-concept" id="flujo-normal">Flujo Normal</h3>
@@ -1222,8 +1162,7 @@
 
                 </article>
             </section>
-            <input type="radio" name="bloques" class="bloques" id="value-units">
-            <section class="section" ><!--*** Valores y Unidades ***************-->
+            <section class="section" id="value-units"><!--*** Valores y Unidades ***************-->
                 <h2 class="section-title">Valores y Unidades</h2>
                 <p class="content">
                     Los valores que una propiedad puede adquirir depende exclusivamente de esa propiedad que deseamos modificar, sin embargo podemos generalizarlos y agruparlos en una lista que nos apoye al momento de necesitarlo, sin embargo lo adecuado es buscar la referencia de cada propiedad para conocer los valores que este admite..
@@ -1577,8 +1516,7 @@
                     </p>
                 </article>
             </section>
-            <input type="radio" name="bloques" class="bloques" id="box-style">
-            <section class="section" ><!--*** Box-style *******************-->
+            <section class="section" id="box-style"><!--*** Box-style *******************-->
                 <h2 class="section-title">Estilizando las cajas</h2>
                 <!--
                     color
@@ -1594,8 +1532,7 @@
 
                 -->
             </section>
-            <input type="radio" name="bloques" class="bloques" id="texto-css">
-            <section class="section" ><!--*** Texto CSS *******************-->
+            <section class="section" id="texto-css"><!--*** Texto CSS *******************-->
                 <h2 class="section-title">Tipografías</h2>
                 <!-- 
                         /*funciones min, max, clamp, calc, var, attr*/
@@ -1616,8 +1553,7 @@
 
                  -->
             </section>
-            <input type="radio" name="bloques" class="bloques" id="maquetacion">
-            <section class="section" ><!--*** Maquetación *****************-->
+            <section class="section" id="maquetacion"><!--*** Maquetación *****************-->
                 <h2 class="section-title">Maquetacion</h2>
                 <!-- 
                     display
@@ -1633,16 +1569,14 @@
                     grid
                  -->
             </section>
-            <input type="radio" name="bloques" class="bloques" id="media-queries">
-            <section class="section" ><!--*** Media Queries *****************-->
+            <section class="section" id="media-queries"><!--*** Media Queries *****************-->
                 <h2 class="section-title">Media Queries</h2>
                 <!-- 
                     screen
                     print
                  -->
             </section>
-            <input type="radio" name="bloques" class="bloques" id="responsive-design">
-            <section class="section" ><!--*** Responsive Design **********-->
+            <section class="section" id="responsive-design"><!--*** Responsive Design **********-->
                 <h2 class="section-title">responsive-design</h2>
                 <!-- 
                     Organizacion 
@@ -1650,8 +1584,7 @@
                     Depuración
                  -->
             </section>
-            <input type="radio" name="bloques" class="bloques" id="animaciones">
-            <section class="section" ><!--*** Animaciones ****************-->
+            <section class="section" id="animaciones"><!--*** Animaciones ****************-->
                 <h2 class="section-title">Animaciones</h2>
                 <!-- 
                     Transition
@@ -1664,8 +1597,7 @@
 
                  -->
             </section>
-            <input type="radio" name="bloques" class="bloques" id="depuracion">
-            <section class="section" ><!--*** Depuracion *****************-->
+            <section class="section" id="depuracion"><!--*** Depuracion *****************-->
                 <h2 class="section-title">Depuración</h2>
                 <!-- 
                     Organizacion 

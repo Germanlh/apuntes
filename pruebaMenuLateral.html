@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba menu lateral</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        main{
+            background-color: blueviolet;
+            display: flex;
+        }
+        .menu-content{
+            background-color:blue;
+            flex-basis: 6rem;
+            position: relative;
+        }
+        .menu{
+            background-color: peru;
+            position:fixed;
+            left: 4rem;
+            top: 0;
+            width: 2rem;
+            padding: 1rem;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 300ms;
+        }
+        .btn-menu{
+            cursor: pointer;
+        }
+        .menu ul{
+            list-style: none;
+        }
+        .contenido{
+            background-color: orangered;
+        }
+
+        .bloque{
+            display: none;
+        }
+        .elem-menu:hover{
+            background-color: black;
+            color: blanchedalmond;
+            cursor: pointer;
+        }
+        .bloques:checked+.bloque{
+            display: block;
+        }
+        #check{
+            display: none;
+        }
+        #check:checked ~ .menu{
+            visibility: visible;
+            opacity: 1;
+            width: 30rem;
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        
+        <div class="menu-content">
+            <input type="checkbox" name="" id="check">
+            <label for="check" class="btn-menu">Menu</label>
+            <aside class="menu">
+                <ul>
+                    <li></li>
+                    <li><label for="modelo-caja" class="elem-menu">Modelo de Caja</label></li>
+                    <li><label for="valores-unidades" class="elem-menu">Valores y Unidades</label></li>
+                    <li><label for="estilos-caja" class="elem-menu">Estilos de Caja</label></li>
+                    <li>5</li>
+                </ul>
+            </aside>
+        </div>
+        <div class="contenido" >
+            <input type="radio" name="bloques" class="bloques" id="rudimentos">
+            <div class="bloque">
+
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo deleniti, ex placeat dolorem animi, laboriosam corrupti corporis minus repellendus, iste velit veritatis accusamus cumque consectetur aliquam quis voluptates esse possimus.</p>
+                
+                <p>Quidem delectus voluptatum aliquam, nesciunt ipsa vero praesentium dolores quo aliquid officiis modi pariatur maxime harum earum. Amet quasi quod ipsum dignissimos rerum cumque illum, magni, omnis voluptate temporibus repellendus.</p>
+                
+                <p>Quod exercitationem saepe alias fugit repellendus, veniam, tenetur quam, autem suscipit in nisi numquam incidunt explicabo culpa corrupti harum ipsam qui. Molestiae eos odit porro beatae eveniet deleniti, obcaecati voluptatem.</p>
+       
+                <p>Deleniti aliquam deserunt dignissimos ullam itaque enim qui recusandae, rem consequuntur consectetur odit eum iure dicta possimus ipsum et quos cupiditate minima? Eaque cupiditate ab inventore vitae, ipsa nam deleniti!</p>
+            </div>
+
+            <input type="radio" name="bloques" class="bloques" id="modelo-caja">
+            <div class="bloque">
+                
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis eius itaque excepturi vero accusamus repudiandae necessitatibus mollitia ut tempora expedita nulla, omnis eos blanditiis aperiam odit aut fugiat! Sit, soluta.</p>
+
+                <p>Fugiat vero obcaecati commodi ipsam! Laborum dolorem voluptatum consequatur suscipit quis deserunt nam quae veniam beatae explicabo magni eum perspiciatis, facilis ipsam, sequi, unde quisquam quod doloribus eaque illum recusandae.</p>
+                
+                <p>Eum est quae esse rem sapiente molestiae necessitatibus excepturi, consequatur officiis, laboriosam voluptates beatae eos accusamus blanditiis repellendus amet perferendis! Maxime aliquam est minima excepturi a quia dolorem ad debitis.</p>
+                
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, molestiae dignissimos! Minima omnis illum assumenda natus nihil expedita laborum corrupti, doloribus blanditiis minus beatae. Exercitationem numquam voluptatem quidem ullam ipsam.</p>
+            </div>
+
+            <input type="radio" name="bloques" class="bloques" id="valores-unidades">
+            <div class="bloque">
+                <p>Dolorem quidem voluptate quos ipsam nulla, ex blanditiis nihil possimus distinctio suscipit eius deleniti odit corrupti. Quo suscipit, illum necessitatibus, magnam perferendis reiciendis cumque provident, autem ex doloribus non iste.</p>
+                
+                <p>Sequi, qui impedit! Earum nobis et vero? Nesciunt necessitatibus inventore, delectus enim placeat expedita animi saepe architecto rerum dicta aut nihil tempore mollitia consequuntur soluta? Libero commodi quo quas aperiam?</p>
+                
+                <p>Commodi aperiam ex atque consectetur reiciendis. Vero, ex quo iusto, at, necessitatibus quibusdam itaque soluta quas eius fugiat nam voluptates quidem placeat incidunt accusantium molestiae odio deserunt maxime maiores. Labore.</p>
+
+                <p>Impedit veritatis aliquam placeat magni rerum, temporibus voluptatem, fugit iusto cupiditate, natus ex omnis magnam reiciendis expedita! Eum voluptatibus quia veritatis alias mollitia autem, nihil sint exercitationem quo sit dolores.</p>
+           
+                <p>Consectetur in, error ea delectus numquam debitis nam modi accusamus iure facilis sapiente deserunt nobis fugit suscipit earum sequi ratione et dolore sint, officia eos quisquam tempora illo distinctio. Provident.</p>
+           
+                <p>Earum vel culpa voluptatibus nobis aut architecto autem ex officia provident labore, vitae nulla, voluptate blanditiis. Facilis in omnis beatae culpa, optio minima est. Tempora ipsam perspiciatis repellat porro magnam!</p>
+            </div>
+
+            <input type="radio" name="bloques" class="bloques" id="estilos-caja">
+            <div class="bloque">
+                <p>Optio similique nesciunt atque quam explicabo porro ipsam cupiditate. Repellat sed explicabo iste deleniti illo, id soluta temporibus quaerat in, quae neque asperiores ipsa laudantium. Accusamus debitis animi vero tenetur.</p>
+
+                <p>Voluptatibus eum facere delectus. Commodi, impedit, ducimus non, consectetur ipsam eaque nobis reiciendis provident neque quae accusantium. Ut placeat cumque, facilis officiis provident quos sunt nobis animi, nemo quo sed?</p>
+
+                <p>Optio similique nesciunt atque quam explicabo porro ipsam cupiditate. Repellat sed explicabo iste deleniti illo, id soluta temporibus quaerat in, quae neque asperiores ipsa laudantium. Accusamus debitis animi vero tenetur.</p>
+
+                <p>Voluptatibus eum facere delectus. Commodi, impedit, ducimus non, consectetur ipsam eaque nobis reiciendis provident neque quae accusantium. Ut placeat cumque, facilis officiis provident quos sunt nobis animi, nemo quo sed?</p>
+            </div>
+
+
+        </div>
+    </main>
+</body>
+</html>
