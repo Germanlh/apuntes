@@ -11,30 +11,66 @@
 </head>
 <body>
     <main>
-        <aside>
-            <nav><!--*** MENU ****************-->
+        <aside><!-- <<<<<<< MENU >>>>>>>>> -->
+            <nav>
+                <label for="check-menu" class="btn-menu fas fa-bars"></label>
+
                 <div class="logo-materia">
-                    <img src="img/JavaScript_logo.svg" alt="">
+                    <!-- class="icon-home fas fa-home" Icono Home Font awesome
+                    <i class="fas fa-bars"></i>-->
+                    <a href="#" class="materias"><!--*** HTML5 ********************-->
+                            <img src="../img/HTML5_logo-grayIcon.svg" alt="Logo HTML5">
+                    </a>
+                    <a href="../index.html" class="materias materia-selected"><!--*** CSS3 ********************-->
+                            <img src="../img/CSS3_logo-grayIcon.svg" alt="Css3 logo">
+                    </a>
+                    <a href="../apJs/apJs.html" class="materias"><!--*** JavaScript ********************-->
+                            <img src="../img/JavaScript_logo-grayIcon.svg" alt="Javascript Logo">
+                    </a>
+                    <a href="" class="materias"><!--*** Responsive ********************-->
+                            <img src="../img/Responsive_Logo-grayIcon.svg" alt="Logo Responsive">
+                    </a>
+                    <a href="" class="materias"><!--*** PHP ********************-->
+                            <img src="../img/PHP-logo-grayIcon.svg" alt="PHP Logo">
+                    </a>
+                    <a href="" class="materias"><!--*** GIT ********************-->
+                            <img src="../img/Git-logo-grayIcon.svg" alt="GIT logo">
+                    </a>
+                    <a href="" class="materias"><!--*** Bash ********************-->
+                            <img src="../img/Gnu-bash-logo-grayIcon.svg" alt="BASH logo">
+                    </a>
+                    <a href="" class="materias"><!--*** Ejercicios ********************-->
+                            <img src="../img/ejercicios-grayIcon.svg" alt="Ejercicios logo">
+                    </a>
                 </div>
-                <a href="../index.html" class="icon-home"><i class="fas fa-home"></i></a> <!-- Home -->
+
+                <input type="checkbox" name="" id="check-menu">
+                <!-- <a href="../index.html" class="icon-home"><i class="fas fa-home"></i></a> Home -->
                 <ul class="menu">
-                    <li><a href="../index.html">home</a></li>
-                    <li><a href="../index.html">home</a></li>
-                    <li><a href="../index.html">home</a></li>
-                    <li><a href="../index.html">home</a></li>
-                    <li>
-                        <a href="../index.html">home</a>
+                    <label for="check-menu" class="btn-menu fas fa-bars"></label>
+                    <li><!-- menu1 -->
+                        <label for="secc1" class="elem-menu">seccion1</label>
                         <ul class="submenu">
-                            <li><a href="../index.html">home</a></li>
-                            <li><a href="../index.html">home</a></li>
-                            <li><a href="../index.html">home</a></li>
+                            <li><a href="#sub1secc1">home</a></li>
+                            <li><a href="#sub2secc1">home</a></li>
+                            <li><a href="#sub3secc1">home</a></li>
+                        </ul>
+                    </li>
+
+                    <li><!-- menu2 -->
+                        <label for="secc2" class="elem-menu">seccion1</label>
+                        <ul class="submenu">
+                            <li><a href="#sub1secc2">home</a></li>
+                            <li><a href="#sub2secc2">home</a></li>
+                            <li><a href="#sub3secc2">home</a></li>
                         </ul>
                     </li>
                 </ul>
             </nav>
         </aside>
-        <div class="contenedor">
-            <section class="section"><!--*** Rudimentos ************************-->
+        <div class="contenedor"><!--<<<<<<< CONTENEDOR  >>>>>>>>> -->
+            <input type="radio" name="bloques" class="bloques" id="secc1" checked>
+            <section class="section"><!--*** secc1 ************************-->
                 <h2 class="section-title">Rudimentos</h2>
                 <article class="concept">
                     <h3 class="title-concept">¿Que es JavaScript?</h3>
@@ -99,7 +135,7 @@
                     </ul>
                     <!--** Imagen **-->
                     <div class="ilustracion">
-                        <img src="img/regla.png" alt="Regla CSS">
+                        <img src="apCss/img/regla.png" alt="Regla CSS">
                     </div>
                 </article>
             </section>
