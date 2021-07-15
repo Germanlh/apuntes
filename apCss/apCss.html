@@ -57,7 +57,7 @@
                             <li><a href="https://css-tricks.com/" target="_blank" rel="noopener noreferrer">CSS Tricks</a></li>
                         </ul>
                     </li>
-                    <li>
+                    <li><!-- Rudimentos -->
                         <label for="rudimentos" class="elem-menu">Rudimentos</label>
                         <!-- <a href="#rudimentos">Rudimentos</a> -->
                         
@@ -69,7 +69,7 @@
                             <li><a href="#esp-cas-her" >Cascada, herencia, especificidad</a></li>
                         </ul>
                     </li>
-                    <li>
+                    <li> <!-- Modelo de caja -->
                         <label for="box-model" class="elem-menu">Modelo de Caja</label>
                         <!-- <a href="#box-model">Modelo de Caja</a> -->
                         <ul class="submenu">
@@ -79,7 +79,7 @@
                             <li><a href="#overflow" >Overflow</a></li>
                         </ul>
                     </li>
-                    <li>
+                    <li><!-- Valores y Unidades -->
                         <label for="value-units" class="elem-menu">Valores y Unidades</label>
                         <!-- <a href="#value-units">Valores y Unidades</a> -->
                         <ul class="submenu">
@@ -90,27 +90,34 @@
                             <li><a href="#function">Funciones</a></li>
                         </ul>
                     </li>
-                    <li>
+                    <li><!-- Estilos de Caja -->
                         <label for="box-style" class="elem-menu">Estilos de caja</label>
                         <!-- <a href="#box-style">Estilos de caja</a></li> -->
-                    <li>
+                    </li>
+                    <li><!-- Texto con CSS  -->
                         <label for="texto-css" class="elem-menu">Texto con CSS</label>
                         <!-- <a href="#texto-css">Texto con CSS</a></li> -->
-                    <li>
+                    </li>
+                    <li><!-- Otros Elementos (form, etc)  -->
+                        <label for="otro-elem" class="elem-menu">Otros Elementos HTML</label>
+                        <!-- <a href="#texto-css">Texto con CSS</a></li> -->
+                    </li>
+                    <li><!-- Maquetación -->
                         <label for="maquetacion" class="elem-menu">Maquetación</label>
                         <!-- <a href="#maquetacion">Maquetación</a></li> -->
-                    <li>
+                    </li>
+                    <li> <!-- Media Queries -->
                         <label for="media-queries" class="elem-menu">Media Queries</label>
                         <!-- <a href="#media-queries">Media Queries</a></li> -->
-                    <li>
-                        <label for="responsive-design" class="elem-menu">Responsive Design</label>
-                        <!-- <a href="#responsive-design">Responsive Design</a></li> -->
-                    <li>
+                    </li>
+                    <li> <!-- Animaciones -->
                         <label for="animaciones" class="elem-menu">Animaciones</label>
                         <!-- <a href="#animaciones">Animaciones</a></li> -->
-                    <li>
+                    </li>
+                    <li> <!-- Depuracion -->
                         <label for="depuracion" class="elem-menu">Depuración</label>
                         <!-- <a href="#depuracion">Depuración</a></li> -->
+                    </li>
                 </ul>
             </nav> 
         </aside>
@@ -1582,39 +1589,520 @@
                 <h2 class="section-title">Estilizando las cajas</h2>
                 <!--
                     color
+                    
                     Background
+                    Gradiente
                     overflow-img
                     box-shadow
                     
-                    outline
-                    image-border
                     border-radius
+                    image-border
+                    outline
                     
-                    Gradiente
 
                 -->
                 <p class="content">
-                    Los valores que una propiedad puede adquirir depende exclusivamente de esa propiedad que deseamos modificar, sin embargo podemos generalizarlos y agruparlos en una lista que nos apoye al momento de necesitarlo, sin embargo lo adecuado es buscar la referencia de cada propiedad para conocer los valores que este admite..
+                    El modelo de caja nos muestra como es que los elementos se comportan dentro de una página web, sin embargo, la manera en las que estan se disponen y colocan e interaccionan con los demás elementos corresponde al maquetado de la página, En este apartado mostraremos como es que las cajas toman apariencias diferentes de forma individual.
                 </p>
                 <ul class="content">
-                    <li><a href="#keyword">Palabras Clave</a></li>
-                    <li><a href="#numbers">Numbers</a></li>
-                    <li><a href="#color">Color</a></li>
-                    <li><a href="#position">position</a></li>
-                    <li><a href="#function">Funciones</a></li>
+                    <li><a href="#color-prop">Color</a></li>
+                    <li><a href="#background">Background</a></li>
+                    <!-- *** -->
                 </ul>
 
-                <article class="concept">
-                    <h3 class="title-concept" id="keyword"> Palabras Clave</h3>
+                <article class="concept"> <!--Color-->
+                    <h3 class="title-concept" id="color-prop"> Color</h3>
+                    <p class="content">
+                        El color es una propiedad que puede agregarse a diferentes características de una caja o <a href="http://https://developer.mozilla.org/en-US/docs/Web/HTML/Applying_color" target="_blank" rel="noopener noreferrer">elemento HTML</a>, por ejemplo al fondo, al contorno, a la sombra, etc. pero cada una de éstas características tienen su propia propiedad y el color es solo uno de sus valores, por ahora veremos las características que atañen a la caja, las carecterísticas que corresponden al texto se veran en la seccion correspondiente, así como algunos elementos adicionales como los formularios y el <a href="https://developer.mozilla.org/es/docs/Web/CSS/caret-color" target="_blank" rel="noopener noreferrer">caret-color</a>. Cuando lo usamos como propiedad de un elemento <code class="language-css">.elemento{color:blue;}</code> el color se aplica sobre los elementos que van al "Frente" del elemento, esto es, el texto o cualquier decoración que utilice el texto, cabe mencionar que la los valores que admite se encuentran descritos en la seccion de Valores y Unidades de este manual.
+                    </p>
+                    <div class="codes">
+                        <h4 class="title-codes">Ejemplo:</h4>
+                        <code class="language-css">
+                            /*RGB*/
+                        </code><br><code class="language-css">
+                            color:#02798b;
+                        </code><br><code class="language-css">
+                            color:#c55da1;
+                        </code><br><code class="language-css">
+                            /*RGBA*/
+                        </code><br><code class="language-css">
+                            color:#02798b0A;
+                        </code><br><code class="language-css">
+                            color:#c55da114;
+                        </code><br><code class="language-css">
+                            /*RGB*/
+                        </code><br><code class="language-css">
+                            color:rgb(2,121,139);
+                        </code><br><code class="language-css">
+                            color:rgb(197,93,161);
+                        </code><br><code class="language-css">
+                            /*RGBA*/
+                        </code><br><code class="language-css">
+                            color:rgb(2,121,139,0.1);
+                        </code><br><code class="language-css">
+                            color:rgb(197,93,161,0.2);
+                        </code><br><code class="language-css">
+                            /*HSL*/
+                        </code><br><code class="language-css">
+                            color:hsl(188, 97%, 28%);
+                        </code><br><code class="language-css">
+                            color:hsl(321, 47%, 57%);
+                        </code><br><code class="language-css">
+                            /*HSLA*/
+                        </code><br><code class="language-css">
+                            color:hsla(188, 97%, 28%, 0.1);
+                        </code><br><code class="language-css">
+                            color:hsla(321, 47%, 57%, 0.2);
+                        </code>
+                    </div>
+                </article>
+                <article class="concept"> <!--Background-->
+                    <h3 class="title-concept" id="background"> Background</h3>
+                    <p class="content">
+                        La propiedad <a href="https://developer.mozilla.org/es/docs/Web/CSS/background" target="_blank" rel="noopener noreferrer">Backgroud</a> es un método abreviado de un conjunto de valores que afectan directamente a las cajas, pero trabajar de este modo puede inducir a la confusión cuando damos mantenimiento a la página o trabajamos en equipo, ya que todos los parámetros aparecen "aglutinados" y dificulta su lectura e interpretación. Por ejemplo
+                    </p>
+                    <div class="codes">
+                        <h4 class="title-codes">Ejemplo:</h4>
+                        <code class="language-css">
+                            .box {
+                                background: linear-gradient(105deg, rgba(255,255,255,.2) 39%, rgba(51,56,57,1) 96%) center center / 400px 200px no-repeat, url(big-star.png) center no-repeat, rebeccapurple;
+                              } 
+                        </code>
+                    </div>
+                    <p class="content">
+                        La manera sensata de trabajar con esta propiedad es usando las propiedades por separado, como puede verse en <a href="https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Backgrounds_and_borders" target="_blank" rel="noopener noreferrer">Este</a> articulo. Los elementos por separado son:
+                    </p>
+                    <ul class="content"> <!-- Submenu de Backbround -->
+                        <li><a href="#prop-background-color">background-color</a></li>
+                        <li><a href="#prop-background-image">background-image</a></li>
+                        <li><a href="#prop-background-repeat">background-repeat</a></li>
+                        <li><a href="#prop-background-size">background-size</a></li>
+                        <li><a href="#prop-background-position">background-position</a></li>
+                        <li><a href="#prop-background-clip">background-clip</a></li>
+                        <li><a href="#prop-background-origin">background-origin</a></li>
+                        <li><a href="#prop-background-attachment">background-attachment</a></li>
+                        <!-- *** -->
+                    </ul>
+                    <h3 class="title-aux" id="prop-background-color">background-color</h3>
+                        <p class="content">
+                            Esta es la propiedad mas "simple", ya que tiene la capacidad de usar un color plano que se coloca por debajo del contenido y relleno del elemento, la propiedad <a href="https://developer.mozilla.org/es/docs/Web/CSS/background-color" target="_blank" rel="noopener noreferrer">background-color</a> nos permite colocar  <a href="https://developer.mozilla.org/es/docs/Web/CSS/color_value" target="_blank" rel="noopener noreferrer">&lt;color&gt;</a> como valor.
+                        </p>
+                        <div class="codes">
+                            <h4 class="title-codes">Sintaxis:</h4>
+                            <code class="language-css">
+                                background-color: &lt;color&gt; | transparent | inherit ;
+                            </code>
+                        </div>
+                        <dl class="content">
+                            <dt>transparent</dt>
+                            <dd>Este es el valor por defecto de esta propiedad, por lo que toda caja tomará el color del elemento inferior en el apilamiento</dd>
+                            <dt>inherit</dt>
+                            <dd>Este valor permite que el elemento pueda heredar de su elemento padre la propiedad en cuestión</dd>
+                            <dt><a href="https://developer.mozilla.org/es/docs/Web/CSS/color_value" target="_blank" rel="noopener noreferrer">&lt;color&gt;</a></dt>
+                            <dd>Permite utilizar una de las opciones válidas para referirnos a un color, puede usarse el nombre del color o su código hexadecimal o las funciones rgb() o hsl(), por su puesto es una opcion usar los colores alfa respectivamente.</dd>
+                        </dl>
+                        <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
+                            <code class="language-css">
+                                background-color:blue;
+                            </code><br><code class="language-css">
+                                /*RGB*/
+                            </code><br><code class="language-css">
+                                background-color:#02798b;
+                            </code><br><code class="language-css">
+                                background-color:#c55da1;
+                            </code><br><code class="language-css">
+                                /*RGBA*/
+                            </code><br><code class="language-css">
+                                background-color:#02798b0A;
+                            </code><br><code class="language-css">
+                                background-color:#c55da114;
+                            </code><br><code class="language-css">
+                                /*RGB*/
+                            </code><br><code class="language-css">
+                                background-color:rgb(2,121,139);
+                            </code><br><code class="language-css">
+                                background-color:rgb(197,93,161);
+                            </code><br><code class="language-css">
+                                /*RGBA*/
+                            </code><br><code class="language-css">
+                                background-color:rgb(2,121,139,0.1);
+                            </code><br><code class="language-css">
+                                background-color:rgb(197,93,161,0.2);
+                            </code><br><code class="language-css">
+                                /*HSL*/
+                            </code><br><code class="language-css">
+                                background-color:hsl(188, 97%, 28%);
+                            </code><br><code class="language-css">
+                                background-color:hsl(321, 47%, 57%);
+                            </code><br><code class="language-css">
+                                /*HSLA*/
+                            </code><br><code class="language-css">
+                                background-color:hsla(188, 97%, 28%, 0.1);
+                            </code><br><code class="language-css">
+                                background-color:hsla(321, 47%, 57%, 0.2);
+                            </code>
+                        </div>
+                    <h3 class="title-aux" id="prop-background-image">background-image</h3>
+                        <p class="content">
+                            <a href="https://developer.mozilla.org/es/docs/Web/CSS/background-image" target="_blank" rel="noopener noreferrer">background-image</a>  nos permite agregar una imagen o varias de fondo al elemento referido, de forma predeterminada si el contenedor es mas pequeña que la imagen, esta no se ajustará, por lo que es necesario hacerlo manualmente, de la misma forma si la imagen es más pequeña que el contenedor, esta se repetirá hasta llenar el espacio, comportamiento que también debemos controlar manualmente. Otro detalle es que si el fondo del elemento es transparente y la imagen tmabien tiene fondo transparente se distinguirán los elementos que están debajo del apilamiento, se recomienda poner un color de fondo con background-color.
+                        </p>
+                        <div class="codes">
+                            <h4 class="title-codes">Sintaxis:</h4>
+                            <code class="language-css">
+                                background-image: url() | none | inherit ;
+                            </code>
+                        </div>
+                        <dl class="content">
+                            <dt>url</dt>
+                            <dd>Es una función que nos permite colocar la dirección en la que se encuentra la imagen que deseamos colocar, cabe mencionar que la dirección puede ser relativa, es decir en la misma carpeta donde almacenamos la página web o una dirección web específica</dd>
+                            <dt>none</dt>
+                            <dd>Utilizado para especificar que un elemento no debe tener ninguna imagen de fondo.</dd>
+                        </dl>
+                        <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
+                            <code class="language-css">
+                                background-image: url("https://mdn.mozillademos.org/files/6457/mdn_logo_only_color.png");
+                            </code><br><code class="language-css">
+                                background-image:  url("https://mdn.mozillademos.org/files/11991/startransparent.gif"),
+                                url("https://mdn.mozillademos.org/files/7693/catfront.png");
+                            </code>
+                        </div>
+                    <h3 class="title-aux" id="prop-background-repeat">background-repeat</h3>
+                        <p class="content">
+                            El comportamiento de "mosaico" que se observa en los elementos a los que se agrega una imagen puede controlarse con <a href="https://developer.mozilla.org/es/docs/Web/CSS/background-repeat" target="_blank" rel="noopener noreferrer">background-repeat</a>, este control se ejerce sobre el eje horizontal o el eje vertical o ambos a la vez, de acuerdo a los siguientes valores que acepta.
+                        </p>
+                        <div class="codes">
+                            <h4 class="title-codes">Sintaxis:</h4>
+                            <code class="language-css">
+                                background-repeat: repeat | no-repeat | repeat-x | repeat-y | space | round |  &lt; horizontal &gt; &lt; vertical &gt; ;
+                            </code>
+                        </div>
+                        <dl class="content">
+                            <dt>repeat</dt>
+                            <dd> Es la opcion por defecto, puede usarse en forma horizontal (repeat-x) o vertical (repeat-y) La imagen se repite hasta cobrir todo el fondo existente. La última imagen debe ser recortada si no encaja.</dd>
+                            <dt>space</dt>
+                            <dd>La imagen se repite lo máximo posible sin recortarse. La primera y última imagen son fijadas a cada lado del elemento, y el espacio blanco es distribuido igualmente entre las imágenes. La propiedad background-position es ignorada a menos que una sola imagen pueda ser desplegada sin recortar. El único caso donde se recorta usando space es cuando no hay suficiente sitio para desplegar una imagen.</dd>
+                            <dt>round</dt>
+                            <dd>Como el espacio permitido aumenta, las imágenes repetidas se estrechan (sin dejar huecos) hasta que haya espacio suficiente (espacio restante >= la mitad del ancho de la imagen) para que otra sea añadida. Cuando la próxima imagen es añadida, todas las demás son comprimidas al espacio disponible. Ejemplo: Una imagen con un ancho inicial de 260px, se repite 3 veces, debería estirarse hasta que el tamaño sea de 300px, luego otra imagen debe ser añadida. Luego deberían comprimirse hasta los 225px.</dd>
+                            <dt>no-repeat</dt>
+                            <dd>La imagen no se repite (y por lo tanto el area coloreada de la imagen de fondo no debe ser rellenada completamente). La posición del fondo no repetido es definida por la propiedad de CSS background-position.</dd>
+                        </dl>
 
+                        <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
+                            <code class="language-css">
+                                /* One-value syntax */
+                            </code><br><code class="language-css">
+                                background-repeat: repeat-x;
+                            </code><br><code class="language-css">
+                                background-repeat: repeat-y;
+                            </code><br><code class="language-css">
+                                background-repeat: repeat;
+                            </code><br><code class="language-css">
+                                background-repeat: space;
+                            </code><br><code class="language-css">
+                                background-repeat: round;
+                            </code><br><code class="language-css">
+                                background-repeat: no-repeat;
+                            </code><br><br><code class="language-css">
+                                /* Two-value syntax: horizontal | vertical */
+                            </code><br><code class="language-css">
+                                background-repeat: repeat space;
+                            </code><br><code class="language-css">
+                                background-repeat: repeat repeat;
+                            </code><br><code class="language-css">
+                                background-repeat: round space;
+                            </code><br><code class="language-css">
+                                background-repeat: no-repeat round;
+                            </code><br><br><code class="language-css">
+                                /* Global values */
+                            </code><br><code class="language-css">
+                                background-repeat: inherit;
+                            </code><br><code class="language-css">
+                                background-repeat: initial;
+                            </code><br><code class="language-css">
+                                background-repeat: unset;
+                            </code>
+                        </div>
+                    <h3 class="title-aux" id="prop-background-size">background-size</h3>
+                        <p class="content">
+                            La propiedad <a href="https://developer.mozilla.org/es/docs/Web/CSS/background-size" target="_blank" rel="noopener noreferrer">background-size</a> nos permite controlar el tamaño que tendrá la imagen dentro del elemento contenedor, de esta manera si la imagen es mayor al contenedor, esta podrá reducirse o en caso contrario ampliarse hasta que se adapte a nuestras necesidades.
+                        </p>
+                        <div class="codes">
+                            <h4 class="title-codes">Sintaxis:</h4>
+                            <code class="language-css">
+                                background-size: width=height | width height | contain | cover | auto ;
+                            </code>
+                        </div>
+                        <dl class="content">
+                            <dt>auto</dt>
+                            <dd>Es el valor por defecto y mantiene las proporciones y medidas originales de la imagen.</dd>
+                            <dt>width=height</dt>
+                            <dd>Es un valor numérico que se aplica a las dos dimensiones de la imagen por igual, puede usarse un porcentaje o una medida determinada en pixeles o relativa</dd>
+                            <dt>width height</dt>
+                            <dd>Podemos especificar  por separado los dos valores tanto horizontal como vertical para tener un mejor control de la imagen</dd>
+                            <dt>contain</dt>
+                            <dd>La imagen mantiene su proporcion, y se adapta el tamaño hasta que esta quede "contenida" dentro del elelemento, el navegador adecuará el tamaño de la imagen para que quepa dentro de la caja. En este caso, pueden quedar huecos a ambos lados o en la parte superior e inferior de la imagen si la relación de aspecto de la imagen es diferente de la de la caja.</dd>
+                            <dt>cover</dt>
+                            <dd> Con esta opcion la imagen mantiene su proporción, pero es estirada hasta que cubra completamente al contenedor, de esta forma, parte de la imagen puede quedar recortada por su elemento contenedor.</dd>
+                        </dl>
+
+                        <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
+                            <code class="language-css">
+                                /* NO RECOMENDADO */
+                            </code><br><code class="language-css">
+                                background-size: 25px;
+                            </code><br><code class="language-css">
+                                background-size: 50%;
+                            </code><br><code class="language-css">
+                                background-size: auto 50px;
+                            </code><br><code class="language-css">
+                                background-size: auto 50%;
+                            </code><br><br><code class="language-css">
+                                /* OKAY */
+                            </code><br><code class="language-css">
+                                background-size: 25px 50px;
+                            </code><br><code class="language-css">
+                                background-size: 50% 50%;
+                            </code>
+                        </div>
+                    <h3 class="title-aux" id="prop-background-position">background-position</h3>
+                        <p class="content">
+                            <a href="https://developer.mozilla.org/es/docs/Web/CSS/background-image" target="_blank" rel="noopener noreferrer">background-image</a>  nos permite agregar una imagen o varias de fondo al elemento referido, de forma predeterminada si el contenedor es mas pequeña que la imagen, esta no se ajustará, por lo que es necesario hacerlo manualmente, de la misma forma si la imagen es más pequeña que el contenedor, esta se repetirá hasta llenar el espacio, comportamiento que también debemos controlar manualmente. Otro detalle es que si el fondo del elemento es transparente y la imagen tmabien tiene fondo transparente se distinguirán los elementos que están debajo del apilamiento, se recomienda poner un color de fondo con background-color.
+                        </p>
+                        <div class="codes">
+                            <h4 class="title-codes">Sintaxis:</h4>
+                            <code class="language-css">
+                                background-color: &lt;color&gt; | transparent | inherit ;
+                            </code>
+                        </div>
+                        <dl class="content">
+                            <dt></dt>
+                            <dd></dd>
+                        </dl>
+                        <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
+                            <code class="language-css">
+                                background-color:blue;
+                            </code><br><code class="language-css">
+                                /*RGB*/
+                            </code><br><code class="language-css">
+                                background-color:#02798b;
+                            </code><br><code class="language-css">
+                                background-color:#c55da1;
+                            </code><br><code class="language-css">
+                                /*RGBA*/
+                            </code><br><code class="language-css">
+                                background-color:#02798b0A;
+                            </code><br><code class="language-css">
+                                background-color:#c55da114;
+                            </code><br><code class="language-css">
+                                /*RGB*/
+                            </code><br><code class="language-css">
+                                background-color:rgb(2,121,139);
+                            </code><br><code class="language-css">
+                                background-color:rgb(197,93,161);
+                            </code><br><code class="language-css">
+                                /*RGBA*/
+                            </code><br><code class="language-css">
+                                background-color:rgb(2,121,139,0.1);
+                            </code><br><code class="language-css">
+                                background-color:rgb(197,93,161,0.2);
+                            </code><br><code class="language-css">
+                                /*HSL*/
+                            </code><br><code class="language-css">
+                                background-color:hsl(188, 97%, 28%);
+                            </code><br><code class="language-css">
+                                background-color:hsl(321, 47%, 57%);
+                            </code><br><code class="language-css">
+                                /*HSLA*/
+                            </code><br><code class="language-css">
+                                background-color:hsla(188, 97%, 28%, 0.1);
+                            </code><br><code class="language-css">
+                                background-color:hsla(321, 47%, 57%, 0.2);
+                            </code>
+                        </div>
+                    <h3 class="title-aux" id="prop-background-clip">background-clip</h3>
+                        <p class="content">
+                            <a href="https://developer.mozilla.org/es/docs/Web/CSS/background-image" target="_blank" rel="noopener noreferrer">background-image</a>  nos permite agregar una imagen o varias de fondo al elemento referido, de forma predeterminada si el contenedor es mas pequeña que la imagen, esta no se ajustará, por lo que es necesario hacerlo manualmente, de la misma forma si la imagen es más pequeña que el contenedor, esta se repetirá hasta llenar el espacio, comportamiento que también debemos controlar manualmente. Otro detalle es que si el fondo del elemento es transparente y la imagen tmabien tiene fondo transparente se distinguirán los elementos que están debajo del apilamiento, se recomienda poner un color de fondo con background-color.
+                        </p>
+                        <div class="codes">
+                            <h4 class="title-codes">Sintaxis:</h4>
+                            <code class="language-css">
+                                background-color: &lt;color&gt; | transparent | inherit ;
+                            </code>
+                        </div>
+                        <dl class="content">
+                            <dt></dt>
+                            <dd></dd>
+                        </dl>
+                        <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
+                            <code class="language-css">
+                                background-color:blue;
+                            </code><br><code class="language-css">
+                                /*RGB*/
+                            </code><br><code class="language-css">
+                                background-color:#02798b;
+                            </code><br><code class="language-css">
+                                background-color:#c55da1;
+                            </code><br><code class="language-css">
+                                /*RGBA*/
+                            </code><br><code class="language-css">
+                                background-color:#02798b0A;
+                            </code><br><code class="language-css">
+                                background-color:#c55da114;
+                            </code><br><code class="language-css">
+                                /*RGB*/
+                            </code><br><code class="language-css">
+                                background-color:rgb(2,121,139);
+                            </code><br><code class="language-css">
+                                background-color:rgb(197,93,161);
+                            </code><br><code class="language-css">
+                                /*RGBA*/
+                            </code><br><code class="language-css">
+                                background-color:rgb(2,121,139,0.1);
+                            </code><br><code class="language-css">
+                                background-color:rgb(197,93,161,0.2);
+                            </code><br><code class="language-css">
+                                /*HSL*/
+                            </code><br><code class="language-css">
+                                background-color:hsl(188, 97%, 28%);
+                            </code><br><code class="language-css">
+                                background-color:hsl(321, 47%, 57%);
+                            </code><br><code class="language-css">
+                                /*HSLA*/
+                            </code><br><code class="language-css">
+                                background-color:hsla(188, 97%, 28%, 0.1);
+                            </code><br><code class="language-css">
+                                background-color:hsla(321, 47%, 57%, 0.2);
+                            </code>
+                        </div>
+                    <h3 class="title-aux" id="prop-background-origin">background-origin</h3>
+                        <p class="content">
+                            <a href="https://developer.mozilla.org/es/docs/Web/CSS/background-image" target="_blank" rel="noopener noreferrer">background-image</a>  nos permite agregar una imagen o varias de fondo al elemento referido, de forma predeterminada si el contenedor es mas pequeña que la imagen, esta no se ajustará, por lo que es necesario hacerlo manualmente, de la misma forma si la imagen es más pequeña que el contenedor, esta se repetirá hasta llenar el espacio, comportamiento que también debemos controlar manualmente. Otro detalle es que si el fondo del elemento es transparente y la imagen tmabien tiene fondo transparente se distinguirán los elementos que están debajo del apilamiento, se recomienda poner un color de fondo con background-color.
+                        </p>
+                        <div class="codes">
+                            <h4 class="title-codes">Sintaxis:</h4>
+                            <code class="language-css">
+                                background-color: &lt;color&gt; | transparent | inherit ;
+                            </code>
+                        </div>
+                        <dl class="content">
+                            <dt></dt>
+                            <dd></dd>
+                        </dl>
+                        <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
+                            <code class="language-css">
+                                background-color:blue;
+                            </code><br><code class="language-css">
+                                /*RGB*/
+                            </code><br><code class="language-css">
+                                background-color:#02798b;
+                            </code><br><code class="language-css">
+                                background-color:#c55da1;
+                            </code><br><code class="language-css">
+                                /*RGBA*/
+                            </code><br><code class="language-css">
+                                background-color:#02798b0A;
+                            </code><br><code class="language-css">
+                                background-color:#c55da114;
+                            </code><br><code class="language-css">
+                                /*RGB*/
+                            </code><br><code class="language-css">
+                                background-color:rgb(2,121,139);
+                            </code><br><code class="language-css">
+                                background-color:rgb(197,93,161);
+                            </code><br><code class="language-css">
+                                /*RGBA*/
+                            </code><br><code class="language-css">
+                                background-color:rgb(2,121,139,0.1);
+                            </code><br><code class="language-css">
+                                background-color:rgb(197,93,161,0.2);
+                            </code><br><code class="language-css">
+                                /*HSL*/
+                            </code><br><code class="language-css">
+                                background-color:hsl(188, 97%, 28%);
+                            </code><br><code class="language-css">
+                                background-color:hsl(321, 47%, 57%);
+                            </code><br><code class="language-css">
+                                /*HSLA*/
+                            </code><br><code class="language-css">
+                                background-color:hsla(188, 97%, 28%, 0.1);
+                            </code><br><code class="language-css">
+                                background-color:hsla(321, 47%, 57%, 0.2);
+                            </code>
+                        </div>
+                    <h3 class="title-aux" id="prop-background-attachment">background-attachment</h3>
+                        <p class="content">
+                            <a href="https://developer.mozilla.org/es/docs/Web/CSS/background-image" target="_blank" rel="noopener noreferrer">background-image</a>  nos permite agregar una imagen o varias de fondo al elemento referido, de forma predeterminada si el contenedor es mas pequeña que la imagen, esta no se ajustará, por lo que es necesario hacerlo manualmente, de la misma forma si la imagen es más pequeña que el contenedor, esta se repetirá hasta llenar el espacio, comportamiento que también debemos controlar manualmente. Otro detalle es que si el fondo del elemento es transparente y la imagen tmabien tiene fondo transparente se distinguirán los elementos que están debajo del apilamiento, se recomienda poner un color de fondo con background-color.
+                        </p>
+                        <div class="codes">
+                            <h4 class="title-codes">Sintaxis:</h4>
+                            <code class="language-css">
+                                background-color: &lt;color&gt; | transparent | inherit ;
+                            </code>
+                        </div>
+                        <dl class="content">
+                            <dt></dt>
+                            <dd></dd>
+                        </dl>
+                        <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
+                            <code class="language-css">
+                                background-color:blue;
+                            </code><br><code class="language-css">
+                                /*RGB*/
+                            </code><br><code class="language-css">
+                                background-color:#02798b;
+                            </code><br><code class="language-css">
+                                background-color:#c55da1;
+                            </code><br><code class="language-css">
+                                /*RGBA*/
+                            </code><br><code class="language-css">
+                                background-color:#02798b0A;
+                            </code><br><code class="language-css">
+                                background-color:#c55da114;
+                            </code><br><code class="language-css">
+                                /*RGB*/
+                            </code><br><code class="language-css">
+                                background-color:rgb(2,121,139);
+                            </code><br><code class="language-css">
+                                background-color:rgb(197,93,161);
+                            </code><br><code class="language-css">
+                                /*RGBA*/
+                            </code><br><code class="language-css">
+                                background-color:rgb(2,121,139,0.1);
+                            </code><br><code class="language-css">
+                                background-color:rgb(197,93,161,0.2);
+                            </code><br><code class="language-css">
+                                /*HSL*/
+                            </code><br><code class="language-css">
+                                background-color:hsl(188, 97%, 28%);
+                            </code><br><code class="language-css">
+                                background-color:hsl(321, 47%, 57%);
+                            </code><br><code class="language-css">
+                                /*HSLA*/
+                            </code><br><code class="language-css">
+                                background-color:hsla(188, 97%, 28%, 0.1);
+                            </code><br><code class="language-css">
+                                background-color:hsla(321, 47%, 57%, 0.2);
+                            </code>
+                        </div>
+                    
+                      
+                    
                 </article>
             </section>
             <input type="radio" name="bloques" class="bloques" id="texto-css">
             <section class="section" ><!--*** Texto CSS *******************-->
                 <h2 class="section-title">Tipografías</h2>
                 <!-- 
-                        /*funciones min, max, clamp, calc, var, attr*/
-                        /*Clamp para texto fluido*/
+                    /*funciones min, max, clamp, calc, var, attr*/
+                    /*Clamp para texto fluido*/
                     Font-face
                     columnas
                     word-wrap
@@ -1622,13 +2110,22 @@
                     font-family
                     listas ul, ol, dl
                     link
-
+                    
                     writing-mode
-                        /*https://developer.mozilla.org/es/docs/Web/CSS/writing-mode*/
+                    /*https://developer.mozilla.org/es/docs/Web/CSS/writing-mode*/
                     table 
                     formulario
-
-
+                    
+                    
+                -->
+            </section>
+            <input type="radio" name="bloques" class="bloques" id="otro-elem">
+            <section class="section" ><!--*** Otros Elementos HTML************-->
+                <h2 class="section-title">Otros Elementos HTML</h2>
+                <!-- 
+                    formularios
+                    caret-color
+                    input-type
                  -->
             </section>
             <input type="radio" name="bloques" class="bloques" id="maquetacion">
@@ -1654,15 +2151,6 @@
                 <!-- 
                     screen
                     print
-                 -->
-            </section>
-            <input type="radio" name="bloques" class="bloques" id="responsive-design">
-            <section class="section" ><!--*** Responsive Design **********-->
-                <h2 class="section-title">responsive-design</h2>
-                <!-- 
-                    Organizacion 
-                    Variables
-                    Depuración
                  -->
             </section>
             <input type="radio" name="bloques" class="bloques" id="animaciones">
