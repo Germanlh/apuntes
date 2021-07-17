@@ -75,8 +75,7 @@
                         <ul class="submenu">
                             <li><a href="#flujo-normal" >Flujo Normal</a></li>
                             <li><a href="#modelo-caja" >Modelos de Cajas</a></li>
-                            <li><a href="#propiedades-box-model" >Propiedades del modelo de caaja</a></li>
-                            <li><a href="#overflow" >Overflow</a></li>
+                            <li><a href="#propiedades-box-model" >Propiedades del modelo de caja</a></li>
                         </ul>
                     </li>
                     <li><!-- Valores y Unidades -->
@@ -93,6 +92,11 @@
                     <li><!-- Estilos de Caja -->
                         <label for="box-style" class="elem-menu">Estilos de caja</label>
                         <!-- <a href="#box-style">Estilos de caja</a></li> -->
+                        <ul class="submenu">
+                            <li><a href="#color-prop">color</a></li>
+                            <li><a href="#background">Background</a></li>
+                            <li><a href="#bordes">Bordes</a></li>
+                        </ul>
                     </li>
                     <li><!-- Texto con CSS  -->
                         <label for="texto-css" class="elem-menu">Texto con CSS</label>
@@ -105,6 +109,9 @@
                     <li><!-- Maquetación -->
                         <label for="maquetacion" class="elem-menu">Maquetación</label>
                         <!-- <a href="#maquetacion">Maquetación</a></li> -->
+                        <ul class="submenu">
+                            <li><a href="#overflow" >Overflow</a></li>
+                        </ul>
                     </li>
                     <li> <!-- Media Queries -->
                         <label for="media-queries" class="elem-menu">Media Queries</label>
@@ -1000,130 +1007,34 @@
 
                     <h3 class="title-aux">BORDER</h3>
                         <p class="content">
-                            La propiedad border es la <a href="https://developer.mozilla.org/es/docs/Web/CSS/Shorthand_properties" target="_blank" rel="noopener noreferrer">propiedad abreviada</a>, que nos permite manipular en conjunto 3 características que modifican la apariencia del borde de los diferentes elementos, estas propiedades son:
+                            El borde es importante para el modelo de caja ya que la dimensión de esta propiedad contribuye al tamaño final del elemento, en especial la propiedad <a href="https://developer.mozilla.org/es/docs/Web/CSS/border-width" target="_blank" rel="noopener noreferrer">border-width</a> que tambien puede manipularse con el método abreviado <a href="https://developer.mozilla.org/es/docs/Web/CSS/border" target="_blank" rel="noopener noreferrer">border</a>, hay que hacer mención que el borde es diferente al <a href="https://developer.mozilla.org/es/docs/Web/CSS/outline" target="_blank" rel="noopener noreferrer">contorno (outline)</a> ya que este no "engorda" a la caja, es decir, no coopera en el tamaño final del elemente ya que este contorno se dibuja sobre el elemento.
                         </p>
-                        <dl class="content">
-                            </dt> <a href="https://developer.mozilla.org/es/docs/Web/CSS/border-width" target="_blank" rel="noopener noreferrer">border-width</a><dt>
-                            <dd>Esta propiedad define el ancho del borde, acepta solo valores positivos, puede colocarse un valor <a href="https://developer.mozilla.org/es/docs/Web/CSS/length" target="_blank" rel="noopener noreferrer"><code>&lt;length&gt;</code></a> o puede usarse las los valores <code>thin | medium | thick </code></dd>
-
-                            <dt> <a href="https://developer.mozilla.org/es/docs/Web/CSS/border-style" target="_blank" rel="noopener noreferrer">border-style</a></dt>
-                            <dd>Nos indica el estilo que tomará el borde dentro de ellos encontramos</dd>
-                            <dd>
-                                <table class="content-table">
-                                    <tbody>
-                                        <tr>
-                                            <td style="vertical-align: middle;"><code>none</code></td>
-                                            <td style="vertical-align: middle;">
-                                                <div
-                                                    style="margin: 0.5em; width: 3em; height: 3em; border-top-style: none; background-color: palegreen;">
-                                                </div>
-                                            </td>
-                                            <td style="vertical-align: middle;">Al igual que la palabra clave hidden, no muestra ningún borde. A menos que se establezca una imagen de fondo, el valor calculado de border-top-width (en-US) será 0, incluso si el valor especificado es otro. En el caso de que la celda de la tabla y el borde se contraigan, el valor ninguno tiene la prioridad más baja: si se establece cualquier otro borde en conflicto, se mostrará.</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="vertical-align: middle;"><code>hidden</code></td>
-                                            <td style="vertical-align: middle;">
-                                                <div
-                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 3px; border-top-style: hidden; background-color: palegreen;">
-                                                </div>
-                                            </td>
-                                            <td style="vertical-align: middle;">Al igual que la palabra clave none, no muestra ningún borde. A menos que se establezca una imagen de fondo, el valor calculado de border-top-width (en-US) será 0, incluso si el valor especificado es otro. En el caso de que la celda de la tabla y el borde se contraigan, el valor oculto tiene la prioridad más alta: si se establece cualquier otro borde en conflicto, no se mostrará.</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="vertical-align: middle;"><code>dotted</code></td>
-                                            <td style="vertical-align: middle;">
-                                                <div
-                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 3px; border-top-style: dotted; background-color: palegreen;">
-                                                </div>
-                                            </td>
-                                            <td style="vertical-align: middle;">Muestra una serie de puntos redondeados. El espaciado de los puntos no está definido por la especificación y es específico de la implementación. El radio de los puntos es la mitad del ancho de borde superior calculado </a>.
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="vertical-align: middle;"><code>dashed</code></td>
-                                            <td style="vertical-align: middle;">
-                                                <div
-                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 3px; border-top-style: dashed; background-color: palegreen;">
-                                                </div>
-                                            </td>
-                                            <td style="vertical-align: middle;">Muestra una serie de segmentos de línea o guiones cortos con extremos cuadrados. El tamaño y la longitud exactos de los segmentos no están definidos por la especificación y son específicos de la implementación.</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="vertical-align: middle;"><code>solid</code></td>
-                                            <td style="vertical-align: middle;">
-                                                <div
-                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 3px; border-top-style: solid; background-color: palegreen;">
-                                                </div>
-                                            </td>
-                                            <td style="vertical-align: middle;">Muestra una línea sólida, recta y única.</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="vertical-align: middle;"><code>double</code></td>
-                                            <td style="vertical-align: middle;">
-                                                <div
-                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 3px; border-top-style: double; background-color: palegreen;">
-                                                </div>
-                                            </td>
-                                            <td style="vertical-align: middle;">Muestra dos líneas rectas que se suman al tamaño de píxel definido por el ancho del borde
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="vertical-align: middle;"><code>groove</code></td>
-                                            <td style="vertical-align: middle;">
-                                                <div
-                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 3px; border-top-style: groove; background-color: palegreen;">
-                                                </div>
-                                            </td>
-                                            <td style="vertical-align: middle;">Muestra un borde con apariencia tallada. Es lo opuesto a la cresta</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="vertical-align: middle;"><code>ridge</code></td>
-                                            <td style="vertical-align: middle;">
-                                                <div
-                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 3px; border-top-style: ridge; background-color: palegreen;">
-                                                </div>
-                                            </td>
-                                            <td style="vertical-align: middle;">Muestra un borde con apariencia extruida. Es lo opuesto al surco.</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="vertical-align: middle;"><code>inset</code></td>
-                                            <td style="vertical-align: middle;">
-                                                <div
-                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 3px; border-top-style: inset; background-color: palegreen;">
-                                                </div>
-                                            </td>
-                                            <td style="vertical-align: middle;">Muestra un borde que hace que el elemento parezca incrustado. Es lo opuesto al comienzo. Cuando se aplica a una celda de la tabla con border-collapse configurado como contraído, este valor se comporta como groove.</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="vertical-align: middle;"><code>outset</code></td>
-                                            <td style="vertical-align: middle;">
-                                                <div
-                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 3px; border-top-style: outset; background-color: palegreen;">
-                                                </div>
-                                            </td>
-                                            <td style="vertical-align: middle;">
-                                                Muestra un borde que hace que el elemento aparezca en relieve. Es lo opuesto al recuadro. Cuando se aplica a una celda de la tabla con el colapso de borde establecido en colapsado, este valor se comporta como una cresta.
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </dd>
-
-                            <dt> <a href="https://developer.mozilla.org/es/docs/Web/CSS/border-color" target="_blank" rel="noopener noreferrer">border-color</a></dt>
-                            <dd> Este valor se define por cualquiera de los valores permitidos para <a href="https://developer.mozilla.org/es/docs/Web/CSS/color" target="_blank" rel="noopener noreferrer"><code>&lt;color&gt;</code></a>  que son: valor de color, Hexadecimal, funcion RGB o RGBA, Funcion HSL o HSLA</dd>
-                        </dl>
                         <div class="codes">
-                        <h4 class="title-codes">Sintaxis:</h4>
-                            <code></code>
-                            border: [border-width || border-style || border-color | inherit] ;
-                        </code></div>
+                            <h4 class="title-codes">Sintaxis:</h4>
+                            <code class="language-css">
+                                border-width: &lt;lenght&gt; | thin | medium | thick | inherit ;
+                            </code>
+                        </div>
+                        <dl class="content">
+                            <dt>&lt;lenght&gt;</dt>
+                            <dd>El grosor de un borde es un valor explícito por lo cual el ancho no puede ser nunca negativo. Nota: Un valor em también es reconocido y soportado.</dd>
+                            <dt>thin</dt>
+                            <dd>Un borde fino.</dd>
+                            <dt>medium</dt>
+                            <dd>Un borde mediano.</dd>
+                            <dt>thick</dt>
+                            <dd>Un borde grueso.</dd>
+                        </dl>
                         <div class="codes">
                             <h4 class="title-codes">Ejemplo:</h4>
                             <code class="language-css">
-                            element {border: 1px solid #000;}
-                        </code></div>
+                                border-width: thin;
+                            </code><br><code class="language-css">
+                                border-width: 2rem;
+                            </code>
+                        </div>
                         <p class="note">
-                            <strong>Nota:</strong> Adicionalmente a esta propiedad, existen dos propiedades relacionadas con esta propiedad, éstas son: <a href="https://developer.mozilla.org/es/docs/Web/CSS/outline" target="_blank" rel="noopener noreferrer">outline</a> y <a href="https://developer.mozilla.org/es/docs/Web/CSS/border-image" target="_blank" rel="noopener noreferrer">border-image</a>
+                            Existen mas propiedades que tienen relacion con el borde y controlan tanto su color como su aspecto general, pero se encuentra detallados en la sección de estilos de caja.
                         </p>
 
                     <h3 class="title-aux">MARGIN - PADDING</h3>
@@ -1180,53 +1091,6 @@
                     <p class="content">
                         Sin embargo si dos cajas contiguas tienen margen, el espacio entre ellas no se suma, por el contrario, se contrae. Un punto clave a la hora de entender los márgenes es el concepto de colapso del margen. Si tienes dos elementos cuyos márgenes se tocan, esos márgenes se combinan para convertirse en un solo margen, cuyo tamaño es el del margen más grande.
                     </p>
-                </article>
-                <article class="concept"><!-- OverFlow-->
-                    <h3 class="title-concept" id="overflow">Overflow</h3>
-                    <p class="content">
-                        A pesar de que se pueda definir el tamaño de una caja desde CSS, siempre existe la posiblidad que el contenido no se ajuste a este tamaño ya sea por que se vea mas pequeño o por que el contenido supere el tamaño del contenedor, es en este momento en que llamamos un desborde de elementos.
-                    </p>
-                    <p class="content">
-                        De manera predeterminada, la forma en que CSS gestiona el desbordamiento es que "deja salir" el contenido, es decir, se muestra fuera de la caja, esto lo hace para evitar problemas de visualización de contenido y se oculte información al usuario que pueda ser importante. La forma adecuada con lidiar con el desbordamiento es usando la propiedad <a href="https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Overflowing_content" target="_blank" rel="noopener noreferrer">overflow</a>. 
-                    </p>
-                    <div class="codes">
-                        <code class="language-css">
-                            /*Valor predeterminado*/
-                        </code><br><code class="language-css">
-                            overflow: visible
-                        </code><br><code class="language-css">
-                            /*Valores*/
-                        </code><br><code class="language-css">
-                            overflow: hidden
-                        </code><br><code class="language-css">
-                            overflow: scroll
-                        </code><br><code class="language-css">
-                            overflow: auto
-                        </code><br><code class="language-css">
-                            overflow: inherit
-                        </code>
-                    </div>
-                    <dl class="content">
-                        <dt><code>visible</code></dt>
-                        <dd>Valor por defecto. El contenido no es recortado, podría ser dibujado fuera de la caja contenedora.</dd>
-                        <dt><code>hidden</code></dt>
-                        <dd>El contenido es recortado y no se muestran barras de posición.</dd>
-                        <dt><code>scroll</code></dt>
-                        <dd>El contenido es recortado y el navegador web usa las barras de desplazamiento, se haya recortado contenido&nbsp;o no. Esto previene cualquier problema con las barras de desplazamiento apareciendo o desapareciendo en un entorno dinámico. Puede que las impresoras impriman contenido excedente.</dd>
-                        <dt><code>auto</code></dt>
-                        <dd>Depende del agente de usuario. Navegadores de escritorio como Firefox proveen barras de desplazamiento si hay contenido excedente.</dd>
-                       </dl>
-                       <p class="content">
-                           En el caso que se quiera controlar solo el scroll vertical u horizontal, podemos usar la propiedad <a href="https://developer.mozilla.org/es/docs/Web/CSS/overflow-y" target="_blank" rel="noopener noreferrer">overflow-y</a> y <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-x" target="_blank" rel="noopener noreferrer">overflow-x</a>
-                       </p>
-                       <p class="note">
-                           <strong>Nota:</strong> En un contenedor fluido relleno de texto, el tamaño mínimo depende de la palabra más larga, en el caso de lidiar con palabras muy largas que provoquen el desbordamiento se puede usar la propiedad <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/word-break" target="_blank" rel="noopener noreferrer">word-break</a> o <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-wrap" target="_blank" rel="noopener noreferrer">overflow-wrap</a> para solucionar el problema.
-                       </p>
-                       <p class="alert">
-                        <strong>Advertencia:</strong> En CSS hay un concepto conocido como <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context" target="_blank" rel="noopener noreferrer">block formatting context</a>  o BFC (contexto de formato de bloque). Cuando usas un valor de overflow, como scroll o auto, creas un BFC. El resultado es que el contenido de la caja al que acabas de cambiar el valor overflow se convierte en un minidiseño propio. Las cosas que están fuera del contenedor no pueden meterse en él, y nada puede sobresalir de esa caja hacia el diseño circundante. Esto es para permitir un comportamiento con desplazamiento, porque para poder crear una experiencia de desplazamiento consistente todo el contenido de tu caja ha de estar contenido en algo, y no puede superponerse con otros elementos de la página.
-                       </p>
-
-
                 </article>
             </section>
             <input type="radio" name="bloques" class="bloques" id="value-units">
@@ -1588,17 +1452,14 @@
             <section class="section" ><!--*** Box-style *******************-->
                 <h2 class="section-title">Estilizando las cajas</h2>
                 <!--
-                    color
                     
-                    Background
-                    Gradiente
-                    overflow-img
-                    box-shadow
-                    
+                   
+                    Border
+                    outline
                     border-radius
                     image-border
-                    outline
                     
+                    box-shadow
 
                 -->
                 <p class="content">
@@ -1607,6 +1468,8 @@
                 <ul class="content">
                     <li><a href="#color-prop">Color</a></li>
                     <li><a href="#background">Background</a></li>
+                    <li><a href="#bordes">Bordes</a></li>
+                    <li><a href="#box-shadow">Sombras de caja</a></li>
                     <!-- *** -->
                 </ul>
 
@@ -1674,13 +1537,14 @@
                     </p>
                     <ul class="content"> <!-- Submenu de Backbround -->
                         <li><a href="#prop-background-color">background-color</a></li>
-                        <li><a href="#prop-background-image">background-image</a></li>
+                        <li><a href="#prop-background-image">background-image y Gradiente</a></li>
                         <li><a href="#prop-background-repeat">background-repeat</a></li>
                         <li><a href="#prop-background-size">background-size</a></li>
                         <li><a href="#prop-background-position">background-position</a></li>
                         <li><a href="#prop-background-clip">background-clip</a></li>
                         <li><a href="#prop-background-origin">background-origin</a></li>
                         <li><a href="#prop-background-attachment">background-attachment</a></li>
+                        <li><a href="#prop-background-multiple">Multiples Fondos</a></li>
                         <!-- *** -->
                     </ul>
                     <h3 class="title-aux" id="prop-background-color">background-color</h3>
@@ -1746,6 +1610,9 @@
                     <h3 class="title-aux" id="prop-background-image">background-image</h3>
                         <p class="content">
                             <a href="https://developer.mozilla.org/es/docs/Web/CSS/background-image" target="_blank" rel="noopener noreferrer">background-image</a>  nos permite agregar una imagen o varias de fondo al elemento referido, de forma predeterminada si el contenedor es mas pequeña que la imagen, esta no se ajustará, por lo que es necesario hacerlo manualmente, de la misma forma si la imagen es más pequeña que el contenedor, esta se repetirá hasta llenar el espacio, comportamiento que también debemos controlar manualmente. Otro detalle es que si el fondo del elemento es transparente y la imagen tmabien tiene fondo transparente se distinguirán los elementos que están debajo del apilamiento, se recomienda poner un color de fondo con background-color.
+                        </p>
+                        <p class="note">
+                            <strong>NOTA:</strong> Adicionalmente, podemos agregar degradados utilizando las propiedades de <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gradient" target="_blank" rel="noopener noreferrer"><strong>&lt;gradient&gt;</strong></a> pudiendo ser lineal, radial, conica o repetitiva lineal o repetitiva radial
                         </p>
                         <div class="codes">
                             <h4 class="title-codes">Sintaxis:</h4>
@@ -1847,7 +1714,6 @@
                             <dt>cover</dt>
                             <dd> Con esta opcion la imagen mantiene su proporción, pero es estirada hasta que cubra completamente al contenedor, de esta forma, parte de la imagen puede quedar recortada por su elemento contenedor.</dd>
                         </dl>
-
                         <div class="codes">
                             <h4 class="title-codes">Ejemplo:</h4>
                             <code class="language-css">
@@ -1870,231 +1736,345 @@
                         </div>
                     <h3 class="title-aux" id="prop-background-position">background-position</h3>
                         <p class="content">
-                            <a href="https://developer.mozilla.org/es/docs/Web/CSS/background-image" target="_blank" rel="noopener noreferrer">background-image</a>  nos permite agregar una imagen o varias de fondo al elemento referido, de forma predeterminada si el contenedor es mas pequeña que la imagen, esta no se ajustará, por lo que es necesario hacerlo manualmente, de la misma forma si la imagen es más pequeña que el contenedor, esta se repetirá hasta llenar el espacio, comportamiento que también debemos controlar manualmente. Otro detalle es que si el fondo del elemento es transparente y la imagen tmabien tiene fondo transparente se distinguirán los elementos que están debajo del apilamiento, se recomienda poner un color de fondo con background-color.
+                            La posicion de la imagen se determina por la propiedad <a href="https://developer.mozilla.org/es/docs/Web/CSS/background-position" target="_blank" rel="noopener noreferrer">background-position</a> la imagen de forma determinada se posiciona en la coordenada (0,0) que se encuentra en la esquina superior izquierda, tomando el sentido positivo de izquierda a izquierda en horizontal y arriba a abajo en vertical. 
                         </p>
                         <div class="codes">
                             <h4 class="title-codes">Sintaxis:</h4>
                             <code class="language-css">
-                                background-color: &lt;color&gt; | transparent | inherit ;
+                                background-position: [ &lt;percentage&gt; | &lt;length&gt; | left | center | right  ]
+                            </code><br><code class="language-css">
+                                [ &lt;percentage&gt; | &lt;length&gt; | top  | center | bottom ] ? ;
+                            </code><br><code class="language-css">
+                                background-position: [ top | center | bottom ];
+                            </code><br><code class="language-css">
+                                background-position: inherit;
                             </code>
                         </div>
                         <dl class="content">
-                            <dt></dt>
-                            <dd></dd>
+                            <dt>&lt;percentage&gt;</dt>
+                            <dd>Con el par de valores '0% 0%', la esquina izquierda de la imagen es alineada con la esquina izquierda del borde del espaciado de la caja. Un valor '100% 100%' pone la esquina inferior de la imagen en la esquina inferior del área de espaciado. Con un valor '14% 84%', el punto a 14% a la derecha y 84% abajo de la imagen es colocado en el punto al 14% derecha y 84% abajo del área de espaciado.</dd>
+                            <dt>&lt;length&gt;</dt>
+                            <dd>con un valor '2cm 1cm', la esquina superior izquierda de la imagen es colocada a 2 cm a la derecha y a 1cm debajo de la esquina superior izquierda del área de espaciado.</dd>
                         </dl>
                         <div class="codes">
                             <h4 class="title-codes">Ejemplo:</h4>
                             <code class="language-css">
-                                background-color:blue;
+                                background-position: top center;
                             </code><br><code class="language-css">
-                                /*RGB*/
+                                background-position: 20px 10%;
                             </code><br><code class="language-css">
-                                background-color:#02798b;
+                                background-position: top 20px;
                             </code><br><code class="language-css">
-                                background-color:#c55da1;
-                            </code><br><code class="language-css">
-                                /*RGBA*/
-                            </code><br><code class="language-css">
-                                background-color:#02798b0A;
-                            </code><br><code class="language-css">
-                                background-color:#c55da114;
-                            </code><br><code class="language-css">
-                                /*RGB*/
-                            </code><br><code class="language-css">
-                                background-color:rgb(2,121,139);
-                            </code><br><code class="language-css">
-                                background-color:rgb(197,93,161);
-                            </code><br><code class="language-css">
-                                /*RGBA*/
-                            </code><br><code class="language-css">
-                                background-color:rgb(2,121,139,0.1);
-                            </code><br><code class="language-css">
-                                background-color:rgb(197,93,161,0.2);
-                            </code><br><code class="language-css">
-                                /*HSL*/
-                            </code><br><code class="language-css">
-                                background-color:hsl(188, 97%, 28%);
-                            </code><br><code class="language-css">
-                                background-color:hsl(321, 47%, 57%);
-                            </code><br><code class="language-css">
-                                /*HSLA*/
-                            </code><br><code class="language-css">
-                                background-color:hsla(188, 97%, 28%, 0.1);
-                            </code><br><code class="language-css">
-                                background-color:hsla(321, 47%, 57%, 0.2);
+                                background-position: top 20px right 10px;
                             </code>
                         </div>
                     <h3 class="title-aux" id="prop-background-clip">background-clip</h3>
                         <p class="content">
-                            <a href="https://developer.mozilla.org/es/docs/Web/CSS/background-image" target="_blank" rel="noopener noreferrer">background-image</a>  nos permite agregar una imagen o varias de fondo al elemento referido, de forma predeterminada si el contenedor es mas pequeña que la imagen, esta no se ajustará, por lo que es necesario hacerlo manualmente, de la misma forma si la imagen es más pequeña que el contenedor, esta se repetirá hasta llenar el espacio, comportamiento que también debemos controlar manualmente. Otro detalle es que si el fondo del elemento es transparente y la imagen tmabien tiene fondo transparente se distinguirán los elementos que están debajo del apilamiento, se recomienda poner un color de fondo con background-color.
+                            La propiedad <a href="https://developer.mozilla.org/es/docs/Web/CSS/background-clip" target="_blank" rel="noopener noreferrer">background-clip</a> provoca que la imagen que se ha ubicado en el fondo sea cortada por una de las cajas del modelo de caja.
                         </p>
                         <div class="codes">
                             <h4 class="title-codes">Sintaxis:</h4>
                             <code class="language-css">
-                                background-color: &lt;color&gt; | transparent | inherit ;
+                                background-clip: border-box | padding-box | content-box | inherit ;
                             </code>
                         </div>
                         <dl class="content">
-                            <dt></dt>
-                            <dd></dd>
+                            <dt>border-box</dt>
+                            <dd>El fondo se extiende hasta el borde exterior de el contenedor (pero por debajo de la frontera, en orden z).</dd>
+                            <dt>padding-box</dt>
+                            <dd>El fondo no se muestra a través del borde (el fondo se extiende hasta el borde exterior del padding).</dd>
+                            <dt>content-box</dt>
+                            <dd>El fondo se dibuja desde donde inicia el contenido.</dd>
                         </dl>
+                        <p class="ejclip border-box">The yellow background extends behind the border.</p>
+                        <p class="ejclip padding-box">The yellow background extends to the inside edge of the border.</p>
+                        <p class="ejclip content-box">The yellow background extends only to the edge of the content box.</p>
+
                         <div class="codes">
                             <h4 class="title-codes">Ejemplo:</h4>
                             <code class="language-css">
-                                background-color:blue;
+                                background-clip: border-box
                             </code><br><code class="language-css">
-                                /*RGB*/
+                                background-clip: padding-box
                             </code><br><code class="language-css">
-                                background-color:#02798b;
-                            </code><br><code class="language-css">
-                                background-color:#c55da1;
-                            </code><br><code class="language-css">
-                                /*RGBA*/
-                            </code><br><code class="language-css">
-                                background-color:#02798b0A;
-                            </code><br><code class="language-css">
-                                background-color:#c55da114;
-                            </code><br><code class="language-css">
-                                /*RGB*/
-                            </code><br><code class="language-css">
-                                background-color:rgb(2,121,139);
-                            </code><br><code class="language-css">
-                                background-color:rgb(197,93,161);
-                            </code><br><code class="language-css">
-                                /*RGBA*/
-                            </code><br><code class="language-css">
-                                background-color:rgb(2,121,139,0.1);
-                            </code><br><code class="language-css">
-                                background-color:rgb(197,93,161,0.2);
-                            </code><br><code class="language-css">
-                                /*HSL*/
-                            </code><br><code class="language-css">
-                                background-color:hsl(188, 97%, 28%);
-                            </code><br><code class="language-css">
-                                background-color:hsl(321, 47%, 57%);
-                            </code><br><code class="language-css">
-                                /*HSLA*/
-                            </code><br><code class="language-css">
-                                background-color:hsla(188, 97%, 28%, 0.1);
-                            </code><br><code class="language-css">
-                                background-color:hsla(321, 47%, 57%, 0.2);
+                                background-clip: content-box
+                            </code><br><br><code class="language-css">
+                                background-clip: inherit
                             </code>
                         </div>
                     <h3 class="title-aux" id="prop-background-origin">background-origin</h3>
                         <p class="content">
-                            <a href="https://developer.mozilla.org/es/docs/Web/CSS/background-image" target="_blank" rel="noopener noreferrer">background-image</a>  nos permite agregar una imagen o varias de fondo al elemento referido, de forma predeterminada si el contenedor es mas pequeña que la imagen, esta no se ajustará, por lo que es necesario hacerlo manualmente, de la misma forma si la imagen es más pequeña que el contenedor, esta se repetirá hasta llenar el espacio, comportamiento que también debemos controlar manualmente. Otro detalle es que si el fondo del elemento es transparente y la imagen tmabien tiene fondo transparente se distinguirán los elementos que están debajo del apilamiento, se recomienda poner un color de fondo con background-color.
+                            Con la propiedad <a href="https://developer.mozilla.org/es/docs/Web/CSS/background-origin" target="_blank" rel="noopener noreferrer">background-origin</a>
+                            nosotros definimos a partir de que caja del modelo de caja se comienza a dibujar la imagen.
                         </p>
                         <div class="codes">
                             <h4 class="title-codes">Sintaxis:</h4>
                             <code class="language-css">
-                                background-color: &lt;color&gt; | transparent | inherit ;
+                                background-origin: padding-box | border-box | content-box ;
                             </code>
                         </div>
                         <dl class="content">
-                            <dt></dt>
-                            <dd></dd>
+                            <dt>padding-box</dt>
+                            <dd>El fondo se extiende al borde exterior (por debajo del borde en el orden z), la posición es relativa al borde de la caja.</dd>
+                            <dt>border-box</dt>
+                            <dd>El fondo se extiende al borde exterior del padding, la posición es relativa al padding de la caja.</dd>
+                            <dt>content-box </dt>
+                            <dd>El fondo se extiende dentro del (recortado al) contenido de la caja, la posición es relativa al contenido de la caja</dd>
                         </dl>
                         <div class="codes">
                             <h4 class="title-codes">Ejemplo:</h4>
                             <code class="language-css">
-                                background-color:blue;
+                                background-origin:border-box;
                             </code><br><code class="language-css">
-                                /*RGB*/
+                                /*Multiples Background*/
                             </code><br><code class="language-css">
-                                background-color:#02798b;
-                            </code><br><code class="language-css">
-                                background-color:#c55da1;
-                            </code><br><code class="language-css">
-                                /*RGBA*/
-                            </code><br><code class="language-css">
-                                background-color:#02798b0A;
-                            </code><br><code class="language-css">
-                                background-color:#c55da114;
-                            </code><br><code class="language-css">
-                                /*RGB*/
-                            </code><br><code class="language-css">
-                                background-color:rgb(2,121,139);
-                            </code><br><code class="language-css">
-                                background-color:rgb(197,93,161);
-                            </code><br><code class="language-css">
-                                /*RGBA*/
-                            </code><br><code class="language-css">
-                                background-color:rgb(2,121,139,0.1);
-                            </code><br><code class="language-css">
-                                background-color:rgb(197,93,161,0.2);
-                            </code><br><code class="language-css">
-                                /*HSL*/
-                            </code><br><code class="language-css">
-                                background-color:hsl(188, 97%, 28%);
-                            </code><br><code class="language-css">
-                                background-color:hsl(321, 47%, 57%);
-                            </code><br><code class="language-css">
-                                /*HSLA*/
-                            </code><br><code class="language-css">
-                                background-color:hsla(188, 97%, 28%, 0.1);
-                            </code><br><code class="language-css">
-                                background-color:hsla(321, 47%, 57%, 0.2);
+                                background-origin: padding-box, content-box;
                             </code>
                         </div>
+                        <p class="alert">
+                            <strong>ADVERTENCIA:</strong> La propiedad background-origin es ignorada si la propiedad background-attachment tiene un valor de fixed. <br> <br> Si el valor de esta propiedad no es establecido en la propiedad abreviada (shorthand) <a href="/es/docs/Web/CSS/background" title="background">background</a> que es aplicada a el elemento despues de la propiedad background-origin, el valor de esta propiedad sera restablecido a su valor inicial por la propiedad abreviada background.
+                        </p>
+                        <p>
+                        </p>
                     <h3 class="title-aux" id="prop-background-attachment">background-attachment</h3>
                         <p class="content">
-                            <a href="https://developer.mozilla.org/es/docs/Web/CSS/background-image" target="_blank" rel="noopener noreferrer">background-image</a>  nos permite agregar una imagen o varias de fondo al elemento referido, de forma predeterminada si el contenedor es mas pequeña que la imagen, esta no se ajustará, por lo que es necesario hacerlo manualmente, de la misma forma si la imagen es más pequeña que el contenedor, esta se repetirá hasta llenar el espacio, comportamiento que también debemos controlar manualmente. Otro detalle es que si el fondo del elemento es transparente y la imagen tmabien tiene fondo transparente se distinguirán los elementos que están debajo del apilamiento, se recomienda poner un color de fondo con background-color.
+                            Otra opcion del fondo de los elementos es controlar la manera en que la imagen se desplazará al momento de desplazarse a través de la pagina, es decir de hacer scroll, esto se controla con <a href="https://developer.mozilla.org/es/docs/Web/CSS/background-attachment" target="_blank" rel="noopener noreferrer">background-attachment</a>
                         </p>
                         <div class="codes">
                             <h4 class="title-codes">Sintaxis:</h4>
                             <code class="language-css">
-                                background-color: &lt;color&gt; | transparent | inherit ;
+                                background-attachment: scroll | fixed | local | inherit
                             </code>
                         </div>
                         <dl class="content">
-                            <dt></dt>
+                            <dt>scroll</dt>
+                            <dd>Es el valor por defecto y hace que el fondo del elemento se desplace cuando te desplazas por el contenido de la página. Si te desplazas por el contenido del elemento, el fondo no se mueve. El efecto resultante es que el fondo está anclado a la página en una posición fija, por lo que se desplaza a medida que la página se desplaza.</dd>
+                            <dt>fixed</dt>
+                            <dd>Hace que el fondo de un elemento quede fijo con respecto a la ventana gráfica, de modo que no se desplace cuando te desplazas por la página o el contenido del elemento. Siempre permanece en la misma posición de la pantalla.</dd>
+                            <dt>local</dt>
                             <dd></dd>
                         </dl>
                         <div class="codes">
                             <h4 class="title-codes">Ejemplo:</h4>
                             <code class="language-css">
-                                background-color:blue;
+                                background-attachment: fixed;
                             </code><br><code class="language-css">
-                                /*RGB*/
+                                /*Multiple*/
                             </code><br><code class="language-css">
-                                background-color:#02798b;
-                            </code><br><code class="language-css">
-                                background-color:#c55da1;
-                            </code><br><code class="language-css">
-                                /*RGBA*/
-                            </code><br><code class="language-css">
-                                background-color:#02798b0A;
-                            </code><br><code class="language-css">
-                                background-color:#c55da114;
-                            </code><br><code class="language-css">
-                                /*RGB*/
-                            </code><br><code class="language-css">
-                                background-color:rgb(2,121,139);
-                            </code><br><code class="language-css">
-                                background-color:rgb(197,93,161);
-                            </code><br><code class="language-css">
-                                /*RGBA*/
-                            </code><br><code class="language-css">
-                                background-color:rgb(2,121,139,0.1);
-                            </code><br><code class="language-css">
-                                background-color:rgb(197,93,161,0.2);
-                            </code><br><code class="language-css">
-                                /*HSL*/
-                            </code><br><code class="language-css">
-                                background-color:hsl(188, 97%, 28%);
-                            </code><br><code class="language-css">
-                                background-color:hsl(321, 47%, 57%);
-                            </code><br><code class="language-css">
-                                /*HSLA*/
-                            </code><br><code class="language-css">
-                                background-color:hsla(188, 97%, 28%, 0.1);
-                            </code><br><code class="language-css">
-                                background-color:hsla(321, 47%, 57%, 0.2);
+                                background-attachment: fixed, scroll;
                             </code>
                         </div>
+                    <h3 class="title-aux" id="prop-background-multiple">Multiples Fondos</h3>
+                        <p class="content">
+                            Es posible usar mas de un fondo o multiples imagenes dentro de un mismo objeto, para ello debemos de usar las propiedades <strong>background-*</strong> y separarlas por comas, Si haces esto, las imágenes de fondo pueden quedar superpuestas entre sí. Los fondos se superponen con la última imagen de fondo que hay en la parte inferior de la lista, y cada imagen anterior se apila encima de la que sigue en el código. 
+                        </p>
+                        <p class="note">
+                            <strong>NOTA:</strong> Los degradados se pueden mezclar con imágenes de fondo normales, las imagenes se colocan en orden, y si estas tienen transparencias pueden crearse efectos interesantes.
+                        </p>
+                        
+                        <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
+                            <code class="language-css">
+                                background-image: url(image1.png), url(image2.png), url(image3.png), url(image1.png);
+                            </code><br><code class="language-css">
+                                background-repeat: no-repeat, repeat-x, repeat;
+                            </code><br><code class="language-css">
+                                background-position: 10px 20px,  top right;
+                            </code>
+                        </div>
+                        <p class="content">
+                            Cada valor de las diversas propiedades coincide con los valores que están en la misma posición en las otras propiedades. Arriba, por ejemplo, el valor para la propiedad background-repeat de image1 será no-repeat. Sin embargo, ¿qué sucede cuando diferentes propiedades tienen una cantidad diferente de valores? La respuesta es que los valores que ocupan las posiciones más pequeñas se alternan cíclicamente: en el ejemplo anterior hay cuatro imágenes de fondo pero solo dos valores background-position. Los primeros dos valores de posición se aplicarán a las dos primeras imágenes, luego los valores volverán a asignarse cíclicamente: a image3 se le dará el primer valor de posición, y a image4 se le dará el segundo valor de posición
+                        </p>
+                </article>
+                <article class="concept"> <!--Bordes-->
+                    <h3 class="title-concept" id="bordes">Bordes</h3>
+                    <ul class="content"> <!-- Submenu de Bordes -->
+                        <li><a href="#prop-border">Border</a></li>
+                        <li><a href="#prop-border-outline">Contornos (Outline)</a></li>
+                        <li><a href="#prop-border-radius">Border-Radius</a></li>
+                        <li><a href="#prop-border-image">Border-image</a></li>
+                        <!-- *** -->
+                    </ul>
+                    <h3 class="title-aux" id="prop-border">border</h3>
+                        <p class="content">
+                            La propiedad border es la <a href="https://developer.mozilla.org/es/docs/Web/CSS/Shorthand_properties" target="_blank" rel="noopener noreferrer">propiedad abreviada</a>, que nos permite manipular en conjunto 3 características que modifican la apariencia del borde de los diferentes elementos, estas propiedades son:
+                        </p>
+                        <div class="codes">
+                            <h4 class="title-codes">Sintaxis:</h4>
+                            <code class="language-css">
+                                border: [border-width || border-style || border-color | inherit] ;
+                            </code>
+                        </div>
+                        <dl class="content">
+                            </dt> <a href="https://developer.mozilla.org/es/docs/Web/CSS/border-width" target="_blank" rel="noopener noreferrer">border-width</a><dt>
+                            <dd>Esta propiedad define el ancho del borde, acepta solo valores positivos, puede colocarse un valor <a href="https://developer.mozilla.org/es/docs/Web/CSS/length" target="_blank" rel="noopener noreferrer"><code>&lt;length&gt;</code></a> o puede usarse las los valores <code>thin | medium | thick </code></dd>
+
+                            <dt> <a href="https://developer.mozilla.org/es/docs/Web/CSS/border-style" target="_blank" rel="noopener noreferrer">border-style</a></dt>
+                            <dd>Nos indica el estilo que tomará el borde dentro de ellos encontramos</dd>
+                            <dd>
+                                <table class="content-table">
+                                    <tbody>
+                                        <tr>
+                                            <td style="vertical-align: middle;"><code>none</code></td>
+                                            <td style="vertical-align: middle;">
+                                                <div
+                                                    style="margin: 0.5em; width: 3em; height: 3em; border-top-style: none; background-color: palegreen;">
+                                                </div>
+                                            </td>
+                                            <td style="vertical-align: middle;">Al igual que la palabra clave hidden, no muestra ningún borde. A menos que se establezca una imagen de fondo, el valor calculado de border-top-width (en-US) será 0, incluso si el valor especificado es otro. En el caso de que la celda de la tabla y el borde se contraigan, el valor ninguno tiene la prioridad más baja: si se establece cualquier otro borde en conflicto, se mostrará.</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="vertical-align: middle;"><code>hidden</code></td>
+                                            <td style="vertical-align: middle;">
+                                                <div
+                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 3px; border-top-style: hidden; background-color: palegreen;">
+                                                </div>
+                                            </td>
+                                            <td style="vertical-align: middle;">Al igual que la palabra clave none, no muestra ningún borde. A menos que se establezca una imagen de fondo, el valor calculado de border-top-width (en-US) será 0, incluso si el valor especificado es otro. En el caso de que la celda de la tabla y el borde se contraigan, el valor oculto tiene la prioridad más alta: si se establece cualquier otro borde en conflicto, no se mostrará.</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="vertical-align: middle;"><code>dotted</code></td>
+                                            <td style="vertical-align: middle;">
+                                                <div
+                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 3px; border-top-style: dotted; background-color: palegreen;">
+                                                </div>
+                                            </td>
+                                            <td style="vertical-align: middle;">Muestra una serie de puntos redondeados. El espaciado de los puntos no está definido por la especificación y es específico de la implementación. El radio de los puntos es la mitad del ancho de borde superior calculado </a>.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="vertical-align: middle;"><code>dashed</code></td>
+                                            <td style="vertical-align: middle;">
+                                                <div
+                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 3px; border-top-style: dashed; background-color: palegreen;">
+                                                </div>
+                                            </td>
+                                            <td style="vertical-align: middle;">Muestra una serie de segmentos de línea o guiones cortos con extremos cuadrados. El tamaño y la longitud exactos de los segmentos no están definidos por la especificación y son específicos de la implementación.</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="vertical-align: middle;"><code>solid</code></td>
+                                            <td style="vertical-align: middle;">
+                                                <div
+                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 3px; border-top-style: solid; background-color: palegreen;">
+                                                </div>
+                                            </td>
+                                            <td style="vertical-align: middle;">Muestra una línea sólida, recta y única.</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="vertical-align: middle;"><code>double</code></td>
+                                            <td style="vertical-align: middle;">
+                                                <div
+                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 3px; border-top-style: double; background-color: palegreen;">
+                                                </div>
+                                            </td>
+                                            <td style="vertical-align: middle;">Muestra dos líneas rectas que se suman al tamaño de píxel definido por el ancho del borde
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="vertical-align: middle;"><code>groove</code></td>
+                                            <td style="vertical-align: middle;">
+                                                <div
+                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 3px; border-top-style: groove; background-color: palegreen;">
+                                                </div>
+                                            </td>
+                                            <td style="vertical-align: middle;">Muestra un borde con apariencia tallada. Es lo opuesto a la cresta</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="vertical-align: middle;"><code>ridge</code></td>
+                                            <td style="vertical-align: middle;">
+                                                <div
+                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 3px; border-top-style: ridge; background-color: palegreen;">
+                                                </div>
+                                            </td>
+                                            <td style="vertical-align: middle;">Muestra un borde con apariencia extruida. Es lo opuesto al surco.</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="vertical-align: middle;"><code>inset</code></td>
+                                            <td style="vertical-align: middle;">
+                                                <div
+                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 3px; border-top-style: inset; background-color: palegreen;">
+                                                </div>
+                                            </td>
+                                            <td style="vertical-align: middle;">Muestra un borde que hace que el elemento parezca incrustado. Es lo opuesto al comienzo. Cuando se aplica a una celda de la tabla con border-collapse configurado como contraído, este valor se comporta como groove.</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="vertical-align: middle;"><code>outset</code></td>
+                                            <td style="vertical-align: middle;">
+                                                <div
+                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 3px; border-top-style: outset; background-color: palegreen;">
+                                                </div>
+                                            </td>
+                                            <td style="vertical-align: middle;">
+                                                Muestra un borde que hace que el elemento aparezca en relieve. Es lo opuesto al recuadro. Cuando se aplica a una celda de la tabla con el colapso de borde establecido en colapsado, este valor se comporta como una cresta.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </dd>
+
+                            <dt> <a href="https://developer.mozilla.org/es/docs/Web/CSS/border-color" target="_blank" rel="noopener noreferrer">border-color</a></dt>
+                            <dd> Este valor se define por cualquiera de los valores permitidos para <a href="https://developer.mozilla.org/es/docs/Web/CSS/color" target="_blank" rel="noopener noreferrer"><code>&lt;color&gt;</code></a>  que son: valor de color, Hexadecimal, funcion RGB o RGBA, Funcion HSL o HSLA</dd>
+                        </dl>
+                        <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
+                            <code class="language-css">
+                                element {border: 1px solid #000;}
+                            </code>
+                        </div>
+                    <h3 class="title-aux" id="prop-border-outline">outline</h3>
                     
-                      
-                    
+                    <h3 class="title-aux" id="prop-border-radius">border-radius</h3>
+                    <h3 class="title-aux" id="prop-border-image">border-image</h3>
+
+                    <p class="note">
+                        <strong>Nota:</strong> Adicionalmente a esta propiedad, existen dos propiedades relacionadas con esta propiedad, éstas son: <a href="https://developer.mozilla.org/es/docs/Web/CSS/outline" target="_blank" rel="noopener noreferrer">outline</a> y <a href="https://developer.mozilla.org/es/docs/Web/CSS/border-image" target="_blank" rel="noopener noreferrer">border-image</a>
+                    </p>
+                </article>
+                <article class="concept"> <!--Sombras Box-shadow-->
+                    <h3 class="title-concept" id="box-shadow"> Box-shadow</h3>
+                    <p class="content">
+                        
+                    </p>
+                    <div class="codes">
+                        <h4 class="title-codes">Ejemplo:</h4>
+                        <code class="language-css">
+                            /*RGB*/
+                        </code><br><code class="language-css">
+                            color:#02798b;
+                        </code><br><code class="language-css">
+                            color:#c55da1;
+                        </code><br><code class="language-css">
+                            /*RGBA*/
+                        </code><br><code class="language-css">
+                            color:#02798b0A;
+                        </code><br><code class="language-css">
+                            color:#c55da114;
+                        </code><br><code class="language-css">
+                            /*RGB*/
+                        </code><br><code class="language-css">
+                            color:rgb(2,121,139);
+                        </code><br><code class="language-css">
+                            color:rgb(197,93,161);
+                        </code><br><code class="language-css">
+                            /*RGBA*/
+                        </code><br><code class="language-css">
+                            color:rgb(2,121,139,0.1);
+                        </code><br><code class="language-css">
+                            color:rgb(197,93,161,0.2);
+                        </code><br><code class="language-css">
+                            /*HSL*/
+                        </code><br><code class="language-css">
+                            color:hsl(188, 97%, 28%);
+                        </code><br><code class="language-css">
+                            color:hsl(321, 47%, 57%);
+                        </code><br><code class="language-css">
+                            /*HSLA*/
+                        </code><br><code class="language-css">
+                            color:hsla(188, 97%, 28%, 0.1);
+                        </code><br><code class="language-css">
+                            color:hsla(321, 47%, 57%, 0.2);
+                        </code>
+                    </div>
                 </article>
             </section>
             <input type="radio" name="bloques" class="bloques" id="texto-css">
@@ -2132,6 +2112,12 @@
             <section class="section" ><!--*** Maquetación *****************-->
                 <h2 class="section-title">Maquetacion</h2>
                 <!-- 
+                    overflow-img
+                    https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Overflowing_content
+                    https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Images_media_form_elements
+                    https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Sizing_items_in_CSS
+                    https://developer.mozilla.org/es/docs/Web/CSS/object-fit
+
                     display
                     visibility
                     position 
@@ -2144,6 +2130,56 @@
                     flexbox
                     grid
                  -->
+                 <ul class="content">
+                    <li><a href="#overflow">Manejo del Overflow</a></li>
+                </ul>
+                 <article class="concept"><!-- OverFlow-->
+                    <h3 class="title-concept" id="overflow">Overflow</h3>
+                    <p class="content">
+                        A pesar de que se pueda definir el tamaño de una caja desde CSS, siempre existe la posiblidad que el contenido no se ajuste a este tamaño ya sea por que se vea mas pequeño o por que el contenido supere el tamaño del contenedor, es en este momento en que llamamos un desborde de elementos.
+                    </p>
+                    <p class="content">
+                        De manera predeterminada, la forma en que CSS gestiona el desbordamiento es que "deja salir" el contenido, es decir, se muestra fuera de la caja, esto lo hace para evitar problemas de visualización de contenido y se oculte información al usuario que pueda ser importante. La forma adecuada con lidiar con el desbordamiento es usando la propiedad <a href="https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Overflowing_content" target="_blank" rel="noopener noreferrer">overflow</a>. 
+                    </p>
+                    <div class="codes">
+                        <code class="language-css">
+                            /*Valor predeterminado*/
+                        </code><br><code class="language-css">
+                            overflow: visible
+                        </code><br><code class="language-css">
+                            /*Valores*/
+                        </code><br><code class="language-css">
+                            overflow: hidden
+                        </code><br><code class="language-css">
+                            overflow: scroll
+                        </code><br><code class="language-css">
+                            overflow: auto
+                        </code><br><code class="language-css">
+                            overflow: inherit
+                        </code>
+                    </div>
+                    <dl class="content">
+                        <dt><code>visible</code></dt>
+                        <dd>Valor por defecto. El contenido no es recortado, podría ser dibujado fuera de la caja contenedora.</dd>
+                        <dt><code>hidden</code></dt>
+                        <dd>El contenido es recortado y no se muestran barras de posición.</dd>
+                        <dt><code>scroll</code></dt>
+                        <dd>El contenido es recortado y el navegador web usa las barras de desplazamiento, se haya recortado contenido&nbsp;o no. Esto previene cualquier problema con las barras de desplazamiento apareciendo o desapareciendo en un entorno dinámico. Puede que las impresoras impriman contenido excedente.</dd>
+                        <dt><code>auto</code></dt>
+                        <dd>Depende del agente de usuario. Navegadores de escritorio como Firefox proveen barras de desplazamiento si hay contenido excedente.</dd>
+                       </dl>
+                       <p class="content">
+                           En el caso que se quiera controlar solo el scroll vertical u horizontal, podemos usar la propiedad <a href="https://developer.mozilla.org/es/docs/Web/CSS/overflow-y" target="_blank" rel="noopener noreferrer">overflow-y</a> y <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-x" target="_blank" rel="noopener noreferrer">overflow-x</a>
+                       </p>
+                       <p class="note">
+                           <strong>Nota:</strong> En un contenedor fluido relleno de texto, el tamaño mínimo depende de la palabra más larga, en el caso de lidiar con palabras muy largas que provoquen el desbordamiento se puede usar la propiedad <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/word-break" target="_blank" rel="noopener noreferrer">word-break</a> o <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-wrap" target="_blank" rel="noopener noreferrer">overflow-wrap</a> para solucionar el problema.
+                       </p>
+                       <p class="alert">
+                        <strong>Advertencia:</strong> En CSS hay un concepto conocido como <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context" target="_blank" rel="noopener noreferrer">block formatting context</a>  o BFC (contexto de formato de bloque). Cuando usas un valor de overflow, como scroll o auto, creas un BFC. El resultado es que el contenido de la caja al que acabas de cambiar el valor overflow se convierte en un minidiseño propio. Las cosas que están fuera del contenedor no pueden meterse en él, y nada puede sobresalir de esa caja hacia el diseño circundante. Esto es para permitir un comportamiento con desplazamiento, porque para poder crear una experiencia de desplazamiento consistente todo el contenido de tu caja ha de estar contenido en algo, y no puede superponerse con otros elementos de la página.
+                       </p>
+
+
+                </article>
             </section>
             <input type="radio" name="bloques" class="bloques" id="media-queries">
             <section class="section" ><!--*** Media Queries *****************-->
