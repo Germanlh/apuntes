@@ -96,6 +96,7 @@
                             <li><a href="#color-prop">color</a></li>
                             <li><a href="#background">Background</a></li>
                             <li><a href="#bordes">Bordes</a></li>
+                            <li><a href="#box-shadow">Sombras de caja</a></li>
                         </ul>
                     </li>
                     <li><!-- Texto con CSS  -->
@@ -1451,17 +1452,6 @@
             <input type="radio" name="bloques" class="bloques" id="box-style">
             <section class="section" ><!--*** Box-style *******************-->
                 <h2 class="section-title">Estilizando las cajas</h2>
-                <!--
-                    
-                   
-                    Border
-                    outline
-                    border-radius
-                    image-border
-                    
-                    box-shadow
-
-                -->
                 <p class="content">
                     El modelo de caja nos muestra como es que los elementos se comportan dentro de una página web, sin embargo, la manera en las que estan se disponen y colocan e interaccionan con los demás elementos corresponde al maquetado de la página, En este apartado mostraremos como es que las cajas toman apariencias diferentes de forma individual.
                 </p>
@@ -1936,7 +1926,7 @@
                                             <td style="vertical-align: middle;"><code>dotted</code></td>
                                             <td style="vertical-align: middle;">
                                                 <div
-                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 3px; border-top-style: dotted; background-color: palegreen;">
+                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 0.5rem; border-style: dotted; background-color: palegreen; border-radius: 0.25rem;">
                                                 </div>
                                             </td>
                                             <td style="vertical-align: middle;">Muestra una serie de puntos redondeados. El espaciado de los puntos no está definido por la especificación y es específico de la implementación. El radio de los puntos es la mitad del ancho de borde superior calculado </a>.
@@ -1946,7 +1936,7 @@
                                             <td style="vertical-align: middle;"><code>dashed</code></td>
                                             <td style="vertical-align: middle;">
                                                 <div
-                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 3px; border-top-style: dashed; background-color: palegreen;">
+                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 0.5rem; border-style: dashed; background-color: palegreen; border-radius: 0.25rem;">
                                                 </div>
                                             </td>
                                             <td style="vertical-align: middle;">Muestra una serie de segmentos de línea o guiones cortos con extremos cuadrados. El tamaño y la longitud exactos de los segmentos no están definidos por la especificación y son específicos de la implementación.</td>
@@ -1955,7 +1945,7 @@
                                             <td style="vertical-align: middle;"><code>solid</code></td>
                                             <td style="vertical-align: middle;">
                                                 <div
-                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 3px; border-top-style: solid; background-color: palegreen;">
+                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 0.5rem; border-style: solid; background-color: palegreen; border-radius: 0.25rem;">
                                                 </div>
                                             </td>
                                             <td style="vertical-align: middle;">Muestra una línea sólida, recta y única.</td>
@@ -1964,7 +1954,7 @@
                                             <td style="vertical-align: middle;"><code>double</code></td>
                                             <td style="vertical-align: middle;">
                                                 <div
-                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 3px; border-top-style: double; background-color: palegreen;">
+                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 0.5rem; border-style: double; background-color: palegreen; border-radius: 0.25rem;">
                                                 </div>
                                             </td>
                                             <td style="vertical-align: middle;">Muestra dos líneas rectas que se suman al tamaño de píxel definido por el ancho del borde
@@ -1974,7 +1964,7 @@
                                             <td style="vertical-align: middle;"><code>groove</code></td>
                                             <td style="vertical-align: middle;">
                                                 <div
-                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 3px; border-top-style: groove; background-color: palegreen;">
+                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 0.5rem; border-style: groove; background-color: palegreen; border-radius: 0.25rem;">
                                                 </div>
                                             </td>
                                             <td style="vertical-align: middle;">Muestra un borde con apariencia tallada. Es lo opuesto a la cresta</td>
@@ -1983,7 +1973,7 @@
                                             <td style="vertical-align: middle;"><code>ridge</code></td>
                                             <td style="vertical-align: middle;">
                                                 <div
-                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 3px; border-top-style: ridge; background-color: palegreen;">
+                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 0.5rem; border-style: ridge; background-color: palegreen; border-radius: 0.25rem;">
                                                 </div>
                                             </td>
                                             <td style="vertical-align: middle;">Muestra un borde con apariencia extruida. Es lo opuesto al surco.</td>
@@ -1992,7 +1982,7 @@
                                             <td style="vertical-align: middle;"><code>inset</code></td>
                                             <td style="vertical-align: middle;">
                                                 <div
-                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 3px; border-top-style: inset; background-color: palegreen;">
+                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 0.5rem; border-style: inset; background-color: palegreen; border-radius: 0.25rem;">
                                                 </div>
                                             </td>
                                             <td style="vertical-align: middle;">Muestra un borde que hace que el elemento parezca incrustado. Es lo opuesto al comienzo. Cuando se aplica a una celda de la tabla con border-collapse configurado como contraído, este valor se comporta como groove.</td>
@@ -2001,7 +1991,7 @@
                                             <td style="vertical-align: middle;"><code>outset</code></td>
                                             <td style="vertical-align: middle;">
                                                 <div
-                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 3px; border-top-style: outset; background-color: palegreen;">
+                                                    style="margin: 0.5em; width: 3em; height: 3em; border-width: 0.5rem; border-style: outset; background-color: palegreen; border-radius: 0.25rem;">
                                                 </div>
                                             </td>
                                             <td style="vertical-align: middle;">
@@ -2022,59 +2012,302 @@
                             </code>
                         </div>
                     <h3 class="title-aux" id="prop-border-outline">outline</h3>
-                    
-                    <h3 class="title-aux" id="prop-border-radius">border-radius</h3>
-                    <h3 class="title-aux" id="prop-border-image">border-image</h3>
+                        <p class="content">
+                            La propiedad <a href="https://developer.mozilla.org/es/docs/Web/CSS/outline" target="_blank" rel="noopener noreferrer">outline</a> es la manera abreviada que nos permite definir los parametros para una línea "adicional" al borde, la diferencia principal, es que ésta no ocupa espacio adicional, es decir su ancho no influye en el tamaño del modelo de caja, en cuanto a sus propiedades ambas son semejantes, otra semejanza es que al momento de aplicar a multiples lineas estas se cierran a diferencia del borde que deja areas abiertas en multilínea
+                        </p>
+                        <div class="codes">
+                            <h4 class="title-codes">Sintaxis:</h4>
+                            <code class="language-css">
+                                outline: [border-width || border-style || border-color | inherit] ;
+                            </code>
+                        </div>
+                        <dl class="content">
+                        </dt> <a href="https://developer.mozilla.org/es/docs/Web/CSS/outline-width" target="_blank" rel="noopener noreferrer">outline-width</a><dt>
+                        <dd>Esta propiedad define el ancho del borde, acepta solo valores positivos, puede colocarse un valor <a href="https://developer.mozilla.org/es/docs/Web/CSS/length" target="_blank" rel="noopener noreferrer"><code>&lt;length&gt;</code></a> o puede usarse las los valores <code>thin | medium | thick </code></dd>
 
-                    <p class="note">
-                        <strong>Nota:</strong> Adicionalmente a esta propiedad, existen dos propiedades relacionadas con esta propiedad, éstas son: <a href="https://developer.mozilla.org/es/docs/Web/CSS/outline" target="_blank" rel="noopener noreferrer">outline</a> y <a href="https://developer.mozilla.org/es/docs/Web/CSS/border-image" target="_blank" rel="noopener noreferrer">border-image</a>
-                    </p>
+                        <dt> <a href="https://developer.mozilla.org/es/docs/Web/CSS/outline-color" target="_blank" rel="noopener noreferrer">outline-color</a></dt>
+                        <dd> Este valor se define por cualquiera de los valores permitidos para <a href="https://developer.mozilla.org/es/docs/Web/CSS/color" target="_blank" rel="noopener noreferrer"><code>&lt;color&gt;</code></a>  que son: valor de color, Hexadecimal, funcion RGB o RGBA, Funcion HSL o HSLA, adicionalmente se puede usar el keyword <strong>invert</strong> el cual para asegurarse que el contorno es visible, este valor realiza una inversión del color de fondo. Esto hace el contorno más sobresaliente, sin importar el color de fondo. Nótese que los navegadores pueden no soportar este valor. De ser así, solamente considerarán la declaración como inválida tambien acepta el valor <strong>transparent</strong></dd>
+
+                        <dt> <a href="https://developer.mozilla.org/es/docs/Web/CSS/outline-style" target="_blank" rel="noopener noreferrer">outline-style</a></dt>
+                        <dd>Nos indica el estilo que tomará el borde dentro de ellos encontramos</dd>
+                        <dd>
+                            <table class="content-table">
+                                <tbody>
+                                    <tr>
+                                        <td style="vertical-align: middle;"><code>none</code></td>
+                                        <td style="vertical-align: middle;">
+                                            <div
+                                                style="margin: 0.5em; width: 3em; height: 3em; outline-style: none; background-color: palegreen;">
+                                            </div>
+                                        </td>
+                                        <td style="vertical-align: middle;">Al igual que la palabra clave hidden, no muestra ningún borde. A menos que se establezca una imagen de fondo, el valor calculado de border-top-width (en-US) será 0, incluso si el valor especificado es otro. En el caso de que la celda de la tabla y el borde se contraigan, el valor ninguno tiene la prioridad más baja: si se establece cualquier otro borde en conflicto, se mostrará.</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="vertical-align: middle;"><code>hidden</code></td>
+                                        <td style="vertical-align: middle;">
+                                            <div
+                                                style="margin: 0.5em; width: 3em; height: 3em; border-width: 3px; border-top-style: hidden; background-color: palegreen;">
+                                            </div>
+                                        </td>
+                                        <td style="vertical-align: middle;">Al igual que la palabra clave none, no muestra ningún borde. A menos que se establezca una imagen de fondo, el valor calculado de border-top-width (en-US) será 0, incluso si el valor especificado es otro. En el caso de que la celda de la tabla y el borde se contraigan, el valor oculto tiene la prioridad más alta: si se establece cualquier otro borde en conflicto, no se mostrará.</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="vertical-align: middle;"><code>dotted</code></td>
+                                        <td style="vertical-align: middle;">
+                                            <div
+                                                style="margin: 0.5em; width: 2em; height: 2em; outline-width: 0.5rem; outline-style: dotted; background-color: palegreen; border-radius: 0.25rem;">
+                                            </div>
+                                        </td>
+                                        <td style="vertical-align: middle;">Muestra una serie de puntos redondeados. El espaciado de los puntos no está definido por la especificación y es específico de la implementación. El radio de los puntos es la mitad del ancho de borde superior calculado </a>.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="vertical-align: middle;"><code>dashed</code></td>
+                                        <td style="vertical-align: middle;">
+                                            <div
+                                                style="margin: 0.5em; width: 2em; height: 2em; outline-width: 0.5rem; outline-style: dashed; background-color: palegreen; border-radius: 0.25rem;">
+                                            </div>
+                                        </td>
+                                        <td style="vertical-align: middle;">Muestra una serie de segmentos de línea o guiones cortos con extremos cuadrados. El tamaño y la longitud exactos de los segmentos no están definidos por la especificación y son específicos de la implementación.</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="vertical-align: middle;"><code>solid</code></td>
+                                        <td style="vertical-align: middle;">
+                                            <div
+                                                style="margin: 0.5em; width: 2em; height: 2em; outline-width: 0.5rem; outline-style: solid; background-color: palegreen; border-radius: 0.25rem;">
+                                            </div>
+                                        </td>
+                                        <td style="vertical-align: middle;">Muestra una línea sólida, recta y única.</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="vertical-align: middle;"><code>double</code></td>
+                                        <td style="vertical-align: middle;">
+                                            <div
+                                                style="margin: 0.5em; width: 2em; height: 2em; outline-width: 0.5rem; outline-style: double; background-color: palegreen; border-radius: 0.25rem;">
+                                            </div>
+                                        </td>
+                                        <td style="vertical-align: middle;">Muestra dos líneas rectas que se suman al tamaño de píxel definido por el ancho del borde
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="vertical-align: middle;"><code>groove</code></td>
+                                        <td style="vertical-align: middle;">
+                                            <div
+                                                style="margin: 0.5em; width: 2em; height: 2em; outline-width: 0.5rem; outline-style: groove; background-color: palegreen; border-radius: 0.25rem;">
+                                            </div>
+                                        </td>
+                                        <td style="vertical-align: middle;">Muestra un borde con apariencia tallada. Es lo opuesto a la cresta</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="vertical-align: middle;"><code>ridge</code></td>
+                                        <td style="vertical-align: middle;">
+                                            <div
+                                                style="margin: 0.5em; width: 2em; height: 2em; outline-width: 0.5rem; outline-style: ridge; background-color: palegreen; border-radius: 0.25rem;">
+                                            </div>
+                                        </td>
+                                        <td style="vertical-align: middle;">Muestra un borde con apariencia extruida. Es lo opuesto al surco.</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="vertical-align: middle;"><code>inset</code></td>
+                                        <td style="vertical-align: middle;">
+                                            <div
+                                                style="margin: 0.5em; width: 2em; height: 2em; outline-width: 0.5rem; outline-style: inset; background-color: palegreen; border-radius: 0.25rem;">
+                                            </div>
+                                        </td>
+                                        <td style="vertical-align: middle;">Muestra un borde que hace que el elemento parezca incrustado. Es lo opuesto al comienzo. Cuando se aplica a una celda de la tabla con border-collapse configurado como contraído, este valor se comporta como groove.</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="vertical-align: middle;"><code>outset</code></td>
+                                        <td style="vertical-align: middle;">
+                                            <div
+                                                style="margin: 0.5em; width: 2em; height: 2em; outline-width: 0.5rem; outline-style: outset; background-color: palegreen; border-radius: 0.25rem;">
+                                            </div>
+                                        </td>
+                                        <td style="vertical-align: middle;">
+                                            Muestra un borde que hace que el elemento aparezca en relieve. Es lo opuesto al recuadro. Cuando se aplica a una celda de la tabla con el colapso de borde establecido en colapsado, este valor se comporta como una cresta.
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </dd>
+
+                        
+                        </dl>
+                        <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
+                            <code class="language-css"> 
+                                /* style */
+                            </code> <br> <code class="language-css"> 
+                                outline: solid;
+                            </code> <br> <br><code class="language-css"> 
+                                /* color | style */
+                            </code> <br> <code class="language-css"> 
+                                outline: #f66 dashed;
+                            </code> <br> <br><code class="language-css"> 
+                                /* style | width */
+                            </code> <br> <code class="language-css"> 
+                                outline: inset thick;
+                            </code> <br> <br><code class="language-css"> 
+                                /* color | style | width */
+                            </code> <br> <code class="language-css"> 
+                                outline: green solid 3px;
+                            </code> <br> <br><code class="language-css"> 
+                                /* Global values */
+                            </code> <br> <code class="language-css"> 
+                                outline: inherit;
+                            </code> <br> <code class="language-css"> 
+                                outline: initial;
+                            </code> <br> <code class="language-css"> 
+                                outline: unset;
+                            </code>
+                        </div>
+                    <h3 class="title-aux" id="prop-border-radius">border-radius</h3>
+                        <p class="content">
+                            La propiedad <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius" target="_blank" rel="noopener noreferrer">border-radius</a> provoca que las esquinas de la caja sean redondeadas, esto provoca que todo el contenido se vea afectado por esta propiedad, ya que recorta todo el contenido, se puede ejercer el control del corte con la propiedad <a href="https://developer.mozilla.org/es/docs/Web/CSS/background-clip" target="_blank" rel="noopener noreferrer">background-clip</a>
+                        </p>
+                        <p class="content">
+                            <strong>border-radius</strong> es el shorthand que permite controlar el valor que se aplica a las cuatro esquinas, aunque puede establecerse de forma individual con las propiedades border-top-left-radius, border-top-right-radius,border-bottom-right-radius, border-bottom-left-radius.
+                        </p>
+                        <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
+                            <code class="language-css"> 
+                                /* Radius is set for all 4 sides */
+                            </code> <br> <code class="language-css"> 
+                                border-radius: 10px;
+                            </code> <br> <br><code class="language-css"> 
+                                /* top-left-and-bottom-right | top-right-and-bottom-left */
+                            </code> <br> <code class="language-css"> 
+                                border-radius: 10px 5%;
+                            </code> <br> <br><code class="language-css"> 
+                                /* top-left | top-right-and-bottom-left | bottom-right */
+                            </code> <br> <code class="language-css"> 
+                                border-radius: 2px 4px 2px;
+                            </code> <br> <br><code class="language-css"> 
+                                /* top-left | top-right | bottom-right | bottom-left */
+                            </code> <br> <code class="language-css"> 
+                                border-radius: 1px 0 3px 4px;
+                            </code> <br> <br><code class="language-css"> 
+                                /* (first radius values) / radius */
+                            </code> <br> <code class="language-css"> 
+                                border-radius: 10px / 20px;
+                            </code> <br> <br><code class="language-css"> 
+                                /* (first radius values) / top-left-and-bottom-right | top-right-and-bottom-left */
+                            </code> <br> <code class="language-css"> 
+                                border-radius: 10px 5% / 20px 30px;
+                            </code> <br> <br><code class="language-css"> 
+                                /* (first radius values) / top-left | top-right-and-bottom-left | bottom-right */
+                            </code> <br> <code class="language-css"> 
+                                border-radius: 10px 5px 2em / 20px 25px 30%;
+                            </code> <br> <br><code class="language-css"> 
+                                /* (first radius values) / top-left | top-right | bottom-right | bottom-left */
+                            </code> <br> <code class="language-css"> 
+                                border-radius: 10px 5% / 20px 25em 30px 35em;
+                            </code> <br><br> <code class="language-css"> 
+                                /* Global values */
+                            </code> <br> <code class="language-css"> 
+                                border-radius: inherit;
+                            </code> <br> <code class="language-css"> 
+                                border-radius: initial;
+                            </code> <br> <code class="language-css"> 
+                                border-radius: revert;
+                            </code> <br> <code class="language-css"> 
+                                border-radius: unset;
+                            </code>
+                        </div>
+                    <h3 class="title-aux" id="prop-border-image">border-image</h3>
+                        <p class="content">
+                            la propiedad <a href="https://developer.mozilla.org/es/docs/Web/CSS/border-image" target="_blank" rel="noopener noreferrer">border-image</a> nos permite usar un estilo diferente para el borde. Al usarse esta propiedad, tiene prefertencia sobre border, sin embargo al no poder cargarse la imagen o tener alguna falla en su sintaxis, dejará de usarse y se mostrará border, por lo que es buena idea definirlo .
+                        </p>
+                        <div class="codes">
+                            <h4 class="title-codes">Sintaxis:</h4>
+                            <code class="language-css">
+                                border-image: [source || slice || with || repeat || outset] ;
+                            </code>
+                        </div>
+                        <dl class="content">
+                            <dt>source</dt>
+                            <dd>puede usarse la instruccion <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-source" target="_blank" rel="noopener noreferrer">border-image-source</a> para definir adecuandamente la fuente, la dirección <strong>url()</strong> absoluta o relativa donde se encuentra la imagen que pondremos como contorno, tambien es posible colocar un degradado u otro elemento de tipo <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/image" target="_blank" rel="noopener noreferrer"><strong>&lt;image&gt;</strong></a></dd>
+                            <dt>slice</dt>
+                            <dd>la propiedad <a href="https://developer.mozilla.org/es/docs/Web/CSS/border-image-slice" target="_blank" rel="noopener noreferrer">border-image-slice</a>permite que dividamos el bloque en 9 partes y especifiquemos en que parte de ellas colocaremos la imagen</dd>
+                            <div class="ilustracion">
+                                <img src="../img/border-image-slice.png" alt="border-image-slice">
+                            </div>
+                            <dt>with</dt>
+                            <dd>la propiedad <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-width" target="_blank" rel="noopener noreferrer">border-image-width</a> nos permite definir el "tamaño" que tendrá la imagen que colocamos  o definimos anteriormente</dd>
+                            <dt>repeat</dt>
+                            <dd>La propiedad CSS <a href="https://developer.mozilla.org/es/docs/Web/CSS/border-image-repeat" target="_blank" rel="noopener noreferrer">border-image-repeat</a> define cómo se manejará la parte media de una imagen de borde para que coincida con el tamaño del borde. Tiene sintaxis de un valor, el cual describe el comportamiento de todos los lados, y otra sintaxis de dos valores, que establece diferentes valores para el comportamiento horizontal y vertical.</dd>
+                            <dt>outset</dt>
+                            <dd>La propiedad <a href="https://developer.mozilla.org/es/docs/Web/CSS/border-image-outset" target="_blank" rel="noopener noreferrer">border-image-outset</a> describe el monto por el cual se extenderá la imagen de borde más allá del límite de la caja.Las porciones de la imagen de borde que se dibujen fuera de los límites de la caja como resultado de esta propiedad no provocarán desplazamiento del contenido. Estas áreas tampoco capturarán o causarán que ocurran eventos del ratón con referencia al elemento al que pertenecen.</dd>
+                        </dl>
+                        <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
+                            <code class="language-css"> 
+                                border: 30px solid transparent;
+                            </code> <br> <code class="language-css"> 
+                                border-image:url("/files/4127/border.png") 30 30 repeat;
+                            </code> <br> <br><code class="language-css"> 
+                                border-image:url("/files/4127/border.png") 30 30 round;
+                            </code> <br> <code class="language-css"> 
+                                border-image:url("/files/4127/border.png") 30 30 stretch;
+                            </code> 
+                        </div>
                 </article>
                 <article class="concept"> <!--Sombras Box-shadow-->
                     <h3 class="title-concept" id="box-shadow"> Box-shadow</h3>
                     <p class="content">
-                        
+                        La propiedad <a href="https://developer.mozilla.org/es/docs/Web/CSS/box-shadow" target="_blank" rel="noopener noreferrer">box-shadow</a> Nos permite colocar una sobra a la caja o elemento que estamos estilizando, podemos definir valores para la posición <strong>x</strong> y <strong>y</strong> asi como el <strong>&lt;color&gt;</strong> y la <strong>blur</strong> o difuminación, existe un cuarto valor que nos permite controlar el tamaño llamado <strong>spread-radius</strong> finalmente podriamos decidir si será interios o exterior, por defecto la sombra será exterior, al usar la palabra <strong>inset</strong> será interna.
+                    </p>
+                    <p class="note">
+                        <strong>NOTA:</strong> Es posible colocar varias sombras al mismo tiempo, solo se debe de separar cada una por comas, la sombra que se mantendrá al frente será la primera en definirse, y el orden se colocará de la misma manera como se vayan definiendo una tras otra. Puede usarse para animaciones.
                     </p>
                     <div class="codes">
                         <h4 class="title-codes">Ejemplo:</h4>
-                        <code class="language-css">
-                            /*RGB*/
-                        </code><br><code class="language-css">
-                            color:#02798b;
-                        </code><br><code class="language-css">
-                            color:#c55da1;
-                        </code><br><code class="language-css">
-                            /*RGBA*/
-                        </code><br><code class="language-css">
-                            color:#02798b0A;
-                        </code><br><code class="language-css">
-                            color:#c55da114;
-                        </code><br><code class="language-css">
-                            /*RGB*/
-                        </code><br><code class="language-css">
-                            color:rgb(2,121,139);
-                        </code><br><code class="language-css">
-                            color:rgb(197,93,161);
-                        </code><br><code class="language-css">
-                            /*RGBA*/
-                        </code><br><code class="language-css">
-                            color:rgb(2,121,139,0.1);
-                        </code><br><code class="language-css">
-                            color:rgb(197,93,161,0.2);
-                        </code><br><code class="language-css">
-                            /*HSL*/
-                        </code><br><code class="language-css">
-                            color:hsl(188, 97%, 28%);
-                        </code><br><code class="language-css">
-                            color:hsl(321, 47%, 57%);
-                        </code><br><code class="language-css">
-                            /*HSLA*/
-                        </code><br><code class="language-css">
-                            color:hsla(188, 97%, 28%, 0.1);
-                        </code><br><code class="language-css">
-                            color:hsla(321, 47%, 57%, 0.2);
-                        </code>
+                        <code class="language-css"> 
+                            /* Keyword values */
+                        </code> <br> <code class="language-css"> 
+                            box-shadow: none;
+                        </code> <br> <br><code class="language-css"> 
+                            /* offset-x | offset-y | color */
+                        </code> <br> <code class="language-css"> 
+                            box-shadow: 60px -16px teal;
+                        </code> <br> <br><code class="language-css"> 
+                            /* offset-x | offset-y | blur-radius | color */
+                        </code> <br> <code class="language-css"> 
+                            box-shadow: 10px 5px 5px black;
+                        </code> <br> <br><code class="language-css"> 
+                            /* offset-x | offset-y | blur-radius | spread-radius | color */
+                        </code> <br> <code class="language-css"> 
+                            box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+                        </code> <br> <br><code class="language-css"> 
+                            /* inset | offset-x | offset-y | color */
+                        </code> <br> <code class="language-css"> 
+                            box-shadow: inset 5em 1em gold;
+                        </code> <br> <br><code class="language-css"> 
+                            /* Any number of shadows, separated by commas */
+                        </code> <br> <code class="language-css"> 
+                            box-shadow: 3px 3px red, -1em 0 0.4em olive;
+                        </code> <br> <br><code class="language-css"> 
+                            /* Global keywords */
+                        </code> <br> <code class="language-css"> 
+                            box-shadow: inherit;
+                        </code> <br> <br><code class="language-css"> 
+                            box-shadow: initial;
+                        </code> <br> <code class="language-css"> 
+                            box-shadow: unset;
+                        </code> 
                     </div>
+                    <dl class="content">
+                        <dt><strong>offset-x, offset-y</strong></dt>
+                        <dd> es un valor <a href="https://developer.mozilla.org/es/docs/Web/CSS/length" target="_blank" rel="noopener noreferrer">&lt;length&gt;</a> permite definir el desplazamiento de la sombra en sentido horizontal (offset-x) y en vertical (offset-y) tomando como referencia la esquina superior izquierda, los valores positivos seran de izquierda a derecha y de arriba abajo según corresponda, si estos valores son igual a 0, la sombra se colocará exactamente detrás del elemento</dd>
+                        <dt>&lt;blur-radius&gt;</dt>
+                        <dd> es un valor <a href="https://developer.mozilla.org/es/docs/Web/CSS/length" target="_blank" rel="noopener noreferrer">&lt;length&gt;</a> que nos permite controlar la difuminación o gradiente, entre mayor sea el valor, mas grande será el blur, no se admiten numeros negativos, si no es especificado el valor será 0 y dará como resultado una sombra sólida</dd>
+                        <dt>&lt;spread-radius&gt;</dt>
+                        <dd>Este es un valor de tipo <a href="https://developer.mozilla.org/es/docs/Web/CSS/length" target="_blank" rel="noopener noreferrer">&lt;length&gt;</a> y provoca que la sombra cambie de tamaño, si el valor es negativo, reducirá la sombra, si el valor es positivo será mayor que el elemento, por defecto tiene un valor 0 (hace la sombra del mismo tamaño del elemento)</dd>
+                        <dt>&lt;color&gt;</dt>
+                        <dd>Es un valor de tipo <a href="https://developer.mozilla.org/es/docs/Web/CSS/color_value" target="_blank" rel="noopener noreferrer">&lt;color&gt;</a> si no se especifica el navegador decide que color se coloca, es posible que tome el valor de la propiedad <a href="https://developer.mozilla.org/es/docs/Web/CSS/color" target="_blank" rel="noopener noreferrer">color</a> </dd>
+                        <dt>inset</dt>
+                        <dd>Al agregar esta propiedad provocará que la sombra sea hacia el interior del elemento por encima del fondo pero debajo del contenido, si no es especificado se toma por defecto como una sombra exterior</dd>
+                    </dl>
                 </article>
             </section>
             <input type="radio" name="bloques" class="bloques" id="texto-css">
