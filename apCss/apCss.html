@@ -97,11 +97,19 @@
                             <li><a href="#background">Background</a></li>
                             <li><a href="#bordes">Bordes</a></li>
                             <li><a href="#box-shadow">Sombras de caja</a></li>
+                            <li><a href="#overflow">Desbordamiento de caja</a></li>
                         </ul>
                     </li>
                     <li><!-- Texto con CSS  -->
                         <label for="texto-css" class="elem-menu">Texto con CSS</label>
                         <!-- <a href="#texto-css">Texto con CSS</a></li> -->
+                        <ul class="submenu">
+                            <li><a href="#font-style-prop">Estilos del tipo de letra</a></li>
+                            <li><a href="#font-style-dis">Diseño de texto</a></li>
+                            <li><a href="#listas-ord-des">Listas</a></li>
+                            <li><a href="#diseño-links">Links</a></li>
+                            <li><a href="#font-properties">Otras propiedades utiles</a></li>
+                        </ul>
                     </li>
                     <li><!-- Otros Elementos (form, etc)  -->
                         <label for="otro-elem" class="elem-menu">Otros Elementos HTML</label>
@@ -2309,65 +2317,11 @@
                         <dd>Al agregar esta propiedad provocará que la sombra sea hacia el interior del elemento por encima del fondo pero debajo del contenido, si no es especificado se toma por defecto como una sombra exterior</dd>
                     </dl>
                 </article>
-            </section>
-            <input type="radio" name="bloques" class="bloques" id="texto-css">
-            <section class="section" ><!--*** Texto CSS *******************-->
-                <h2 class="section-title">Tipografías</h2>
-                <!-- 
-                    /*funciones min, max, clamp, calc, var, attr*/
-                    /*Clamp para texto fluido*/
-                    Font-face
-                    columnas
-                    word-wrap
-                    text-shadow
-                    font-family
-                    listas ul, ol, dl
-                    link
-                    
-                    writing-mode
-                    /*https://developer.mozilla.org/es/docs/Web/CSS/writing-mode*/
-                    table 
-                    formulario
-                    
-                    
-                -->
-            </section>
-            <input type="radio" name="bloques" class="bloques" id="otro-elem">
-            <section class="section" ><!--*** Otros Elementos HTML************-->
-                <h2 class="section-title">Otros Elementos HTML</h2>
-                <!-- 
-                    formularios
-                    caret-color
-                    input-type
-                 -->
-            </section>
-            <input type="radio" name="bloques" class="bloques" id="maquetacion">
-            <section class="section" ><!--*** Maquetación *****************-->
-                <h2 class="section-title">Maquetacion</h2>
-                <!-- 
-                    overflow-img
-                    https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Overflowing_content
-                    https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Images_media_form_elements
-                    https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Sizing_items_in_CSS
-                    https://developer.mozilla.org/es/docs/Web/CSS/object-fit
-
-                    display
-                    visibility
-                    position 
-                        /*Position sticky no funciona si ancestro tiene overflow*/
-                    z-index
-                    Contextos de apilamiento "stacking-context"
-                    float
-                    inline-block
-                    table
-                    flexbox
-                    grid
-                 -->
-                 <ul class="content">
-                    <li><a href="#overflow">Manejo del Overflow</a></li>
-                </ul>
-                 <article class="concept"><!-- OverFlow-->
+                <article class="concept"><!-- OverFlow-->
                     <h3 class="title-concept" id="overflow">Overflow</h3>
+                    <p class="content">
+                        El desbordamiento de los elementos que se encuentran en un contenedor, puede darse por que el texto ocupa mayor espacio que el tamaño definido del contenedor, es decir cuando el contenedor no fluye con el redimensionamiento de la página y por el contrario tiene una medida definida, en el caso del texto podemos manejarlo con overflow, Los elementos de <a href="https://developer.mozilla.org/es/docs/Web/CSS/Replaced_element" target="_blank" rel="noopener noreferrer"> elementos de reemplazo</a> pueden manejarse de otra forma, como se muestra en este <a href="https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Images_media_form_elements" target="_blank" rel="noopener noreferrer">artículo</a> podemos usar la propiedad <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/max-width" target="_blank" rel="noopener noreferrer">max-width</a> u <a href="https://developer.mozilla.org/es/docs/Web/CSS/object-fit" target="_blank" rel="noopener noreferrer">object-fit</a>      
+                    </p>
                     <p class="content">
                         A pesar de que se pueda definir el tamaño de una caja desde CSS, siempre existe la posiblidad que el contenido no se ajuste a este tamaño ya sea por que se vea mas pequeño o por que el contenido supere el tamaño del contenedor, es en este momento en que llamamos un desborde de elementos.
                     </p>
@@ -2400,19 +2354,619 @@
                         <dd>El contenido es recortado y el navegador web usa las barras de desplazamiento, se haya recortado contenido&nbsp;o no. Esto previene cualquier problema con las barras de desplazamiento apareciendo o desapareciendo en un entorno dinámico. Puede que las impresoras impriman contenido excedente.</dd>
                         <dt><code>auto</code></dt>
                         <dd>Depende del agente de usuario. Navegadores de escritorio como Firefox proveen barras de desplazamiento si hay contenido excedente.</dd>
-                       </dl>
-                       <p class="content">
+                    </dl>
+                    <p class="content">
                            En el caso que se quiera controlar solo el scroll vertical u horizontal, podemos usar la propiedad <a href="https://developer.mozilla.org/es/docs/Web/CSS/overflow-y" target="_blank" rel="noopener noreferrer">overflow-y</a> y <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-x" target="_blank" rel="noopener noreferrer">overflow-x</a>
-                       </p>
-                       <p class="note">
+                    </p>
+                    <p class="note">
                            <strong>Nota:</strong> En un contenedor fluido relleno de texto, el tamaño mínimo depende de la palabra más larga, en el caso de lidiar con palabras muy largas que provoquen el desbordamiento se puede usar la propiedad <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/word-break" target="_blank" rel="noopener noreferrer">word-break</a> o <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-wrap" target="_blank" rel="noopener noreferrer">overflow-wrap</a> para solucionar el problema.
-                       </p>
-                       <p class="alert">
+                    </p>
+                    <p class="alert">
                         <strong>Advertencia:</strong> En CSS hay un concepto conocido como <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context" target="_blank" rel="noopener noreferrer">block formatting context</a>  o BFC (contexto de formato de bloque). Cuando usas un valor de overflow, como scroll o auto, creas un BFC. El resultado es que el contenido de la caja al que acabas de cambiar el valor overflow se convierte en un minidiseño propio. Las cosas que están fuera del contenedor no pueden meterse en él, y nada puede sobresalir de esa caja hacia el diseño circundante. Esto es para permitir un comportamiento con desplazamiento, porque para poder crear una experiencia de desplazamiento consistente todo el contenido de tu caja ha de estar contenido en algo, y no puede superponerse con otros elementos de la página.
-                       </p>
-
-
+                    </p>
                 </article>
+            </section>
+            <input type="radio" name="bloques" class="bloques" id="texto-css">
+            <section class="section" ><!--*** Texto CSS *******************-->
+                <h2 class="section-title">Tipografías</h2>
+                <!-- 
+                    /*funciones min, max, clamp, calc, var, attr*/
+                    /*Clamp para texto fluido*/
+                    
+                    columnas
+                                                     
+                    listas ul, ol, dl
+                    link
+                    
+                   
+                -->
+                <p class="section">
+                    Este <a href="https://developer.mozilla.org/es/docs/Learn/CSS/Styling_text" target="_blank" rel="noopener noreferrer">artículo</a> amplia el manejo del textoEl texto dentro de un contenedor puede cambiarse de dirección con la opcion <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode" target="_blank" rel="noopener noreferrer">writing-mode</a> lo cual nos permite cambiar de modo horizontal a vertical, sea de abajo hacia arriba o de arriba abajo, otra forma de hacerlo es con <a href="https://developer.mozilla.org/es/docs/Web/CSS/inline-size" target="_blank" rel="noopener noreferrer">inline-size</a> o <a href="https://developer.mozilla.org/es/docs/Web/CSS/block-size" target="_blank" rel="noopener noreferrer">block-size</a> la cuales son experimentales pero pueden ser de mucha ayuda, el articulo completo se puede encontrar en este <a href="https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Handling_different_text_directions" target="_blank" rel="noopener noreferrer">artículo</a>
+                </p>
+                <p class="content">
+                    El texto es un elemento que se coloca dentro de un contenedor, por ejemplo la etiqueta <strong>&lt;p&gt;</strong> y esta puede colocarse dentro de otro contenedor para tener mejor control, cabe hacer mención que al momento que aplicamos estilos, se aplican a todo el contenido de texto dentro del contenedor, no se puede hacer cambios a elementos individuales, a menos que se encuentren marcados entre etiquetas como <strong>&lt;span&gt;</strong>, o a través de pseudo elementos como <a href="https://developer.mozilla.org/es/docs/Web/CSS/::first-letter" target="_blank" rel="noopener noreferrer">::first-letter</a> o <a href="https://developer.mozilla.org/es/docs/Web/CSS/::first-line" target="_blank" rel="noopener noreferrer">::first-line</a> o <a href="https://developer.mozilla.org/es/docs/Web/CSS/::selection" target="_blank" rel="noopener noreferrer">::selection</a>
+                </p>
+                <p class="content">
+                    El flujo normal del texto es de izquierda a derecha, cuando llega al limite de espacio disponible se produce un salto de línea y se forma de arriba hacia abajo, siempre empezando desde la esquina superior izquierda, en los lenguajes RTL o right-to-left la orientación cambia.
+                </p>
+                <ul class="content">
+                    <li><a href="#font-style-prop">Estilos del tipo de letra</a></li>
+                    <li><a href="#font-style-dis">Diseño de texto</a></li>
+                    <li><a href="#listas-ord-des">Listas</a></li>
+                    <li><a href="#diseño-links">Links</a></li>
+                    <li><a href="#font-properties">Otras propiedades utiles</a></li>
+                </ul>
+                <article class="concept"> <!-- Estilos del tipo de letra -->
+                    <h3 class="title-concept" id="font-style-prop"> Estilos del tipo de letra</h3>
+                    <ul class="content"> <!-- Submenu de Estilos de letra -->
+                        <li><a href="#font-color">Color</a></li>
+                        <li><a href="#font-size">font-size</a></li>
+                        <li><a href="#font-family">font-family</a></li>
+                        <li><a href="#font-style">font-style</a></li>
+                        <li><a href="#font-weight">font-weight</a></li>
+                        <li><a href="#text-transform">text-transform</a></li>
+                        <li><a href="#text-decoration">text-decoration</a></li>
+                        <li><a href="#text-shadow">text-shadow</a></li>
+                        <!-- *** -->
+                    </ul>
+                    <h3 class="title-aux" id="font-color">Color</h3>
+                        <p class="content">
+                            El color del texto esta definido por la propiedad <a href="https://developer.mozilla.org/es/docs/Web/CSS/color" target="_blank" rel="noopener noreferrer">color</a> 
+                        </p>
+                        <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
+                            <code class="language-css">
+                                color: red;}
+                            </code>
+                        </div>
+                    <h3 class="title-aux" id="font-size">font-size</h3>
+                        <p class="content">
+                            El tamaño de la letra está determinada por la propiedad <a href="https://developer.mozilla.org/es/docs/Web/CSS/font-size" target="_blank" rel="noopener noreferrer">font-size</a> 
+                        </p>
+                        <div class="codes">
+                            <h4 class="title-codes">Sintaxis:</h4>
+                            <code class="language-css">
+                                font-size: xx-small | x-small | small | medium | large | x-large | xx-large
+                            </code> <br> <code class="language-css">
+                                font-size: smaller | larger
+                            </code> <br> <code class="language-css">
+                                font-size:&lt;longitud&gt; | &lt;porcentaje&gt; | inherit
+                            </code>
+                        </div>
+                        <dl class="content">
+                            <dt>xx-small, x-small, small, medium, large, x-large, xx-large </dt>
+                            <dd>un grupo de palabras clave de dimensión absoluta en relación al que determina el usuario como tamaño por defecto (que es medium). De forma parecida a las sentencias HTML &lt;font size="1"&gt; hasta &lt;font size="7"&gt; donde el tamaño por defecto es &lt;font size="3"&gt;.</dd>
+                            <dt>larger, smaller </dt>
+                            <dd>más grande o más pequeño que el tamaño de letra del elemento padre, con aproximadamente el mismo ratio que el mencionado anteriormente.</dd>
+                            <dt>&lt;longitud&gt;</dt>
+                            <dd>medida positiva del tipo <a href="https://developer.mozilla.org/es/docs/Web/CSS/length" target="_blank" rel="noopener noreferrer">&lt;length&gt;</a> </dd>
+                            <dt>&lt;Porcentaje&gt;</dt>
+                            <dd>un porcentaje positivo del cuerpo de letra del elemento padre.
+                                Es aconsejable evitar el uso de valores que no sean relativos al tamaño por defecto definido por el usuario, tales como longitud absoluta en unidades distintas a em o ex. Sin embargo, si hay que usar ese tipo de valores, es preferible utilizar unidades px (píxel), ya que su significado no varía en función de las características del sistema operativo (casi siempre erróneas) como la resolución del monitor.</dd>
+                        </dl>
+                        <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
+                            <code class="language-css"> 
+                                /* Ajusta el texto del párrafo a un cuerpo de letra muy grande. */
+                            </code> <br> <code class="language-css"> 
+                                p { font-size: xx-large }
+                            </code> <br> <br><code class="language-css"> 
+                                /* Ajusta la cabecera de nivel 1 (h1) a 2,5 veces del tamaño del texto. */
+                            </code> <br> <code class="language-css"> 
+                                h1 { font-size: 250% }
+                            </code> <br> <br><code class="language-css"> 
+                                /* Ajusta el texto incluido en span a 16px */
+                            </code> <br> <code class="language-css"> 
+                                span { font-size: 16px; }
+                            </code>
+                        </div>
+                    <h3 class="title-aux" id="font-family">font-family</h3>
+                        <p class="content">
+                            La manera en que podemos definir la tipografía que usaremos con <a href="https://developer.mozilla.org/es/docs/Web/CSS/font-family" target="_blank" rel="noopener noreferrer">font-family</a> definiendo la familia o usando un nombre genérico, la fuente debe estar instalada en la Pc para poder usarse, es recomendable definir mas de una familia en caso que no se encuentre disponible, una buena idea es recurrir a fuentes seguras como las que se muestran en la pagina <a href="https://www.cssfontstack.com/" target="_blank" rel="noopener noreferrer">cssfontstack</a> las cuales dispone casi todos los sistemas operativos, una opción diferente es usar una <a href="https://developer.mozilla.org/es/docs/Learn/CSS/Styling_text/Web_fonts" target="_blank" rel="noopener noreferrer">Web_fonts</a> lo cual nos permite enlazar desde un servidor externo una considerable cantidad de opciones y no depender de fuentes locales, aunque si es necesario la propiedad <a href="https://developer.mozilla.org/es/docs/Web/CSS/@font-face" target="_blank" rel="noopener noreferrer">@font-face</a> con la cual podemos "instalar la fuente que necesitamos"
+                        </p>
+                        <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
+                            <code class="language-css"> 
+                                font-family: &lt;familia o nombre genérico&gt; [, &lt;familia o nombre genérico&gt;]* | inherit
+                            </code>
+                        </div>
+                        <dl class="content">
+                            <dt>nombre de familia </dt>
+                            <dd>El nombre de la familia de la fuente. Por ejemplo, 'Times' y 'Helvética' son nombres de familia. Los nombres de familia que contengan espacios, deben escribirse entre comillas (por ejemplo: "Times New Roman").</dd>
+                            <dt>nombre de familia </dt>
+                            <dd>Se han definido los siguientes nombres genéricos: serif, sans-serif, cursive, fantasy, monospace. Los nombres genéricos son palabras claves y no deben ponerse entre comillas.</dd>
+                        </dl>
+                        <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
+                            <code class="language-css"> 
+                                body { font-family: "Gill Sans Extrabold", Helvetica, sans-serif }
+                            </code> <br> <code class="language-css"> 
+                                .receipt { font-family: Courier, "Lucida Console", monospace }
+                            </code>
+                        </div>
+                    <h3 class="title-aux" id="font-style">font-style</h3>
+                        <p class="content">
+                            Si necesitamos la tipografia italica u oblique usamos <a href="https://developer.mozilla.org/es/docs/Web/CSS/font-style" target="_blank" rel="noopener noreferrer">font-style</a>
+                        </p>
+                        <div class="codes">
+                            <h4 class="title-codes">Sintaxis:</h4>
+                            <code class="language-css">
+                                font-style: normal | italic | oblique | inherit | initial | unset ;
+                            </code>
+                        </div>
+                        <dl class="content">
+                            <dt>normal</dt>
+                            <dd>Escoge un tipo de letra clasificado como normal dentro de una familia de fuente.</dd>
+                            <dt>italic</dt>
+                            <dd>Escoge un tipo de letra etiquetado como italic, o, si una versión cursiva del tipo de letra no esté disponible, escoge un tipo de letra etiquetado como oblique en lugar de eso.</dd>
+                            <dt>oblique</dt>
+                            <dd>Escoge un tipo de letra etiquetado como oblique, o, si una versión oblique del tipo de letra no esté disponible, escoge un tipo de letra etiquetado como italic en lugar de eso.</dd>
+                            
+                        </dl>
+                    <h3 class="title-aux" id="font-weight">font-weight</h3>
+                        <p class="content">
+                            El grosor de la tipografía lo controlamos con la propiedad <a href="https://developer.mozilla.org/es/docs/Web/CSS/font-weight" target="_blank" rel="noopener noreferrer">font-weight</a>
+                        </p>
+                        <div class="codes">
+                            <h4 class="title-codes">Sintaxis:</h4>
+                            <code class="language-css">
+                                font-weight: normal | bold | lighter | bolder | &lt;peso&gt; | inherit | initial | unset ;
+                            </code>
+                        </div>
+                        <dl class="content">
+                            <dt>normal</dt>
+                            <dd>Peso/grueso normal de la fuente. Igual que 400.</dd>
+                            <dt>bold</dt>
+                            <dd>Grueso ancho (negrita). Igual que 700.</dd>
+                            <dt>lighter</dt>
+                            <dd>Corresponde a un tipo de fuente menos grueso que el tipo del elemento padre (dentro de los valores disponibles).</dd>
+                            <dt>bolder</dt>
+                            <dd>Corresponde a un tipo de fuente más grueso que el tipo del elemento padre (dentro de los valores disponibles).</dd>
+                            <dt>&lt;peso&gt;</dt>
+                            <dd>100, 200, 300, 400, 500, 600, 700, 800, 900, Pesos numéricos para los tipos de fuente que nos permiten más flexibilidad que normal - bold. Si el peso especificado no existe en el tipo de fuente escogido, un valor entre 600 y 900 se presentará con el valor más próximo disponible para dar una letra más oscura. De igual forma, un valor entre 100 y 500 se presentará con el valor más próximo disponible para dar una letra más clara. Esto significa que para los tipos de letra que sólo dispongan de normal y bold, cualquier valor entre 100 y 500 será normal y entre 600 y 900, será bold.</dd>
+                        </dl>
+                    <h3 class="title-aux" id="text-transform">text-transform</h3>
+                        <p class="content">
+                           Cuando es necesario cambiar de mayusculas a minúsculas o capitalizada usamos <a href="https://developer.mozilla.org/es/docs/Web/CSS/text-transform" target="_blank" rel="noopener noreferrer">text-transform</a> esta propiedad respeta las reglas de cada uno de los lenguajes, es necesario verificar estas reglas para otros idiomas.
+                        </p>
+                        <div class="codes">
+                            <h4 class="title-codes">Sintaxis:</h4>
+                            <code class="language-css">
+                                text-transform: capitalize | uppercase | lowercase | none | full-width |  inherit | initial | unset
+                            </code>
+                        </div>
+                        <dl class="content">
+                            <dt>capitalize</dt>
+                            <dd>Es una palabra clave que fuerza a que la primera letra de cada palabra sea convertida a mayúscula. EL resto de caracteres no es modificado; eso significa que mantienen su tamaño original, como haya sido escrito en el texto del elemento. Una letra es cualquier caracter Unicode que sea parte de la categoría general de Letras o Números : esto excluye cualquier signo de puntuación o símbolos al principio de la palabra</dd>
+                            <dt>uppercase</dt>
+                            <dd>Es una palabra clave que fuerza a todos los caracteres a ser convertidos a mayúsculas.</dd>
+                            <dt>lowercase</dt>
+                            <dd>Es una palabra clave que fuerza a todos los caracteres a ser convertidos a minúsculas.</dd>
+                            <dt>none</dt>
+                            <dd>Es una palabra clave que previene que sea cambiado el tamaño de los caracteres.</dd>
+                            <dt>full-width</dt>
+                            <dd>Es una palabra clave que fuerza que la escritura de un caracter, principalmente ideogramas y del alfabeto latín, abarque el espacio dentro de un cuadro, permitiendo que queden alineados al alfabeto asiático del este (como el chino o japonés).</dd>
+                        </dl>
+                        <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
+                            <code class="language-css"> 
+                                /* Ajusta el texto del párrafo a un cuerpo de letra muy grande. */
+                            </code> <br> <code class="language-css"> 
+                                p { font-size: xx-large }
+                            </code> <br> <br><code class="language-css"> 
+                                /* Ajusta la cabecera de nivel 1 (h1) a 2,5 veces del tamaño del texto. */
+                            </code> <br> <code class="language-css"> 
+                                h1 { font-size: 250% }
+                            </code> <br> <br><code class="language-css"> 
+                                /* Ajusta el texto incluido en span a 16px */
+                            </code> <br> <code class="language-css"> 
+                                span { font-size: 16px; }
+                            </code>
+                        </div>
+                    <h3 class="title-aux" id="text-decoration">text-decoration</h3>
+                        <p class="content">
+                            Con <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration" target="_blank" rel="noopener noreferrer">text-decoration</a> podemos agregar subrayados o tachados al texto.
+                        </p>
+                        <div class="codes">
+                            <h4 class="title-codes">Sintaxis:</h4>
+                            <code class="language-css">
+                                text-decoration: &lt;'text-decoration-line'&gt; || &lt;'text-decoration-style'&gt; || &lt;'text-decoration-color'&gt; || &lt;'text-decoration-thickness'&gt;
+                            </code>
+                        </div>
+                        <dl class="content">
+                            <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-line" target="_blank" rel="noopener noreferrer">text-decoration-line</a></dt>
+                            <dd>establece el tipo de decoración de línea que se agregará a un elemento.</dd>
+                            <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color" target="_blank" rel="noopener noreferrer">text-decoration-color</a></dt>
+                            <dd>Fija el color de la decoración</dd>
+                            <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-style" target="_blank" rel="noopener noreferrer">text-decoration-style</a></dt>
+                            <dd>define el estilo de las líneas especificadas por text-decoration-line. El estilo aplica a todas las líneas, no hay manera de establecer diferentes estilos para cada línea definida por text-decoration-line</dd>
+                            <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-thickness" target="_blank" rel="noopener noreferrer">text-decoration-thickness</a></dt>
+                            <dd>Indica el grosor de la decoración</dd>
+                        </dl>
+                        <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
+                            <code class="language-css"> 
+                                text-decoration: underline red;
+                            </code> <br> <code class="language-css"> 
+                                text-decoration: wavy overline lime;
+                            </code> <br> <code class="language-css"> 
+                                text-decoration: line-through;
+                            </code> <br> <code class="language-css"> 
+                                text-decoration: none;
+                            </code> <br> <code class="language-css"> 
+                                text-decoration: dashed underline overline;
+                            </code> <br> <code class="language-css"> 
+                                text-decoration: solid underline purple 4px;
+                            </code> <br> <code class="language-css"> 
+                                text-decoration: blink;
+                            </code>
+                        </div>
+                    <h3 class="title-aux" id="text-shadow">text-shadow</h3>
+                        <p class="content">
+                            Podemos poner sombra al texto, usando <a href="https://developer.mozilla.org/es/docs/Web/CSS/text-shadow" target="_blank" rel="noopener noreferrer">text-shadow</a>, al igual que box-shadow se puede colocar varias sombras una tras otras, tienen valores semejantes, las sombras se colocan sobre el fondo detrás del texto, ordenadas en la forma que fueron definidas.
+                            
+                        </p>
+                        <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
+                            <code class="language-css"> 
+                                /* Keyword values */
+                            </code> <br> <code class="language-css"> 
+                                text-shadow: none;
+                            </code> <br> <br><code class="language-css"> 
+                                /* offset-x | offset-y | color */
+                            </code> <br> <code class="language-css"> 
+                                text-shadow: 60px -16px teal;
+                            </code> <br> <br><code class="language-css"> 
+                                /* offset-x | offset-y | blur-radius | color */
+                            </code> <br> <code class="language-css"> 
+                                text-shadow: 10px 5px 5px black;
+                            </code> <br> <br><code class="language-css"> 
+                                /* Any number of shadows, separated by commas */
+                            </code> <br> <code class="language-css"> 
+                                text-shadow: 3px 3px red, -1em 0 0.4em olive;
+                            </code> <br> <br><code class="language-css"> 
+                                /* Global keywords */
+                            </code> <br> <code class="language-css"> 
+                                text-shadow: inherit;
+                            </code> <br><code class="language-css"> 
+                                text-shadow: initial;
+                            </code> <br> <code class="language-css"> 
+                                text-shadow: unset;
+                            </code> 
+                        </div>
+                        <dl class="content">
+                            <dt><strong>offset-x, offset-y</strong></dt>
+                            <dd> es un valor <a href="https://developer.mozilla.org/es/docs/Web/CSS/length" target="_blank" rel="noopener noreferrer">&lt;length&gt;</a> permite definir el desplazamiento de la sombra en sentido horizontal (offset-x) y en vertical (offset-y) tomando como referencia la esquina superior izquierda, los valores positivos seran de izquierda a derecha y de arriba abajo según corresponda, si estos valores son igual a 0, la sombra se colocará exactamente detrás del elemento</dd>
+                            <dt>&lt;blur-radius&gt;</dt>
+                            <dd> es un valor <a href="https://developer.mozilla.org/es/docs/Web/CSS/length" target="_blank" rel="noopener noreferrer">&lt;length&gt;</a> que nos permite controlar la difuminación o gradiente, entre mayor sea el valor, mas grande será el blur, no se admiten numeros negativos, si no es especificado el valor será 0 y dará como resultado una sombra sólida</dd>
+                            
+                            <dt>&lt;color&gt;</dt>
+                            <dd>Es un valor de tipo <a href="https://developer.mozilla.org/es/docs/Web/CSS/color_value" target="_blank" rel="noopener noreferrer">&lt;color&gt;</a> si no se especifica el navegador decide que color se coloca, es posible que tome el valor de la propiedad <a href="https://developer.mozilla.org/es/docs/Web/CSS/color" target="_blank" rel="noopener noreferrer">color</a> </dd>
+                            
+                        </dl>
+                </article>
+                <article class="concept"> <!-- Diseño del Texto -->
+                    <h3 class="title-concept" id="font-style-dis"> Diseño de texto</h3>
+                    <ul class="content"> <!-- Submenu de Estilos de letra -->
+                        <li><a href="#text-align">text-align</a></li>
+                        <li><a href="#line-height">line-height</a></li>
+                        <li><a href="#letter-spacing">letter-spacing</a></li>
+                        <!-- *** -->
+                    </ul>
+                    <h3 class="title-aux" id="text-align">text-align</h3>
+                        <p class="content">
+                            Con la propiedad <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-align" target="_blank" rel="noopener noreferrer">text-align</a> ayuda que el texto se acomode dentro de su contenedor, tecnicamente controla la justificación.
+                        </p>
+                        <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
+                            <code class="language-css"> 
+                                /* Keyword values */
+                            </code> <br> <code class="language-css"> 
+                                text-align: left;
+                            </code> <br> <code class="language-css"> 
+                                text-align: right;
+                            </code> <br> <code class="language-css"> 
+                                text-align: center;
+                            </code> <br> <code class="language-css"> 
+                                text-align: justify;
+                            </code> <br> <code class="language-css"> 
+                                text-align: justify-all;
+                            </code> <br> <code class="language-css"> 
+                                text-align: start;
+                            </code> <br> <code class="language-css"> 
+                                text-align: end;
+                            </code> <br> <code class="language-css"> 
+                                text-align: match-parent;
+                            </code> <br> <code class="language-css"> 
+                                /* Character-based alignment in a table column */
+                            </code> <br> <code class="language-css"> 
+                                text-align: ".";
+                            </code> <br> <code class="language-css"> 
+                                text-align: "." center;
+                            </code> <br> <code class="language-css"> 
+                                /* Global values */
+                            </code> <br> <code class="language-css"> 
+                                text-align: inherit;
+                            </code> <br> <code class="language-css"> 
+                                text-align: initial;
+                            </code> <br> <code class="language-css"> 
+                                text-align: revert;
+                            </code> <br> <code class="language-css"> 
+                                text-align: unset;
+                            </code> 
+                        </div>
+                        <dl class="content">
+                            <dt>start</dt>
+                            <dd>Propiedad experimental semejante a left</dd>
+                            <dt>end</dt>
+                            <dd>Propiedad experimental semejante a right</dd>
+                            <dt>left</dt>
+                            <dd>los objetos inline son alineados al lado izquierdo de la caja</dd>
+                            <dt>right</dt>
+                            <dd>El contenido inline se alinea al costado derecho del contenedor</dd>
+                            <dt>center</dt>
+                            <dd></dd>
+                            <dt>justify</dt>
+                            <dd>Agrega espacios adicionales entre las palabras para lograr que el texto quede alineado de izquierda y derecha, excepto la ultima linea.</dd>
+                            <dt>justify-all</dt>
+                            <dd>Propiedad experimental semejante a justify solo que tambien afecta la última fila</dd>
+                            <dt>match-parent</dt>
+                            <dd>propiedad experimental pero toma en cuenta los valores start y end para estar acorde a la dirección de su padre.</dd>
+                            <dt>&lt;string&gt;</dt>
+                            <dd>Propiedad experimental que cuando es aplicada a una celda de la tabla especifica el caracter acerca del cual se va a realizar la alineación</dd>
+                        </dl>
+                    <h3 class="title-aux" id="line-height">line-height</h3>
+                        <p class="content">
+                            El interlineado se maneja con la propiedad <a href="https://developer.mozilla.org/es/docs/Web/CSS/line-height" target="_blank" rel="noopener noreferrer">line-height</a>establece la altura de una casilla remarcada por líneas. Comúnmente se usa para establecer la distancia entre líneas de texto. A nivel de elementos de bloque, define la altura mínima de las casillas encuadradas por líneas dentro del elemento. En elementos en linea no reemplazables, especifica la altura que se usa para calcular la altura de la casila encuadrada por líneas.
+                        </p>
+                        <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
+                            <code class="language-css"> 
+                                /* Keyword value */
+                            </code> <br> <code class="language-css"> 
+                                line-height: normal;
+                            </code> <br> <br> <code class="language-css"> 
+                                /* Unitless values: usa esta cifra multiplicada por el tamaño de fuente del elemento */
+                            </code> <br> <code class="language-css"> 
+                                line-height: 3.5;
+                            </code> <br><br> <code class="language-css"> 
+                                /* &lt;longitud&gt; valores */
+                            </code> <br> <code class="language-css"> 
+                                line-height: 3em;
+                            </code> <br><br> <code class="language-css"> 
+                                /* &lt;porcentaje&gt; valores */
+                            </code> <br> <code class="language-css"> 
+                                line-height: 34%;
+                            </code> <br><br> <code class="language-css"> 
+                                /* Valores absolutos */
+                            </code> <br> <code class="language-css"> 
+                                line-height: inherit;
+                            </code> <br> <code class="language-css"> 
+                                line-height: initial;
+                            </code> <br> <code class="language-css"> 
+                                line-height: unset;
+                            </code>
+                        </div>
+                        <dl class="content">
+                            <dt>normal</dt>
+                            <dd>Depende del agente del usuario. Los navegadores de escritorio (incluido Firefox) usan un valor por defecto de apenas 1.2, dependiendo del font-family del elemento.</dd>
+                            <dt>&lt;numero&gt; </dt>
+                            <dd>El valor utilizado es este &lt;numero&gt; sin unidades multiplicado por el propio tamaño de fuente del elemento. El valor calculado es el mismo que el &lt;numero&gt; especificado. En la mayoría de los casos, esta es la forma preferida de establecer line-height y evitar resultados inesperados debido a la herencia.</dd>
+                            <dt>&lt;longitud&gt;</dt>
+                            <dd>La &lt;longitud&gt; especificada se utiliza en el cálculo de la altura de la casilla encuadrada por líneas. Los valores dados en unidades em pueden producir resultados inesperados (ver ejemplo más abajo).</dd>
+                            <dt>&lt;porcentaje&gt; </dt>
+                            <dd>En relación con el tamaño de fuente del elemento en sí. El valor calculado es este &lt;porcentaje&gt; multiplicado por el tamaño de letra del elemento calculado. Los valores porcentuales pueden producir resultados inesperados (ver el segundo ejemplo a continuación).</dd>
+                        </dl>
+                        
+                    <h3 class="title-aux" id="letter-spacing">letter-spacing</h3>
+                        <p class="content">
+                            El espaciado entre caracteres puede controlarse con <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing" target="_blank" rel="noopener noreferrer">letter-spacing</a> o con <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/word-spacing" target="_blank" rel="noopener noreferrer">word-spacing</a> para el espaciado entre palabras.
+                        </p>
+                        
+                </article>
+                <article class="concept"> <!-- Listas -->
+                    <h3 class="title-concept" id="listas-ord-des"> Listas</h3>
+                    <ul class="content"> <!-- Submenu de Estilos de letra -->
+                        <li><a href="#font-color">Color</a></li>
+                        <!-- *** -->
+                    </ul>
+                    <h3 class="title-aux" id=""></h3>
+                        <p class="content">
+                        </p>
+                        <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
+                            <code class="language-css">
+                                propiedad: |||;
+                            </code>
+                        </div>
+                        <dl class="content">
+                            <dt></dt>
+                            <dd></dd>
+                        </dl>
+                        <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
+                            <code class="language-css"> 
+                                /**** */
+                            </code> <br> <code class="language-css"> 
+                                /**** */
+                            </code> 
+                        </div>
+                    <h3 class="title-aux" id=""></h3>
+                        <p class="content">
+                        </p>
+                        <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
+                            <code class="language-css">
+                                propiedad: |||;
+                            </code>
+                        </div>
+                        <dl class="content">
+                            <dt></dt>
+                            <dd></dd>
+                        </dl>
+                        <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
+                            <code class="language-css"> 
+                                /**** */
+                            </code> <br> <code class="language-css"> 
+                                /**** */
+                            </code> 
+                        </div>
+                    <h3 class="title-aux" id=""></h3>
+                        <p class="content">
+                        </p>
+                        <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
+                            <code class="language-css">
+                                propiedad: |||;
+                            </code>
+                        </div>
+                        <dl class="content">
+                            <dt></dt>
+                            <dd></dd>
+                        </dl>
+                        <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
+                            <code class="language-css"> 
+                                /**** */
+                            </code> <br> <code class="language-css"> 
+                                /**** */
+                            </code> 
+                        </div>
+                </article>
+                <article class="concept"> <!-- Links -->
+                    <h3 class="title-concept" id="diseño-links"> Links</h3>
+                    <ul class="content"> <!-- Submenu de Estilos de letra -->
+                        <li><a href="#font-color">Color</a></li>
+                        <!-- *** -->
+                    </ul>
+                    <h3 class="title-aux" id=""></h3>
+                        <p class="content">
+                        </p>
+                        <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
+                            <code class="language-css">
+                                propiedad: |||;
+                            </code>
+                        </div>
+                        <dl class="content">
+                            <dt></dt>
+                            <dd></dd>
+                        </dl>
+                        <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
+                            <code class="language-css"> 
+                                /**** */
+                            </code> <br> <code class="language-css"> 
+                                /**** */
+                            </code> 
+                        </div>
+                    <h3 class="title-aux" id=""></h3>
+                        <p class="content">
+                        </p>
+                        <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
+                            <code class="language-css">
+                                propiedad: |||;
+                            </code>
+                        </div>
+                        <dl class="content">
+                            <dt></dt>
+                            <dd></dd>
+                        </dl>
+                        <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
+                            <code class="language-css"> 
+                                /**** */
+                            </code> <br> <code class="language-css"> 
+                                /**** */
+                            </code> 
+                        </div>
+                    <h3 class="title-aux" id=""></h3>
+                        <p class="content">
+                        </p>
+                        <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
+                            <code class="language-css">
+                                propiedad: |||;
+                            </code>
+                        </div>
+                        <dl class="content">
+                            <dt></dt>
+                            <dd></dd>
+                        </dl>
+                        <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
+                            <code class="language-css"> 
+                                /**** */
+                            </code> <br> <code class="language-css"> 
+                                /**** */
+                            </code> 
+                        </div>
+                </article>
+                <article class="concept"> <!-- Otras Propiedades -->
+                    <h3 class="title-concept" id="font-properties"> Otras Propiedades utiles</h3>
+                    <p class="content">Aplicacion de estilos a tipos de letra</p>
+                    <ul>
+                        <li><a href="/es/docs/Web/CSS/font-variant"><code>font-variant</code></a>: Cambia entre las opciones de versalita y normal del tipo de letra.</li>
+                        <li><a class="only-in-en-us" title="Currently only available in English (US)" href="/en-US/docs/Web/CSS/font-kerning"><code>font-kerning</code> <span>(en-US)</span></a>: Activa/Desactiva las opciones de interletraje del tipo de letra.</li>
+                        <li><a class="only-in-en-us" title="Currently only available in English (US)" href="/en-US/docs/Web/CSS/font-feature-settings"><code>font-feature-settings</code> <span>(en-US)</span></a>: Activa/Desactiva diversas características de los tipos de letra <a href="https://en.wikipedia.org/wiki/OpenType" class="external" rel=" noopener">OpenType</a>.</li>
+                        <li><a href="/es/docs/Web/CSS/font-variant-alternates"><code>font-variant-alternates</code></a>: Controla el uso de los caracteres alternativos para un tipo de letra dado.</li>
+                        <li><a class="only-in-en-us" title="Currently only available in English (US)" href="/en-US/docs/Web/CSS/font-variant-caps"><code>font-variant-caps</code> <span>(en-US)</span></a>: Controla el uso de los caracteres alternativos de las mayúsculas.</li>
+                        <li><a class="only-in-en-us" title="Currently only available in English (US)" href="/en-US/docs/Web/CSS/font-variant-east-asian"><code>font-variant-east-asian</code> <span>(en-US)</span></a>: Controla el uso de los caracteres alternativos en textos en idiomas del Asia Oriental, como el japonés y el chino.</li>
+                        <li><a class="only-in-en-us" title="Currently only available in English (US)" href="/en-US/docs/Web/CSS/font-variant-ligatures"><code>font-variant-ligatures</code> <span>(en-US)</span></a>: Controla qué ligaduras y formas contextuales se usarán en el texto.</li>
+                        <li><a class="only-in-en-us" title="Currently only available in English (US)" href="/en-US/docs/Web/CSS/font-variant-numeric"><code>font-variant-numeric</code> <span>(en-US)</span></a>: Controla el uso de los caracteres alternativos para números, fracciones y marcadores de ordinales.</li>
+                        <li><a class="only-in-en-us" title="Currently only available in English (US)" href="/en-US/docs/Web/CSS/font-variant-position"><code>font-variant-position</code> <span>(en-US)</span></a>: Controla el uso de los caracteres alternativos de tamaños más pequeños posicionados como subíndice y superíndice.</li>
+                        <li><a href="/es/docs/Web/CSS/font-size-adjust"><code>font-size-adjust</code></a>: Ajusta el tamaño visual del texto independientemente del tamaño real del tipo de letra.</li>
+                        <li><a class="only-in-en-us" title="Currently only available in English (US)" href="/en-US/docs/Web/CSS/font-stretch"><code>font-stretch</code> <span>(en-US)</span></a>: Cambia entre posibles versiones ampliadas de un tipo de letra determinado.</li>
+                        <li><a class="only-in-en-us" title="Currently only available in English (US)" href="/en-US/docs/Web/CSS/text-underline-position"><code>text-underline-position</code> <span>(en-US)</span></a>: Especifica la posición de los subrayados con el valor <code>underline</code> de la propiedad <code>text-decoration-line</code>.</li>
+                        <li><a class="only-in-en-us" title="Currently only available in English (US)" href="/en-US/docs/Web/CSS/text-rendering"><code>text-rendering</code> <span>(en-US)</span></a>: Intenta optimizar la representación del texto.</li>
+                    </ul>
+                    <p class="content">Estilos de disposición de los textos</p>
+                    <ul>
+                        <li><a class="only-in-en-us" title="Currently only available in English (US)" href="/en-US/docs/Web/CSS/text-indent"><code>text-indent</code> <span>(en-US)</span></a>: Especifica el espacio horizontal que debe dejarse antes del comienzo de la primera línea del contenido de texto.</li>
+                        <li><a href="/es/docs/Web/CSS/text-overflow"><code>text-overflow</code></a>: Define cómo se señala el contenido que los usuarios no ven porque desborda.</li>
+                        <li><a href="/es/docs/Web/CSS/white-space"><code>white-space</code></a>: Define cómo se usan los espacios en blanco y los saltos de línea asociados dentro del elemento.</li>
+                        <li><a class="only-in-en-us" title="Currently only available in English (US)" href="/en-US/docs/Web/CSS/word-break"><code>word-break</code> <span>(en-US)</span></a>: Especifica si se deben dividir las palabras a final de línea.</li>
+                        <li><a href="/es/docs/Web/CSS/direction"><code>direction</code></a>: Define la dirección del texto (esto depende del idioma, y por lo general es mejor dejar que HTML maneje esa parte, porque está vinculada al contenido del texto).</li>
+                        <li><a href="/es/docs/Web/CSS/hyphens"><code>hyphens</code></a>: Activa/Desactiva la separación de palabras en los idiomas admitidos.</li>
+                        <li><a class="only-in-en-us" title="Currently only available in English (US)" href="/en-US/docs/Web/CSS/line-break"><code>line-break</code> <span>(en-US)</span></a>: Relaja o refuerza el salto de línea en los idiomas asiáticos.</li>
+                        <li><a class="only-in-en-us" title="Currently only available in English (US)" href="/en-US/docs/Web/CSS/text-align-last"><code>text-align-last</code> <span>(en-US)</span></a>: Define cómo es la alineación de la última línea de un bloque o línea justo antes de un salto de línea forzado.</li>
+                        <li><a href="/es/docs/Web/CSS/text-orientation"><code>text-orientation</code></a>: Define la orientación del texto en una línea.</li>
+                        <li><a class="only-in-en-us" title="Currently only available in English (US)" href="/en-US/docs/Web/CSS/overflow-wrap"><code>word-wrap</code> <span>(en-US)</span></a>: Especifica si el navegador puede dividir palabras a final de línea para evitar desbordamientos del contenido.</li>
+                        <li><a href="/es/docs/Web/CSS/writing-mode"><code>writing-mode</code></a>: Define si las líneas de texto se disponen en horizontal o en vertical y la dirección en la que fluyen las líneas subsiguientes.</li>
+                    </ul>
+                </article>
+            </section>
+            <input type="radio" name="bloques" class="bloques" id="otro-elem">
+            <section class="section" ><!--*** Otros Elementos HTML************-->
+                <h2 class="section-title">Otros Elementos HTML</h2>
+                <!-- 
+                    Tablas
+                    formularios
+                        https://developer.mozilla.org/es/docs/Learn/Forms
+                    caret-color
+                    input-type
+                 -->
+            </section>
+            <input type="radio" name="bloques" class="bloques" id="maquetacion">
+            <section class="section" ><!--*** Maquetación *****************-->
+                <h2 class="section-title">Maquetacion</h2>
+                <!-- 
+
+                    display
+                    visibility
+                    position 
+                        /*Position sticky no funciona si ancestro tiene overflow*/
+                    z-index
+                    Contextos de apilamiento "stacking-context"
+                    float
+                    inline-block
+                    table
+                    flexbox
+                    grid
+                 -->
+                 
             </section>
             <input type="radio" name="bloques" class="bloques" id="media-queries">
             <section class="section" ><!--*** Media Queries *****************-->
