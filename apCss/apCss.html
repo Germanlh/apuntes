@@ -108,6 +108,7 @@
                             <li><a href="#font-style-dis">Diseño de texto</a></li>
                             <li><a href="#listas-ord-des">Listas</a></li>
                             <li><a href="#diseño-links">Links</a></li>
+                            <li><a href="#fuentes-web">Fuentes Web</a></li>
                             <li><a href="#font-properties">Otras propiedades utiles</a></li>
                         </ul>
                     </li>
@@ -2394,6 +2395,7 @@
                     <li><a href="#font-style-dis">Diseño de texto</a></li>
                     <li><a href="#listas-ord-des">Listas</a></li>
                     <li><a href="#diseño-links">Links</a></li>
+                    <li><a href="#fuentes-web">Fuentes Web</a></li>
                     <li><a href="#font-properties">Otras propiedades utiles</a></li>
                 </ul>
                 <article class="concept"> <!-- Estilos del tipo de letra -->
@@ -2766,143 +2768,363 @@
                 </article>
                 <article class="concept"> <!-- Listas -->
                     <h3 class="title-concept" id="listas-ord-des"> Listas</h3>
+                    
                     <ul class="content"> <!-- Submenu de Estilos de letra -->
-                        <li><a href="#font-color">Color</a></li>
+                        <li><a href="#list-style-type">Tipo de lista</a></li>
+                        <li><a href="#list-style-position">Posicion Viñetas</a></li>
+                        <li><a href="#list-style-image">Estilo de Viñeta</a></li>
                         <!-- *** -->
                     </ul>
-                    <h3 class="title-aux" id=""></h3>
-                        <p class="content">
+                    
+                        <p class="content">Los estilos de las listas pueden definirse para Listas Ordenadas &lt;ol&gt; para listas desordenadas &lt;ul&gt; y listas de definición &lt;dl&gt; todas ellas se ven afectadas por las propiedades generales que puede aplicarse al texto, sin embargo hay un pequeño conjunto de propiedades que son específicos para ellas, dentro de estas propiedades se encuentran: <a href="https://developer.mozilla.org/es/docs/Web/CSS/list-style-type" target="_blank" rel="noopener noreferrer">list-style-type</a>, <a href="https://developer.mozilla.org/es/docs/Web/CSS/list-style-position" target="_blank" rel="noopener noreferrer">list-style-position</a> y <a href="https://developer.mozilla.org/es/docs/Web/CSS/list-style-image" target="_blank" rel="noopener noreferrer">list-style-image</a>.  
+                        </p>
+                        <h3 class="title-aux" id="list-style-type">list-style-type</h3>
+                        <p class="content"> Con esta propiedad podemos controlar que tipo de lista se va a enumerar, en el caso de las listas ordenadas podemos cambiar el modo de enumeración a numeración romana, alfabetica u otras propiedades, existen más opciones descritas en el enlace: <a href="https://developer.mozilla.org/es/docs/Web/CSS/list-style-type" target="_blank" rel="noopener noreferrer">list-style-type</a>.  
                         </p>
                         <div class="codes">
                             <h4 class="title-codes">Ejemplo:</h4>
                             <code class="language-css">
-                                propiedad: |||;
+                                list-style-type:  &lt;std-list-style-name&gt; | none | inherit ;
                             </code>
                         </div>
                         <dl class="content">
-                            <dt></dt>
-                            <dd></dd>
+                            <dt>&lt;std-list-style-name&gt;</dt>
+                            <dd>Puede tomar los valores de disc, circle, square, decimal, decimal-leading-zero, lower-roman, upper-roman, lower-greek, lower-latin, upper-latin, armenian, georgian, lower-alpha, upper-alpha</dd>
                         </dl>
                         <div class="codes">
                             <h4 class="title-codes">Ejemplo:</h4>
-                            <code class="language-css"> 
-                                /**** */
-                            </code> <br> <code class="language-css"> 
-                                /**** */
-                            </code> 
+                            <code class="language-css">
+                                ol.normal {
+                            </code> <br> <code class="language-css">
+                                list-style-type: upper-alpha;
+                            </code> <br> <code class="language-css">
+                                  }
+                            </code> <br> <code class="language-css">
+                                /* Usando el shortcut "list-style": */
+                            </code> <br> <code class="language-css">
+                                ol.shortcut {
+                            </code> <br> <code class="language-css">
+                                list-style: upper-alpha;
+                            </code> <br> <code class="language-css">
+                                }
+                            </code>
                         </div>
-                    <h3 class="title-aux" id=""></h3>
-                        <p class="content">
+                        <div class="codes" style="padding-left: 3rem;">
+                            <ol style="list-style-type: decimal-leading-zero">
+                                <li>numero</li>
+                                <li>letra</li>
+                                <li>Romanos</li>
+                                <li>otros</li>
+                            </ol>
+                            <br>
+                            <ol style="list-style-type: upper-alpha">
+                                <li>numero</li>
+                                <li>letra</li>
+                                <li>Romanos</li>
+                                <li>otros</li>
+                            </ol>
+                            <br>
+                            <ol style="list-style-type: upper-roman">
+                                <li>numero</li>
+                                <li>letra</li>
+                                <li>Romanos</li>
+                                <li>otros</li>
+                            </ol>
+                            <br>
+                            <ol style="list-style-type: lower-greek">
+                                <li>numero</li>
+                                <li>letra</li>
+                                <li>Romanos</li>
+                                <li>otros</li>
+                            </ol>
+                        </div>
+                    <h3 class="title-aux" id="list-style-position">list-style-position</h3>
+                        <p class="content">Esta propiedad nos permite posicionar la viñeta dentro de la caja contenedora de texto o fuera de ella
                         </p>
                         <div class="codes">
                             <h4 class="title-codes">Ejemplo:</h4>
                             <code class="language-css">
-                                propiedad: |||;
+                                list-style-position: inside | outside | inherit;
                             </code>
                         </div>
-                        <dl class="content">
-                            <dt></dt>
-                            <dd></dd>
-                        </dl>
                         <div class="codes">
                             <h4 class="title-codes">Ejemplo:</h4>
                             <code class="language-css"> 
-                                /**** */
+                                .one {
+                            </code> <br> <code class="language-css"> 
+                                list-style:square inside;
+                            </code> <br> <code class="language-css"> 
+                                }
+                            </code> <br> <code class="language-css"> 
+                            
+                            .two {
+                            </code> <br> <code class="language-css"> 
+                                list-style-position: outside;
+                            </code> <br> <code class="language-css"> 
+                                list-style-type: circle;
+                            </code> <br> <code class="language-css"> 
+                            }
                             </code> <br> <code class="language-css"> 
                                 /**** */
                             </code> 
                         </div>
-                    <h3 class="title-aux" id=""></h3>
-                        <p class="content">
+                        <div class="codes" style="padding-left: 3rem;">
+                            <ol style="list-style-position: outside;">
+                                <li>uno</li>
+                                <li>dos</li>
+                                <li>tres</li>
+                            </ol>
+                            <br>
+                            <ol style="list-style-position: inside;">
+                                <li>uno</li>
+                                <li>dos</li>
+                                <li>tres</li>
+                            </ol>
+                        </div>
+
+                    <h3 class="title-aux" id="list-style-image">list-style-image</h3>
+                        <p class="content"> Esta propiedad nos permite modificar la forma de la viñeta colocando una imagen en su lugar
                         </p>
                         <div class="codes">
                             <h4 class="title-codes">Ejemplo:</h4>
                             <code class="language-css">
-                                propiedad: |||;
+                                list-style-image: &lt;uri&gt; | none | inherit;
                             </code>
                         </div>
                         <dl class="content">
-                            <dt></dt>
-                            <dd></dd>
+                            <dt>&lt;uri&gt;</dt>
+                            <dd>directorio donde se encuentra la imagen que se utilizará como marcador.</dd>
                         </dl>
                         <div class="codes">
                             <h4 class="title-codes">Ejemplo:</h4>
                             <code class="language-css"> 
-                                /**** */
-                            </code> <br> <code class="language-css"> 
-                                /**** */
+                                ul {
+                                </code> <br> <code class="language-css"> 
+                                    list-style-image: url("https://mdn.mozillademos.org/files/11981/starsolid.gif");
+                                </code> <br> <code class="language-css"> 
+                                  }
                             </code> 
                         </div>
+                        <div class="codes" style="padding-left: 3rem;">
+                            <ol style="list-style-image: url('https://mdn.mozillademos.org/files/11981/starsolid.gif');">
+                                <li>uno</li>
+                                <li>dos</li>
+                                <li>tres</li>
+                            </ol>
+                        </div>
+                        <p class="content"> Sin embargo, esta propiedad es un poco limitada por lo que respecta al control de la posición, el tamaño, etc., de las viñetas. Es más conveniente usar la familia de propiedades background, hemos aplicado estilo a la lista no ordenada de este modo:
+                        </p>
+                        <img alt="an unordered list with the bullet points set as little star images" src="https://mdn.mozillademos.org/files/12956/image-bullets.png" style="border-style: solid; border-width: 1px; display: block; margin: 0px auto; width: 200px;" loading="lazy" >
+                        <div class="codes">
+                            <h4 class="title-codes">Ejemplo:</h4>
+                            <code class="language-css"> 
+                                ul {
+                            </code> <br> <code class="language-css"> 
+                                padding-left: 2rem;
+                            </code> <br> <code class="language-css"> 
+                                list-style-type: none;
+                            </code> <br> <code class="language-css"> 
+                            }
+                        </code> <br> <code class="language-css"> 
+                            
+                            ul li {
+                        </code> <br> <code class="language-css"> 
+                            padding-left: 2rem;
+                        </code> <br> <code class="language-css"> 
+                            background-image: url(star.svg);
+                        </code> <br> <code class="language-css"> 
+                            background-position: 0 0;
+                        </code> <br> <code class="language-css"> 
+                            background-size: 1.6rem 1.6rem;
+                        </code> <br> <code class="language-css"> 
+                            background-repeat: no-repeat;
+                        </code> <br> <code class="language-css"> 
+                            }    
+                        </code> 
                 </article>
                 <article class="concept"> <!-- Links -->
                     <h3 class="title-concept" id="diseño-links"> Links</h3>
-                    <ul class="content"> <!-- Submenu de Estilos de letra -->
-                        <li><a href="#font-color">Color</a></li>
-                        <!-- *** -->
-                    </ul>
-                    <h3 class="title-aux" id=""></h3>
+                    <p class="content"> Existen ciertas reglas básicas que se deben a tomar en cuenta en la creación de hiperenlaces esto se hace con el propósito de mantener una coherencia con lo que espera el usuario y la forma en que se presenta la información sea amistosa, de esta manera este articulo nos recuerda pautas básicas de  <a href="https://developer.mozilla.org/es/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks" target="_blank" rel="noopener noreferrer">como crear links</a>.
+                    </p>
+                    <p class="content">La apariencia de los links puede ser personalizada de tal forma que sea congruente con el diseño general de la página, pero es correcto mantener cierta diferencia con el texto común, es decir, implementar ideas que le permitan diferenciarse y entender que son hiperenlaces, en este sentido, puede cambiarse usando algunas propiedades como <a href="https://developer.mozilla.org/es/docs/Web/CSS/color" target="_blank" rel="noopener noreferrer">color</a>, <a href="https://developer.mozilla.org/es/docs/Web/CSS/outline" target="_blank" rel="noopener noreferrer">outline</a>,  <a href="https://developer.mozilla.org/es/docs/Web/CSS/cursor" target="_blank" rel="noopener noreferrer"> el cursor</a>. o la <a href="https://developer.mozilla.org/es/docs/Web/CSS/text-decoration" target="_blank" rel="noopener noreferrer"> decoracion del texto</a> aunque no es exclusivo limitarse a estas propiedades para resaltar el hiperenlace, incluso es común agregar un pequeño ícono a lado del texto.
+                    </p>
+                    <p class="content">  Cada link mantiene diferentes estados al momento de estar presentes dentro de la página web, estos estados pueden controlarse a través de las pseudoclases, <a href="#link-link">:link</a>, <a href="#link-visited">:visited</a>, <a href="#link-hover">:hover</a>, <a href="#link-focus">:focus</a>, <a href="#link-active">:active</a> hay que recalcar que cada uno de estos estados mantienen un comportamiento predeterminado aunque puede modificarse, sin embargo, Este orden es importante porque los estilos de enlace se construyen sobre los anteriores. Por ejemplo, los estilos de la primera regla se aplicarán a todas las reglas siguientes, y cuando activas un enlace también pasas con el cursor por encima. Si los pones en un orden incorrecto, no funcionarán adecuadamente. Para recordar este orden, puedes intentar utilizar una fórmula nemotécnica como LoVe Fears HAte..
+                    </p>
+                    
+                    <h3 class="title-aux" id="link-link">:link</h3>
                         <p class="content">
+                            Link (no visitado): El estado predeterminado que presenta un enlace cuando no está en ningún otro estado. Se puede especificar usando la pseudoclase :link.
                         </p>
-                        <div class="codes">
-                            <h4 class="title-codes">Ejemplo:</h4>
-                            <code class="language-css">
-                                propiedad: |||;
-                            </code>
-                        </div>
-                        <dl class="content">
-                            <dt></dt>
-                            <dd></dd>
-                        </dl>
+                    <h3 class="title-aux" id="link-visited">:visited</h3>
+                        <p class="content">
+                            Un enlace cuando ya se ha visitado (está grabado en el historial del navegador); se le aplica otro formato con la pseudoclase :visited.
+                        </p>
+                    <h3 class="title-aux" id="link-hover">:hover</h3>
+                        <p class="content">
+                            Un enlace cuando se le pasa el cursor por encima; se le aplica otro formato con la pseudoclase :hover.
+                        </p>
+                    <h3 class="title-aux" id="link-focus">:focus</h3>
+                        <p class="content">
+                            Un enlace cuando tiene el foco (por ejemplo, se salta a este con la tecla Tab del teclado o se le da el foco mediante programación usando HTMLElement.focus()); se le aplica un formato diferente con la pseudoclase :focus.
+                        </p>
+                    <h3 class="title-aux" id="link-active">:active</h3>
+                        <p class="content">
+                            Active: Un enlace cuando se activa (por ejemplo, se hace clic encima); se le aplica un formato diferente con la pseudoclase :active.
+                        </p>
+                        
                         <div class="codes">
                             <h4 class="title-codes">Ejemplo:</h4>
                             <code class="language-css"> 
-                                /**** */
+                                a {
                             </code> <br> <code class="language-css"> 
-                                /**** */
+                                outline: none;
+                            </code> <br> <code class="language-css"> 
+                                text-decoration: none;
+                            </code> <br> <code class="language-css"> 
+                                padding: 2px 1px 0;
+                            </code> <br> <code class="language-css"> 
+                                }
+                            </code> <br><br> <code class="language-css"> 
+                                a:link {
+                            </code> <br> <code class="language-css"> 
+                                color: #265301;
+                            </code> <br> <code class="language-css"> 
+                            }
+                            </code> <br><br> <code class="language-css"> 
+                                a:visited {
+                            </code> <br> <code class="language-css"> 
+                                color: #437A16;
+                            </code> <br> <code class="language-css"> 
+                                }
+                            </code> <br><br> <code class="language-css"> 
+                                a:focus {
+                                </code> <br> <code class="language-css"> 
+                                    border-bottom: 1px solid;
+                                </code> <br> <code class="language-css"> 
+                                    background: #BAE498;
+                                </code> <br> <code class="language-css"> 
+                                } 
+                            </code> <br><br> <code class="language-css"> 
+                                    a:hover {
+                                </code> <br> <code class="language-css"> 
+                                    border-bottom: 1px solid;
+                                </code> <br> <code class="language-css"> 
+                                    background: #CDFEAA;
+                                </code> <br> <code class="language-css"> 
+                                }
+                            </code> <br><br> <code class="language-css"> 
+                                a:active {
+                                </code> <br> <code class="language-css"> 
+                                    background: #265301;
+                                </code> <br> <code class="language-css"> 
+                                    color: #CDFEAA;
+                                </code> <br> <code class="language-css"> 
+                                  }
                             </code> 
                         </div>
-                    <h3 class="title-aux" id=""></h3>
-                        <p class="content">
-                        </p>
-                        <div class="codes">
-                            <h4 class="title-codes">Ejemplo:</h4>
-                            <code class="language-css">
-                                propiedad: |||;
-                            </code>
-                        </div>
-                        <dl class="content">
-                            <dt></dt>
-                            <dd></dd>
-                        </dl>
-                        <div class="codes">
-                            <h4 class="title-codes">Ejemplo:</h4>
-                            <code class="language-css"> 
-                                /**** */
-                            </code> <br> <code class="language-css"> 
-                                /**** */
-                            </code> 
-                        </div>
-                    <h3 class="title-aux" id=""></h3>
-                        <p class="content">
-                        </p>
-                        <div class="codes">
-                            <h4 class="title-codes">Ejemplo:</h4>
-                            <code class="language-css">
-                                propiedad: |||;
-                            </code>
-                        </div>
-                        <dl class="content">
-                            <dt></dt>
-                            <dd></dd>
-                        </dl>
-                        <div class="codes">
-                            <h4 class="title-codes">Ejemplo:</h4>
-                            <code class="language-css"> 
-                                /**** */
-                            </code> <br> <code class="language-css"> 
-                                /**** */
-                            </code> 
-                        </div>
+                </article>
+                <article class="concept"> <!-- Font Face -->
+                    <h3 class="title-concept" id="fuentes-web">Fuentes Web</h3>
+                    <p class="content">
+                        Las fuentes que pueden usarse en las diferentes páginas web, pero al visualizarse en el equipo del cliente, este usará las fuentes disponibles en ese equipo para lograr que todas las páginas siempre luzcan igual en todos los clientes, es necesario usar las fuente que universalmente tienen todos los equipos, también llamadas <a href="https://developer.mozilla.org/es/docs/Learn/CSS/Styling_text/Fundamentals#familia_de_tipos_de_letras">fuentes seguras</a> , sin embargo, cuando nos vemos limitados por esas tipografias, es necesario usar fuentes diferentes alternativas para ser congruente con el diseño que se desea, por esta razón puede optarse por usar una tipografía única o exclusiva, para ello el artículo <a href="https://developer.mozilla.org/es/docs/Learn/CSS/Styling_text/Web_fonts">MDN web-font</a> puede ayudarnos, a grandes razgos, se trata de usar una tipografía propia que se aloje en el servidor donde se distribuye la página o solictarla activamente desde un servidor externo que la mantenga alojada, para esto usamos @font-face.
+                    </p>
+                    <h3 class="title-aux">@font-face</h3>
+                    <div class="codes">
+                        <h4 class="title-codes">Ejemplo:</h4>
+                        <code class="language-css">
+                            @font-face {
+                        </code> <br> <code class="language-css">
+                            font-family: "myFont";
+                        </code> <br> <code class="language-css">
+                            src: url("myFont.woff");
+                        </code> <br> <code class="language-css">
+                            }
+                        </code>
+                    </div>
+                    <p class="content">
+                        Una vez que hemos definido un nombre para nuestra fuente, y declaramos donde está alojada, ya podemos hacer uso de ella con font-family.
+                    </p>
+                    <div class="codes">
+                        <h4 class="title-codes">Ejemplo:</h4>
+                        <code class="language-css">
+                            html {
+                        </code> <br> <code class="language-css">
+                            font-family: "myFont", "Bitstream Vera Serif", serif;
+                        </code> <br> <code class="language-css">                        
+                            }
+                        </code>
+                    </div>
+                    
+                    <ol class="content">
+                        <li>Los navegadores admiten diferentes formatos de tipos de letra, por lo que necesitarás más de un formato de tipos de letra para conseguir una compatibilidad decente entre navegadores. Por ejemplo, la mayoría de los navegadores modernos admiten WOFF/WOFF2 (Web Open Font Format, versiones 1 y 2), el formato más eficiente disponible. Pero las versiones antiguas de Internet Explorer solo admiten tipos de letra con formato EOT (Embedded Open Type) y es posible que debas incluir una versión SVG del tipo de letra para soportar versiones antiguas de navegadores iPhone y Android. A continuación te mostraremos cómo generar el código necesario.</li>
+                        <li>Generalmente las fuentes no son de uso gratuito. Debes pagar por ellas y/o respetar otras condiciones de licencia, como acreditar al creador del tipo de letra en el código (o en tu sitio web). Los tipos de letra no deben robarse, ni debes utilizarlos sin otorgar a su creador el crédito apropiado.</li>
+                    </ol>
+                    <p class="content">Esto se conoce como «sintaxis @font-face a prueba de balas» desde una publicación de Paul Irish, en los tiempos en que <code><code>@font-face</code></code> empezaba a popularizarse (<a href="https://www.paulirish.com/2009/bulletproof-font-face-implementation-syntax/" class="external" rel=" noopener">Bulletproof @font-face Syntax</a>). Vamos a ver qué hace:</p>
+                    <div class="codes">
+                        <h4 class="title-codes">Ejemplo:</h4>
+                        <code class="language-css">
+                        </code> <br> <code class="language-css">
+                            @font-face {
+                        </code> <br> <code class="language-css">
+                            font-family: 'ciclefina';
+                        </code> <br> <code class="language-css">
+                            src: url('fonts/cicle_fina-webfont.eot');
+                        </code> <br> <code class="language-css">
+                            src: url('fonts/cicle_fina-webfont.eot?#iefix') format('embedded-opentype'),
+                        </code> <br> <code class="language-css">
+                            url('fonts/cicle_fina-webfont.woff2') format('woff2'),
+                        </code> <br> <code class="language-css">
+                            url('fonts/cicle_fina-webfont.woff') format('woff'),
+                        </code> <br> <code class="language-css">
+                            url('fonts/cicle_fina-webfont.ttf') format('truetype'),
+                        </code> <br> <code class="language-css">
+                            url('fonts/cicle_fina-webfont.svg#ciclefina') format('svg');
+                        </code> <br> <code class="language-css">
+                            font-weight: normal;
+                        </code> <br> <code class="language-css">
+                            font-style: normal;
+                        </code> <br> <code class="language-css">
+                              }
+                        </code>
+                    </div>
+                    <ul>
+                        <li><code><code><code>font-family</code></code></code>: Esta línea especifica el nombre con el que vas a referirte a la fuente. Puedes poner el que quieras, siempre y cuando lo uses de manera coherente a lo largo de tu CSS.</li>
+                        <li><code><code><code>src</code></code></code>: Estas líneas especifican las rutas de acceso a los archivos de tipos de letra para que puedas importarlos a tu CSS (la parte <code><code><code>URL</code></code></code>) y el formato de cada archivo de tipo de letra (la parte <code><code><code>format</code></code></code>). La última parte en cada caso es opcional, pero es útil declararla porque permite que los navegadores encuentren más rápido un tipo de letra que puedan usar. Se pueden enumerar varias declaraciones, separadas por comas: el navegador buscará por ellas y usará la primera que encuentre. Por lo tanto, es mejor poner formatos nuevos y mejores, como WOFF2 y formatos más antiguos, no tan buenos, como TTF. La única excepción son las fuentes EOT: se colocan primero para corregir un par de errores en versiones anteriores de Internet Explorer, por lo que intentará usar lo primero que encuentre, incluso si realmente no puede usar la fuente.</li>
+                        <li><a href="/es/docs/Web/CSS/font-weight"><code>font-weight</code></a>/<a href="/es/docs/Web/CSS/font-style"><code>font-style</code></a>: Estas líneas especifican qué grueso tiene el tipo de letra y si se muestra en cursiva o no. Si vas a importar diversos grosores del mismo tipo de letra, puedes especificar cuál es su grueso/estilo y luego usar valores de <a href="/es/docs/Web/CSS/font-weight"><code>font-weight</code></a> / <a href="/es/docs/Web/CSS/font-style"><code>font-style</code></a> diferentes para elegir entre ellos, en lugar de tener que llamar a todos los diferentes miembros de la familia de tipos de letra con nombres distintos. <a href="http://www.456bereastreet.com/archive/201012/font-face_tip_define_font-weight_and_font-style_to_keep_your_css_simple/" class="external" rel=" noopener">@tip-face tip: define font-weight and font-stile to keep your CSS simple</a> de Roger Johansson muestra qué hacer con más detalle.</li>
+                       </ul>
+                    <br><br>
+                    <p class="content">
+                        Otra forma de usar las tipografías, es através de un servidor externo, por ejemplo <a href="https://fonts.google.com/">google fonts</a> de donde podemos usar diversas tipografías  solo añadiendo una linea de javascript en el proyecto en cuestión, o por @import
+                    </p>
+                    <div class="codes">
+                        <h4 class="title-codes">HTML:</h4>
+                        <code class="language-html">
+                            &lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+                        </code> <br> <code class="language-html">
+                            &lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
+                        </code> <br> <code class="language-html">
+                            &lt;link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"    rel="stylesheet"&gt;    
+                        </code> <br> <br><br>
+                        
+                        <h4 class="title-codes">CSS:</h4>
+                        <code class="language-css">
+                            font-family: 'Roboto', sans-serif;
+                        </code>
+                    </div>
+                    <div class="codes">
+                        <h4 class="title-codes">CSS:</h4>
+                        <code class="language-css">
+                            &lt;style&gt;
+                        </code> <br> <code class="language-css">
+                            @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+                        </code> <br> <code class="language-css">
+                            &lt;/style&gt;
+                        </code> <br> <br><br><code class="language-css">
+                            /*CSS rules to specify families*/
+                        </code> <br> <code class="language-css">
+                            font-family: 'Roboto', sans-serif;
+                        </code>
+                    </div>
                 </article>
                 <article class="concept"> <!-- Otras Propiedades -->
                     <h3 class="title-concept" id="font-properties"> Otras Propiedades utiles</h3>
