@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apuntes WSL-BASH</title>
+    <script src="https://kit.fontawesome.com/a2e8d0339c.js"></script>
+    <link rel="stylesheet" href="../css/apuntes.css">
+    <link rel="stylesheet" href="../css/prism.css">
+</head>
+<body>
+    <main>
+        <aside><!-- <<<<<<< MENU >>>>>>>>> -->
+            <nav>
+                <label for="check-menu" class="btn-menu fas fa-bars"></label>
+
+                <div class="logo-materia">
+                    <!-- class="icon-home fas fa-home" Icono Home Font awesome
+                    <i class="fas fa-bars"></i> #-->
+                    <a href="../apHtml/apHtml.html" class="materias"><!--*** HTML5 ********************-->
+                            <img src="../img/HTML5_logo-grayIcon.svg" alt="Logo HTML5">
+                    </a>
+                    <a href="../apCss/apCss.html" class="materias"><!--*** CSS3 ********************-->
+                            <img src="../img/CSS3_logo-grayIcon.svg" alt="Css3 logo">
+                    </a>
+                    <a href="../apJs/apJs.html" class="materias"><!--*** JavaScript ********************-->
+                            <img src="../img/JavaScript_logo-grayIcon.svg" alt="Javascript Logo">
+                    </a>
+                    <a href="" class="materias"><!--*** Responsive ********************-->
+                            <img src="../img/Responsive_Logo-grayIcon.svg" alt="Logo Responsive">
+                    </a>
+                    <a href="" class="materias"><!--*** PHP ********************-->
+                            <img src="../img/PHP-logo-grayIcon.svg" alt="PHP Logo">
+                    </a>
+                    <a href="" class="materias"><!--*** GIT ********************-->
+                            <img src="../img/Git-logo-grayIcon.svg" alt="GIT logo">
+                    </a>
+                    <a href="#" class="materias materia-selected"><!--*** Bash ********************-->
+                            <img src="../img/Gnu-bash-logo-grayIcon.svg" alt="BASH logo">
+                    </a>
+                    <a href="" class="materias"><!--*** Ejercicios ********************-->
+                            <img src="../img/ejercicios-grayIcon.svg" alt="Ejercicios logo">
+                    </a>
+                </div>
+
+                <input type="checkbox" name="" id="check-menu">
+                <!-- <a href="../index.html" class="icon-home"><i class="fas fa-home"></i></a> Home -->
+                <ul class="menu">
+                    <label for="check-menu" class="btn-menu fas fa-bars"></label>
+                    <li><!-- Rudimentos -->
+                        <label for="rudimentos" class="elem-menu">Rudimentos</label>
+                        <ul class="submenu">
+                            <li><a href="#que-es-wsl">¿Que es WSL?</a></li>
+                            <li><a href="#cmd-basics">Comandos Básicos</a></li>
+                            <li><a href="#cmd-archivos-dir">Archivos y Dir</a></li>
+                        </ul>
+                    </li>
+
+                    <li><!-- menu2 -->
+                        <label for="secc2" class="elem-menu">seccion2</label>
+                        <ul class="submenu">
+                            <li><a href="#sub1secc2">home</a></li>
+                            <li><a href="#sub2secc2">home</a></li>
+                            <li><a href="#sub3secc2">home</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <div class="contenedor"><!--<<<<<<< CONTENEDOR  >>>>>>>>> -->
+            <input type="radio" name="bloques" class="bloques" id="rudimentos" checked>
+            <section class="section"><!--*** Rudimentos ************************-->
+                <h2 class="section-title">Rudimentos</h2>
+                <article class="concept"><!--Rudimentos-->
+                    <h3 class="title-concept" id="que-es-wsl">¿Que es WSL?</h3>
+                    
+                        <p class="content"><b>Windows Subsystem for Linux</b> (<b>WSL</b>) es una&nbsp;<a href="/wiki/Capa_de_compatibilidad" title="Capa de compatibilidad" target="_blank" rel="noopener noreferrer">capa de compatibilidad</a> desarrollada por <a href="/wiki/Microsoft" title="Microsoft">Microsoft</a> para correr ejecutables de <a href="/wiki/GNU/Linux" title="GNU/Linux" target="_blank" rel="noopener noreferrer">Linux</a>&nbsp;(en formato&nbsp;<a href="/wiki/Executable_and_Linkable_Format" title="Executable and Linkable Format" target="_blank" rel="noopener noreferrer">ELF</a>) nativamente en&nbsp;<a href="/wiki/Windows_10" title="Windows 10" target="_blank" rel="noopener noreferrer">Windows 10</a> y <a href="/wiki/Windows_Server_2019" title="Windows Server 2019" target="_blank" rel="noopener noreferrer">Windows Server 2019</a>, más información en <a href="https://es.wikipedia.org/wiki/Windows_Subsystem_for_Linux" target="_blank" rel="noopener noreferrer">Wikipedia</a> Esta integración que se hace de Linux dentro de windows nos permite controlar la pc con comandos de linux e instalar programas de linux dentro de windows sin necesidad de virtualizar.
+                        </p>
+
+                        <p class="content">
+                            Actualmente puede instalarse desde la página del proyecto <a href="https://docs.microsoft.com/es-es/windows/wsl/install" target="_blank" rel="noopener noreferrer">WSL</a>, adicionalmente tambien podria usarse BASH dentro de windows permitiendonos usar comandos Linux en windows.
+                        </p>
+
+                    <h3 class="title-concept" id="cmd-basics">Comandos Basicos</h3>
+                        <p class="content">
+                            Una buena idea puede ser repasar otros comandos básicos aparte de los aquí listados, por ejemplo en la  <a href="https://linuxjourney.com/lesson/print-working-directory-pwd-command" target="_blank" rel="noopener noreferrer">pagina comandos</a> podemos practicar y entender otros
+                        </p>
+                        <dl class="content">
+                            <dt>pwd</dt>
+                            <dd>Muestra el la ruta del directorio donde nos encontramos posicionados</dd>
+                            <dt>cd</dt>
+                            <dd>"Change Directory" Nos permite cambiar de un directorio a otro, si usamos esta instrucción sin ningun parametro adicional, nos enviará al Home directamente, también podemos usar rutas relativas como <code>cd .</code> o <code>cd ..</code> o code ../..  tambien podemos usar rutas absolutas. otra utilidad es que cuando ponemos el principio del nombre del archivo y presionamos <code>tab</code> busca las coincidencias del archivo o carpeta que inicien con el texto ingresado</dd>
+                            <dt>clear</dt>
+                            <dd>limpia la pantalla de todos los resultados mostrados en la terminal, opcionalmente puede usarse <code>ctrl+l</code> pero esta instrucción solo recorre el cursor al principio de la pantalla de la terminal, no elimina lo que ha mostradoi anteriormente</dd>
+                            <dt><a href="#cmd-crear">mkdir</a></dt>
+                            <dd>"Make Directory" permite crear una carpeta en la ubicación en donde nos encontramos</dd>
+                            <dt><a href="#cmd-touch">touch</a></dt>
+                            <dd>puede crearse un archivo vacío y agregarle una extenión</dd>
+                            <dt>cat</dt>
+                            <dd>"Observa" dentro del archivo, mostrándonos su contenido</dd>
+                            <dt><a href="#cmd-ls">ls</a></dt>
+                            <dd>muestra el contenido de una carpeta</dd>
+                        </dl>
+
+                    <h3 class="title-concept" id="cmd-archivos-dir">Manipulando Archivos y Directorios</h3>
+                        <ul class="content"><!-- Submenu de Manipular Archivos y Directorios-->
+                            <li><a href="#cmd-ls">Listar: ls y tree</a></li>
+                            <li><a href="#cmd-crear">Crear: mkdir-Directorios,  touch-archivos</a></li>
+                            <li><a href="#cmd-cp">Copiar: cp</a></li>
+                            <li><a href="#cmd-mv">Mover y Renombrar: mv</a></li>
+                            <li><a href="#">Borrar: rm</a></li>
+
+                            <!-- *** -->
+                        </ul>
+
+                        <h3 class="title-aux" id="cmd-ls">ls: Listar Directorio</h3>
+                            <p class="content">
+                                Muestra el contenido de una carpeta, tanto las otras carpetas como los archivos que se encuentran dentro:
+                            </p>
+                            <div class="codes">
+                                <h4 class="title-codes">Ejemplo:</h4>
+                                <code class="language-css">
+                                    ziel@ziel-lap:~$ ls
+                                </code> <br> <code class="language-css">
+                                    ziel@ziel-lap:~$ ls -a
+                                </code> <br> <code class="language-css">
+                                    ziel@ziel-lap:~$ ls -lh
+                                </code> <br> <code class="language-css">
+                                    /*muestra los archivos del mas actual al mas antiguo*/
+                                </code> <br> <code class="language-css">
+                                    ziel@ziel-lap:~$ ls -lt
+                                </code> <br> <code class="language-css">
+                                    /*muestra los archivos del mas antiguo al mas actual*/
+                                </code> <br> <code class="language-css">
+                                    ziel@ziel-lap:~$ ls -ltr
+                                </code> <br> <code class="language-css">
+                                    /*muestra de forma mas legible el tamaño de los archivos*/
+                                </code> <br> <code class="language-css">
+                                    ziel@ziel-lap:~$ ls -lh
+                                </code> <br> <code class="language-css">
+                                    /*muestra de forma ordenada los archivos por su tamaño*/
+                                </code> <br> <code class="language-css">
+                                    ziel@ziel-lap:~$ ls -lhS
+                                </code> <br> <code class="language-css">
+                                    /*muestra los atributos de los archivos y los archivos ocultos*/
+                                </code> <br> <code class="language-css">
+                                    ziel@ziel-lap:~$ ls -la
+                                </code>
+                            </div>
+                            <p class="content">
+                                Alguna de sus opciones (argumentos) más útiles son:
+                            </p>
+                            <ul class="content">
+                                <li>
+                                    -a :todos los archivos, incluso los que comienzan con punto (.).
+                                </li>
+                                <li>
+                                    -A :Lista todos los ficheros en los directorios, excepto los que comienzan con punto . (.) y los que comienzan con doble punto (…).
+                                    
+                                </li>
+                                <li>
+                                    -F :indica tipo: / directorio, * ejecutable, @ enlace simbólico.
+                                </li>
+                                <li>
+                                    -h :indicará el tamaño en KB, MB, etc.
+                                </li>
+                                <li>
+                                    -l :listado en formato largo (o detallado).
+                                </li>
+                                <li>
+                                    -S :clasifica los contenidos de los directorios por tamaños, con los ficheros más grandes en primer lugar.
+                                </li>
+                                <li>
+                                    -r :invierte el orden de la salida.
+                                </li>
+                                <li>
+                                    -R :Lista recursivamente los subdirectorios encontrados.
+                                </li>
+                                <li>
+                                    -t :ordenar por fecha de última modificación.
+                                </li>
+                                <li>
+                                    -u :ordenar por fecha de último acceso.
+                                </li>
+                                <li>
+                                    -x :presenta los ficheros por columnas.
+                                </li>
+                                <li>
+                                    -i :precede la salida con el número de i-node
+                                </li>
+                            </ul>
+                        
+                        <h3 class="title-aux" id="cmd-tree">tree: Listar Directorio</h3>
+                            <p class="content">
+                                Nos ayuda a listar un directorio para poder visualizarlo en forma de árbol de forma más estética y ver las relaciones que existen entre ellos, también puede modificarse el nivel de profundidad para mostrar solo lo que nos interesa.
+                            </p>
+                            <div class="codes">
+                                <h4 class="title-codes">Ejemplo:</h4>
+                                <code class="language-javascript">
+                                    ziel@ziel-lap:~$ tree
+                                </code> <br> <code class="language-javascript">
+                                    /*Seleccionando el nivel, en este caso 2*/
+                                </code> <br> <code class="language-javascript">
+                                    ziel@ziel-lap:~$ tree -L 2
+                                </code> <br> <code class="language-javascript">
+                                    /*En caso de no tenerlo instalado*/
+                                </code> <br> <code class="language-javascript">
+                                    ziel@ziel-lap:~$ sudo apt-get install tree
+                                </code> <br> <code class="language-javascript">
+                                    /*Revisar la version*/
+                                </code> <br> <code class="language-javascript">
+                                    ziel@ziel-lap:~$ tree --version
+                                </code>
+                            </div>
+
+
+                        <h3 class="title-aux" id="cmd-crear">mkdir: Crear un directorio</h3>
+                            <p class="content">
+                                Para crear un directorio, debemos posicionarnos sobre la carpeta donde serán creados y ejecutar el comando, es recomendable no usar espacios para nombrar a los directorios, pero si es necesarios se debe colocar el nombre entre comillas
+                            </p>
+                            <div class="codes">
+                                <h4 class="title-codes">Ejemplo:</h4>
+                                <code class="language-javascript">
+                                    ziel@ziel-lap:~$ mkdir MiDirectorio
+                                </code> <br> <code class="language-javascript">
+                                    ziel@ziel-lap:~$ mkdir "Mi Directorio"
+                                </code> <br> <code class="language-javascript">
+                                    /*Crea multiples directorios*/
+                                </code> <br> <code class="language-javascript">
+                                    ziel@ziel-lap:~$ mkdir arch1 arch2 arch3 arch4
+                                </code>
+                            </div>
+
+                        <h3 class="title-aux" id="cmd-touch">touch: crea Archivos</h3>
+                            <p class="content">
+                                touch crea archivos sin ningún contenido, el cual puede agregarse posteriormente, asi mismo podemos definir una extensión al c moomento de crearlo, se puede hacer individual o multiples en una sola línea
+                            </p>
+                            <div class="codes">
+                                <h4 class="title-codes">Ejemplo:</h4>
+                                <code class="language-javascript">
+                                    ziel@ziel-lap:~$ touch archivo.txt
+                                </code> <br> <code class="language-javascript">
+                                    ziel@ziel-lap:~$ touch archivo.txt index.html nose.css
+                                </code>
+                            </div>
+
+                        <h3 class="title-aux" id="cmd-cp">cp: copiar Archivos y Directorios</h3>
+                            <p class="content">
+                                Este comando nos ayuda a crear la copia de una archivo determinado, si ignoramos la ruta donde se colocará so usará la misma carpeta donde se encuentra el original.
+                            </p>
+                            <div class="codes">
+                                <h4 class="title-codes">Ejemplo:</h4>
+                                <code class="language-javascript">
+                                    /*Crea una copia en el mismo directorio*/
+                                </code> <br> <code class="language-javascript">
+                                    ziel@ziel-lap:~$ cp file fiel_bk
+                                </code> <br> <code class="language-javascript">
+                                    /*Crea una copia en otro directorio*/
+                                </code> <br> <code class="language-javascript">
+                                    ziel@ziel-lap:~$ cp mycoolfile /home/pete/Documents/cooldocs
+                                </code> <br> <code class="language-javascript">
+                                    /*Crea una copia varios archivos a la vez*/
+                                </code> <br> <code class="language-javascript">
+                                    ziel@ziel-lap:~$ cp *.jpg /home/pete/Pictures
+                                </code> <br> <code class="language-javascript">
+                                    /*Crea una copia de la carpeta con todo el contenido*/
+                                </code> <br> <code class="language-javascript">
+                                    ziel@ziel-lap:~$ cp -r Pumpkin/ /home/pete/Documents
+                                </code> <br> <code class="language-javascript">
+                                    /*Crea una copia de la carpeta sin sobreescribir*/
+                                </code> <br> <code class="language-javascript">
+                                    ziel@ziel-lap:~$ cp -i mycoolfile /home/pete/Pictures
+                                </code>
+                            </div>
+
+                        <h3 class="title-aux" id="cmd-mv">mv: mover y Renombrar Archivos y Directorios</h3>
+                            <p class="content">
+                                Este comando nos ayuda a mover un archivo de un lugar a otro, si no especificamos alguna ruta para hacerlo, se renombrará el archivo en la misma ruta donde se encuentra.
+                            </p>
+                            <div class="codes">
+                                <h4 class="title-codes">Ejemplo:</h4>
+                                <code class="language-javascript">
+                                    /*Renombrar archivo*/
+                                </code> <br> <code class="language-javascript">
+                                    ziel@ziel-lap:~$ mv oldfile newfile
+                                </code> <br> <code class="language-javascript">
+                                    /*Renombrar Carpeta*/
+                                </code> <br> <code class="language-javascript">
+                                    ziel@ziel-lap:~$ mv directory1 directory2
+                                </code> <br> <code class="language-javascript">
+                                    /*Mueve un directorio a la carpeta señalada*/
+                                </code> <br> <code class="language-javascript">
+                                    ziel@ziel-lap:~$ mv file2 /home/pete/Documents
+                                </code> <br> <code class="language-javascript">
+                                    /*Mueve  varios archivos a la vez*/
+                                </code> <br> <code class="language-javascript">
+                                    ziel@ziel-lap:~$ mv file_1 file_2 /somedirectory
+                                </code> <br> <code class="language-javascript">
+                                    /*Previene sobreescritura*/
+                                </code> <br> <code class="language-javascript">
+                                    ziel@ziel-lap:~$ mv -i directory1 directory2
+                                </code> <br> <code class="language-javascript">
+                                    /*Crea una copia y coloca ~ al archivo viejo para bakup*/
+                                </code> <br> <code class="language-javascript">
+                                    ziel@ziel-lap:~$ mv -b directory1 directory2
+                                </code>
+                            </div>
+
+
+                            <h3 class="title-aux" id="cmd-rm">rm: borra Archivos y Directorios</h3>
+                            <p class="content">
+                                Este comando borra los archivos o carpetas que le indiquemos.
+                            </p>
+                            <p class="alert">
+                                Este comando es peligroso si no se escribe correctamente, ya que puede borrar <b>TODO EL SISTEMA</b> si se usa <code>$rm /</code> dejándolo inutilizable, tampoco se puede dejar un espacio entre el root <code><b>/</b></code> y la ruta del directorio o archivo a borrar, ya que lo tomaría como que se borra todo el sistema y después la ruta especificada. Usar <code>$ rm -rf</code> Es muy peligroso por que borra recursivamente, absolutamente todo lo que haya en esa carpeta, sin pasar por la papelera.
+                            </p>
+                            <div class="codes">
+                                <h4 class="title-codes">Ejemplo:</h4>
+                                <code class="language-javascript">
+                                    /*Remueve archivo en la carpeta situada*/
+                                </code> <br> <code class="language-javascript">
+                                    ziel@ziel-lap:~$ rm file1
+                                </code> <br> <code class="language-javascript">
+                                    /*Modo interactivo, pide confirmacion*/
+                                </code> <br> <code class="language-javascript">
+                                    ziel@ziel-lap:~$ rm -i file
+                                </code> <br> <code class="language-javascript">
+                                    /*Borra un directorio con todos sus archivos*/
+                                </code> <br> <code class="language-javascript">
+                                    ziel@ziel-lap:~$ rm -r directory
+                                </code> <br> <code class="language-javascript">
+                                    /*Pregunta uno por uno los elementos a borrar*/
+                                </code> <br> <code class="language-javascript">
+                                    ziel@ziel-lap:~$ rm -ri directory
+                                </code>
+                            </div>
+
+
+
+                    <!--Formato de Enlaces-->
+                    <a href="" target="_blank" rel="noopener noreferrer">xx</a>
+                    <!--Título Del concepto-->
+                    <h3 class="title-concept">Titulo Concepto</h3>
+                    <!--Título Secundario-->
+                    <h3 class="title-aux">Titulo Secundario</h3>
+                    <!--Parrafo Contenido-->
+                    <p class="content"></p>
+                    <!--Parrafo Alert-->
+                    <p class="alert"></p>
+                    <!--** Parrafos de Notas **-->
+                    <p class="note"></p>
+                    <!--** Codigos de Ejemplo sin Pre**-->
+                    <div class="codes">
+                        <h4 class="title-codes">Ejemplo:</h4>
+                        <code class="language-css">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        </code> <br> <code class="language-css">
+                            In, inventore error. Tenetur optio officiis dicta omnis numquam eos eius recusandae amet ad ducimus, quod tempore cumque! Voluptate illo obcaecati cum?
+                        </code>
+                    </div>
+                    <!--** Codigos de Ejemplo Con Pre**-->
+                    <pre>
+                        <code class="language-javascript">
+                            let a;
+                            a=25;
+                            if(!a){
+                                console.log("No");
+                            }else{
+                                console.log("Si");
+                            }
+                        </code>
+                    </pre>
+                    <!--** Lista de definiciones **-->
+                    <dl class="content">
+                        <dt></dt>
+                        <dd></dd>
+                    </dl>
+                    <!--** Tabla Comparativa **-->
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--** Lista enumeración **-->
+                    <ul class="content">
+                        <li></li>
+                    </ul>
+                    <!--** Imagen **-->
+                    <div class="ilustracion">
+                        <img src="apCss/img/regla.png" alt="Regla CSS">
+                    </div>
+                </article>
+            </section>
+            <input type="radio" name="bloques" class="bloques" id="secc2">
+            <section class="section"><!--*** secc1 ************************-->
+                <h2 class="section-title">xxxRudimentos</h2>
+                <article class="concept">
+                    <h3 class="title-concept">¿Que es JavaScript?</h3>
+                    <!--** Referencias **-->
+                    <div class="link-reference">
+                        <a href="" class="icon-link"><i class="fas fa-external-link-alt"></i></a>
+                        <ul>
+                            <li><a href="">MDN</a></li>
+                            <li><a href="">Nose</a></li>
+                            <li><a href="">Quien sabe</a></li>
+                            <li><a href="">Puede ser</a></li>
+                            <li><a href="">A lo mejor</a></li>
+                        </ul>
+                    </div>
+                    <h3 class="title-aux">Titulo Secundario</h3>
+                    <!--Parrafo Contenido-->
+                    <p class="content"></p>
+                    <!--Parrafo Alert-->
+                    <p class="alert"></p>
+                    <!--** Parrafos de Notas **-->
+                    <p class="note"></p>
+                    <!--** Codigos de Ejemplo sin Pre**-->
+                    <div class="codes">
+                        <h4 class="title-codes">Ejemplo:</h4>
+                        <code class="language-css">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        </code> <br> <code class="language-css">
+                            In, inventore error. Tenetur optio officiis dicta omnis numquam eos eius recusandae amet ad ducimus, quod tempore cumque! Voluptate illo obcaecati cum?
+                        </code>
+                    </div>
+                    <!--** Codigos de Ejemplo Con Pre**-->
+                    <pre>
+                        <code class="language-javascript">
+                            let a;
+                            a=25;
+                            if(!a){
+                                console.log("No");
+                            }else{
+                                console.log("Si");
+                            }
+                        </code>
+                    </pre>
+                    <!--** Lista de definiciones **-->
+                    <dl class="content">
+                        <dt></dt>
+                        <dd></dd>
+                    </dl>
+                    <!--** Tabla Comparativa **-->
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--** Lista enumeración **-->
+                    <ul class="content">
+                        <li></li>
+                    </ul>
+                    <!--** Imagen **-->
+                    <div class="ilustracion">
+                        <img src="apCss/img/regla.png" alt="Regla CSS">
+                    </div>
+                </article>
+            </section>
+            <input type="radio" name="bloques" class="bloques" id="secc2">
+            <section class="section"><!--*** secc1 ************************-->
+                <h2 class="section-title">xxxRudimentos</h2>
+                <article class="concept">
+                    <h3 class="title-concept">¿Que es JavaScript?</h3>
+                    <!--** Referencias **-->
+                    <div class="link-reference">
+                        <a href="" class="icon-link"><i class="fas fa-external-link-alt"></i></a>
+                        <ul>
+                            <li><a href="">MDN</a></li>
+                            <li><a href="">Nose</a></li>
+                            <li><a href="">Quien sabe</a></li>
+                            <li><a href="">Puede ser</a></li>
+                            <li><a href="">A lo mejor</a></li>
+                        </ul>
+                    </div>
+                    <h3 class="title-aux">Titulo Secundario</h3>
+                    <!--Parrafo Contenido-->
+                    <p class="content"></p>
+                    <!--Parrafo Alert-->
+                    <p class="alert"></p>
+                    <!--** Parrafos de Notas **-->
+                    <p class="note"></p>
+                    <!--** Codigos de Ejemplo sin Pre**-->
+                    <div class="codes">
+                        <h4 class="title-codes">Ejemplo:</h4>
+                        <code class="language-css">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        </code> <br> <code class="language-css">
+                            In, inventore error. Tenetur optio officiis dicta omnis numquam eos eius recusandae amet ad ducimus, quod tempore cumque! Voluptate illo obcaecati cum?
+                        </code>
+                    </div>
+                    <!--** Codigos de Ejemplo Con Pre**-->
+                    <pre>
+                        <code class="language-javascript">
+                            let a;
+                            a=25;
+                            if(!a){
+                                console.log("No");
+                            }else{
+                                console.log("Si");
+                            }
+                        </code>
+                    </pre>
+                    <!--** Lista de definiciones **-->
+                    <dl class="content">
+                        <dt></dt>
+                        <dd></dd>
+                    </dl>
+                    <!--** Tabla Comparativa **-->
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--** Lista enumeración **-->
+                    <ul class="content">
+                        <li></li>
+                    </ul>
+                    <!--** Imagen **-->
+                    <div class="ilustracion">
+                        <img src="apCss/img/regla.png" alt="Regla CSS">
+                    </div>
+                </article>
+            </section>
+            <input type="radio" name="bloques" class="bloques" id="secc2">
+            <section class="section"><!--*** secc1 ************************-->
+                <h2 class="section-title">xxxRudimentos</h2>
+                <article class="concept">
+                    <h3 class="title-concept">¿Que es JavaScript?</h3>
+                    <!--** Referencias **-->
+                    <div class="link-reference">
+                        <a href="" class="icon-link"><i class="fas fa-external-link-alt"></i></a>
+                        <ul>
+                            <li><a href="">MDN</a></li>
+                            <li><a href="">Nose</a></li>
+                            <li><a href="">Quien sabe</a></li>
+                            <li><a href="">Puede ser</a></li>
+                            <li><a href="">A lo mejor</a></li>
+                        </ul>
+                    </div>
+                    <h3 class="title-aux">Titulo Secundario</h3>
+                    <!--Parrafo Contenido-->
+                    <p class="content"></p>
+                    <!--Parrafo Alert-->
+                    <p class="alert"></p>
+                    <!--** Parrafos de Notas **-->
+                    <p class="note"></p>
+                    <!--** Codigos de Ejemplo sin Pre**-->
+                    <div class="codes">
+                        <h4 class="title-codes">Ejemplo:</h4>
+                        <code class="language-css">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        </code> <br> <code class="language-css">
+                            In, inventore error. Tenetur optio officiis dicta omnis numquam eos eius recusandae amet ad ducimus, quod tempore cumque! Voluptate illo obcaecati cum?
+                        </code>
+                    </div>
+                    <!--** Codigos de Ejemplo Con Pre**-->
+                    <pre>
+                        <code class="language-javascript">
+                            let a;
+                            a=25;
+                            if(!a){
+                                console.log("No");
+                            }else{
+                                console.log("Si");
+                            }
+                        </code>
+                    </pre>
+                    <!--** Lista de definiciones **-->
+                    <dl class="content">
+                        <dt></dt>
+                        <dd></dd>
+                    </dl>
+                    <!--** Tabla Comparativa **-->
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--** Lista enumeración **-->
+                    <ul class="content">
+                        <li></li>
+                    </ul>
+                    <!--** Imagen **-->
+                    <div class="ilustracion">
+                        <img src="apCss/img/regla.png" alt="Regla CSS">
+                    </div>
+                </article>
+            </section>
+            <input type="radio" name="bloques" class="bloques" id="secc2">
+            <section class="section"><!--*** secc1 ************************-->
+                <h2 class="section-title">xxxRudimentos</h2>
+                <article class="concept">
+                    <h3 class="title-concept">¿Que es JavaScript?</h3>
+                    <!--** Referencias **-->
+                    <div class="link-reference">
+                        <a href="" class="icon-link"><i class="fas fa-external-link-alt"></i></a>
+                        <ul>
+                            <li><a href="">MDN</a></li>
+                            <li><a href="">Nose</a></li>
+                            <li><a href="">Quien sabe</a></li>
+                            <li><a href="">Puede ser</a></li>
+                            <li><a href="">A lo mejor</a></li>
+                        </ul>
+                    </div>
+                    <h3 class="title-aux">Titulo Secundario</h3>
+                    <!--Parrafo Contenido-->
+                    <p class="content"></p>
+                    <!--Parrafo Alert-->
+                    <p class="alert"></p>
+                    <!--** Parrafos de Notas **-->
+                    <p class="note"></p>
+                    <!--** Codigos de Ejemplo sin Pre**-->
+                    <div class="codes">
+                        <h4 class="title-codes">Ejemplo:</h4>
+                        <code class="language-css">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        </code> <br> <code class="language-css">
+                            In, inventore error. Tenetur optio officiis dicta omnis numquam eos eius recusandae amet ad ducimus, quod tempore cumque! Voluptate illo obcaecati cum?
+                        </code>
+                    </div>
+                    <!--** Codigos de Ejemplo Con Pre**-->
+                    <pre>
+                        <code class="language-javascript">
+                            let a;
+                            a=25;
+                            if(!a){
+                                console.log("No");
+                            }else{
+                                console.log("Si");
+                            }
+                        </code>
+                    </pre>
+                    <!--** Lista de definiciones **-->
+                    <dl class="content">
+                        <dt></dt>
+                        <dd></dd>
+                    </dl>
+                    <!--** Tabla Comparativa **-->
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--** Lista enumeración **-->
+                    <ul class="content">
+                        <li></li>
+                    </ul>
+                    <!--** Imagen **-->
+                    <div class="ilustracion">
+                        <img src="apCss/img/regla.png" alt="Regla CSS">
+                    </div>
+                </article>
+            </section>
+            <input type="radio" name="bloques" class="bloques" id="secc2">
+            <section class="section"><!--*** secc1 ************************-->
+                <h2 class="section-title">xxxRudimentos</h2>
+                <article class="concept">
+                    <h3 class="title-concept">¿Que es JavaScript?</h3>
+                    <!--** Referencias **-->
+                    <div class="link-reference">
+                        <a href="" class="icon-link"><i class="fas fa-external-link-alt"></i></a>
+                        <ul>
+                            <li><a href="">MDN</a></li>
+                            <li><a href="">Nose</a></li>
+                            <li><a href="">Quien sabe</a></li>
+                            <li><a href="">Puede ser</a></li>
+                            <li><a href="">A lo mejor</a></li>
+                        </ul>
+                    </div>
+                    <h3 class="title-aux">Titulo Secundario</h3>
+                    <!--Parrafo Contenido-->
+                    <p class="content"></p>
+                    <!--Parrafo Alert-->
+                    <p class="alert"></p>
+                    <!--** Parrafos de Notas **-->
+                    <p class="note"></p>
+                    <!--** Codigos de Ejemplo sin Pre**-->
+                    <div class="codes">
+                        <h4 class="title-codes">Ejemplo:</h4>
+                        <code class="language-css">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        </code> <br> <code class="language-css">
+                            In, inventore error. Tenetur optio officiis dicta omnis numquam eos eius recusandae amet ad ducimus, quod tempore cumque! Voluptate illo obcaecati cum?
+                        </code>
+                    </div>
+                    <!--** Codigos de Ejemplo Con Pre**-->
+                    <pre>
+                        <code class="language-javascript">
+                            let a;
+                            a=25;
+                            if(!a){
+                                console.log("No");
+                            }else{
+                                console.log("Si");
+                            }
+                        </code>
+                    </pre>
+                    <!--** Lista de definiciones **-->
+                    <dl class="content">
+                        <dt></dt>
+                        <dd></dd>
+                    </dl>
+                    <!--** Tabla Comparativa **-->
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--** Lista enumeración **-->
+                    <ul class="content">
+                        <li></li>
+                    </ul>
+                    <!--** Imagen **-->
+                    <div class="ilustracion">
+                        <img src="apCss/img/regla.png" alt="Regla CSS">
+                    </div>
+                </article>
+            </section>
+            <input type="radio" name="bloques" class="bloques" id="secc2">
+            <section class="section"><!--*** secc1 ************************-->
+                <h2 class="section-title">xxxRudimentos</h2>
+                <article class="concept">
+                    <h3 class="title-concept">¿Que es JavaScript?</h3>
+                    <!--** Referencias **-->
+                    <div class="link-reference">
+                        <a href="" class="icon-link"><i class="fas fa-external-link-alt"></i></a>
+                        <ul>
+                            <li><a href="">MDN</a></li>
+                            <li><a href="">Nose</a></li>
+                            <li><a href="">Quien sabe</a></li>
+                            <li><a href="">Puede ser</a></li>
+                            <li><a href="">A lo mejor</a></li>
+                        </ul>
+                    </div>
+                    <h3 class="title-aux">Titulo Secundario</h3>
+                    <!--Parrafo Contenido-->
+                    <p class="content"></p>
+                    <!--Parrafo Alert-->
+                    <p class="alert"></p>
+                    <!--** Parrafos de Notas **-->
+                    <p class="note"></p>
+                    <!--** Codigos de Ejemplo sin Pre**-->
+                    <div class="codes">
+                        <h4 class="title-codes">Ejemplo:</h4>
+                        <code class="language-css">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        </code> <br> <code class="language-css">
+                            In, inventore error. Tenetur optio officiis dicta omnis numquam eos eius recusandae amet ad ducimus, quod tempore cumque! Voluptate illo obcaecati cum?
+                        </code>
+                    </div>
+                    <!--** Codigos de Ejemplo Con Pre**-->
+                    <pre>
+                        <code class="language-javascript">
+                            let a;
+                            a=25;
+                            if(!a){
+                                console.log("No");
+                            }else{
+                                console.log("Si");
+                            }
+                        </code>
+                    </pre>
+                    <!--** Lista de definiciones **-->
+                    <dl class="content">
+                        <dt></dt>
+                        <dd></dd>
+                    </dl>
+                    <!--** Tabla Comparativa **-->
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--** Lista enumeración **-->
+                    <ul class="content">
+                        <li></li>
+                    </ul>
+                    <!--** Imagen **-->
+                    <div class="ilustracion">
+                        <img src="apCss/img/regla.png" alt="Regla CSS">
+                    </div>
+                </article>
+            </section>
+            <input type="radio" name="bloques" class="bloques" id="secc2">
+            <section class="section"><!--*** secc1 ************************-->
+                <h2 class="section-title">xxxRudimentos</h2>
+                <article class="concept">
+                    <h3 class="title-concept">¿Que es JavaScript?</h3>
+                    <!--** Referencias **-->
+                    <div class="link-reference">
+                        <a href="" class="icon-link"><i class="fas fa-external-link-alt"></i></a>
+                        <ul>
+                            <li><a href="">MDN</a></li>
+                            <li><a href="">Nose</a></li>
+                            <li><a href="">Quien sabe</a></li>
+                            <li><a href="">Puede ser</a></li>
+                            <li><a href="">A lo mejor</a></li>
+                        </ul>
+                    </div>
+                    <h3 class="title-aux">Titulo Secundario</h3>
+                    <!--Parrafo Contenido-->
+                    <p class="content"></p>
+                    <!--Parrafo Alert-->
+                    <p class="alert"></p>
+                    <!--** Parrafos de Notas **-->
+                    <p class="note"></p>
+                    <!--** Codigos de Ejemplo sin Pre**-->
+                    <div class="codes">
+                        <h4 class="title-codes">Ejemplo:</h4>
+                        <code class="language-css">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        </code> <br> <code class="language-css">
+                            In, inventore error. Tenetur optio officiis dicta omnis numquam eos eius recusandae amet ad ducimus, quod tempore cumque! Voluptate illo obcaecati cum?
+                        </code>
+                    </div>
+                    <!--** Codigos de Ejemplo Con Pre**-->
+                    <pre>
+                        <code class="language-javascript">
+                            let a;
+                            a=25;
+                            if(!a){
+                                console.log("No");
+                            }else{
+                                console.log("Si");
+                            }
+                        </code>
+                    </pre>
+                    <!--** Lista de definiciones **-->
+                    <dl class="content">
+                        <dt></dt>
+                        <dd></dd>
+                    </dl>
+                    <!--** Tabla Comparativa **-->
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--** Lista enumeración **-->
+                    <ul class="content">
+                        <li></li>
+                    </ul>
+                    <!--** Imagen **-->
+                    <div class="ilustracion">
+                        <img src="apCss/img/regla.png" alt="Regla CSS">
+                    </div>
+                </article>
+            </section>
+            <input type="radio" name="bloques" class="bloques" id="secc2">
+            <section class="section"><!--*** secc1 ************************-->
+                <h2 class="section-title">xxxRudimentos</h2>
+                <article class="concept">
+                    <h3 class="title-concept">¿Que es JavaScript?</h3>
+                    <!--** Referencias **-->
+                    <div class="link-reference">
+                        <a href="" class="icon-link"><i class="fas fa-external-link-alt"></i></a>
+                        <ul>
+                            <li><a href="">MDN</a></li>
+                            <li><a href="">Nose</a></li>
+                            <li><a href="">Quien sabe</a></li>
+                            <li><a href="">Puede ser</a></li>
+                            <li><a href="">A lo mejor</a></li>
+                        </ul>
+                    </div>
+                    <h3 class="title-aux">Titulo Secundario</h3>
+                    <!--Parrafo Contenido-->
+                    <p class="content"></p>
+                    <!--Parrafo Alert-->
+                    <p class="alert"></p>
+                    <!--** Parrafos de Notas **-->
+                    <p class="note"></p>
+                    <!--** Codigos de Ejemplo sin Pre**-->
+                    <div class="codes">
+                        <h4 class="title-codes">Ejemplo:</h4>
+                        <code class="language-css">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        </code> <br> <code class="language-css">
+                            In, inventore error. Tenetur optio officiis dicta omnis numquam eos eius recusandae amet ad ducimus, quod tempore cumque! Voluptate illo obcaecati cum?
+                        </code>
+                    </div>
+                    <!--** Codigos de Ejemplo Con Pre**-->
+                    <pre>
+                        <code class="language-javascript">
+                            let a;
+                            a=25;
+                            if(!a){
+                                console.log("No");
+                            }else{
+                                console.log("Si");
+                            }
+                        </code>
+                    </pre>
+                    <!--** Lista de definiciones **-->
+                    <dl class="content">
+                        <dt></dt>
+                        <dd></dd>
+                    </dl>
+                    <!--** Tabla Comparativa **-->
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--** Lista enumeración **-->
+                    <ul class="content">
+                        <li></li>
+                    </ul>
+                    <!--** Imagen **-->
+                    <div class="ilustracion">
+                        <img src="apCss/img/regla.png" alt="Regla CSS">
+                    </div>
+                </article>
+            </section>
+        </div>
+    </main>
+    <script src="js/prism.js"></script>
+</body>
+</html>
