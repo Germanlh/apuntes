@@ -120,7 +120,15 @@
                         <label for="maquetacion" class="elem-menu">Maquetación</label>
                         <!-- <a href="#maquetacion">Maquetación</a></li> -->
                         <ul class="submenu">
-                            <li><a href="#overflow" >Overflow</a></li>
+                            <li><a href="#flujo-normal">Flujo Normal</a></li>
+                            <li><a href="#display-visibility">Display y Visibility</a></li>
+                            <li><a href="#float">Float</a></li>
+                            <li><a href="#inline">inline</a></li>
+                            <li><a href="#table">table</a></li>
+                            <li><a href="#css-position">position</a></li>
+                            <li><a href="#flex-box">flexbox</a></li>
+                            <li><a href="#grid">grid</a></li>
+                            <!-- *** -->
                         </ul>
                     </li>
                     <li> <!-- Media Queries -->
@@ -3174,7 +3182,7 @@
             <input type="radio" name="bloques" class="bloques" id="maquetacion">
             <section class="section" ><!--*** Maquetación *****************-->
                 <h2 class="section-title">Maquetacion</h2>
-                <!-- 
+              <!-- 
 
                     display
                     visibility
@@ -3188,7 +3196,388 @@
                     flexbox
                     grid
                  -->
-                 
+                <p class="content">
+                    La maquetación de las páginas web, tambien llamado <a href="https://developer.mozilla.org/es/docs/Learn/CSS/CSS_layout" target="_blank" rel="noopener noreferrer">layout</a> o diseño web, son la implementación de diversas herramientas y técnicas disponibles para lograr que la página que estamos desarrollando tenga la forma adecuada para el propósito que ha sido creada, esta es la base de UI y del UX, pues através del diseño es como se crean esta interacción con el usuario, en gran medida, este trabajo se desarrolla en el frontend, usando no solo css si no javascript para lograr diferentes efectos.
+                </p>
+                <ul class="content">
+                    <li><a href="#flujo-normal">Flujo Normal</a></li>
+                    <li><a href="#display-visibility">Display y Visibility</a></li>
+                    <li><a href="#float">Float</a></li>
+                    <li><a href="#inline">inline</a></li>
+                    <li><a href="#table">table</a></li>
+                    <li><a href="#css-position">position</a></li>
+                    <li><a href="#flex-box">flexbox</a></li>
+                    <li><a href="#grid">grid</a></li>
+                    <!-- *** -->
+                </ul>
+                 <article class="concept"> <!-- Flujo Normal -->
+                    <h3 class="title-concept" id="flujo-normal">Flujo Normal</h3>
+                    <p class="content">
+                        La manera <b>"Normal"</b> en la que los elementos se acomodanen la página web sin ninguna intervención o modificación, obedece a la naturaleza de cada uno de los elementos que tienen por defecto, es en este sentido que el <a href="https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/The_box_model" target="_blank" rel="noopener noreferrer">modelo de caja</a> toma relevancia, ya que estos elementos se acomodan uno encima de otro o a lado de sus compañeros, dependiendo si su naturaleza es en <code>línea</code> o en <code>bloque</code>. 
+                    </p>
+                    <p class="content">
+                        Sin embargo este comportamiento puede ser cambiado a conveniencia, cambiando el flujo normal y forzar el comportamiento de los diferentes elementos para que estos se muestren en la manera que nosotros necesitamos.
+                    </p>
+                    <p class="alert">
+                        Si por algún motivo, nuestra página no puede cargar el css, nuestra página se verá de forma básica como la hayamos estructurado en HTML, de esta manera, una buena estructura desde el HTML hará que esta página se muestre de forma legible para el usuario aunque los estilos no estén presentes.
+                    </p>
+                    <p class="note">
+                        Los bloques se comportan de acuerdo al orden de lectura con el que se encuentre configurado el navegador, en occidente el orden de lectura es de izquierda a derecha y de arriba a abajo, en otros países el comportamiento de los bloques puede ser diferente.
+                    </p>
+                </article>
+                 <article class="concept"> <!-- Display y Visibility -->
+                    <h3 class="title-concept" id="display-visibility">Display y Visibility</h3>
+                    <p class="content">
+                        una forma de modificar el comportamiento de las cajas dentro de la maquetación es usar la propiedad <a href="" target="_blank" rel="noopener noreferrer">visibility</a>, esta propiedad nos permite "hacer transparente" al objeto a quien lo estamos aplicando, sin embargo el lugar que deja vacío se mantiene y provoca que los demás objetos "respeten el espacio que le corresponde" dejando un hueco.
+                    </p>
+
+                    <div class="codes">
+                        <h4 class="title-codes">Sintaxis Visibility:</h4>
+                        <code class="language-css">
+                            visibility: visible | hidden | collapse | inherit; 
+                        </code>
+                    </div>
+                    <dl class="content">
+                        <dt></dt>
+                        <dd></dd>
+                    </dl>
+                    <dl class="content">
+                        <dt id="visible"><code>visible</code></dt>
+                        <dd>El elemento se muestra normalmente.</dd>
+                        <dt id="hidden"><code>hidden</code></dt>
+                        <dd>El elemento está escondido, pero los demás elementos se colocan como si ése elemento estuviera presente. Esto funciona como si el elemento fuera absolutamente transparente. Los elementos, con la propiedad <code>visibility: visible</code>, descendientes de ése elemento serán visibles.</dd>
+                        <dt id="collapse"><code>collapse</code></dt>
+                        <dd>Para tablas, filas, columnas y grupos de tablas. Las filas o columnas se esconden y el espacio que normalmente ocupan, es ocupado (como si aplicáramos el código <code><a href="/es/docs/Web/CSS/display"><code>display</code></a>: none</code> a las filas/columnas de la tabla). Sin embargo, el tamaño de las columnas o filas restantes, es calculado como si las filas/columnas fusionadas estuvieran presentes. Esta propiedad se diseñó así, al fin de permitir la supresión rápida de filas/columnas de una tabla sin necesidad de calcular de nuevo los altos y los anchos de cada porción de tabla. (Para otros elementos, <code>collapse</code> funciona como <code>hidden</code>).</dd>
+                    </dl>
+
+                    <div class="codes">
+                        <h4 class="title-codes">Ejemplo:</h4>
+                        <code class="language-css">
+                            p{ visibility: hidden; }   /* Los párrafos no serán visibles*/
+                        </code> <br> <code class="language-css">
+                            p.showme { visibility: visible; }  /* excepto los que tengan class = showme (clase= muéstrame)*/
+                        </code> <br> <code class="language-css">
+                            tr.col { visibility: collapse; } /* las filas de la tabla con la clasecol se fusionarán*/ 
+                        </code>
+                    </div>
+                    <p class="note">
+                        El soporte para <code>visibility: collapse</code> no se encuentra o está implementado parcialmente en algunos navegadores modernos. En muchos casos será tratado como <code>visibility: hidden</code> en elementos que no son filas / columnas de una tabla.
+                    </p>
+                    <p class="note"><code>visibility:collapse</code> puede cambiar el aspecto de una tabla si hay anidadas tablas dentro de celdas fusionadas, a no ser que se especifique explícitamente <code>visibility: visible</code> en la tabla anidada.</p>
+                    <p class="content">
+                        En cambio, si deseamos que el objeto se oculte, pero que las demás cajas, tampoco respeten el lugar que a este le pertenecía, lo más adecuado es usar <code><a href="https://developer.mozilla.org/es/docs/Web/CSS/display" target="_blank" rel="noopener noreferrer">display</a></code>, usando la propiedad <code class="language-css">display: none;</code>, aunque la funcionalidad de display no está para nada limitada a solo esta característica, a través de ella obtenemos mas herramientas de maquetación aún más poderosas, algunas de ellas pueden ser:
+                    </p>
+                    <div class="codes">
+                        <h4 class="title-codes">Display:</h4>
+                        <code class="language-css">
+                        </code> <br> <code class="language-css">
+                            / * Valores &lt;display-outside&gt; * /
+                        </code> <br> <code class="language-css">
+                            display: block;
+                        </code> <br> <code class="language-css">
+                            display: inline;
+                        </code> <br> <code class="language-css">
+                            display: run-in;
+                        </code> <br><br> <code class="language-css">
+                            / * Valores &lt;display-inside&gt; * /
+                        </code> <br> <code class="language-css">
+                            display: flow;
+                        </code> <br> <code class="language-css">
+                            display: flow-root;
+                        </code> <br> <code class="language-css">
+                            display: table;
+                        </code> <br> <code class="language-css">
+                            display: flex;
+                        </code> <br> <code class="language-css">
+                            display: grid;
+                        </code> <br> <code class="language-css">
+                            display: ruby;
+                        </code> <br> <code class="language-css">
+                            display: subgrid;
+                        </code> <br><br> <code class="language-css">
+                            / * Valores &lt;display-outside&gt; más valores &lt;display-inside&gt; * /
+                        </code> <br> <code class="language-css">
+                            display: block flow;
+                        </code> <br> <code class="language-css">
+                            display: inline table;
+                        </code> <br> <code class="language-css">
+                            display: flex run-in;
+                        </code> <br><br> <code class="language-css">
+                            / * Valores &lt;display-listitem&gt; * /
+                        </code> <br> <code class="language-css">
+                            display: list-item;
+                        </code> <br> <code class="language-css">
+                            display: list-item block;
+                        </code> <br> <code class="language-css">
+                            display: list-item inline;
+                        </code> <br> <code class="language-css">
+                            display: list-item flow;
+                        </code> <br> <code class="language-css">
+                            display: list-item flow-root;
+                        </code> <br> <code class="language-css">
+                            display: list-item block flow;
+                        </code> <br> <code class="language-css">
+                            display: list-item block flow-root;
+                        </code> <br> <code class="language-css">
+                            display: flow list-item block;
+                        </code> <br><br> <code class="language-css">
+                            / * Valores &lt;display-internal&gt; * /
+                        </code> <br> <code class="language-css">
+                            display: table-row-group;
+                        </code> <br> <code class="language-css">
+                            display: table-header-group;
+                        </code> <br> <code class="language-css">
+                            display: table-footer-group;
+                        </code> <br> <code class="language-css">
+                            display: table-row;
+                        </code> <br> <code class="language-css">
+                            display: table-cell;
+                        </code> <br> <code class="language-css">
+                            display: table-column-group;
+                        </code> <br> <code class="language-css">
+                            display: table-column;
+                        </code> <br> <code class="language-css">
+                            display: table-caption;
+                        </code> <br> <code class="language-css">
+                            display: ruby-base;
+                        </code> <br> <code class="language-css">
+                            display: ruby-text;
+                        </code> <br> <code class="language-css">
+                            display: ruby-base-container;
+                        </code> <br> <code class="language-css">
+                            display: ruby-text-container;
+                        </code> <br><br> <code class="language-css">
+                            / * Valores &lt;display-box&gt; * /
+                        </code> <br> <code class="language-css">
+                            display: contents;
+                        </code> <br> <code class="language-css">
+                            display: none;
+                        </code> <br><br> <code class="language-css">
+                            / * Valores &lt;display-legacy&gt; * /
+                        </code> <br> <code class="language-css">
+                            display: inline-block;
+                        </code> <br> <code class="language-css">
+                            display: inline-table;
+                        </code> <br> <code class="language-css">
+                            display: inline-flex;
+                        </code> <br> <code class="language-css">
+                            display: inline-grid;
+                        </code> <br><br> <code class="language-css">
+                            / * Valores globales * /
+                        </code> <br> <code class="language-css">
+                            display: heredar;
+                        </code> <br> <code class="language-css">
+                            display: initial;
+                        </code> <br> <code class="language-css">
+                            display: unset;
+                        </code>
+                    </div>
+
+                </article>
+                 <article class="concept"> <!-- Float -->
+                    <h3 class="title-concept" id="float">Float</h3>
+                    <p class="content">
+                        Este estilo de maquetación utiliza la propiedad  <a href="https://developer.mozilla.org/es/docs/Learn/CSS/CSS_layout/Floats" target="_blank" rel="noopener noreferrer">float</a> y se usa por compatibilidad de navegadores viejos, su función original era flotar los elementos o imagenes dentro de los bloques de texto, similar a como se usan las letras capitales en los periódicos, sin embargo por mucho tiempo se convirtió en una herramienta de maquetación hasta la llegada de Flexbox y Grid. podemos ver la <a href="https://developer.mozilla.org/es/docs/Web/CSS/float" target="_blank" rel="noopener noreferrer">sintaxis</a>
+                    </p>
+                    <div class="ilustracion">
+                        <img src="../img/float.png" alt="Ejemplo de Float en CSS">
+                    </div>
+
+                    <div class="codes">
+                        <h4 class="title-codes">Display:</h4>
+                        <code class="language-css">
+                        </code> <br> <code class="language-css">
+                            /* Valores clave || Keyword values */
+                        </code> <br> <code class="language-css">
+                            float: left;
+                        </code> <br> <code class="language-css">
+                            float: right;
+                        </code> <br> <code class="language-css">
+                            float: none;
+                        </code> <br> <code class="language-css">
+                            float: inline-start;
+                        </code> <br> <code class="language-css">
+                            float: inline-end;
+                        </code> <br> <br><code class="language-css">
+                            /* Valores globales || Global values */
+                        </code> <br> <code class="language-css">
+                            float: inherit;
+                        </code> <br> <code class="language-css">
+                            float: initial;
+                        </code> <br> <code class="language-css">
+                            float: unset;
+                        </code> <br> <code class="language-css">
+                            display: ruby;
+                        </code>
+                    </div>
+
+                    <dl class="content">
+                        <dt>left</dt>
+                        <dd>El elemento flotado se sitúa a la izquierda de su bloque contenedor</dd>
+                        <dt>right</dt>
+                        <dd>El elemento flota del lado derecho de su bloque contenedor</dd>
+                        <dt>none</dt>
+                        <dd>El elemento no deberá flotar, cabe mencionar que esta propiedad no elimina el hecho que el elemento que estaba flotando deje de hacerlo</dd>
+                    </dl>
+
+                    <p class="alert">
+                        Una vez que el propósito de flotar los elementos se haya cumplido, el elemento contenedor debe de limpiar los efectos de flotar los elementos, esto se debe a que el flujo normal de los elementos ha sido modificado
+                    </p>
+                    
+                    <p class="content">
+                        Para limpiar el efecto, se puede usar la propiedad <a href="https://developer.mozilla.org/es/docs/Web/CSS/clear" target="_blank" rel="noopener noreferrer">clear</a> en el elemento o parrafo siguiente,la forma normal de hacerlo es que el cuadro contenedor de los párrafos y los elementos flotados utilicen el "hack clearfix" 
+                    </p>
+
+                    <div class="codes">
+                        <h4 class="title-codes">Clearfix</h4>
+                        <code class="language-css">
+                        </code> <br> <code class="language-css">
+                            .wrapper::after {
+                        </code> <br> <code class="language-css">
+                                content: "";
+                        </code> <br> <code class="language-css">
+                                clear: both;
+                        </code> <br> <code class="language-css">
+                                display: block;
+                        </code> <br> <code class="language-css">
+                                }
+                        </code>
+                    </div>
+
+                    <p class="content">
+                        John Mircha recomienda lo siguiente, tomando la idea de que multiples elementos, anteriores y posteriores usaran la flotación para maquetar, por lo tanto, se necesita que los pseudoelementos, after y before sean los que limpien esta propiedad.
+                    </p>
+
+                    <div class="codes">
+                        <h4 class="title-codes">Clearfix</h4>
+                        <code class="language-css">
+                        </code> <br> <code class="language-css">
+                            .clear, .clear::after, .clear::before{clear: both;}
+                        </code> <br> <code class="language-css">
+                            .clear::after, .clear::before{
+                        </code> <br> <code class="language-css">
+                                content: "";
+                        </code> <br> <code class="language-css">
+                                display: block;
+                        </code> <br> <code class="language-css">
+                                }
+                        </code>
+                    </div>
+
+
+                </article>
+                 <article class="concept"> <!-- Inline -->
+                    <h3 class="title-concept" id="inline">Inline</h3>
+                    <p class="content">
+                        Otra herramienta antigua de la maquetación es el uso del <code class="language-css">display: inline-block</code> esta propiedad hace que los elementos adquieran propiedades tanto en línea como de bloque <a href="<a href="" target="_blank" rel="noopener noreferrer">xx</a>" target="_blank" rel="noopener noreferrer">inline-block</a> acomoda los objetos en línea y con ellos forma un solo bloque, el problema es que genera espacios en blanco entre un objeto y otro por lo que se agrega dimensiones, se arregla quitando el tamño de la fuente del contenedor <code class="language-html">&lt;section class="container f0" &gt;</code>... <code class="language-css">.f0{font-size:0}</code> o quitando los espacios entre los elementos.
+                    </p>
+
+                    <p class="note"> Los objetos se acomodan uno después de otro, pero cuando tienen diferente tamaño, es necesario, alinear verticalmente los objetos</p>
+
+                    <div class="codes">
+                        <code class="language-css">
+                        </code> <br> <code class="language-css">
+                            /* Alineación Vertical */
+                        </code> <br> <code class="language-css">
+                            .v-line{vertical-align:button;}
+                        </code> <br> <code class="language-css">
+                            .v-line{vertical-align:middle;}
+                        </code> <br> <code class="language-css">
+                            .v-line{vertical-align:top;}
+                        </code>
+                    </div>
+
+
+                </article>
+                 <article class="concept"> <!-- Table -->
+                    <h3 class="title-concept" id="table">Table</h3>
+                    <p class="content">
+                        Esta técnica de maquetación fué una de las primeras que se usaron, definitivamente no se recomienda su práctica, solo se menciona como referencia, ya que grid, posee mucho mejores herramientas con mejores resultados. Para usar esta forma solo basta con declarar al contenedor como <code>table</code> y a los items como <code>table-cell</code>
+                    </p>
+                    <div class="codes">
+                        <h4 class="title-codes">CSS</h4>
+                        <code class="language-css">
+                            .table{display: table;}
+                        </code> <br> <code class="language-css">
+                            .table-cell{display: table-cell;}
+                        </code>
+                    </div>
+
+                    <div class="codes">
+                        <h4 class="title-codes">HTML</h4>
+                        <code class="language-html">
+                            &lt;section class="table"&gt;
+                        </code> <br> <code class="language-html">
+                            &lt;article class="table-cell"&gt;
+                        </code>
+                    </div>
+                </article>
+                <article class="concept"> <!-- Css Position -->
+                    <h3 class="title-concept" id="css-position">Css Position</h3>
+                    <p class="content">
+                        No es una técnica de maquetación como tal, pero ayuda a ubicar los elementos en una posición conveniente para nosotros, a través de un sistema de coordenadas. La propiedad que debe modificarse en el elemento es <a href="https://developer.mozilla.org/es/docs/Web/CSS/position" target="_blank" rel="noopener noreferrer">Position</a>
+                    </p>
+
+                    <div class="codes">
+                        <h4 class="title-codes">Sintaxis Visibility:</h4>
+                        <code class="language-css">
+                            Position: static | relative | absolute | fixed | sticky; 
+                        </code>
+                    </div>
+
+                    <dl class="content">
+                        <dt>static</dt>
+                        <dd>Es el valor predeterminado para todos los elementos de CSS, cuando los elementos tienen fijado este valor, no se les considera posicionados, por lo que algunas animaciones no funcionarían con estos elelementos, El elemento es posicionado de acuerdo al flujo normal del documento. Las propiedades top, right, bottom, left, and z-index no tienen efecto. Este es el valor por defecto.</dd>
+                        <dt>Relative</dt>
+                        <dd>Con este valor el elemento conserva su lugar en el flujo normal del documento, pero se muestra desplazado, tomando como referencia el espacio donde originalmente debería aparecer con base en los valores de top, right, bottom, and left., este valor no altera la posición de los otros elementos en el documento Este valor crea un nuevo contexto de apilamiento, donde el valor de z-index no es auto.</dd>
+                        <div class="ilustracion">
+                            <img src="../img/position-relative.png" alt="elemento con position relative">
+                        </div>
+                        <dt>Absolute</dt>
+                        <dd>Este valor permite al elemento posicionarse dentro del documento, tomando como referencia a su ancestro más cercano que posea un posicionamiento definido, es decir, que no sea static, si no encuentra a este ancestro se posicionará con referencia al <code class="language-html">&lt;body&gt;</code>, cabe mencionar que el lugar que ocupaba este elemento quedará vacío por lo que será ocupado por el siguiente elemento del documento</dd>
+                        <div class="ilustracion">
+                            <img src="../img/position-absolute.png" alt="elemento con position relative">
+                        </div>
+                        <dt>Fixed</dt>
+                        <dd>Este elemento se posiciona semejante al valor absolute, la diferencia que la referencia de su posicionamiento será el <code>viewport</code> encima de los demás, lo que permite crear elementos flotantes que permanezcan en la misma posición</dd>
+                        <div class="ilustracion">
+                            <img src="../img/position-fixed.png" alt="elemento con position relative">
+                        </div>
+                        <dt>Sticky</dt>
+                        <dd>Este valor tiene propiedades tanto de relative como de fixed, ya que mantiene su posición de manera relativa hasta que cruza un umbral que nosotros especificamos al momento de hacer scroll, a partir de ahi se comportará como un elemento fixed al cual se "pegará"  hasta que el scroll lo devuelva a su posición inicial, su uso común es crear encabezados o piés de página</dd>
+                        <div class="ilustracion">
+                            <img src="../img/position-sticky.png" alt="elemento con position relative">
+                        </div>
+                    </dl>
+
+                    <p class="content">
+                        La referencia de la posición de los diferentes elementos se establece a partir de tomar como referencia cualquiera de los 4 costados de los elementos padres, estas propiedades son: <a href="https://developer.mozilla.org/es/docs/Web/CSS/top" target="_blank" rel="noopener noreferrer">top</a>, <a href="https://developer.mozilla.org/es/docs/Web/CSS/right" target="_blank" rel="noopener noreferrer">right</a>, <a href="https://developer.mozilla.org/es/docs/Web/CSS/bottom" target="_blank" rel="noopener noreferrer">bottom</a> y <a href="https://developer.mozilla.org/es/docs/Web/CSS/left" target="_blank" rel="noopener noreferrer">left</a>.
+                    </p>
+                    <p class="alert">
+                        El posicionamiento de los elementos puede causar confusión dependiendo de la propiedad donde referenciamos su posición, el sentido positivo es diferente para bottom y top así como para left y right, para ello se usa esta imagen para conocer cual es el sentido positivo de cada una de las referencias.
+                    </p>
+                    <div class="ilustracion">
+                        <img src="../img/position-reference.png" alt="elemento con position relative">
+                    </div>
+                    <p class="alert">
+                        Si a un mismo elemento definimos un top y bottom, se toma como referencia a TOP, en el caso que left y right estén especificados gana la dirección de lectura, para nosotros sería LEFT para otros idiomas que tienen el orden de lectura diferente sería RIGHT
+                    </p>
+                    <p class="content">
+                        Los elementos se posicionan de acuerdo al flujo normal, al momento de posicionar los elementos, en ocasiones es necesario cambiar el orden como aparecen los objetos, esto se establece a través de la propiedad <a href="https://developer.mozilla.org/es/docs/Web/CSS/z-index" target="_blank" rel="noopener noreferrer">z-index</a>, entre más grande es el número estará mas al "Frente", entre más pequeño, mas "atrás".
+                    </p>
+
+                    <p class="note">
+                        Hay que tomar en cuenta que el posicionamiento a través del z-index puede verse modificado por el <a href="https://developer.mozilla.org/es/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context" target="_blank" rel="noopener noreferrer">Contexto de apilamiento</a> que es la conceptualización tridimensional de los elementos HTML a lo largo de un eje-Z imaginario relativo al usuario que se asume está de cara al viewport o página web, hay diferentes situaciones que se crean diferentes contextos de apilamiento lo cual afecta la visibilidad de los elementos.
+                    </p>
+
+                </article>
+                 <article class="concept"> <!-- Flexbox -->
+                    <h3 class="title-concept" id="flex-box">Flexbox</h3>
+                </article>
+                 <article class="concept"> <!-- Grid -->
+                    <h3 class="title-concept" id="grid">Grid</h3>
+                </article>
+                
             </section>
             <input type="radio" name="bloques" class="bloques" id="media-queries">
             <section class="section" ><!--*** Media Queries *****************-->
