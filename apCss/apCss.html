@@ -120,7 +120,7 @@
                         <label for="maquetacion" class="elem-menu">Maquetación</label>
                         <!-- <a href="#maquetacion">Maquetación</a></li> -->
                         <ul class="submenu">
-                            <li><a href="#flujo-normal">Flujo Normal</a></li>
+                            <li><a href="#maq-flujo-normal">Flujo Normal</a></li>
                             <li><a href="#display-visibility">Display y Visibility</a></li>
                             <li><a href="#float">Float</a></li>
                             <li><a href="#inline">inline</a></li>
@@ -3199,8 +3199,8 @@
                 <p class="content">
                     La maquetación de las páginas web, tambien llamado <a href="https://developer.mozilla.org/es/docs/Learn/CSS/CSS_layout" target="_blank" rel="noopener noreferrer">layout</a> o diseño web, son la implementación de diversas herramientas y técnicas disponibles para lograr que la página que estamos desarrollando tenga la forma adecuada para el propósito que ha sido creada, esta es la base de UI y del UX, pues através del diseño es como se crean esta interacción con el usuario, en gran medida, este trabajo se desarrolla en el frontend, usando no solo css si no javascript para lograr diferentes efectos.
                 </p>
-                <ul class="content">
-                    <li><a href="#flujo-normal">Flujo Normal</a></li>
+                <ul class="content" id="menu-maquetacion">
+                    <li><a href="#maq-flujo-normal">Flujo Normal</a></li>
                     <li><a href="#display-visibility">Display y Visibility</a></li>
                     <li><a href="#float">Float</a></li>
                     <li><a href="#inline">inline</a></li>
@@ -3210,8 +3210,9 @@
                     <li><a href="#grid">grid</a></li>
                     <!-- *** -->
                 </ul>
+
                  <article class="concept"> <!-- Flujo Normal -->
-                    <h3 class="title-concept" id="flujo-normal">Flujo Normal</h3>
+                    <h3 class="title-concept" id="maq-flujo-normal">Flujo Normal</h3>
                     <p class="content">
                         La manera <b>"Normal"</b> en la que los elementos se acomodanen la página web sin ninguna intervención o modificación, obedece a la naturaleza de cada uno de los elementos que tienen por defecto, es en este sentido que el <a href="https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/The_box_model" target="_blank" rel="noopener noreferrer">modelo de caja</a> toma relevancia, ya que estos elementos se acomodan uno encima de otro o a lado de sus compañeros, dependiendo si su naturaleza es en <code>línea</code> o en <code>bloque</code>. 
                     </p>
@@ -3237,10 +3238,7 @@
                             visibility: visible | hidden | collapse | inherit; 
                         </code>
                     </div>
-                    <dl class="content">
-                        <dt></dt>
-                        <dd></dd>
-                    </dl>
+                    
                     <dl class="content">
                         <dt id="visible"><code>visible</code></dt>
                         <dd>El elemento se muestra normalmente.</dd>
@@ -3544,7 +3542,7 @@
                             <img src="../img/position-fixed.png" alt="elemento con position relative">
                         </div>
                         <dt>Sticky</dt>
-                        <dd>Este valor tiene propiedades tanto de relative como de fixed, ya que mantiene su posición de manera relativa hasta que cruza un umbral que nosotros especificamos al momento de hacer scroll, a partir de ahi se comportará como un elemento fixed al cual se "pegará"  hasta que el scroll lo devuelva a su posición inicial, su uso común es crear encabezados o piés de página</dd>
+                        <dd>Este valor tiene propiedades tanto de relative como de fixed, ya que mantiene su posición de manera relativa hasta que cruza un umbral que nosotros especificamos al momento de hacer scroll, a partir de ahi se comportará como un elemento fixed al cual se "pegará"  hasta que el scroll lo devuelva a su posición inicial, su uso común es crear encabezados o piés de página, este posicionamiento no funciona si su ancestro tiene overflow definido</dd>
                         <div class="ilustracion">
                             <img src="../img/position-sticky.png" alt="elemento con position relative">
                         </div>
@@ -3573,6 +3571,448 @@
                 </article>
                  <article class="concept"> <!-- Flexbox -->
                     <h3 class="title-concept" id="flex-box">Flexbox</h3>
+                    <h3 class="title-aux">Propiedades del Contenedor</h3>
+                    <ul class="content" id="menu-flex-contenedor">
+                        <li><a href="#flex-direction">Flex Direction</a></li>
+                        <li><a href="#flex-wrap">Flex Wrap</a></li>
+                        <li><a href="#flex-flow">Flex Flow (shorthand)</a></li>
+                        <li><a href="#flex-justify-content">Justify Content (Main Axis)</a></li>
+                        <li><a href="#flex-align-items">Align Items (Cross Axis)</a></li>
+                        <li><a href="#flex-align-content">Align Content (Cross Axis)</a></li>
+                        <li><a href="#flex-gap">gap, row-gap, column-gap</a></li>
+                        <!-- *** -->
+                    </ul>
+
+                    <h3 class="title-aux">Propiedades de los elementos Hijo</h3>
+                    <ul class="content" id="menu-flex-hijos">
+                        <li><a href="#flex-Order">Order</a></li>
+                        <li><a href="#flex-grow">Flex Grow</a></li>
+                        <li><a href="#flex-shrink">Flex Shrink</a></li>
+                        <li><a href="#flex-basis">Flex Basis</a></li>
+                        <li><a href="#flex-shorthand">Flex (shorthand)</a></li>
+                        <li><a href="#flex-align-self">Align Self</a></li>
+                        <!-- *** -->
+                    </ul>
+
+                    <p class="content">
+                        <a href="https://developer.mozilla.org/es/docs/Learn/CSS/CSS_layout/Flexbox" target="_blank" rel="noopener noreferrer">Flexbox</a> o  <a href="https://developer.mozilla.org/es/docs/Web/CSS/CSS_Flexible_Box_Layout" target="_blank" rel="noopener noreferrer">Flexbox</a> permite ordenar los elementos de un contenedor y ordenarlos unidimensionalmente, aunque el arreglo final pueden ser filas y columnas, no existe un control de ambas dimensiones como si lo hace <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids" target="_blank" rel="noopener noreferrer">grid</a>, sin embargo si permite acomodar a los elementos en diferentes filas que permite usar esa propiedad para maquetación fluida y reponsive., flexbox vino a solucionar las frustaciones de trabajar con <code>float</code> <code>position</code>
+                    </p>
+                    <p class="alert">
+                        Al usar Flexbox se establece un nuevo <code><b>Contexto de Formato Flexible</b></code> aplica directamente a través de un contenedor, esto provoca, que los elementos hijos cambien el comportamiento normal de las cajas y no se comporten de acuerdo al modelo de caja standar, no importa si en sus propiedades se encuentra declarado <code class="language-css">display: block;</code> o <code class="language-css">display: inline;</code>, este comportamiento se ve  alterado y ahora es manipulado por las propiedades flex para los hijos. en el contenedor no aplican los Floats o los Clear, El vertical-align deja de funcionar y los Pseudoelementos, <code>::Firt-line, ::first-letter</code>
+                    </p>
+
+                    <p class="content">
+                        Al declarar un contenedor como <code class="language-css">display: flex;</code>, este, se rige a través de dos ejes imaginarios, el cual, el primero es el eje principal y el otro es un eje secundario, se muestra de la siguiente forma 
+                    </p>
+                    <figure class="ilustracion">
+                        <img src="../img/flex_terms.png" alt="Ejes de Contenedor Flexbox">
+                    </figure>
+
+                    <h3 class="title-aux">Propiedades del Contenedor</h3>
+                    <dl class="content">
+                        <dt id="flex-direction"><a href="#menu-flex-contenedor">Flex Direction</a></dt>
+                        <dd>
+                            <p class="content">
+                                A través de esta propiedad definimos en el contenedor cual será el Eje principal y cual será el Eje Secundario, también podemos establecer el sentido en el que se organizaran los elementos, ya sea  de izquierda a derecha o en reversa (row), o de arriba a abajo o en reversa (column), de forma predeterminada al usar <code class="language-css">display: flex;</code>, se establece <code class="language-css">flex-direction: row;</code> de forma predeterminada.
+                            </p>
+
+                            <div class="codes">
+                                <h4 class="title-codes">Sintaxis flex-direction:</h4>
+                                <code class="language-css">
+                                    flex-direction: row | row-reverse | column | column-reverse; 
+                                </code> <br><br> <code class="language-css">
+                                    /* Valores globales */
+                                </code> <br> <code class="language-css">
+                                    flex-direction: inherit | initial | unset ;
+                                </code>
+                            </div>
+
+                            <dl class="content">
+                                <dt>row</dt>
+                                <dd>Establece que los elementos se alineen en el eje principal horizontal que será establecido de izquierda a derecha, si no se especifica, este será el valor por defecto</dd>
+                                <dt>row-reverse</dt>
+                                <dd>Establece que los elementos se alineen en el eje principal horizontal que será establecido de derecha a izquierda</dd>
+                                <dt>column</dt>
+                                <dd>Establece que los elementos se apilen sobre el eje principal que ahora será vertical de arriba a abajo</dd>
+                                <dt>column-reverse</dt>
+                                <dd>Establece que los elementos se apilen sobre el eje principal que ahora será vertical de abajo a arriba</dd>
+                            </dl>
+
+                            <figure class="ilustracion">
+                                <img src="../img/flex-direction.svg" alt="Regla CSS">
+                            </figure>
+                        </dd>
+
+                        <dt id="flex-wrap"><a href="#menu-flex-contenedor">Flex Wrap</a></dt>
+                        <dd>
+                            <p class="content">
+                                Esta propiedad, hace que los elementos sean forzados a acomodarse en una misma línea (sobre Main Axis) o si pueden ocupar más lineas, dependiendo si el tamaño del contenedor lo permite
+                            </p>
+
+                            <div class="codes">
+                                <h4 class="title-codes">Sintaxis flex-wrap:</h4>
+                                <code class="language-css">
+                                    flex-wrap: nowrap | wrap | wrap-reverse; 
+                                </code> <br><br> <code class="language-css">
+                                    /* Valores globales */
+                                </code> <br> <code class="language-css">
+                                    flex-wrap: inherit;
+                                </code>
+                            </div>
+
+                            <dl class="content">
+                                <dt>nowrap</dt>
+                                <dd>Es la propiedad establecida por default, provoca que todos los elementos se mantengan en una sola linea sobre el eje principal</dd>
+                                <dt>wrap</dt>
+                                <dd>Permite que se respete el ancho de los hijos, y estos puedan acomodarse en diferentes líneas sobre el Eje secundario (Cross Axis)</dd>
+                                <dt>wrap-reverse</dt>
+                                <dd>Provoca el mismo efecto que wrap pero en sentido inverso</dd>
+                            </dl>
+
+                            <figure class="ilustracion">
+                                <img src="../img/flex-wrap.svg" alt="Aplicacion de Wrap">
+                            </figure>
+                        </dd>
+
+                        <dt id="flex-flow"><a href="#menu-flex-contenedor">Flex Flow (shorthand)</a></dt>
+                        <dd>
+                            <p class="content">
+                                Esta propiedad es el Shorthand que permite establecer <code>flex-direction</code> y <code>flex-wrap</code> en una misma línea de código
+                            </p>
+
+                            <div class="codes">
+                                <h4 class="title-codes">Sintaxis flex-flow:</h4>
+                                <code class="language-css">
+                                    flex-flow: &lt;flex-direction&gt; | &lt;flex-wrap&gt; ; 
+                                </code>
+                            </div>
+                        </dd>
+
+                        <dt id="flex-justify-content"><a href="#menu-flex-contenedor">Justify Content (Main Axis)</a></dt>
+                        <dd>
+                            <p class="content">
+                                Esta propiedad permite distribuir el espacio sobrante del Main Axis entre los diferentes elementos hijos, permitiendonos establecer la manera que se acomodan estos objetos, estas propiedades surten efecto después que las longitudes y márgenes automáticos son aplicados, lo que significa que si existe al menos un elemento hijo con un <code>flex-grow</code> diferente de 0, no habrá efecto ya que no habrá espacioo disponible
+                            </p>
+
+                            <div class="codes">
+                                <h4 class="title-codes">Sintaxis justify-content:</h4>
+                                <code class="language-css">
+                                    justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly | stretch; 
+                                </code> <br><br> <code class="language-css">
+                                    /* Valores globales */
+                                </code> <br> <code class="language-css">
+                                    justify-content: inherit | initial | unset ;
+                                </code>
+                            </div>
+
+                            <dl class="content">
+                                <dt>flex-start</dt>
+                                <dd>Este es el valor por defecto si no se encuentra explicitamente colocado otro valor, esta propiedad coloca a los elementos al inicio del Main Axis, el primier elemento se coloca al raz del contenedor y los siguientes elementos al raz del contenedor precedente</dd>
+                                <dt>flex-end</dt>
+                                <dd>Semejante a Flex start, solo que coloca a los elementos iniciando desde el final del Main Axis</dd>
+                                <dt>center</dt>
+                                <dd>Los elementos se colocan Juntos, consecutivamente en el centro del espacio disponible del contenedor</dd>
+                                <dt>space-between</dt>
+                                <dd>El primer elemento hijo se alinea al raz del contenedor en el principio del Main Axis y el último elemento se coloca al raz del final del Main Axis, los demas elementos son separados proporcionalmente por el espacio disponible repartido entre ellos</dd>
+                                <dt>space-around</dt>
+                                <dd>Reparte el espacio disponible entre el numero de elementos hijo y esa porción que le toca a cada quien se divide entre dos, colocando una mitad de lado derecho y otra de lado izquierdo, eso provoca que el espacio se raparta entre los elementos pero provoca un espaciado diferente al principio y al final de la fila de elementos</dd>
+                                <dt>space-evenly</dt>
+                                <dd>Reparte el espacio equitativamente entre el numero de espacios disponible y separa a los elementos de forma equitativa, incluso al principio y al final de la fila de elementos</dd>
+                                <dt>stretch</dt>
+                                <dd>Provoca que los elementos se estiren sobre el Main axis ocupando todo el espacio disponible</dd>
+                            </dl>
+
+                            <figure class="ilustracion">
+                                <img src="../img/flex-justify-content.gif" alt="Ejemplo de Justify Content">
+                            </figure>
+                        </dd>
+
+                        <dt id="flex-align-items"><a href="#menu-flex-contenedor">Align Items (Cross Axis)</a></dt>
+                        <dd>
+                            <p class="content">
+                                Alinea a los elementos en el eje secundario (Cross Axis), cuando estos elementos se encuentran dispuestos en una sola línea en el Main Axis, es decir, <code>flex-wrap</code> tiene el valor de <code>nowrap</code> 
+                            </p>
+
+                            <div class="codes">
+                                <h4 class="title-codes">Sintaxis align-items:</h4>
+                                <code class="language-css">
+                                    align-items: stretch | flex-start | flex-end | center  | baseline; 
+                                </code> <br><br> <code class="language-css">
+                                    /* Valores globales */
+                                </code> <br> <code class="language-css">
+                                    align-items: inherit | initial | unset ;
+                                </code>
+                            </div>
+
+                            <dl class="content">
+                                <dt>stretch</dt>
+                                <dd>Es el valor por defecto, y provoca que los elementos "crezcan" y ocupen todo el espacio disponible sobre el Cross Axis</dd>
+                                <dt>flex-start</dt>
+                                <dd>Coloca a los elementos en el inicio del Cross Axis</dd>
+                                <dt>flex-end</dt>
+                                <dd>Coloca a los elementos en el final del Cross Axis</dd>
+                                <dt>center</dt>
+                                <dd>Coloca a los elementos en el centro del Cross axis</dd>
+                                <dt>baseline</dt>
+                                <dd>Los elementos son alineados desde la linea base del contenido de los hijos</dd>
+                            </dl>
+
+                            <figure class="ilustracion">
+                                <img src="../img/align-items.svg" alt="Elementos alineados en el Cross Axis">
+                            </figure>
+                        </dd>
+
+                        <dt id="flex-align-content"><a href="#menu-flex-contenedor">Align Content (Cross Axis)</a></dt>
+                        <dd>
+                            <p class="content">
+                                Esta propiedad define como se alinean los elementos a lo largo del Cross Axis cuando existen varias lineas de elementos, todos se mueven en forma de bloque, es decir todos juntos.
+                            </p>
+
+                            <p class="alert">
+                                Esta propiedad solo puede usarse cuando se encuentra definido que los contenedores pueden tener multiples líneas de los hijos, es decir, la propiedad <code>flex-wrap</code> tiene el valor <code>wrap</code> o <code>wrapreverse</code>
+                            </p>
+
+                            <div class="codes">
+                                <h4 class="title-codes">Sintaxis align-content:</h4>
+                                <code class="language-css">
+                                    align-content: normal | flex-start | flex-end | center | space-between | space-around | space-evenly | stretch; 
+                                </code> <br><br> <code class="language-css">
+                                    /* Valores globales */
+                                </code> <br> <code class="language-css">
+                                    align-content: inherit | initial | unset ;
+                                </code>
+                            </div>
+
+                            <dl class="content">
+                                <dt>normal</dt>
+                                <dd>Es el valor por defecto cuando no se ha colocado otro valor a esta propiedad, los elementos se mantienen en su posicion por default</dd>
+                                <dt>flex-start</dt>
+                                <dd>Los elementos se agrupan al principio del Cross Axis</dd>
+                                <dt>flex-end</dt>
+                                <dd>Los elementos se agrupan al final del Cross Axis</dd>
+                                <dt>center</dt>
+                                <dd>Los elementos se agrupan en el centro del Cross Axis</dd>
+                                <dt>space-between</dt>
+                                <dd>El espacio disponible del Cross Axis se reparte entre los elementos, la primera linea se coloca al raz de Inicio del eje miestras que la ultima linea se coloca al raz del final del eje</dd>
+                                <dt>space-around</dt>
+                                <dd>el espacio disponible se reparte entre el numero de filas, y este se reparte al principio y final de cada fila dejando disparejo el espacio al final y al principio, comparado con el espacio intermedio de las filas</dd>
+                                <dt>space-evenly</dt>
+                                <dd>Reparte equitativamente el espacio entre las separaciones de las filas y el principio y el fin, dejando un espacio semejante entre todos los huecos disponibles</dd>
+                                <dt>stretch</dt>
+                                <dd>Provoca que los elementos ocupen todo el espacio disponible repartiendolo entre las filas disponibles</dd>
+                            </dl>
+
+                            <figure class="ilustracion">
+                                <img src="../img/align-content.svg" alt="Alinea a los elementos en el Cross Axis con wrap">
+                            </figure>
+                        </dd>
+
+                        <dt id="flex-gap"><a href="#menu-flex-contenedor">gap, row-gap, column-gap</a></dt>
+                        <dd>
+                            <p class="content">
+                                La propiedad <a href="https://css-tricks.com/almanac/properties/g/gap/" target="_blank" rel="noopener noreferrer">gap</a> provoca que los elementos posean una separación explícita y predecible, es decir, nos permite estables cual es el espaciado entre los elementos de forma precisa, de forma diferente a como lo hace <code>space-around</code> o <code>space-between</code>
+                            </p>
+
+                            <div class="codes">
+                                <h4 class="title-codes">Sintaxis gap:</h4>
+                                <code class="language-css">
+                                    gap: &lt;longitud&gt;; 
+                                </code>
+                            </div>
+
+                            <dl class="content">
+                                <dt>longitud</dt>
+                                <dd>Se aplica cualquiera de las medidas absolutas o relativas válidas para CSS</dd>
+                            </dl>
+
+                            <figure class="ilustracion">
+                                <img src="../img/gap-1.svg" alt="Muestra de gap">
+                            </figure>
+                        </dd>
+                    </dl>
+
+                    <h3 class="title-aux">Propiedades de los elementos Hijo</h3>
+                    <dl class="content">
+                        <dt id="flex-Order"><a href="#menu-flex-hijos">Order</a></dt>
+                        <dd>
+                            <p class="content">
+                                Los elementos dentro de un contenedor que tiene <code>display: flex</code>, se acomodan uno a lado de otro en el orden en que fueron clocados en el <code>HTML</code>, sin embargo este orden puede ser alterado colocándoles esta propiedad a cada uno de los hijos o los que son de nuestro interés que se sitúen en otro valor
+                            </p>
+
+                            <p class="alert">
+                                Por default, el valor de order es 0, order acepta valores negativos, si varios elementos tienen el mismo valor de order, se respeta se colocan juntos y se respeta la posición del html.
+                            </p>
+
+                            <div class="codes">
+                                <h4 class="title-codes">Sintaxis order:</h4>
+                                <code class="language-css">
+                                    order: &lt;integer&gt;; 
+                                </code>
+                            </div>
+
+                            <dl class="content">
+                                <dt>integer</dt>
+                                <dd>Es un numero entero, que puede ser negativo</dd>
+                            </dl>
+
+                            <figure class="ilustracion">
+                                <img src="../img/order.svg" alt="Cambia el Orden de los Items">
+                            </figure>
+                        </dd>
+
+                        <dt id="flex-grow"><a href="#menu-flex-hijos">Flex Grow</a></dt>
+                        <dd>
+                            <p class="content">
+                                Establece el factor de crecimiento de un item dentro de un contenedor flex, este crecimiento viene dado por el espacio disponible en el Main Axis, y se reparte entre los items dependiendo del factor de crecimiento, de todos ellos, por ejemplo si tengo tres items y tienen factor de crecimiento 1,2,1, el espacio disponible se divide entre 4 y a cada item se le asigna la porcion que le corresponde.
+                            </p>
+                            <p class="alert">
+                                Funciona solo cuando los elementos estan en una sola línea <code>flex-wrap: nowrap</code>, no acepta números negativos, si el valor es 0, ocupa el tamaño original del item, con el valor de 1 o más se ocupa el espacio disponible.
+                            </p>
+
+                            <div class="codes">
+                                <h4 class="title-codes">Sintaxis flex-grow:</h4>
+                                <code class="language-css">
+                                    flex-grow: &lt;integer&gt;; 
+                                </code> <br><br> <code class="language-css">
+                                    /* Valores globales */
+                                </code> <br> <code class="language-css">
+                                    flex-grow: inherit | initial | unset ;
+                                </code>
+                            </div>
+
+                            <dl class="content">
+                                <dt>integer</dt>
+                                <dd>Es un numero entero, su valor por defecto es 0</dd>
+                            </dl>
+
+                            <figure class="ilustracion">
+                                <img src="../img/flex-grow.svg" alt="Establece el Factor de Crecimiento">
+                            </figure>
+                        </dd>
+
+                        <dt id="flex-shrink"><a href="#menu-flex-hijos">Flex Shrink</a></dt>
+                        <dd>
+                            <p class="content">
+                                Especifica el valor de contracción que los elementos tendrán cuando el espacio del contenedor sea menor que la suma de los espacios de los items, esta diferencia será distribuida entre los elementos y cada uno se encogerá de acuerdo al valor asignado 
+                            </p>
+
+                            <p class="alert">
+                                Funciona solo cuando los elementos estan en una sola línea <code>flex-wrap: nowrap</code>, no acepta números negativos
+                            </p>
+
+                            <div class="codes">
+                                <h4 class="title-codes">Sintaxis flex-shrink:</h4>
+                                <code class="language-css">
+                                    flex-shrink: &lt;integer&gt;; 
+                                </code> <br><br> <code class="language-css">
+                                    /* Valores globales */
+                                </code> <br> <code class="language-css">
+                                    flex-shrink: inherit | initial | unset ;
+                                </code>
+                            </div>
+
+                            <dl class="content">
+                                <dt>integer</dt>
+                                <dd>Es un numero entero, su valor por defecto es 1</dd>
+                            </dl>
+
+                            <figure class="ilustracion">
+                                <img src="../img/flex-shrink.png" alt="Establece el Factor de contracción">
+                            </figure>
+                        </dd>
+
+                        <dt id="flex-basis"><a href="#menu-flex-hijos">Flex Basis</a></dt>
+                        <dd>
+                            <p class="content">
+                                La propiedad de CSS flex-basis especifíca la base flexible, la cual es el tamaño inicial de un elemento flexible. Ésta propiedad determina el tamaño de una caja de contenidos a no ser que se haya especificado de otra forma usando box-sizing. 
+                            </p>
+
+                            <div class="codes">
+                                <h4 class="title-codes">Sintaxis flex-basis:</h4>
+                                <code class="language-css">
+                                    flex-basis: &lt;width&gt;; 
+                                </code> <br><br> <code class="language-css">
+                                    /* Palabras clave de dimensionamiento intrínseco */
+                                </code> <br> <code class="language-css">
+                                    flex-basis: content | fill | max-content | min-content | fit-content ;
+                                </code> <br><br> <code class="language-css">
+                                    /* Valores globales */
+                                </code> <br> <code class="language-css">
+                                    flex-basis: inherit | initial | unset ;
+                                </code>
+                            </div>
+
+                            <dl class="content">
+                                <dt>width</dt>
+                                <dd>Definido por un número seguido de una unidad absoluta tal como px, mm o pt, o un porcentaje del tamaño principal de un contenedor flexible padre. Los valores negativos no son válidos.</dd>
+                                <dt>content</dt>
+                                <dd>Indica el dimensionamiento automático, basado en el contenido del elemento flexible.</dd>
+                            </dl>
+                        </dd>
+
+                        <dt id="flex-shorthand"><a href="#menu-flex-hijos">Flex (shorthand)</a></dt>
+                        <dd>
+                            <p class="content">
+                                La propiedad CSS flex es una propiedad resumida que indica la capacidad de un elemento flexible para alterar sus dimensiones y llenar el espacio disponible. Los elementos flexibles pueden ser estirados para utilizar el espacio disponible proporcional a su factor de crecimiento flexible o su factor de contracción flexible para evitar desbordamiento.
+                            </p>
+
+                            <div class="codes">
+                                <h4 class="title-codes">Sintaxis flex:</h4>
+                                <code class="language-css">
+                                    flex: &lt;flex-grow&gt; | &lt;flex-shrink&gt; | &lt;flex-basis&gt;; 
+                                </code> <br><br> <code class="language-css">
+                                    /* Valores globales */
+                                </code> <br> <code class="language-css">
+                                    flex: inherit | initial | unset ;
+                                </code>
+                            </div>
+
+                            <p class="content">
+                                El valor de <code>flex:auto</code> equivale a <code>flex:1 1 auto</code>; El valor de <code>flex:none</code> equivale a <code>flex: 0 0 auto</code>; el valor de <code>flex:n</code> equivale a <code>flex:n 0 0 </code>
+                            </p>
+
+                            <p class="note">Usar <code>flex:1 1 50%</code> ayuda a dividir exactamente en 2 el espacio disponible </p>
+                        </dd>
+
+                        <dt id="flex-align-self"><a href="#menu-flex-hijos">Align Self</a></dt>
+                        <dd>
+                            <p class="content">
+                                La propiedad CSS align-self alinea los elementos flexibles de la línea flexible actual, reemplazando el valor de align-items. Si el límite transversal de alguno de los elementos está definido como auto, el valor de align-self es ignorado
+                            </p>
+
+                            <div class="codes">
+                                <h4 class="title-codes">Sintaxis align-self:</h4>
+                                <code class="language-css">
+                                    align-self: auto | stretch | flex-start | flex-end | center  | baseline; 
+                                </code> <br><br> <code class="language-css">
+                                    /* Valores globales */
+                                </code> <br> <code class="language-css">
+                                    align-self: inherit | initial | unset ;
+                                </code>
+                            </div>
+
+                            <dl class="content">
+                                <dt>auto</dt>
+                                <dd>Se calcula acorde al valor de align-items del padre, o al de stretch si el elemento no tiene padre</dd>
+                                <dt>stretch</dt>
+                                <dd>provoca que los elementos "crezcan" y ocupen todo el espacio disponible sobre el Cross Axis</dd>
+                                <dt>flex-start</dt>
+                                <dd>Coloca a los elementos en el inicio del Cross Axis</dd>
+                                <dt>flex-end</dt>
+                                <dd>Coloca a los elementos en el final del Cross Axis</dd>
+                                <dt>center</dt>
+                                <dd>Coloca a los elementos en el centro del Cross axis</dd>
+                                <dt>baseline</dt>
+                                <dd>Los elementos son alineados desde la linea base del contenido de los hijos</dd>
+                            </dl>
+
+
+                            <figure class="ilustracion">
+                                <img src="../img/align-self.svg" alt="Regla CSS">
+                            </figure>
+                        </dd>
+                    </dl>
+
                 </article>
                  <article class="concept"> <!-- Grid -->
                     <h3 class="title-concept" id="grid">Grid</h3>
